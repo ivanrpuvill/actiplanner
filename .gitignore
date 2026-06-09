@@ -1,0 +1,17 @@
+# Python
+venv/
+__pycache__/
+*.pyc
+
+# Variables d'entorn
+.env
+
+# Visual Studio Code
+.vscode/
+
+# Sistema operatiu
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
