@@ -1,0 +1,16 @@
+[
+  {
+    "idObjectiu": 1,
+    "idPla": 1,
+    "titol": "Millorar el seguiment de l'equip",
+    "descripcio": "Establir rutines de seguiment individual amb els membres de l'equip.",
+    "ordre": 1
+  },
+  {
+    "idObjectiu": 2,
+    "idPla": 1,
+    "titol": "Incrementar la qualitat del feedback",
+    "descripcio": "Aplicar tècniques de feedback constructiu en reunions setmanals.",
+    "ordre": 2
+  }
+]

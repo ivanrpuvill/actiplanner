@@ -1,5 +1,11 @@
-from fastapi import FastAPI
+from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
+
+from app.services.usuari_service import UsuariService
+from app.services.pla_accio_service import PlaAccioService
+
+usuari_service = UsuariService()
+pla_accio_service = PlaAccioService()
 
 app = FastAPI(
     title="Actiplanner API",
@@ -23,11 +29,6 @@ def root():
 def health():
     return {"status": "ok"}
 
-from fastapi import FastAPI, HTTPException
-from fastapi.middleware.cors import CORSMiddleware
-
-from app.services.usuari_service import UsuariService
-
 app = FastAPI(
     title="Actiplanner API",
     description="Backend del sistema Actiplanner",
@@ -41,9 +42,6 @@ app.add_middleware(
     allow_methods=["*"],
     allow_headers=["*"],
 )
-
-usuari_service = UsuariService()
-
 
 @app.get("/")
 def root():
@@ -101,3 +99,22 @@ def comprovar_supervisor(idPrograma: int, idUsuari: int):
         "idUsuari": idUsuari,
         "esSupervisor": usuari_service.es_supervisor(idUsuari, idPrograma)
     }
+
+    @app.get("/empreses/{idEmpresa}/programes")
+def get_programes_empresa(idEmpresa: int):
+    return pla_accio_service.get_programes_empresa(idEmpresa)
+
+
+@app.get("/programes/{idPrograma}/plans")
+def get_plans_programa(idPrograma: int):
+    return pla_accio_service.get_plans_programa(idPrograma)
+
+
+@app.get("/plans/{idPla}")
+def get_pla_detallat(idPla: int):
+    pla = pla_accio_service.get_pla_detallat(idPla)
+
+    if pla is None:
+        raise HTTPException(status_code=404, detail="Pla d'acció no trobat")
+
+    return pla
