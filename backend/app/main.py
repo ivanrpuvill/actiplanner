@@ -5,11 +5,13 @@ from app.services.usuari_service import UsuariService
 from app.services.pla_accio_service import PlaAccioService
 from app.services.kpi_service import KPIService
 from app.services.seguiment_objectiu_service import SeguimentObjectiuService
+from app.services.feedback_service import FeedbackService
 
 usuari_service = UsuariService()
 pla_accio_service = PlaAccioService()
 kpi_service = KPIService()
 seguiment_objectiu_service = SeguimentObjectiuService()
+feedback_service = FeedbackService()
 
 app = FastAPI(
     title="Actiplanner API",
@@ -177,3 +179,59 @@ def get_detall_seguiment_objectiu_usuari(
         )
 
     return detall
+
+@app.get("/feedback")
+def get_feedbacks():
+    return feedback_service.get_feedbacks()
+
+
+@app.get("/feedback/{idFeedback}")
+def get_feedback(idFeedback: int):
+    feedback = feedback_service.get_feedback(idFeedback)
+
+    if feedback is None:
+        raise HTTPException(
+            status_code=404,
+            detail="Feedback no trobat"
+        )
+
+    return feedback
+
+
+@app.get("/programes/{idPrograma}/feedback")
+def get_feedbacks_programa(idPrograma: int):
+    return feedback_service.get_feedbacks_programa(idPrograma)
+
+
+@app.get("/participants/{idUsuariParticipant}/feedback")
+def get_feedbacks_participant(idUsuariParticipant: int):
+    return feedback_service.get_feedbacks_participant(idUsuariParticipant)
+
+
+@app.get("/supervisors/{idUsuariSupervisor}/feedback")
+def get_feedbacks_supervisor(idUsuariSupervisor: int):
+    return feedback_service.get_feedbacks_supervisor(idUsuariSupervisor)
+
+
+@app.get("/programes/{idPrograma}/participants/{idUsuariParticipant}/feedback")
+def get_feedbacks_programa_participant(
+    idPrograma: int,
+    idUsuariParticipant: int
+):
+    return feedback_service.get_feedbacks_programa_participant(
+        idPrograma,
+        idUsuariParticipant
+    )
+
+
+@app.post("/feedback")
+def create_feedback(feedback: Feedback):
+    nou_feedback = feedback_service.create_feedback(feedback)
+
+    if nou_feedback is None:
+        raise HTTPException(
+            status_code=400,
+            detail="El supervisor o el participant no pertanyen al programa indicat"
+        )
+
+    return nou_feedback
