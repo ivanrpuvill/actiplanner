@@ -32,3 +32,10 @@ class RegistreKPIRepository:
             key=lambda registre: registre.dataRegistre,
             reverse=True
         )[0]
+
+    def get_by_kpi_and_usuari(self, idKPI: int, idUsuari: int) -> list[RegistreKPI]:
+        return [
+            registre
+            for registre in self.get_all()
+            if registre.idKPI == idKPI and registre.idUsuari == idUsuari
+        ]

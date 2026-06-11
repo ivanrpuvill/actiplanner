@@ -3,9 +3,11 @@ from fastapi.middleware.cors import CORSMiddleware
 
 from app.services.usuari_service import UsuariService
 from app.services.pla_accio_service import PlaAccioService
+from app.services.kpi_service import KPIService
 
 usuari_service = UsuariService()
 pla_accio_service = PlaAccioService()
+kpi_service = KPIService()
 
 app = FastAPI(
     title="Actiplanner API",
@@ -118,3 +120,22 @@ def get_pla_detallat(idPla: int):
         raise HTTPException(status_code=404, detail="Pla d'acció no trobat")
 
     return pla
+
+@app.get("/kpis/{idKPI}")
+def get_kpi(idKPI: int):
+    kpi = kpi_service.get_kpi(idKPI)
+
+    if kpi is None:
+        raise HTTPException(status_code=404, detail="KPI no trobat")
+
+    return kpi
+
+
+@app.get("/kpis/{idKPI}/registres")
+def get_registres_kpi(idKPI: int):
+    return kpi_service.get_registres_kpi(idKPI)
+
+
+@app.get("/kpis/{idKPI}/usuaris/{idUsuari}/registres")
+def get_registres_kpi_usuari(idKPI: int, idUsuari: int):
+    return kpi_service.get_registres_kpi_usuari(idKPI, idUsuari)

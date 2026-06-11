@@ -20,3 +20,10 @@ class KPIRepository:
             for kpi in self.get_all()
             if kpi.idAccio == idAccio
         ]
+    
+    def get_by_id(self, idKPI: int) -> KPI | None:
+        for kpi in self.get_all():
+            if kpi.idKPI == idKPI:
+                return kpi
+
+        return [None]
