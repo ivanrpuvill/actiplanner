@@ -4,10 +4,12 @@ from fastapi.middleware.cors import CORSMiddleware
 from app.services.usuari_service import UsuariService
 from app.services.pla_accio_service import PlaAccioService
 from app.services.kpi_service import KPIService
+from app.services.seguiment_objectiu_service import SeguimentObjectiuService
 
 usuari_service = UsuariService()
 pla_accio_service = PlaAccioService()
 kpi_service = KPIService()
+seguiment_objectiu_service = SeguimentObjectiuService()
 
 app = FastAPI(
     title="Actiplanner API",
@@ -139,3 +141,39 @@ def get_registres_kpi(idKPI: int):
 @app.get("/kpis/{idKPI}/usuaris/{idUsuari}/registres")
 def get_registres_kpi_usuari(idKPI: int, idUsuari: int):
     return kpi_service.get_registres_kpi_usuari(idKPI, idUsuari)
+
+@app.get("/objectius/{idObjectiu}/seguiments")
+def get_seguiments_objectiu(idObjectiu: int):
+    return seguiment_objectiu_service.get_seguiments_objectiu(idObjectiu)
+
+
+@app.get("/usuaris/{idUsuari}/seguiments")
+def get_seguiments_usuari(idUsuari: int):
+    return seguiment_objectiu_service.get_seguiments_usuari(idUsuari)
+
+
+@app.get("/programes/{idPrograma}/usuaris/{idUsuari}/seguiments")
+def get_seguiments_programa_usuari(idPrograma: int, idUsuari: int):
+    return seguiment_objectiu_service.get_seguiments_programa_usuari(
+        idPrograma,
+        idUsuari
+    )
+
+
+@app.get("/objectius/{idObjectiu}/usuaris/{idUsuari}/seguiment")
+def get_detall_seguiment_objectiu_usuari(
+    idObjectiu: int,
+    idUsuari: int
+):
+    detall = seguiment_objectiu_service.get_detall_seguiment_objectiu_usuari(
+        idObjectiu,
+        idUsuari
+    )
+
+    if detall is None:
+        raise HTTPException(
+            status_code=404,
+            detail="Seguiment d'objectiu no trobat"
+        )
+
+    return detall

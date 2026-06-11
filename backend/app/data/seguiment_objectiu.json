@@ -1,0 +1,14 @@
+[
+  {
+    "idSeguiment": 1,
+    "idObjectiu": 1,
+    "idPrograma": 1,
+    "idUsuari": 1
+  },
+  {
+    "idSeguiment": 2,
+    "idObjectiu": 2,
+    "idPrograma": 1,
+    "idUsuari": 1
+  }
+]
