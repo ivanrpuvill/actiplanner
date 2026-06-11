@@ -41,30 +41,6 @@ def root():
 def health():
     return {"status": "ok"}
 
-app = FastAPI(
-    title="Actiplanner API",
-    description="Backend del sistema Actiplanner",
-    version="1.0"
-)
-
-app.add_middleware(
-    CORSMiddleware,
-    allow_origins=["*"],
-    allow_credentials=True,
-    allow_methods=["*"],
-    allow_headers=["*"],
-)
-
-@app.get("/")
-def root():
-    return {"message": "Actiplanner funciona correctament"}
-
-
-@app.get("/health")
-def health():
-    return {"status": "ok"}
-
-
 @app.get("/empreses")
 def get_empreses():
     return empresa_client_service.get_empreses()
@@ -142,11 +118,6 @@ def comprovar_supervisor(idPrograma: int, idUsuari: int):
         "idUsuari": idUsuari,
         "esSupervisor": usuari_service.es_supervisor(idUsuari, idPrograma)
     }
-
-
-@app.get("/empreses/{idEmpresa}/programes")
-def get_programes_empresa(idEmpresa: int):
-    return pla_accio_service.get_programes_empresa(idEmpresa)
 
 
 @app.get("/programes/{idPrograma}/plans")
