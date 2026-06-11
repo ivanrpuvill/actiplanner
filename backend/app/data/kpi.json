@@ -1,0 +1,16 @@
+[
+  {
+    "idKPI": 1,
+    "idAccio": 1,
+    "nom": "Reunions realitzades",
+    "descripcio": "Nombre de reunions 1:1 realitzades durant la setmana.",
+    "periodicitat": "setmanal"
+  },
+  {
+    "idKPI": 2,
+    "idAccio": 2,
+    "nom": "Feedbacks registrats",
+    "descripcio": "Nombre de feedbacks registrats després de les reunions.",
+    "periodicitat": "setmanal"
+  }
+]

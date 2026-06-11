@@ -8,4 +8,3 @@ class Accio(BaseModel):
     descripcio: str
     dataInici: str
     dataFi: str
-    obligatoria: bool

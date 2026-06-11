@@ -100,7 +100,7 @@ def comprovar_supervisor(idPrograma: int, idUsuari: int):
         "esSupervisor": usuari_service.es_supervisor(idUsuari, idPrograma)
     }
 
-    @app.get("/empreses/{idEmpresa}/programes")
+@app.get("/empreses/{idEmpresa}/programes")
 def get_programes_empresa(idEmpresa: int):
     return pla_accio_service.get_programes_empresa(idEmpresa)
 

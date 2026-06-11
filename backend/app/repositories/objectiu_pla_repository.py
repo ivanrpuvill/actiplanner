@@ -15,10 +15,8 @@ class ObjectiuPlaRepository:
         return [ObjectiuPla(**item) for item in data]
 
     def get_by_pla(self, idPla: int) -> list[ObjectiuPla]:
-        objectius = [
+        return [
             objectiu
             for objectiu in self.get_all()
             if objectiu.idPla == idPla
         ]
-
-        return sorted(objectius, key=lambda objectiu: objectiu.ordre)
