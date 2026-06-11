@@ -99,3 +99,51 @@ class PlaAccioService:
         if progres >= 40:
             return "en_progres"
         return "pendent"
+
+    def get_resum_progres_pla(self, idPla: int) -> dict | None:
+        pla = self.pla_repository.get_by_id(idPla)
+
+        if pla is None:
+            return None
+
+        objectius = self.objectiu_repository.get_by_pla(idPla)
+        resum_objectius = []
+
+        for objectiu in objectius:
+            accions = self.accio_repository.get_by_objectiu(objectiu.idObjectiu)
+            valors_objectiu = []
+
+            for accio in accions:
+                kpis = self.kpi_repository.get_by_accio(accio.idAccio)
+
+                for kpi in kpis:
+                    ultim_registre = self.registre_kpi_repository.get_ultim_by_kpi(
+                        kpi.idKPI
+                    )
+
+                    if ultim_registre is not None:
+                        valors_objectiu.append(ultim_registre.valor)
+
+            progres_objectiu = self._calcular_mitjana(valors_objectiu)
+
+            resum_objectius.append({
+                "idObjectiu": objectiu.idObjectiu,
+                "descripcio": objectiu.descripcio,
+                "valor": objectiu.valor,
+                "progresObjectiu": progres_objectiu,
+                "estatObjectiu": self._calcular_estat(progres_objectiu)
+            })
+
+        progres_pla = self._calcular_mitjana([
+            objectiu["progresObjectiu"]
+            for objectiu in resum_objectius
+        ])
+
+        return {
+            "idPla": pla.idPla,
+            "idPrograma": pla.idPrograma,
+            "titol": pla.titol,
+            "progresPla": progres_pla,
+            "estatPla": self._calcular_estat(progres_pla),
+            "objectius": resum_objectius
+        }

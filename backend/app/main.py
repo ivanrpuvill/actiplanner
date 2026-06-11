@@ -106,6 +106,7 @@ def comprovar_supervisor(idPrograma: int, idUsuari: int):
         "esSupervisor": usuari_service.es_supervisor(idUsuari, idPrograma)
     }
 
+
 @app.get("/empreses/{idEmpresa}/programes")
 def get_programes_empresa(idEmpresa: int):
     return pla_accio_service.get_programes_empresa(idEmpresa)
@@ -124,6 +125,7 @@ def get_pla_detallat(idPla: int):
         raise HTTPException(status_code=404, detail="Pla d'acció no trobat")
 
     return pla
+
 
 @app.get("/kpis/{idKPI}")
 def get_kpi(idKPI: int):
@@ -180,6 +182,7 @@ def get_detall_seguiment_objectiu_usuari(
 
     return detall
 
+
 @app.get("/feedback")
 def get_feedbacks():
     return feedback_service.get_feedbacks()
@@ -235,3 +238,47 @@ def create_feedback(feedback: Feedback):
         )
 
     return nou_feedback
+
+
+@app.get("/plans/{idPla}/progres")
+def get_resum_pla(idPla: int):
+    resum = visualitzacio_service.get_resum_pla(idPla)
+
+    if resum is None:
+        raise HTTPException(
+            status_code=404,
+            detail="Pla d'acció no trobat"
+        )
+
+    return resum
+
+
+@app.get("/programes/{idPrograma}/dashboard")
+def get_dashboard_programa(idPrograma: int):
+    return visualitzacio_service.get_dashboard_programa(idPrograma)
+
+
+@app.get("/programes/{idPrograma}/participants/{idUsuari}/progres")
+def get_progres_participant(idPrograma: int, idUsuari: int):
+    return visualitzacio_service.get_progres_participant(
+        idPrograma,
+        idUsuari
+    )
+
+
+@app.get("/plans/{idPla}/progres")
+def get_resum_progres_pla(idPla: int):
+    resum = pla_accio_service.get_resum_progres_pla(idPla)
+
+    if resum is None:
+        raise HTTPException(
+            status_code=404,
+            detail="Pla d'acció no trobat"
+        )
+
+    return resum
+
+
+@app.get("/kpis/{idKPI}/evolucio")
+def get_evolucio_kpi(idKPI: int):
+    return kpi_service.get_evolucio_kpi(idKPI)
