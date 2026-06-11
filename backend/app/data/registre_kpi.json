@@ -1,18 +1,26 @@
 [
   {
-    "idRegistre": 1,
     "idKPI": 1,
     "idPrograma": 1,
     "idUsuari": 1,
-    "valor": 80,
+    "valor": 80.0,
+    "idRegistre": 1,
     "dataRegistre": "2026-06-10"
   },
   {
-    "idRegistre": 2,
     "idKPI": 2,
     "idPrograma": 1,
     "idUsuari": 1,
-    "valor": 60,
+    "valor": 60.0,
+    "idRegistre": 2,
     "dataRegistre": "2026-06-10"
+  },
+  {
+    "idKPI": 1,
+    "idPrograma": 1,
+    "idUsuari": 1,
+    "valor": 2.0,
+    "idRegistre": 3,
+    "dataRegistre": "2026-06-12"
   }
 ]

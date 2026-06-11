@@ -58,5 +58,17 @@
     "idUsuari": 5,
     "dataCreacio": "2026-06-11",
     "passwordHash": "1234"
+  },
+  {
+    "idEmpresa": 1,
+    "nom": "Marina",
+    "cognoms": "Rodriguez",
+    "telefon": "600000000",
+    "email": "marina@banca.com",
+    "esAdministrador": false,
+    "actiu": true,
+    "idUsuari": 6,
+    "dataCreacio": "2026-06-12",
+    "passwordHash": "abc"
   }
 ]

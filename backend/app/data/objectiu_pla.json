@@ -1,14 +1,20 @@
 [
   {
-    "idObjectiu": 1,
     "idPla": 1,
     "descripcio": "Millorar el seguiment individual de l'equip",
-    "valor": 100
+    "valor": 100.0,
+    "idObjectiu": 1
   },
   {
-    "idObjectiu": 2,
     "idPla": 1,
     "descripcio": "Incrementar la qualitat del feedback",
-    "valor": 100
+    "valor": 100.0,
+    "idObjectiu": 2
+  },
+  {
+    "idPla": 1,
+    "descripcio": "Vendes",
+    "valor": 100.0,
+    "idObjectiu": 3
   }
 ]

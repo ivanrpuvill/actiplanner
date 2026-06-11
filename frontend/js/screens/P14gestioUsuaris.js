@@ -14,8 +14,8 @@ export async function renderP14GestioUsuaris(app, navegar) {
 
   activarLayoutEvents(navegar);
 
-  document.getElementById("btnNouUsuari").addEventListener("click", () => {
-    renderFormUsuari(navegar);
+  document.getElementById("btnNouUsuari").addEventListener("click", async () => {
+    await renderFormUsuari(navegar);
   });
 
   document.getElementById("btnAssignarRol").addEventListener("click", async () => {
@@ -60,8 +60,9 @@ async function carregarUsuaris() {
   }
 }
 
-function renderFormUsuari(navegar) {
+async function renderFormUsuari(navegar) {
   const container = document.getElementById("formContainer");
+  const empreses = await apiGet("/empreses");
 
   container.classList.remove("hidden");
   container.innerHTML = `
@@ -69,18 +70,39 @@ function renderFormUsuari(navegar) {
 
     <form id="usuariForm" class="form-grid">
       <div>
+        <label>Empresa</label>
+        <select id="idEmpresa" required>
+          ${empreses.map((empresa) => `
+            <option value="${empresa.idEmpresa}">
+              ${empresa.nom || `Empresa ${empresa.idEmpresa}`}
+            </option>
+          `).join("")}
+        </select>
+      </div>
+
+      <div>
         <label>Nom</label>
         <input id="nom" required />
       </div>
 
       <div>
         <label>Cognoms</label>
-        <input id="cognoms" />
+        <input id="cognoms" required />
+      </div>
+
+      <div>
+        <label>Telèfon</label>
+        <input id="telefon" />
       </div>
 
       <div>
         <label>Email</label>
         <input id="email" type="email" required />
+      </div>
+
+      <div>
+        <label>Contrasenya</label>
+        <input id="password" type="password" required />
       </div>
 
       <div>
@@ -108,7 +130,7 @@ function renderFormUsuari(navegar) {
       esAdministrador: document.getElementById("esAdministrador").checked,
       actiu: true,
       password: document.getElementById("password").value
-  };
+    };
 
     await apiPost("/usuaris", nouUsuari);
     navegar("P14");

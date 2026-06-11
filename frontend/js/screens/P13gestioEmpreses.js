@@ -47,7 +47,7 @@ async function carregarEmpreses() {
               <td>${empresa.idEmpresa}</td>
               <td>${empresa.nom || "-"}</td>
               <td>${empresa.sector || "-"}</td>
-              <td>${empresa.emailContacte || empresa.contacte || "-"}</td>
+              <td>${empresa.contacte || "-"}</td>
             </tr>
           `).join("")}
         </tbody>

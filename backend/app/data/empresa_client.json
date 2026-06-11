@@ -16,5 +16,29 @@
     "sector": "Consultoria",
     "contacte": "Ivan",
     "idEmpresa": 3
+  },
+  {
+    "nom": "Empresa B",
+    "sector": "Farma",
+    "contacte": null,
+    "idEmpresa": 4
+  },
+  {
+    "nom": "Empresa C",
+    "sector": "Banca",
+    "contacte": null,
+    "idEmpresa": 5
+  },
+  {
+    "nom": "Empresa D",
+    "sector": "Farma",
+    "contacte": "info@farma.com",
+    "idEmpresa": 6
+  },
+  {
+    "nom": "Empresa E",
+    "sector": "Banca",
+    "contacte": "info@banca.com",
+    "idEmpresa": 7
   }
 ]
