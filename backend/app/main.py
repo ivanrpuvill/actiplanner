@@ -10,6 +10,8 @@ from app.services.feedback_service import FeedbackService
 from app.services.analisi_service import AnalisiService
 from app.services.ia_service import IAService
 
+from app.models.feedback import Feedback
+
 empresa_client_service = EmpresaClientService()
 usuari_service = UsuariService()
 pla_accio_service = PlaAccioService()
