@@ -56,3 +56,17 @@ class UsuariService:
                 item.idPrograma for item in programes_supervisor
             ]
         }
+
+    def create_usuari(self, usuari):
+        nou_usuari = Usuari(
+            **usuari.model_dump(),
+            idUsuari=self.repository.next_id()
+        )
+        return self.repository.create(nou_usuari)
+
+    def update_usuari(self, idUsuari: int, usuari):
+        usuari_actualitzat = Usuari(
+            **usuari.model_dump(),
+            idUsuari=idUsuari
+        )
+        return self.repository.update(idUsuari, usuari_actualitzat)

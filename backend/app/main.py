@@ -10,6 +10,8 @@ from app.services.feedback_service import FeedbackService
 from app.services.analisi_service import AnalisiService
 from app.services.ia_service import IAService
 
+from app.models.empresa_client import EmpresaClient
+from app.models.usuari import Usuari
 from app.models.feedback import Feedback
 
 empresa_client_service = EmpresaClientService()
@@ -74,6 +76,24 @@ def get_programes_empresa(idEmpresa: int):
     return empresa_client_service.get_programes_empresa(idEmpresa)
 
 
+@app.post("/empreses")
+def create_empresa(empresa: EmpresaClient):
+    return empresa_client_service.create_empresa(empresa)
+
+
+@app.put("/empreses/{idEmpresa}")
+def update_empresa(idEmpresa: int, empresa: EmpresaClient):
+    empresa_actualitzada = empresa_client_service.update_empresa(idEmpresa, empresa)
+
+    if empresa_actualitzada is None:
+        raise HTTPException(
+            status_code=404,
+            detail="Empresa client no trobada"
+        )
+
+    return empresa_actualitzada
+
+
 @app.get("/usuaris")
 def get_usuaris():
     return usuari_service.get_usuaris()
@@ -102,6 +122,24 @@ def get_rols_usuari(idUsuari: int):
         raise HTTPException(status_code=404, detail="Usuari no trobat")
 
     return rols
+
+
+@app.post("/usuaris")
+def create_usuari(usuari: Usuari):
+    return usuari_service.create_usuari(usuari)
+
+
+@app.put("/usuaris/{idUsuari}")
+def update_usuari(idUsuari: int, usuari: Usuari):
+    usuari_actualitzat = usuari_service.update_usuari(idUsuari, usuari)
+
+    if usuari_actualitzat is None:
+        raise HTTPException(
+            status_code=404,
+            detail="Usuari no trobat"
+        )
+
+    return usuari_actualitzat
 
 
 @app.get("/programes/{idPrograma}/participants/{idUsuari}")
