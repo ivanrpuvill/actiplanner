@@ -61,19 +61,21 @@ class UsuariService:
             ]
         }
 
-    def create_usuari(self, usuari):
-        nou_usuari = Usuari(
-            **usuari.model_dump(),
-            idUsuari=self.repository.next_id()
-        )
-        return self.repository.create(nou_usuari)
+    def create_usuari(self, usuari: Usuari):
+        data = usuari.model_dump()
+        data["idUsuari"] = self.usuari_repository.next_id()
 
-    def update_usuari(self, idUsuari: int, usuari):
-        usuari_actualitzat = Usuari(
-            **usuari.model_dump(),
-            idUsuari=idUsuari
-        )
-        return self.repository.update(idUsuari, usuari_actualitzat)
+        nou_usuari = Usuari(**data)
+
+        return self.usuari_repository.create(nou_usuari)
+
+    def update_usuari(self, idUsuari: int, usuari: Usuari):
+        data = usuari.model_dump()
+        data["idUsuari"] = idUsuari
+
+        usuari_actualitzat = Usuari(**data)
+
+        return self.usuari_repository.update(idUsuari, usuari_actualitzat)
 
     def assignar_participant(self, participant: ProgramaParticipant):
         if self.get_usuari(participant.idUsuari) is None:

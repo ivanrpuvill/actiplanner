@@ -21,3 +21,19 @@ class EmpresaClientService:
             return []
 
         return self.programa_repository.get_by_empresa(idEmpresa)
+
+    def create_empresa(self, empresa: EmpresaClient):
+        data = empresa.model_dump()
+        data["idEmpresa"] = self.empresa_repository.next_id()
+
+        nova_empresa = EmpresaClient(**data)
+
+        return self.empresa_repository.create(nova_empresa)
+
+    def update_empresa(self, idEmpresa: int, empresa: EmpresaClient):
+        data = empresa.model_dump()
+        data["idEmpresa"] = idEmpresa
+
+        empresa_actualitzada = EmpresaClient(**data)
+
+        return self.empresa_repository.update(idEmpresa, empresa_actualitzada)

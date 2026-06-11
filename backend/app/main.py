@@ -107,6 +107,11 @@ def update_empresa(idEmpresa: int, empresa: EmpresaClient):
 @app.get("/usuaris")
 def get_usuaris():
     return usuari_service.get_usuaris()
+    
+
+@app.get("/usuaris/administradors")
+def get_administradors():
+    return usuari_service.get_administradors()
 
 
 @app.get("/usuaris/{idUsuari}")
@@ -117,11 +122,6 @@ def get_usuari(idUsuari: int):
         raise HTTPException(status_code=404, detail="Usuari no trobat")
 
     return usuari
-
-
-@app.get("/usuaris/administradors")
-def get_administradors():
-    return usuari_service.get_administradors()
 
 
 @app.get("/usuaris/{idUsuari}/rols")

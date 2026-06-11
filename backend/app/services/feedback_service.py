@@ -59,7 +59,7 @@ class FeedbackService:
 
         feedback_actualitzat = Feedback(**data)
 
-        return self.repository.update(
+        return self.feedback_repository.update(
             idFeedback,
             feedback_actualitzat
         )

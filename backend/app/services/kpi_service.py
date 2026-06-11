@@ -50,12 +50,12 @@ class KPIService:
 
         data = registre.model_dump()
         data["idRegistre"] = (
-            self.registre_repository.next_id()
+            self.registre_kpi_repository.next_id()
         )
 
         nou_registre = RegistreKPI(**data)
 
-        return self.registre_repository.create(
+        return self.registre_kpi_repository.create(
             nou_registre
         )
 
@@ -71,7 +71,7 @@ class KPIService:
             **data
         )
 
-        return self.registre_repository.update(
+        return self.registre_kpi_repository.update(
             idRegistre,
             registre_actualitzat
         )
