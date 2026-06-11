@@ -1,3 +1,4 @@
+from app.models.registre_kpi import RegistreKPI
 from app.repositories.kpi_repository import KPIRepository
 from app.repositories.registre_kpi_repository import RegistreKPIRepository
 
@@ -35,3 +36,42 @@ class KPIService:
             }
             for registre in registres_ordenats
         ]
+
+    def create_registre_kpi(
+        self,
+        registre: RegistreKPI
+    ):
+        kpi = self.kpi_repository.get_by_id(
+            registre.idKPI
+        )
+
+        if kpi is None:
+            return None
+
+        data = registre.model_dump()
+        data["idRegistre"] = (
+            self.registre_repository.next_id()
+        )
+
+        nou_registre = RegistreKPI(**data)
+
+        return self.registre_repository.create(
+            nou_registre
+        )
+
+    def update_registre_kpi(
+        self,
+        idRegistre: int,
+        registre: RegistreKPI
+    ):
+        data = registre.model_dump()
+        data["idRegistre"] = idRegistre
+
+        registre_actualitzat = RegistreKPI(
+            **data
+        )
+
+        return self.registre_repository.update(
+            idRegistre,
+            registre_actualitzat
+        )

@@ -52,3 +52,14 @@ class FeedbackService:
             return None
 
         return self.feedback_repository.create(feedback)
+
+    def update_feedback(self, idFeedback: int, feedback: Feedback):
+        data = feedback.model_dump()
+        data["idFeedback"] = idFeedback
+
+        feedback_actualitzat = Feedback(**data)
+
+        return self.repository.update(
+            idFeedback,
+            feedback_actualitzat
+        )

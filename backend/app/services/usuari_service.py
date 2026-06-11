@@ -1,4 +1,6 @@
 from app.models.usuari import Usuari
+from app.models.programa_participant import ProgramaParticipant
+from app.models.programa_supervisor import ProgramaSupervisor
 from app.repositories.usuari_repository import UsuariRepository
 from app.repositories.programa_participant_repository import ProgramaParticipantRepository
 from app.repositories.programa_supervisor_repository import ProgramaSupervisorRepository
@@ -9,6 +11,8 @@ class UsuariService:
         self.usuari_repository = UsuariRepository()
         self.participant_repository = ProgramaParticipantRepository()
         self.supervisor_repository = ProgramaSupervisorRepository()
+        self.programa_participant_repository = ProgramaParticipantRepository()
+        self.programa_supervisor_repository = ProgramaSupervisorRepository()
 
     def get_usuaris(self) -> list[Usuari]:
         return self.usuari_repository.get_all()
@@ -70,3 +74,33 @@ class UsuariService:
             idUsuari=idUsuari
         )
         return self.repository.update(idUsuari, usuari_actualitzat)
+
+    def assignar_participant(self, participant: ProgramaParticipant):
+        if self.get_usuari(participant.idUsuari) is None:
+            return None
+
+        return self.programa_participant_repository.create(participant)
+
+    def update_participant_programa(
+        self,
+        idPrograma: int,
+        idUsuari: int,
+        participant: ProgramaParticipant
+    ):
+        participant_actualitzat = ProgramaParticipant(
+            **participant.model_dump()
+        )
+        participant_actualitzat.idPrograma = idPrograma
+        participant_actualitzat.idUsuari = idUsuari
+
+        return self.programa_participant_repository.update(
+            idPrograma,
+            idUsuari,
+            participant_actualitzat
+        )
+
+    def assignar_supervisor(self, supervisor: ProgramaSupervisor):
+        if self.get_usuari(supervisor.idUsuari) is None:
+            return None
+
+        return self.programa_supervisor_repository.create(supervisor)

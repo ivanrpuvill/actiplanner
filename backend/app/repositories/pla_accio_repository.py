@@ -27,3 +27,41 @@ class PlaAccioRepository:
             for pla in self.get_all()
             if pla.idPrograma == idPrograma
         ]
+
+    def _write_all(self, plans):
+        with open(self.file_path, "w", encoding="utf-8") as file:
+            json.dump(
+                [pla.model_dump() for pla in plans],
+                file,
+                ensure_ascii=False,
+                indent=2
+            )
+
+    def next_id(self):
+        plans = self.get_all()
+
+        if not plans:
+            return 1
+
+        return max(pla.idPla for pla in plans) + 1
+
+    def create(self, pla):
+        plans = self.get_all()
+        plans.append(pla)
+
+        self._write_all(plans)
+
+        return pla
+
+    def update(self, idPla: int, pla_actualitzat):
+        plans = self.get_all()
+
+        for index, pla in enumerate(plans):
+            if pla.idPla == idPla:
+                plans[index] = pla_actualitzat
+
+                self._write_all(plans)
+
+                return pla_actualitzat
+
+        return None

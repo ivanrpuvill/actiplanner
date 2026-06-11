@@ -67,3 +67,23 @@ class FeedbackRepository:
             )
 
         return nou_feedback
+
+    def _write_all(self, feedbacks):
+        with open(self.file_path, "w", encoding="utf-8") as file:
+            json.dump(
+                [feedback.model_dump() for feedback in feedbacks],
+                file,
+                ensure_ascii=False,
+                indent=2
+            )
+
+    def update(self, idFeedback: int, feedback_actualitzat):
+        feedbacks = self.get_all()
+
+        for index, feedback in enumerate(feedbacks):
+            if feedback.idFeedback == idFeedback:
+                feedbacks[index] = feedback_actualitzat
+                self._write_all(feedbacks)
+                return feedback_actualitzat
+
+        return None

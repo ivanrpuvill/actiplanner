@@ -39,3 +39,55 @@ class RegistreKPIRepository:
             for registre in self.get_all()
             if registre.idKPI == idKPI and registre.idUsuari == idUsuari
         ]
+
+    def get_by_id(self, idRegistre: int) -> RegistreKPI | None:
+        for registre in self.get_all():
+            if registre.idRegistre == idRegistre:
+                return registre
+
+        return None
+
+    def _write_all(self, registres):
+        with open(self.file_path, "w", encoding="utf-8") as file:
+            json.dump(
+                [registre.model_dump() for registre in registres],
+                file,
+                ensure_ascii=False,
+                indent=2
+            )
+
+    def next_id(self):
+        registres = self.get_all()
+
+        if not registres:
+            return 1
+
+        return max(
+            registre.idRegistre
+            for registre in registres
+        ) + 1
+
+    def create(self, registre):
+        registres = self.get_all()
+        registres.append(registre)
+
+        self._write_all(registres)
+
+        return registre
+
+    def update(
+        self,
+        idRegistre: int,
+        registre_actualitzat
+    ):
+        registres = self.get_all()
+
+        for index, registre in enumerate(registres):
+            if registre.idRegistre == idRegistre:
+                registres[index] = registre_actualitzat
+
+                self._write_all(registres)
+
+                return registre_actualitzat
+
+        return None

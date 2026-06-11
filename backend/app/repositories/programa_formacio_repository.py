@@ -26,3 +26,35 @@ class ProgramaFormacioRepository:
             for programa in self.get_all()
             if programa.idEmpresa == idEmpresa
         ]
+
+    def _write_all(self, programes):
+        with open(self.file_path, "w", encoding="utf-8") as file:
+            json.dump(
+                [programa.model_dump() for programa in programes],
+                file,
+                ensure_ascii=False,
+                indent=2
+            )
+
+    def next_id(self):
+        programes = self.get_all()
+        if not programes:
+            return 1
+        return max(programa.idPrograma for programa in programes) + 1
+
+    def create(self, programa):
+        programes = self.get_all()
+        programes.append(programa)
+        self._write_all(programes)
+        return programa
+
+    def update(self, idPrograma: int, programa_actualitzat):
+        programes = self.get_all()
+
+        for index, programa in enumerate(programes):
+            if programa.idPrograma == idPrograma:
+                programes[index] = programa_actualitzat
+                self._write_all(programes)
+                return programa_actualitzat
+
+        return None

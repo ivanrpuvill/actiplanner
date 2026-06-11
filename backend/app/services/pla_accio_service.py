@@ -1,3 +1,7 @@
+from app.models.pla_accio import PlaAccio
+from app.models.objectiu_pla import ObjectiuPla
+from app.models.accio import Accio
+from app.models.kpi import KPI
 from app.repositories.pla_accio_repository import PlaAccioRepository
 from app.repositories.objectiu_pla_repository import ObjectiuPlaRepository
 from app.repositories.accio_repository import AccioRepository
@@ -147,3 +151,127 @@ class PlaAccioService:
             "estatPla": self._calcular_estat(progres_pla),
             "objectius": resum_objectius
         }
+
+    def get_plans_programa(self, idPrograma: int):
+        return self.pla_repository.get_by_programa(idPrograma)
+
+    def create_pla(self, pla: PlaAccio):
+        data = pla.model_dump()
+        data["idPla"] = self.pla_repository.next_id()
+
+        nou_pla = PlaAccio(**data)
+
+        return self.pla_repository.create(nou_pla)
+
+    def update_pla(self, idPla: int, pla: PlaAccio):
+        data = pla.model_dump()
+        data["idPla"] = idPla
+
+        pla_actualitzat = PlaAccio(**data)
+
+        return self.pla_repository.update(
+            idPla,
+            pla_actualitzat
+        )
+
+    def create_objectiu(
+        self,
+        objectiu: ObjectiuPla
+    ):
+        pla = self.pla_repository.get_by_id(
+            objectiu.idPla
+        )
+
+        if pla is None:
+            return None
+
+        data = objectiu.model_dump()
+        data["idObjectiu"] = (
+            self.objectiu_repository.next_id()
+        )
+
+        nou_objectiu = ObjectiuPla(**data)
+
+        return self.objectiu_repository.create(
+            nou_objectiu
+        )
+
+    def update_objectiu(
+        self,
+        idObjectiu: int,
+        objectiu: ObjectiuPla
+    ):
+        data = objectiu.model_dump()
+        data["idObjectiu"] = idObjectiu
+
+        objectiu_actualitzat = ObjectiuPla(**data)
+
+        return self.objectiu_repository.update(
+            idObjectiu,
+            objectiu_actualitzat
+        )
+
+    def create_accio(self, accio: Accio):
+        objectiu = self.objectiu_repository.get_by_id(
+            accio.idObjectiu
+        )
+
+        if objectiu is None:
+            return None
+
+        data = accio.model_dump()
+        data["idAccio"] = self.accio_repository.next_id()
+
+        nova_accio = Accio(**data)
+
+        return self.accio_repository.create(
+            nova_accio
+        )
+
+
+    def update_accio(
+        self,
+        idAccio: int,
+        accio: Accio
+    ):
+        data = accio.model_dump()
+        data["idAccio"] = idAccio
+
+        accio_actualitzada = Accio(**data)
+
+        return self.accio_repository.update(
+            idAccio,
+            accio_actualitzada
+        )
+
+    def create_kpi(self, kpi: KPI):
+        accio = self.accio_repository.get_by_id(
+            kpi.idAccio
+        )
+
+        if accio is None:
+            return None
+
+        data = kpi.model_dump()
+        data["idKPI"] = self.kpi_repository.next_id()
+
+        nou_kpi = KPI(**data)
+
+        return self.kpi_repository.create(
+            nou_kpi
+        )
+
+    def update_kpi(
+        self,
+        idKPI: int,
+        kpi: KPI
+    ):
+        data = kpi.model_dump()
+        data["idKPI"] = idKPI
+
+        kpi_actualitzat = KPI(**data)
+
+        return self.kpi_repository.update(
+            idKPI,
+            kpi_actualitzat
+        )
