@@ -1,6 +1,7 @@
 from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 
+from app.services.empresa_client_service import EmpresaClientService
 from app.services.usuari_service import UsuariService
 from app.services.pla_accio_service import PlaAccioService
 from app.services.kpi_service import KPIService
@@ -9,6 +10,7 @@ from app.services.feedback_service import FeedbackService
 from app.services.analisi_service import AnalisiService
 from app.services.ia_service import IAService
 
+empresa_client_service = EmpresaClientService()
 usuari_service = UsuariService()
 pla_accio_service = PlaAccioService()
 kpi_service = KPIService()
@@ -61,6 +63,37 @@ def root():
 @app.get("/health")
 def health():
     return {"status": "ok"}
+
+
+@app.get("/empreses")
+def get_empreses():
+    return empresa_client_service.get_empreses()
+
+
+@app.get("/empreses/{idEmpresa}")
+def get_empresa(idEmpresa: int):
+    empresa = empresa_client_service.get_empresa(idEmpresa)
+
+    if empresa is None:
+        raise HTTPException(
+            status_code=404,
+            detail="Empresa client no trobada"
+        )
+
+    return empresa
+
+
+@app.get("/empreses/{idEmpresa}/programes")
+def get_programes_empresa(idEmpresa: int):
+    empresa = empresa_client_service.get_empresa(idEmpresa)
+
+    if empresa is None:
+        raise HTTPException(
+            status_code=404,
+            detail="Empresa client no trobada"
+        )
+
+    return empresa_client_service.get_programes_empresa(idEmpresa)
 
 
 @app.get("/usuaris")
@@ -242,32 +275,6 @@ def create_feedback(feedback: Feedback):
         )
 
     return nou_feedback
-
-
-@app.get("/plans/{idPla}/progres")
-def get_resum_pla(idPla: int):
-    resum = visualitzacio_service.get_resum_pla(idPla)
-
-    if resum is None:
-        raise HTTPException(
-            status_code=404,
-            detail="Pla d'acció no trobat"
-        )
-
-    return resum
-
-
-@app.get("/programes/{idPrograma}/dashboard")
-def get_dashboard_programa(idPrograma: int):
-    return visualitzacio_service.get_dashboard_programa(idPrograma)
-
-
-@app.get("/programes/{idPrograma}/participants/{idUsuari}/progres")
-def get_progres_participant(idPrograma: int, idUsuari: int):
-    return visualitzacio_service.get_progres_participant(
-        idPrograma,
-        idUsuari
-    )
 
 
 @app.get("/plans/{idPla}/progres")
