@@ -20,3 +20,10 @@ class PlaAccioRepository:
                 return pla
 
         return None
+
+    def get_by_programa(self, idPrograma: int) -> list[PlaAccio]:
+        return [
+            pla
+            for pla in self.get_all()
+            if pla.idPrograma == idPrograma
+        ]
