@@ -1,4 +1,4 @@
-from app.models.empresa_client import EmpresaClient
+from app.models.empresa_client import EmpresaClient, EmpresaClientCreate, EmpresaClientUpdate
 from app.repositories.empresa_client_repository import EmpresaClientRepository
 from app.repositories.programa_formacio_repository import ProgramaFormacioRepository
 
@@ -22,18 +22,21 @@ class EmpresaClientService:
 
         return self.programa_repository.get_by_empresa(idEmpresa)
 
-    def create_empresa(self, empresa: EmpresaClient):
+    def create_empresa(self, empresa: EmpresaClientCreate):
         data = empresa.model_dump()
         data["idEmpresa"] = self.empresa_repository.next_id()
-
         nova_empresa = EmpresaClient(**data)
-
         return self.empresa_repository.create(nova_empresa)
 
-    def update_empresa(self, idEmpresa: int, empresa: EmpresaClient):
-        data = empresa.model_dump()
+    def update_empresa(self, idEmpresa: int, empresa: EmpresaClientUpdate):
+        empresa_actual = self.empresa_repository.get_by_id(idEmpresa)
+
+        if empresa_actual is None:
+            return None
+
+        data = empresa_actual.model_dump()
+        data.update(empresa.model_dump(exclude_unset=True))
         data["idEmpresa"] = idEmpresa
 
         empresa_actualitzada = EmpresaClient(**data)
-
         return self.empresa_repository.update(idEmpresa, empresa_actualitzada)

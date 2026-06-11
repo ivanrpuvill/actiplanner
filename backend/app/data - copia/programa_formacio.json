@@ -1,0 +1,11 @@
+[
+  {
+    "idPrograma": 1,
+    "idEmpresa": 1,
+    "nom": "Formació en lideratge",
+    "descripcio": "Programa orientat a millorar les habilitats de lideratge dels comandaments intermedis.",
+    "dataInici": "2026-06-01",
+    "dataFi": "2026-07-15",
+    "actiu": true
+  }
+]

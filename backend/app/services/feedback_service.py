@@ -1,4 +1,5 @@
-from app.models.feedback import Feedback
+from datetime import date
+from app.models.feedback import Feedback, FeedbackCreate, FeedbackUpdate
 from app.repositories.feedback_repository import FeedbackRepository
 from app.repositories.programa_participant_repository import ProgramaParticipantRepository
 from app.repositories.programa_supervisor_repository import ProgramaSupervisorRepository
@@ -35,7 +36,7 @@ class FeedbackService:
             idUsuariParticipant
         )
 
-    def create_feedback(self, feedback: Feedback) -> Feedback | None:
+    def create_feedback(self, feedback: FeedbackCreate) -> Feedback | None:
         es_supervisor = any(
             item.idPrograma == feedback.idPrograma
             and item.idUsuari == feedback.idUsuariSupervisor
@@ -51,15 +52,24 @@ class FeedbackService:
         if not es_supervisor or not es_participant:
             return None
 
-        return self.feedback_repository.create(feedback)
+        nou_feedback = Feedback(
+            idFeedback=self.feedback_repository.next_id(),
+            dataCreacio=date.today().isoformat(),
+            **feedback.model_dump()
+        )
 
-    def update_feedback(self, idFeedback: int, feedback: Feedback):
-        data = feedback.model_dump()
+        return self.feedback_repository.create(nou_feedback)
+
+    def update_feedback(self, idFeedback: int, feedback: FeedbackUpdate):
+        feedback_actual = self.feedback_repository.get_by_id(idFeedback)
+
+        if feedback_actual is None:
+            return None
+
+        data = feedback_actual.model_dump()
+        data.update(feedback.model_dump(exclude_unset=True))
         data["idFeedback"] = idFeedback
 
         feedback_actualitzat = Feedback(**data)
 
-        return self.feedback_repository.update(
-            idFeedback,
-            feedback_actualitzat
-        )
+        return self.feedback_repository.update(idFeedback, feedback_actualitzat)

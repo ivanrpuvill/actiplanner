@@ -1,38 +1,62 @@
 [
   {
-    "idUsuari": 1,
     "idEmpresa": 1,
     "nom": "Marc",
     "cognoms": "Garcia",
-    "passwordHash": "hash_demo",
     "telefon": "600000001",
     "email": "marc.garcia@empresa.com",
     "esAdministrador": false,
     "actiu": true,
-    "dataCreacio": "2026-06-01"
+    "idUsuari": 1,
+    "dataCreacio": "2026-06-01",
+    "passwordHash": "hash_demo"
   },
   {
-    "idUsuari": 2,
     "idEmpresa": 1,
     "nom": "Laura",
     "cognoms": "Martínez",
-    "passwordHash": "hash_demo",
     "telefon": "600000002",
     "email": "laura.martinez@empresa.com",
     "esAdministrador": false,
     "actiu": true,
-    "dataCreacio": "2026-06-01"
+    "idUsuari": 2,
+    "dataCreacio": "2026-06-01",
+    "passwordHash": "hash_demo"
   },
   {
-    "idUsuari": 3,
     "idEmpresa": 1,
     "nom": "Administrador",
     "cognoms": "Demo",
-    "passwordHash": "hash_demo",
     "telefon": "600000003",
     "email": "admin@empresa.com",
     "esAdministrador": true,
     "actiu": true,
-    "dataCreacio": "2026-06-01"
+    "idUsuari": 3,
+    "dataCreacio": "2026-06-01",
+    "passwordHash": "hash_demo"
+  },
+  {
+    "idEmpresa": 3,
+    "nom": "Ivan",
+    "cognoms": "Rodríguez",
+    "telefon": "600000000",
+    "email": "ivan@test.com",
+    "esAdministrador": true,
+    "actiu": true,
+    "idUsuari": 4,
+    "dataCreacio": "2026-06-11",
+    "passwordHash": "1234"
+  },
+  {
+    "idEmpresa": 3,
+    "nom": "Ivan",
+    "cognoms": "Rodríguez",
+    "telefon": "600000000",
+    "email": "ivan@test.com",
+    "esAdministrador": true,
+    "actiu": true,
+    "idUsuari": 5,
+    "dataCreacio": "2026-06-11",
+    "passwordHash": "1234"
   }
 ]

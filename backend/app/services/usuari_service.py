@@ -1,6 +1,7 @@
-from app.models.usuari import Usuari
-from app.models.programa_participant import ProgramaParticipant
-from app.models.programa_supervisor import ProgramaSupervisor
+from datetime import date
+from app.models.usuari import Usuari, UsuariCreate, UsuariUpdate
+from app.models.programa_participant import ProgramaParticipant, ProgramaParticipantCreate, ProgramaParticipantUpdate
+from app.models.programa_supervisor import ProgramaSupervisor, ProgramaSupervisorCreate
 from app.repositories.usuari_repository import UsuariRepository
 from app.repositories.programa_participant_repository import ProgramaParticipantRepository
 from app.repositories.programa_supervisor_repository import ProgramaSupervisorRepository
@@ -61,39 +62,66 @@ class UsuariService:
             ]
         }
 
-    def create_usuari(self, usuari: Usuari):
+    def create_usuari(self, usuari: UsuariCreate):
         data = usuari.model_dump()
-        data["idUsuari"] = self.usuari_repository.next_id()
+        password = data.pop("password")
 
-        nou_usuari = Usuari(**data)
+        nou_usuari = Usuari(
+            idUsuari=self.usuari_repository.next_id(),
+            passwordHash=password,
+            dataCreacio=date.today().isoformat(),
+            **data
+        )
 
         return self.usuari_repository.create(nou_usuari)
 
-    def update_usuari(self, idUsuari: int, usuari: Usuari):
-        data = usuari.model_dump()
+    def update_usuari(self, idUsuari: int, usuari: UsuariUpdate):
+        usuari_actual = self.usuari_repository.get_by_id(idUsuari)
+
+        if usuari_actual is None:
+            return None
+
+        data = usuari_actual.model_dump()
+        update_data = usuari.model_dump(exclude_unset=True)
+
+        if "password" in update_data:
+            update_data["passwordHash"] = update_data.pop("password")
+
+        data.update(update_data)
         data["idUsuari"] = idUsuari
 
         usuari_actualitzat = Usuari(**data)
 
         return self.usuari_repository.update(idUsuari, usuari_actualitzat)
 
-    def assignar_participant(self, participant: ProgramaParticipant):
+    def assignar_participant(self, idPrograma: int, participant: ProgramaParticipantCreate):
         if self.get_usuari(participant.idUsuari) is None:
             return None
 
-        return self.programa_participant_repository.create(participant)
-
-    def update_participant_programa(
-        self,
-        idPrograma: int,
-        idUsuari: int,
-        participant: ProgramaParticipant
-    ):
-        participant_actualitzat = ProgramaParticipant(
-            **participant.model_dump()
+        nou_participant = ProgramaParticipant(
+            idPrograma=idPrograma,
+            idUsuari=participant.idUsuari,
+            estatParticipacio=participant.estatParticipacio,
+            dataAssignacio=date.today().isoformat()
         )
-        participant_actualitzat.idPrograma = idPrograma
-        participant_actualitzat.idUsuari = idUsuari
+
+        return self.programa_participant_repository.create(nou_participant)
+
+    def update_participant_programa(self, idPrograma: int, idUsuari: int, participant: ProgramaParticipantUpdate):
+        participant_actual = self.programa_participant_repository.get_by_programa_usuari(
+            idPrograma,
+            idUsuari
+        )
+
+        if participant_actual is None:
+            return None
+
+        data = participant_actual.model_dump()
+        data.update(participant.model_dump(exclude_unset=True))
+        data["idPrograma"] = idPrograma
+        data["idUsuari"] = idUsuari
+
+        participant_actualitzat = ProgramaParticipant(**data)
 
         return self.programa_participant_repository.update(
             idPrograma,
@@ -101,8 +129,14 @@ class UsuariService:
             participant_actualitzat
         )
 
-    def assignar_supervisor(self, supervisor: ProgramaSupervisor):
+    def assignar_supervisor(self, idPrograma: int, supervisor: ProgramaSupervisorCreate):
         if self.get_usuari(supervisor.idUsuari) is None:
             return None
 
-        return self.programa_supervisor_repository.create(supervisor)
+        nou_supervisor = ProgramaSupervisor(
+            idPrograma=idPrograma,
+            idUsuari=supervisor.idUsuari,
+            dataAssignacio=date.today().isoformat()
+        )
+
+        return self.programa_supervisor_repository.create(nou_supervisor)

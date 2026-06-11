@@ -1,8 +1,20 @@
 [
   {
-    "idEmpresa": 1,
     "nom": "Empresa Demo",
     "sector": "Formació i consultoria",
-    "contacte": "contacte@empresa-demo.com"
+    "contacte": "contacte@empresa-demo.com",
+    "idEmpresa": 1
+  },
+  {
+    "nom": "Empresa A",
+    "sector": "Banca",
+    "contacte": null,
+    "idEmpresa": 2
+  },
+  {
+    "nom": "Empresa prova",
+    "sector": "Consultoria",
+    "contacte": "Ivan",
+    "idEmpresa": 3
   }
 ]

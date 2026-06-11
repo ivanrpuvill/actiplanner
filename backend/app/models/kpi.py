@@ -1,9 +1,27 @@
 from pydantic import BaseModel
 
 
-class KPI(BaseModel):
-    idKPI: int
+class KPIBase(BaseModel):
     idAccio: int
     nom: str
     descripcio: str
     periodicitat: str
+
+
+class KPICreate(KPIBase):
+    pass
+
+
+class KPIUpdate(BaseModel):
+    idAccio: int | None = None
+    nom: str | None = None
+    descripcio: str | None = None
+    periodicitat: str | None = None
+
+
+class KPIRead(KPIBase):
+    idKPI: int
+
+
+class KPI(KPIRead):
+    pass

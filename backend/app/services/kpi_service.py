@@ -1,4 +1,5 @@
-from app.models.registre_kpi import RegistreKPI
+from datetime import date
+from app.models.registre_kpi import RegistreKPI, RegistreKPICreate, RegistreKPIUpdate
 from app.repositories.kpi_repository import KPIRepository
 from app.repositories.registre_kpi_repository import RegistreKPIRepository
 
@@ -37,41 +38,30 @@ class KPIService:
             for registre in registres_ordenats
         ]
 
-    def create_registre_kpi(
-        self,
-        registre: RegistreKPI
-    ):
-        kpi = self.kpi_repository.get_by_id(
-            registre.idKPI
-        )
+    def create_registre_kpi(self, registre: RegistreKPICreate):
+        kpi = self.kpi_repository.get_by_id(registre.idKPI)
 
         if kpi is None:
             return None
 
-        data = registre.model_dump()
-        data["idRegistre"] = (
-            self.registre_kpi_repository.next_id()
+        nou_registre = RegistreKPI(
+            idRegistre=self.registre_kpi_repository.next_id(),
+            dataRegistre=date.today().isoformat(),
+            **registre.model_dump()
         )
 
-        nou_registre = RegistreKPI(**data)
+        return self.registre_kpi_repository.create(nou_registre)
 
-        return self.registre_kpi_repository.create(
-            nou_registre
-        )
+    def update_registre_kpi(self, idRegistre: int, registre: RegistreKPIUpdate):
+        registre_actual = self.registre_kpi_repository.get_by_id(idRegistre)
 
-    def update_registre_kpi(
-        self,
-        idRegistre: int,
-        registre: RegistreKPI
-    ):
-        data = registre.model_dump()
+        if registre_actual is None:
+            return None
+
+        data = registre_actual.model_dump()
+        data.update(registre.model_dump(exclude_unset=True))
         data["idRegistre"] = idRegistre
 
-        registre_actualitzat = RegistreKPI(
-            **data
-        )
+        registre_actualitzat = RegistreKPI(**data)
 
-        return self.registre_kpi_repository.update(
-            idRegistre,
-            registre_actualitzat
-        )
+        return self.registre_kpi_repository.update(idRegistre, registre_actualitzat)

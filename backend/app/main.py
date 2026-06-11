@@ -1,17 +1,17 @@
 from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 
-from app.models.empresa_client import EmpresaClient
-from app.models.usuari import Usuari
-from app.models.programa_formacio import ProgramaFormacio
-from app.models.programa_participant import ProgramaParticipant
-from app.models.programa_supervisor import ProgramaSupervisor
-from app.models.pla_accio import PlaAccio
-from app.models.objectiu_pla import ObjectiuPla
-from app.models.accio import Accio
-from app.models.kpi import KPI
-from app.models.registre_kpi import RegistreKPI
-from app.models.feedback import Feedback
+from app.models.empresa_client import EmpresaClientCreate, EmpresaClientUpdate, EmpresaClientRead
+from app.models.usuari import UsuariCreate, UsuariUpdate, UsuariRead
+from app.models.programa_formacio import ProgramaFormacioCreate, ProgramaFormacioUpdate, ProgramaFormacioRead
+from app.models.programa_participant import ProgramaParticipantCreate, ProgramaParticipantRead
+from app.models.programa_supervisor import ProgramaSupervisorCreate, ProgramaSupervisorRead
+from app.models.pla_accio import PlaAccioCreate, PlaAccioUpdate, PlaAccioRead
+from app.models.objectiu_pla import ObjectiuPlaCreate, ObjectiuPlaUpdate, ObjectiuPlaRead
+from app.models.accio import AccioCreate, AccioUpdate, AccioRead
+from app.models.kpi import KPICreate, KPIUpdate, KPIRead
+from app.models.registre_kpi import RegistreKPICreate, RegistreKPIUpdate, RegistreKPIRead
+from app.models.feedback import FeedbackCreate, FeedbackUpdate, FeedbackRead
 
 from app.services.empresa_client_service import EmpresaClientService
 from app.services.usuari_service import UsuariService
@@ -47,20 +47,23 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
+
 @app.get("/")
 def root():
     return {"message": "Actiplanner funciona correctament"}
+
 
 @app.get("/health")
 def health():
     return {"status": "ok"}
 
-@app.get("/empreses")
+
+@app.get("/empreses", response_model=list[EmpresaClientRead])
 def get_empreses():
     return empresa_client_service.get_empreses()
 
 
-@app.get("/empreses/{idEmpresa}")
+@app.get("/empreses/{idEmpresa}", response_model=EmpresaClientRead)
 def get_empresa(idEmpresa: int):
     empresa = empresa_client_service.get_empresa(idEmpresa)
 
@@ -73,7 +76,7 @@ def get_empresa(idEmpresa: int):
     return empresa
 
 
-@app.get("/empreses/{idEmpresa}/programes")
+@app.get("/empreses/{idEmpresa}/programes", response_model=list[ProgramaFormacioRead])
 def get_programes_empresa(idEmpresa: int):
     empresa = empresa_client_service.get_empresa(idEmpresa)
 
@@ -86,13 +89,13 @@ def get_programes_empresa(idEmpresa: int):
     return empresa_client_service.get_programes_empresa(idEmpresa)
 
 
-@app.post("/empreses")
-def create_empresa(empresa: EmpresaClient):
+@app.post("/empreses", response_model=EmpresaClientRead)
+def create_empresa(empresa: EmpresaClientCreate):
     return empresa_client_service.create_empresa(empresa)
 
 
-@app.put("/empreses/{idEmpresa}")
-def update_empresa(idEmpresa: int, empresa: EmpresaClient):
+@app.put("/empreses/{idEmpresa}", response_model=EmpresaClientRead)
+def update_empresa(idEmpresa: int, empresa: EmpresaClientUpdate):
     empresa_actualitzada = empresa_client_service.update_empresa(idEmpresa, empresa)
 
     if empresa_actualitzada is None:
@@ -104,17 +107,17 @@ def update_empresa(idEmpresa: int, empresa: EmpresaClient):
     return empresa_actualitzada
 
 
-@app.get("/usuaris")
+@app.get("/usuaris", response_model=list[UsuariRead])
 def get_usuaris():
     return usuari_service.get_usuaris()
-    
 
-@app.get("/usuaris/administradors")
+
+@app.get("/usuaris/administradors", response_model=list[UsuariRead])
 def get_administradors():
     return usuari_service.get_administradors()
 
 
-@app.get("/usuaris/{idUsuari}")
+@app.get("/usuaris/{idUsuari}", response_model=UsuariRead)
 def get_usuari(idUsuari: int):
     usuari = usuari_service.get_usuari(idUsuari)
 
@@ -134,21 +137,16 @@ def get_rols_usuari(idUsuari: int):
     return rols
 
 
-@app.post("/usuaris")
-def create_usuari(usuari: Usuari):
+@app.post("/usuaris", response_model=UsuariRead)
+def create_usuari(usuari: UsuariCreate):
     return usuari_service.create_usuari(usuari)
 
 
-@app.put("/usuaris/{idUsuari}")
-def update_usuari(idUsuari: int, usuari: Usuari):
+@app.put("/usuaris/{idUsuari}", response_model=UsuariRead)
+def update_usuari(idUsuari: int, usuari: UsuariUpdate):
     usuari_actualitzat = usuari_service.update_usuari(idUsuari, usuari)
-
     if usuari_actualitzat is None:
-        raise HTTPException(
-            status_code=404,
-            detail="Usuari no trobat"
-        )
-
+        raise HTTPException(status_code=404, detail="Usuari no trobat")
     return usuari_actualitzat
 
 
@@ -170,17 +168,17 @@ def comprovar_supervisor(idPrograma: int, idUsuari: int):
     }
 
 
-@app.get("/programes/{idPrograma}/plans")
+@app.get("/programes/{idPrograma}/plans", response_model=list[PlaAccioRead])
 def get_plans_programa(idPrograma: int):
     return pla_accio_service.get_plans_programa(idPrograma)
 
 
-@app.get("/programes")
+@app.get("/programes", response_model=list[ProgramaFormacioRead])
 def get_programes():
     return programa_formacio_service.get_programes()
 
 
-@app.get("/programes/{idPrograma}")
+@app.get("/programes/{idPrograma}", response_model=ProgramaFormacioRead)
 def get_programa(idPrograma: int):
     programa = programa_formacio_service.get_programa(idPrograma)
 
@@ -193,58 +191,40 @@ def get_programa(idPrograma: int):
     return programa
 
 
-@app.post("/programes")
-def create_programa(programa: ProgramaFormacio):
+@app.post("/programes", response_model=ProgramaFormacioRead)
+def create_programa(programa: ProgramaFormacioCreate):
     return programa_formacio_service.create_programa(programa)
 
 
-@app.put("/programes/{idPrograma}")
-def update_programa(idPrograma: int, programa: ProgramaFormacio):
-    programa_actualitzat = programa_formacio_service.update_programa(
-        idPrograma,
-        programa
-    )
-
+@app.put("/programes/{idPrograma}", response_model=ProgramaFormacioRead)
+def update_programa(idPrograma: int, programa: ProgramaFormacioUpdate):
+    programa_actualitzat = programa_formacio_service.update_programa(idPrograma, programa)
     if programa_actualitzat is None:
-        raise HTTPException(
-            status_code=404,
-            detail="Programa no trobat"
-        )
-
+        raise HTTPException(status_code=404, detail="Programa no trobat")
     return programa_actualitzat
 
 
-@app.post("/programes/{idPrograma}/participants")
-def assignar_participant(idPrograma: int, participant: ProgramaParticipant):
-    data = participant.model_dump()
-    data["idPrograma"] = idPrograma
-
-    participant = ProgramaParticipant(**data)
-
-    assignacio = usuari_service.assignar_participant(participant)
+@app.post("/programes/{idPrograma}/participants", response_model=ProgramaParticipantRead)
+def assignar_participant(idPrograma: int, participant: ProgramaParticipantCreate):
+    assignacio = usuari_service.assignar_participant(idPrograma, participant)
 
     if assignacio is None:
         raise HTTPException(
             status_code=400,
-            detail="L'usuari no existeix o ja està assignat com a participant"
+            detail="El programa o l'usuari no existeixen, o l'usuari ja està assignat com a participant"
         )
 
     return assignacio
 
 
-@app.post("/programes/{idPrograma}/supervisors")
-def assignar_supervisor(idPrograma: int, supervisor: ProgramaSupervisor):
-    data = supervisor.model_dump()
-    data["idPrograma"] = idPrograma
-
-    supervisor = ProgramaSupervisor(**data)
-
-    assignacio = usuari_service.assignar_supervisor(supervisor)
+@app.post("/programes/{idPrograma}/supervisors", response_model=ProgramaSupervisorRead)
+def assignar_supervisor(idPrograma: int, supervisor: ProgramaSupervisorCreate):
+    assignacio = usuari_service.assignar_supervisor(idPrograma, supervisor)
 
     if assignacio is None:
         raise HTTPException(
             status_code=400,
-            detail="L'usuari no existeix o ja està assignat com a supervisor"
+            detail="El programa o l'usuari no existeixen, o l'usuari ja està assignat com a supervisor"
         )
 
     return assignacio
@@ -260,64 +240,57 @@ def get_pla_detallat(idPla: int):
     return pla
 
 
-@app.post("/plans")
-def create_pla(pla: PlaAccio):
+@app.post("/plans", response_model=PlaAccioRead)
+def create_pla(pla: PlaAccioCreate):
     return pla_accio_service.create_pla(pla)
 
 
-@app.put("/plans/{idPla}")
-def update_pla(idPla: int, pla: PlaAccio):
-    pla_actualitzat = pla_accio_service.update_pla(
-        idPla,
-        pla
-    )
-
+@app.put("/plans/{idPla}", response_model=PlaAccioRead)
+def update_pla(idPla: int, pla: PlaAccioUpdate):
+    pla_actualitzat = pla_accio_service.update_pla(idPla, pla)
     if pla_actualitzat is None:
-        raise HTTPException(
-            status_code=404,
-            detail="Pla d'acció no trobat"
-        )
-
+        raise HTTPException(status_code=404, detail="Pla d'acció no trobat")
     return pla_actualitzat
 
 
-@app.post("/accions")
-def create_accio(accio: Accio):
-    nova_accio = pla_accio_service.create_accio(
-        accio
-    )
+@app.get("/objectius/{idObjectiu}/seguiments")
+def get_seguiments_objectiu(idObjectiu: int):
+    return seguiment_objectiu_service.get_seguiments_objectiu(idObjectiu)
 
+
+@app.post("/objectius", response_model=ObjectiuPlaRead)
+def create_objectiu(objectiu: ObjectiuPlaCreate):
+    nou_objectiu = pla_accio_service.create_objectiu(objectiu)
+    if nou_objectiu is None:
+        raise HTTPException(status_code=404, detail="Pla d'acció no trobat")
+    return nou_objectiu
+
+
+@app.put("/objectius/{idObjectiu}", response_model=ObjectiuPlaRead)
+def update_objectiu(idObjectiu: int, objectiu: ObjectiuPlaUpdate):
+    objectiu_actualitzat = pla_accio_service.update_objectiu(idObjectiu, objectiu)
+    if objectiu_actualitzat is None:
+        raise HTTPException(status_code=404, detail="Objectiu no trobat")
+    return objectiu_actualitzat
+
+
+@app.post("/accions", response_model=AccioRead)
+def create_accio(accio: AccioCreate):
+    nova_accio = pla_accio_service.create_accio(accio)
     if nova_accio is None:
-        raise HTTPException(
-            status_code=404,
-            detail="Objectiu no trobat"
-        )
-
+        raise HTTPException(status_code=404, detail="Objectiu no trobat")
     return nova_accio
 
 
-@app.put("/accions/{idAccio}")
-def update_accio(
-    idAccio: int,
-    accio: Accio
-):
-    accio_actualitzada = (
-        pla_accio_service.update_accio(
-            idAccio,
-            accio
-        )
-    )
-
+@app.put("/accions/{idAccio}", response_model=AccioRead)
+def update_accio(idAccio: int, accio: AccioUpdate):
+    accio_actualitzada = pla_accio_service.update_accio(idAccio, accio)
     if accio_actualitzada is None:
-        raise HTTPException(
-            status_code=404,
-            detail="Acció no trobada"
-        )
-
+        raise HTTPException(status_code=404, detail="Acció no trobada")
     return accio_actualitzada
 
 
-@app.get("/kpis/{idKPI}")
+@app.get("/kpis/{idKPI}", response_model=KPIRead)
 def get_kpi(idKPI: int):
     kpi = kpi_service.get_kpi(idKPI)
 
@@ -327,135 +300,46 @@ def get_kpi(idKPI: int):
     return kpi
 
 
-@app.get("/kpis/{idKPI}/registres")
+@app.get("/kpis/{idKPI}/registres", response_model=list[RegistreKPIRead])
 def get_registres_kpi(idKPI: int):
     return kpi_service.get_registres_kpi(idKPI)
 
 
-@app.get("/kpis/{idKPI}/usuaris/{idUsuari}/registres")
+@app.get("/kpis/{idKPI}/usuaris/{idUsuari}/registres", response_model=list[RegistreKPIRead])
 def get_registres_kpi_usuari(idKPI: int, idUsuari: int):
     return kpi_service.get_registres_kpi_usuari(idKPI, idUsuari)
 
 
-@app.post("/kpis")
-def create_kpi(kpi: KPI):
-    nou_kpi = pla_accio_service.create_kpi(
-        kpi
-    )
-
+@app.post("/kpis", response_model=KPIRead)
+def create_kpi(kpi: KPICreate):
+    nou_kpi = pla_accio_service.create_kpi(kpi)
     if nou_kpi is None:
-        raise HTTPException(
-            status_code=404,
-            detail="Acció no trobada"
-        )
-
+        raise HTTPException(status_code=404, detail="Acció no trobada")
     return nou_kpi
 
 
-@app.put("/kpis/{idKPI}")
-def update_kpi(
-    idKPI: int,
-    kpi: KPI
-):
-    kpi_actualitzat = (
-        pla_accio_service.update_kpi(
-            idKPI,
-            kpi
-        )
-    )
-
+@app.put("/kpis/{idKPI}", response_model=KPIRead)
+def update_kpi(idKPI: int, kpi: KPIUpdate):
+    kpi_actualitzat = pla_accio_service.update_kpi(idKPI, kpi)
     if kpi_actualitzat is None:
-        raise HTTPException(
-            status_code=404,
-            detail="KPI no trobat"
-        )
-
+        raise HTTPException(status_code=404, detail="KPI no trobat")
     return kpi_actualitzat
 
 
-@app.post("/registres-kpi")
-def create_registre_kpi(
-    registre: RegistreKPI
-):
-    nou_registre = (
-        kpi_service.create_registre_kpi(
-            registre
-        )
-    )
-
+@app.post("/registres-kpi", response_model=RegistreKPIRead)
+def create_registre_kpi(registre: RegistreKPICreate):
+    nou_registre = kpi_service.create_registre_kpi(registre)
     if nou_registre is None:
-        raise HTTPException(
-            status_code=404,
-            detail="KPI no trobat"
-        )
-
+        raise HTTPException(status_code=404, detail="KPI no trobat")
     return nou_registre
 
 
-@app.put("/registres-kpi/{idRegistre}")
-def update_registre_kpi(
-    idRegistre: int,
-    registre: RegistreKPI
-):
-    registre_actualitzat = (
-        kpi_service.update_registre_kpi(
-            idRegistre,
-            registre
-        )
-    )
-
+@app.put("/registres-kpi/{idRegistre}", response_model=RegistreKPIRead)
+def update_registre_kpi(idRegistre: int, registre: RegistreKPIUpdate):
+    registre_actualitzat = kpi_service.update_registre_kpi(idRegistre, registre)
     if registre_actualitzat is None:
-        raise HTTPException(
-            status_code=404,
-            detail="Registre KPI no trobat"
-        )
-
+        raise HTTPException(status_code=404, detail="Registre KPI no trobat")
     return registre_actualitzat
-
-
-@app.get("/objectius/{idObjectiu}/seguiments")
-def get_seguiments_objectiu(idObjectiu: int):
-    return seguiment_objectiu_service.get_seguiments_objectiu(idObjectiu)
-
-
-@app.post("/objectius")
-def create_objectiu(
-    objectiu: ObjectiuPla
-):
-    nou_objectiu = (
-        pla_accio_service.create_objectiu(
-            objectiu
-        )
-    )
-
-    if nou_objectiu is None:
-        raise HTTPException(
-            status_code=404,
-            detail="Pla d'acció no trobat"
-        )
-
-    return nou_objectiu
-
-
-@app.put("/objectius/{idObjectiu}")
-def update_objectiu(
-    idObjectiu: int,
-    objectiu: ObjectiuPla
-):
-    objectiu_actualitzat = (
-        pla_accio_service.update_objectiu(
-            idObjectiu,
-            objectiu
-        )
-    )
-
-    if objectiu_actualitzat is None:
-        raise HTTPException(
-            status_code=404,
-            detail="Objectiu no trobat"
-        )
-
-    return objectiu_actualitzat
 
 
 @app.get("/usuaris/{idUsuari}/seguiments")
@@ -472,10 +356,7 @@ def get_seguiments_programa_usuari(idPrograma: int, idUsuari: int):
 
 
 @app.get("/objectius/{idObjectiu}/usuaris/{idUsuari}/seguiment")
-def get_detall_seguiment_objectiu_usuari(
-    idObjectiu: int,
-    idUsuari: int
-):
+def get_detall_seguiment_objectiu_usuari(idObjectiu: int, idUsuari: int):
     detall = seguiment_objectiu_service.get_detall_seguiment_objectiu_usuari(
         idObjectiu,
         idUsuari
@@ -490,12 +371,12 @@ def get_detall_seguiment_objectiu_usuari(
     return detall
 
 
-@app.get("/feedback")
+@app.get("/feedback", response_model=list[FeedbackRead])
 def get_feedbacks():
     return feedback_service.get_feedbacks()
 
 
-@app.get("/feedback/{idFeedback}")
+@app.get("/feedback/{idFeedback}", response_model=FeedbackRead)
 def get_feedback(idFeedback: int):
     feedback = feedback_service.get_feedback(idFeedback)
 
@@ -508,59 +389,46 @@ def get_feedback(idFeedback: int):
     return feedback
 
 
-@app.put("/feedback/{idFeedback}")
-def update_feedback(idFeedback: int, feedback: Feedback):
-    feedback_actualitzat = feedback_service.update_feedback(
-        idFeedback,
-        feedback
-    )
-
-    if feedback_actualitzat is None:
-        raise HTTPException(
-            status_code=404,
-            detail="Feedback no trobat"
-        )
-
-    return feedback_actualitzat
-
-
-@app.get("/programes/{idPrograma}/feedback")
-def get_feedbacks_programa(idPrograma: int):
-    return feedback_service.get_feedbacks_programa(idPrograma)
-
-
-@app.get("/participants/{idUsuariParticipant}/feedback")
-def get_feedbacks_participant(idUsuariParticipant: int):
-    return feedback_service.get_feedbacks_participant(idUsuariParticipant)
-
-
-@app.get("/supervisors/{idUsuariSupervisor}/feedback")
-def get_feedbacks_supervisor(idUsuariSupervisor: int):
-    return feedback_service.get_feedbacks_supervisor(idUsuariSupervisor)
-
-
-@app.get("/programes/{idPrograma}/participants/{idUsuariParticipant}/feedback")
-def get_feedbacks_programa_participant(
-    idPrograma: int,
-    idUsuariParticipant: int
-):
-    return feedback_service.get_feedbacks_programa_participant(
-        idPrograma,
-        idUsuariParticipant
-    )
-
-
-@app.post("/feedback")
-def create_feedback(feedback: Feedback):
+@app.post("/feedback", response_model=FeedbackRead)
+def create_feedback(feedback: FeedbackCreate):
     nou_feedback = feedback_service.create_feedback(feedback)
-
     if nou_feedback is None:
         raise HTTPException(
             status_code=400,
             detail="El supervisor o el participant no pertanyen al programa indicat"
         )
-
     return nou_feedback
+
+
+@app.put("/feedback/{idFeedback}", response_model=FeedbackRead)
+def update_feedback(idFeedback: int, feedback: FeedbackUpdate):
+    feedback_actualitzat = feedback_service.update_feedback(idFeedback, feedback)
+    if feedback_actualitzat is None:
+        raise HTTPException(status_code=404, detail="Feedback no trobat")
+    return feedback_actualitzat
+
+
+@app.get("/programes/{idPrograma}/feedback", response_model=list[FeedbackRead])
+def get_feedbacks_programa(idPrograma: int):
+    return feedback_service.get_feedbacks_programa(idPrograma)
+
+
+@app.get("/participants/{idUsuariParticipant}/feedback", response_model=list[FeedbackRead])
+def get_feedbacks_participant(idUsuariParticipant: int):
+    return feedback_service.get_feedbacks_participant(idUsuariParticipant)
+
+
+@app.get("/supervisors/{idUsuariSupervisor}/feedback", response_model=list[FeedbackRead])
+def get_feedbacks_supervisor(idUsuariSupervisor: int):
+    return feedback_service.get_feedbacks_supervisor(idUsuariSupervisor)
+
+
+@app.get("/programes/{idPrograma}/participants/{idUsuariParticipant}/feedback", response_model=list[FeedbackRead])
+def get_feedbacks_programa_participant(idPrograma: int, idUsuariParticipant: int):
+    return feedback_service.get_feedbacks_programa_participant(
+        idPrograma,
+        idUsuariParticipant
+    )
 
 
 @app.get("/plans/{idPla}/progres")
@@ -606,10 +474,7 @@ def generar_resum_programa(idPrograma: int):
 
 
 @app.get("/ia/programes/{idPrograma}/participants/{idUsuariParticipant}/feedback")
-def generar_recomanacio_feedback(
-    idPrograma: int,
-    idUsuariParticipant: int
-):
+def generar_recomanacio_feedback(idPrograma: int, idUsuariParticipant: int):
     return ia_service.generar_recomanacio_feedback(
         idPrograma,
         idUsuariParticipant
