@@ -7,64 +7,7 @@
 </head>
 <body>
 
-<header>
-    <div class="logo">Acti<span>planner</span></div>
-    <button onclick="carregarIA()">Generar resum IA</button>
-</header>
-
-<div class="layout">
-    <aside class="sidebar">
-        <h3>Menú</h3>
-        <a class="active">Dashboard</a>
-        <a>Plans d'acció</a>
-        <a>Feedback</a>
-        <a>IA</a>
-    </aside>
-
-    <main>
-        <div class="page-title">
-            <h1>Dashboard del programa</h1>
-            <p>Seguiment del progrés dels plans d'acció</p>
-        </div>
-
-        <section class="grid">
-            <div class="card">
-                <h2>Participants</h2>
-                <div class="metric" id="nombreParticipants">-</div>
-            </div>
-
-            <div class="card">
-                <h2>Progrés mitjà</h2>
-                <div class="metric" id="progresMitja">-</div>
-                <div class="progress-bar">
-                    <div class="progress-fill" id="barraProgres"></div>
-                </div>
-            </div>
-
-            <div class="card">
-                <h2>Estat</h2>
-                <span class="badge" id="estatPrograma">-</span>
-            </div>
-        </section>
-
-        <section class="card">
-            <h2>Participants destacats</h2>
-            <ul id="participantsDestacats"></ul>
-        </section>
-
-        <section class="card">
-            <h2>Objectius en risc</h2>
-            <ul id="objectiusRisc"></ul>
-        </section>
-
-        <section class="card">
-            <h2>Resum generat per IA</h2>
-            <div id="resumIA">
-                Encara no s'ha generat cap resum.
-            </div>
-        </section>
-    </main>
-</div>
+<div id="app"></div>
 
 <script src="js/app.js"></script>
 </body>

@@ -1,106 +1,123 @@
 const API_URL = "http://127.0.0.1:8000";
-const ID_PROGRAMA = 1;
 
-async function carregarDashboard() {
-    await carregarAnalisiPrograma();
-    await carregarParticipantsDestacats();
-    await carregarObjectiusRisc();
-}
-
-async function carregarAnalisiPrograma() {
-    const resposta = await fetch(`${API_URL}/programes/${ID_PROGRAMA}/analisi`);
-    const dades = await resposta.json();
-
-    document.getElementById("nombreParticipants").textContent =
-        dades.nombreParticipants;
-
-    document.getElementById("progresMitja").textContent =
-        `${dades.progresMitjaPrograma}%`;
-
-    document.getElementById("estatPrograma").textContent =
-        dades.estatPrograma;
-
-    document.getElementById("barraProgres").style.width =
-        `${dades.progresMitjaPrograma}%`;
-}
-
-async function carregarParticipantsDestacats() {
-    const resposta = await fetch(
-        `${API_URL}/programes/${ID_PROGRAMA}/participants-destacats`
-    );
-
-    const dades = await resposta.json();
-    const llista = document.getElementById("participantsDestacats");
-
-    llista.innerHTML = "";
-
-    if (dades.length === 0) {
-        llista.innerHTML = "<li>No hi ha participants destacats.</li>";
-        return;
+const usuarisDemo = {
+    participant: {
+        idUsuari: 1,
+        nom: "Participant Demo",
+        rol: "participant"
+    },
+    supervisor: {
+        idUsuari: 2,
+        nom: "Supervisor Demo",
+        rol: "supervisor"
+    },
+    administrador: {
+        idUsuari: 3,
+        nom: "Administrador Demo",
+        rol: "administrador"
     }
+};
 
-    dades.forEach(participant => {
-        const item = document.createElement("li");
-        item.textContent = `Usuari ${participant.idUsuari} - ${participant.progres}%`;
-        llista.appendChild(item);
-    });
-}
+function renderLogin() {
+    document.getElementById("app").innerHTML = `
+        <section class="login-page">
+            <div class="login-card">
+                <div class="logo">Acti<span>planner</span></div>
+                <p class="subtitle">
+                    Plataforma de seguiment de plans d'acció.
+                </p>
 
-async function carregarObjectiusRisc() {
-    const resposta = await fetch(
-        `${API_URL}/programes/${ID_PROGRAMA}/objectius-risc`
-    );
+                <label>Email</label>
+                <input type="email" placeholder="usuari@empresa.com">
 
-    const dades = await resposta.json();
-    const llista = document.getElementById("objectiusRisc");
+                <label>Contrasenya</label>
+                <input type="password" placeholder="********">
 
-    llista.innerHTML = "";
+                <button onclick="entrarCom('participant')">
+                    Iniciar sessió
+                </button>
 
-    if (dades.length === 0) {
-        llista.innerHTML = "<li>No hi ha objectius en risc.</li>";
-        return;
-    }
+                <div class="demo-buttons">
+                    <button onclick="entrarCom('participant')">
+                        Entrar com a participant
+                    </button>
 
-    dades.forEach(objectiu => {
-        const item = document.createElement("li");
-        item.textContent = `${objectiu.descripcio} - ${objectiu.progres}%`;
-        llista.appendChild(item);
-    });
-}
+                    <button onclick="entrarCom('supervisor')">
+                        Entrar com a supervisor
+                    </button>
 
-async function carregarIA() {
-    const contenidor = document.getElementById("resumIA");
-    contenidor.innerHTML = "Generant resum...";
-
-    const resposta = await fetch(
-        `${API_URL}/ia/programes/${ID_PROGRAMA}/resum`
-    );
-
-    const dades = await resposta.json();
-    const analisi = dades.analisiGenerada;
-
-    contenidor.innerHTML = `
-        <p><strong>Resum general:</strong> ${analisi.resumGeneral}</p>
-
-        <p><strong>Aspectes positius:</strong></p>
-        <ul>
-            ${analisi.aspectesPositius.map(item => `<li>${item}</li>`).join("")}
-        </ul>
-
-        <p><strong>Riscos detectats:</strong></p>
-        <ul>
-            ${
-                analisi.riscosDetectats.length > 0
-                    ? analisi.riscosDetectats.map(item => `<li>${item}</li>`).join("")
-                    : "<li>No s'han detectat riscos.</li>"
-            }
-        </ul>
-
-        <p><strong>Recomanacions:</strong></p>
-        <ul>
-            ${analisi.recomanacions.map(item => `<li>${item}</li>`).join("")}
-        </ul>
+                    <button onclick="entrarCom('administrador')">
+                        Entrar com a administrador
+                    </button>
+                </div>
+            </div>
+        </section>
     `;
 }
 
-carregarDashboard();
+function entrarCom(rol) {
+    const usuari = usuarisDemo[rol];
+
+    localStorage.setItem("usuariActiu", JSON.stringify(usuari));
+
+    renderSeleccioPrograma();
+}
+
+async function renderSeleccioPrograma() {
+    const usuari = JSON.parse(localStorage.getItem("usuariActiu"));
+
+    const resposta = await fetch(`${API_URL}/empreses/1/programes`);
+    const programes = await resposta.json();
+
+    document.getElementById("app").innerHTML = `
+        <header class="header">
+            <div class="logo">Acti<span>planner</span></div>
+            <div>${usuari.nom}</div>
+        </header>
+
+        <main class="main">
+            <div class="page-title">
+                <h1>Selecció de programa i rol</h1>
+                <p>Selecciona el programa de formació amb què vols treballar.</p>
+            </div>
+
+            <section class="card-grid">
+                ${programes.map(programa => `
+                    <article class="card">
+                        <h2>${programa.nom}</h2>
+                        <p class="secondary">${programa.descripcio}</p>
+                        <p>
+                            <span class="badge">${usuari.rol}</span>
+                        </p>
+                        <p class="secondary">
+                            ${programa.dataInici} - ${programa.dataFi}
+                        </p>
+                        <button onclick="accedirPrograma(${programa.idPrograma})">
+                            Accedir
+                        </button>
+                    </article>
+                `).join("")}
+            </section>
+        </main>
+    `;
+}
+
+function accedirPrograma(idPrograma) {
+    const usuari = JSON.parse(localStorage.getItem("usuariActiu"));
+
+    localStorage.setItem("idProgramaActiu", idPrograma);
+
+    if (usuari.rol === "participant") {
+        alert("Següent pantalla: P03 Dashboard participant");
+    }
+
+    if (usuari.rol === "supervisor") {
+        alert("Següent pantalla: P08 Dashboard supervisor");
+    }
+
+    if (usuari.rol === "administrador") {
+        alert("Següent pantalla: P12 Dashboard administrador");
+    }
+}
+
+renderLogin();
