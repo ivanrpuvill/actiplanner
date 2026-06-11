@@ -100,11 +100,15 @@ function renderFormUsuari(navegar) {
     event.preventDefault();
 
     const nouUsuari = {
+      idEmpresa: Number(document.getElementById("idEmpresa").value),
       nom: document.getElementById("nom").value,
       cognoms: document.getElementById("cognoms").value,
+      telefon: document.getElementById("telefon").value || null,
       email: document.getElementById("email").value,
-      esAdministrador: document.getElementById("esAdministrador").checked
-    };
+      esAdministrador: document.getElementById("esAdministrador").checked,
+      actiu: true,
+      password: document.getElementById("password").value
+  };
 
     await apiPost("/usuaris", nouUsuari);
     navegar("P14");
@@ -170,7 +174,10 @@ async function renderFormAssignacio(navegar) {
         ? `/programes/${idPrograma}/participants`
         : `/programes/${idPrograma}/supervisors`;
 
-    await apiPost(endpoint, { idUsuari });
+    await apiPost(endpoint, {
+      idUsuari,
+      ...(rol === "participant" ? { estatParticipacio: "actiu" } : {})
+    });
 
     navegar("P14");
   });

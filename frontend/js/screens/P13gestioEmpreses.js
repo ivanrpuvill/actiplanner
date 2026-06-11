@@ -93,7 +93,7 @@ function renderFormEmpresa(navegar) {
     const novaEmpresa = {
       nom: document.getElementById("nom").value,
       sector: document.getElementById("sector").value,
-      emailContacte: document.getElementById("emailContacte").value
+      contacte: document.getElementById("emailContacte").value
     };
 
     await apiPost("/empreses", novaEmpresa);

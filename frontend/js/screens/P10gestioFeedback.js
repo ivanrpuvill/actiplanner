@@ -122,13 +122,11 @@ async function carregarFeedbackParticipant(idParticipant, navegar) {
       event.preventDefault();
 
       const nouFeedback = {
-        idFeedback: Date.now(),
         idPrograma: programa.idPrograma,
         idUsuariSupervisor: supervisor.idUsuari,
         idUsuariParticipant: Number(idParticipant),
         comentari: document.getElementById("comentari").value,
-        validacio: document.getElementById("validacio").checked,
-        dataCreacio: new Date().toISOString().slice(0, 10)
+        validacio: document.getElementById("validacio").checked
       };
 
       await apiPost("/feedback", nouFeedback);
@@ -139,12 +137,8 @@ async function carregarFeedbackParticipant(idParticipant, navegar) {
       button.addEventListener("click", async () => {
         const feedbackActualitzat = {
           idFeedback: Number(button.dataset.idFeedback),
-          idPrograma: programa.idPrograma,
-          idUsuariSupervisor: supervisor.idUsuari,
-          idUsuariParticipant: Number(button.dataset.idParticipant),
-          comentari: decodeURIComponent(button.dataset.comentari),
-          validacio: true,
-          dataCreacio: new Date().toISOString().slice(0, 10)
+            comentari: decodeURIComponent(button.dataset.comentari),
+            validacio: true
         };
 
         await apiPut(`/feedback/${feedbackActualitzat.idFeedback}`, feedbackActualitzat);

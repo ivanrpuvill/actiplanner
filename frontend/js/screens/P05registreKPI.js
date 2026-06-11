@@ -159,12 +159,10 @@ function activarFormsRegistre(navegar) {
       const valor = Number(form.valor.value);
 
       const registre = {
-        idRegistre: Date.now(),
         idKPI,
         idPrograma: programa.idPrograma,
         idUsuari: usuari.idUsuari,
-        valor,
-        dataRegistre: new Date().toISOString().slice(0, 10)
+        valor
       };
 
       await apiPost("/registres-kpi", registre);

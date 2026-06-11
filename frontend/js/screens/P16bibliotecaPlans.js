@@ -124,9 +124,7 @@ async function renderFormPla(navegar) {
     const nouPla = {
       idPrograma: Number(document.getElementById("idPrograma").value),
       titol: document.getElementById("titol").value,
-      dataInici: document.getElementById("dataInici").value,
-      dataFi: document.getElementById("dataFi").value,
-      descripcio: document.getElementById("descripcio").value
+      actiu: true
     };
 
     await apiPost("/plans", nouPla);

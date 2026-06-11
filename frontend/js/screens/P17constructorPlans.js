@@ -43,7 +43,7 @@ async function carregarSelectorPlans() {
     plansPrograma.forEach((pla) => {
       plans.push({
         ...pla,
-        nomPrograma: programa.nom || programa.nomPrograma || `Programa ${programa.idPrograma}`
+        nomPrograma: programa.nom || `Programa ${programa.idPrograma}`
       });
     });
   }
@@ -55,7 +55,7 @@ async function carregarSelectorPlans() {
 
   select.innerHTML = plans.map((pla) => `
     <option value="${pla.idPla}">
-      ${pla.titol || pla.nom || `Pla ${pla.idPla}`} — ${pla.nomPrograma}
+      ${pla.titol || `Pla ${pla.idPla}`} — ${pla.nomPrograma}
     </option>
   `).join("");
 }
@@ -65,6 +65,8 @@ async function carregarConstructor(idPla, navegar) {
 
   try {
     const pla = await apiGet(`/plans/${idPla}`);
+    const objectius = pla.objectius || [];
+    const accions = obtenirAccions(objectius);
 
     container.innerHTML = `
       <div class="grid two-cols">
@@ -72,11 +74,11 @@ async function carregarConstructor(idPla, navegar) {
           <h3>Nou objectiu</h3>
 
           <form id="objectiuForm" class="form">
-            <label>Títol</label>
-            <input id="objectiuTitol" required />
-
             <label>Descripció</label>
-            <textarea id="objectiuDescripcio"></textarea>
+            <textarea id="objectiuDescripcio" required></textarea>
+
+            <label>Valor objectiu</label>
+            <input id="objectiuValor" type="number" step="0.01" required />
 
             <button class="btn" type="submit">Crear objectiu</button>
           </form>
@@ -87,19 +89,22 @@ async function carregarConstructor(idPla, navegar) {
 
           <form id="accioForm" class="form">
             <label>Objectiu</label>
-            <select id="accioObjectiu">
-              ${(pla.objectius || []).map((objectiu) => `
+            <select id="accioObjectiu" required>
+              ${objectius.map((objectiu) => `
                 <option value="${objectiu.idObjectiu}">
-                  ${objectiu.titol || objectiu.nom || `Objectiu ${objectiu.idObjectiu}`}
+                  ${objectiu.descripcio || `Objectiu ${objectiu.idObjectiu}`}
                 </option>
               `).join("")}
             </select>
+
+            <label>Títol</label>
+            <input id="accioTitol" required />
 
             <label>Descripció</label>
             <textarea id="accioDescripcio" required></textarea>
 
             <label>Data límit</label>
-            <input id="accioDataLimit" type="date" />
+            <input id="accioDataLimit" type="date" required />
 
             <button class="btn" type="submit">Crear acció</button>
           </form>
@@ -109,11 +114,11 @@ async function carregarConstructor(idPla, navegar) {
           <h3>Nou KPI</h3>
 
           <form id="kpiForm" class="form">
-            <label>Objectiu</label>
-            <select id="kpiObjectiu">
-              ${(pla.objectius || []).map((objectiu) => `
-                <option value="${objectiu.idObjectiu}">
-                  ${objectiu.titol || objectiu.nom || `Objectiu ${objectiu.idObjectiu}`}
+            <label>Acció</label>
+            <select id="kpiAccio" required>
+              ${accions.map((accio) => `
+                <option value="${accio.idAccio}">
+                  ${accio.titol || accio.descripcio || `Acció ${accio.idAccio}`}
                 </option>
               `).join("")}
             </select>
@@ -121,11 +126,15 @@ async function carregarConstructor(idPla, navegar) {
             <label>Nom KPI</label>
             <input id="kpiNom" required />
 
-            <label>Valor objectiu</label>
-            <input id="kpiValorObjectiu" type="number" step="0.01" />
+            <label>Descripció</label>
+            <input id="kpiDescripcio" required />
 
-            <label>Unitat</label>
-            <input id="kpiUnitat" />
+            <label>Periodicitat</label>
+            <select id="kpiPeriodicitat" required>
+              <option value="diari">Diari</option>
+              <option value="setmanal">Setmanal</option>
+              <option value="mensual">Mensual</option>
+            </select>
 
             <button class="btn" type="submit">Crear KPI</button>
           </form>
@@ -133,7 +142,7 @@ async function carregarConstructor(idPla, navegar) {
 
         <div class="card">
           <h3>Objectius actuals</h3>
-          ${renderObjectius(pla.objectius || [])}
+          ${renderObjectius(objectius)}
         </div>
       </div>
     `;
@@ -145,6 +154,18 @@ async function carregarConstructor(idPla, navegar) {
   }
 }
 
+function obtenirAccions(objectius) {
+  const accions = [];
+
+  objectius.forEach((objectiu) => {
+    (objectiu.accions || []).forEach((accio) => {
+      accions.push(accio);
+    });
+  });
+
+  return accions;
+}
+
 function renderObjectius(objectius) {
   if (!objectius.length) {
     return `<p>Encara no hi ha objectius en aquest pla.</p>`;
@@ -154,8 +175,16 @@ function renderObjectius(objectius) {
     <div class="list">
       ${objectius.map((objectiu) => `
         <div class="list-item">
-          <strong>${objectiu.titol || objectiu.nom || `Objectiu ${objectiu.idObjectiu}`}</strong>
-          <p>${objectiu.descripcio || ""}</p>
+          <strong>${objectiu.descripcio || `Objectiu ${objectiu.idObjectiu}`}</strong>
+          <p>Valor objectiu: ${objectiu.valor}</p>
+
+          ${(objectiu.accions || []).length ? `
+            <ul>
+              ${objectiu.accions.map((accio) => `
+                <li>${accio.titol || accio.descripcio || `Acció ${accio.idAccio}`}</li>
+              `).join("")}
+            </ul>
+          ` : `<p>No hi ha accions associades.</p>`}
         </div>
       `).join("")}
     </div>
@@ -168,8 +197,8 @@ function activarForms(idPla, navegar) {
 
     const nouObjectiu = {
       idPla: Number(idPla),
-      titol: document.getElementById("objectiuTitol").value,
-      descripcio: document.getElementById("objectiuDescripcio").value
+      descripcio: document.getElementById("objectiuDescripcio").value,
+      valor: Number(document.getElementById("objectiuValor").value)
     };
 
     await apiPost("/objectius", nouObjectiu);
@@ -181,8 +210,10 @@ function activarForms(idPla, navegar) {
 
     const novaAccio = {
       idObjectiu: Number(document.getElementById("accioObjectiu").value),
+      titol: document.getElementById("accioTitol").value,
       descripcio: document.getElementById("accioDescripcio").value,
-      dataLimit: document.getElementById("accioDataLimit").value
+      dataInici: new Date().toISOString().slice(0, 10),
+      dataFi: document.getElementById("accioDataLimit").value
     };
 
     await apiPost("/accions", novaAccio);
@@ -193,10 +224,10 @@ function activarForms(idPla, navegar) {
     event.preventDefault();
 
     const nouKPI = {
-      idObjectiu: Number(document.getElementById("kpiObjectiu").value),
+      idAccio: Number(document.getElementById("kpiAccio").value),
       nom: document.getElementById("kpiNom").value,
-      valorObjectiu: Number(document.getElementById("kpiValorObjectiu").value),
-      unitat: document.getElementById("kpiUnitat").value
+      descripcio: document.getElementById("kpiDescripcio").value,
+      periodicitat: document.getElementById("kpiPeriodicitat").value
     };
 
     await apiPost("/kpis", nouKPI);

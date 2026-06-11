@@ -114,7 +114,8 @@ async function renderFormPrograma(navegar) {
       idEmpresa: Number(document.getElementById("idEmpresa").value),
       dataInici: document.getElementById("dataInici").value,
       dataFi: document.getElementById("dataFi").value,
-      descripcio: document.getElementById("descripcio").value
+      descripcio: document.getElementById("descripcio").value,
+      actiu: true
     };
 
     await apiPost("/programes", nouPrograma);
