@@ -26,4 +26,4 @@ class KPIRepository:
             if kpi.idKPI == idKPI:
                 return kpi
 
-        return [None]
+        return None
