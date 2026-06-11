@@ -6,12 +6,14 @@ from app.services.pla_accio_service import PlaAccioService
 from app.services.kpi_service import KPIService
 from app.services.seguiment_objectiu_service import SeguimentObjectiuService
 from app.services.feedback_service import FeedbackService
+from app.services.analisi_service import AnalisiService
 
 usuari_service = UsuariService()
 pla_accio_service = PlaAccioService()
 kpi_service = KPIService()
 seguiment_objectiu_service = SeguimentObjectiuService()
 feedback_service = FeedbackService()
+analisi_service = AnalisiService()
 
 app = FastAPI(
     title="Actiplanner API",
@@ -282,3 +284,23 @@ def get_resum_progres_pla(idPla: int):
 @app.get("/kpis/{idKPI}/evolucio")
 def get_evolucio_kpi(idKPI: int):
     return kpi_service.get_evolucio_kpi(idKPI)
+
+
+@app.get("/programes/{idPrograma}/analisi")
+def get_analisi_programa(idPrograma: int):
+    return analisi_service.get_analisi_programa(idPrograma)
+
+
+@app.get("/programes/{idPrograma}/objectius-risc")
+def get_objectius_risc(idPrograma: int):
+    return analisi_service.get_objectius_risc(idPrograma)
+
+
+@app.get("/programes/{idPrograma}/participants-destacats")
+def get_participants_destacats(idPrograma: int):
+    return analisi_service.get_participants_destacats(idPrograma)
+
+
+@app.get("/programes/{idPrograma}/participants-desviacio")
+def get_participants_amb_desviacio(idPrograma: int):
+    return analisi_service.get_participants_amb_desviacio(idPrograma)
