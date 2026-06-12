@@ -2,7 +2,9 @@ import { apiGet, apiPost } from "../api.js";
 import { renderLayout, activarLayoutEvents } from "../layout.js";
 
 export async function renderP16BibliotecaPlans(app, navegar) {
-  app.innerHTML = renderLayout("Biblioteca plans", `
+  const filtrePrograma = sessionStorage.getItem("filtreProgramaPlans");
+  app.innerHTML = renderLayout(
+    filtrePrograma ? "Plans del programa" : "Biblioteca plans", `
     <div class="page-actions">
       <button class="btn" id="btnNouPla">Nou pla</button>
     </div>
@@ -22,9 +24,17 @@ export async function renderP16BibliotecaPlans(app, navegar) {
 
 async function carregarPlans() {
   const container = document.getElementById("plansContainer");
+  const filtrePrograma = sessionStorage.getItem("filtreProgramaPlans");
 
   try {
-    const programes = await apiGet("/programes");
+    const totsElsProgrames = await apiGet("/programes");
+
+    const programes = filtrePrograma
+      ? totsElsProgrames.filter(
+          (programa) =>
+            String(programa.idPrograma) === String(filtrePrograma)
+        )
+      : totsElsProgrames;
     const totsElsPlans = [];
 
     for (const programa of programes) {

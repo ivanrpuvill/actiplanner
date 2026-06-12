@@ -297,3 +297,72 @@ th {
   overflow-x: auto;
   font-size: 13px;
 }
+
+.dashboard-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+  align-items: stretch;
+}
+
+.stat-card {
+  padding: 24px;
+  border-radius: 18px;
+  background: #ffffff;
+  box-shadow: 0 8px 24px rgba(15, 23, 42, 0.08);
+}
+
+.stat-card h3 {
+  margin: 0 0 12px 0;
+  font-size: 16px;
+  color: #475569;
+}
+
+.stat-number {
+  margin: 0;
+  font-size: 38px;
+  font-weight: 800;
+  color: #0f172a;
+}
+
+.stat-subtitle {
+  margin-top: 8px;
+  color: #64748b;
+  font-size: 14px;
+}
+
+.dashboard-wide {
+  grid-column: 1 / -1;
+}
+
+.button-grid {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.clickable-card {
+  cursor: pointer;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.clickable-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 28px rgba(15, 23, 42, 0.12);
+}
+
+.alert-block {
+  margin-top: 16px;
+  padding: 16px;
+  border-radius: 12px;
+}
+
+.warning-alert {
+  background: #fff7ed;
+  border: 1px solid #fed7aa;
+}
+
+.success-alert {
+  background: #ecfdf5;
+  border: 1px solid #bbf7d0;
+}
