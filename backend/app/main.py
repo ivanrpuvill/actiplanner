@@ -300,6 +300,24 @@ def get_kpi(idKPI: int):
     return kpi
 
 
+@app.get("/kpis/{idKPI}/assoliment")
+def get_assoliment_kpi(idKPI: int):
+    kpi = kpi_service.get_kpi(idKPI)
+    if kpi is None:
+        raise HTTPException(status_code=404, detail="KPI no trobat")
+
+    registres = kpi_service.get_registres_kpi(idKPI)
+    if not registres:
+        return {"idKPI": idKPI, "assoliment": 0}
+
+    ultim = sorted(registres, key=lambda r: r.dataRegistre)[-1]
+    return {
+        "idKPI": idKPI,
+        "valorActual": ultim.valor,
+        "assoliment": kpi_service.calcular_assoliment_kpi(kpi, ultim.valor)
+    }
+
+
 @app.get("/kpis/{idKPI}/registres", response_model=list[RegistreKPIRead])
 def get_registres_kpi(idKPI: int):
     return kpi_service.get_registres_kpi(idKPI)

@@ -1,14 +1,16 @@
-import { apiGet, apiPost } from "../api.js";
+import { apiGet, apiPost, apiPut } from "../api.js";
 import { renderLayout, activarLayoutEvents } from "../layout.js";
 
+let plaActual = null;
+
 export async function renderP17ConstructorPlans(app, navegar) {
-  app.innerHTML = renderLayout("Constructor objectius-accions-KPI", `
+  app.innerHTML = renderLayout("Constructor de plans", `
     <div class="card">
-      <h3>Selecciona un pla</h3>
+      <h3>Selecciona un pla d'acció</h3>
 
       <div class="form-grid">
         <div>
-          <label>Pla d'acció</label>
+          <label>Pla</label>
           <select id="plaSelect"></select>
         </div>
 
@@ -18,7 +20,9 @@ export async function renderP17ConstructorPlans(app, navegar) {
       </div>
     </div>
 
-    <div id="constructorContainer" class="constructor-container"></div>
+    <div id="constructorContainer" class="constructor-container">
+      <div class="card">Carregant plans...</div>
+    </div>
   `);
 
   activarLayoutEvents(navegar);
@@ -26,144 +30,479 @@ export async function renderP17ConstructorPlans(app, navegar) {
   await carregarSelectorPlans();
 
   document.getElementById("btnCarregarPla").addEventListener("click", async () => {
-    const idPla = document.getElementById("plaSelect").value;
-    await carregarConstructor(idPla, navegar);
+    const idPla = Number(document.getElementById("plaSelect").value);
+    await carregarPla(idPla);
   });
 }
 
 async function carregarSelectorPlans() {
   const select = document.getElementById("plaSelect");
-  const programes = await apiGet("/programes");
-
-  const plans = [];
-
-  for (const programa of programes) {
-    const plansPrograma = await apiGet(`/programes/${programa.idPrograma}/plans`);
-
-    plansPrograma.forEach((pla) => {
-      plans.push({
-        ...pla,
-        nomPrograma: programa.nom || `Programa ${programa.idPrograma}`
-      });
-    });
-  }
-
-  if (!plans.length) {
-    select.innerHTML = `<option>No hi ha plans disponibles</option>`;
-    return;
-  }
-
-  select.innerHTML = plans.map((pla) => `
-    <option value="${pla.idPla}">
-      ${pla.titol || `Pla ${pla.idPla}`} — ${pla.nomPrograma}
-    </option>
-  `).join("");
-}
-
-async function carregarConstructor(idPla, navegar) {
-  const container = document.getElementById("constructorContainer");
 
   try {
-    const pla = await apiGet(`/plans/${idPla}`);
-    const objectius = pla.objectius || [];
-    const accions = obtenirAccions(objectius);
+    const programes = await apiGet("/programes");
+    const plans = [];
 
-    container.innerHTML = `
-      <div class="grid two-cols">
+    for (const programa of programes) {
+      const plansPrograma = await apiGet(`/programes/${programa.idPrograma}/plans`);
+      plansPrograma.forEach((pla) => {
+        plans.push({
+          ...pla,
+          nomPrograma: programa.nom || programa.nomPrograma || `Programa ${programa.idPrograma}`
+        });
+      });
+    }
+
+    if (!plans.length) {
+      select.innerHTML = `<option value="">No hi ha plans disponibles</option>`;
+      document.getElementById("constructorContainer").innerHTML = `
         <div class="card">
-          <h3>Nou objectiu</h3>
-
-          <form id="objectiuForm" class="form">
-            <label>Descripció</label>
-            <textarea id="objectiuDescripcio" required></textarea>
-
-            <label>Valor objectiu</label>
-            <input id="objectiuValor" type="number" step="0.01" required />
-
-            <button class="btn" type="submit">Crear objectiu</button>
-          </form>
+          <p>No hi ha cap pla d'acció creat.</p>
         </div>
+      `;
+      return;
+    }
 
-        <div class="card">
-          <h3>Nova acció</h3>
+    select.innerHTML = plans.map((pla) => `
+      <option value="${pla.idPla}">
+        ${pla.titol || `Pla ${pla.idPla}`} — ${pla.nomPrograma}
+      </option>
+    `).join("");
 
-          <form id="accioForm" class="form">
-            <label>Objectiu</label>
-            <select id="accioObjectiu" required>
-              ${objectius.map((objectiu) => `
-                <option value="${objectiu.idObjectiu}">
-                  ${objectiu.descripcio || `Objectiu ${objectiu.idObjectiu}`}
-                </option>
-              `).join("")}
-            </select>
+    await carregarPla(plans[0].idPla);
+  } catch (error) {
+    document.getElementById("constructorContainer").innerHTML =
+      `<p class="error-text">${error.message}</p>`;
+  }
+}
 
-            <label>Títol</label>
-            <input id="accioTitol" required />
+async function carregarPla(idPla) {
+  const container = document.getElementById("constructorContainer");
 
-            <label>Descripció</label>
-            <textarea id="accioDescripcio" required></textarea>
+  container.innerHTML = `
+    <div class="card">
+      <p>Carregant estructura del pla...</p>
+    </div>
+  `;
 
-            <label>Data límit</label>
-            <input id="accioDataLimit" type="date" required />
-
-            <button class="btn" type="submit">Crear acció</button>
-          </form>
-        </div>
-
-        <div class="card">
-          <h3>Nou KPI</h3>
-
-          <form id="kpiForm" class="form">
-            <label>Acció</label>
-            <select id="kpiAccio" required>
-              ${accions.map((accio) => `
-                <option value="${accio.idAccio}">
-                  ${accio.titol || accio.descripcio || `Acció ${accio.idAccio}`}
-                </option>
-              `).join("")}
-            </select>
-
-            <label>Nom KPI</label>
-            <input id="kpiNom" required />
-
-            <label>Descripció</label>
-            <input id="kpiDescripcio" required />
-
-            <label>Periodicitat</label>
-            <select id="kpiPeriodicitat" required>
-              <option value="diari">Diari</option>
-              <option value="setmanal">Setmanal</option>
-              <option value="mensual">Mensual</option>
-            </select>
-
-            <label>Tipus de càlcul</label>
-            <select id="kpiTipusCalcul" required>
-              <option value="acumulat">Acumulat</option>
-              <option value="mitjana">Mitjana</option>
-            </select>
-
-            <button class="btn" type="submit">Crear KPI</button>
-          </form>
-        </div>
-
-        <div class="card">
-          <h3>Objectius actuals</h3>
-          ${renderObjectius(objectius)}
-        </div>
-      </div>
-    `;
-
-    activarForms(idPla, navegar);
-
+  try {
+    plaActual = await apiGet(`/plans/${idPla}`);
+    renderConstructor();
   } catch (error) {
     container.innerHTML = `<p class="error-text">${error.message}</p>`;
   }
 }
 
-function obtenirAccions(objectius) {
+function renderConstructor() {
+  const container = document.getElementById("constructorContainer");
+
+  container.innerHTML = `
+    <div class="card">
+      <h3>${plaActual.titol || `Pla ${plaActual.idPla}`}</h3>
+      <p>Constructor d'objectius, accions i KPI del pla seleccionat.</p>
+    </div>
+
+    <div class="grid constructor-container">
+      <div class="card">
+        <h3>Nou objectiu</h3>
+
+        <div class="form-grid">
+          <div>
+            <label>Descripció</label>
+            <input id="objectiuDescripcio" type="text" placeholder="Ex. Millorar la comunicació interna">
+          </div>
+
+          <div>
+            <label>Valor / pes</label>
+            <input id="objectiuValor" type="number" step="0.01" value="100">
+          </div>
+        </div>
+
+        <div class="form-actions">
+          <button class="btn" id="btnCrearObjectiu">Afegir objectiu</button>
+        </div>
+      </div>
+
+      <div class="card">
+        <h3>Nova acció</h3>
+
+        <div class="form-grid">
+          <div>
+            <label>Objectiu</label>
+            <select id="accioObjectiuSelect">
+              ${renderOptionsObjectius()}
+            </select>
+          </div>
+
+          <div>
+            <label>Títol</label>
+            <input id="accioTitol" type="text" placeholder="Ex. Fer reunions setmanals">
+          </div>
+
+          <div>
+            <label>Descripció</label>
+            <input id="accioDescripcio" type="text" placeholder="Descripció de l'acció">
+          </div>
+
+          <div>
+            <label>Data inici</label>
+            <input id="accioDataInici" type="date">
+          </div>
+
+          <div>
+            <label>Data fi</label>
+            <input id="accioDataFi" type="date">
+          </div>
+        </div>
+
+        <div class="form-actions">
+          <button class="btn" id="btnCrearAccio">Afegir acció</button>
+        </div>
+      </div>
+
+      <div class="card">
+        <h3>Nou KPI</h3>
+
+        <div class="form-grid">
+          <div>
+            <label>Acció</label>
+            <select id="kpiAccioSelect">
+              ${renderOptionsAccions()}
+            </select>
+          </div>
+
+          <div>
+            <label>Nom</label>
+            <input id="kpiNom" type="text" placeholder="Ex. Nombre de reunions realitzades">
+          </div>
+
+          <div>
+            <label>Descripció</label>
+            <input id="kpiDescripcio" type="text" placeholder="Què mesura aquest indicador">
+          </div>
+
+          <div>
+            <label>Periodicitat</label>
+            <select id="kpiPeriodicitat">
+              <option value="diari">Diari</option>
+              <option value="setmanal">Setmanal</option>
+              <option value="mensual">Mensual</option>
+            </select>
+          </div>
+
+          <div>
+            <label>Tipus de KPI</label>
+            <select id="kpiTipus">
+              <option value="numeric">Numèric</option>
+              <option value="percentatge">Percentatge</option>
+              <option value="escala">Escala</option>
+              <option value="boolea">Sí / No</option>
+            </select>
+          </div>
+
+          <div>
+            <label>Orientació</label>
+            <select id="kpiOrientacio">
+              <option value="major_millor">Com més alt, millor</option>
+              <option value="menor_millor">Com més baix, millor</option>
+            </select>
+          </div>
+
+          <div>
+            <label>Valor mínim</label>
+            <input id="kpiValorMinim" type="number" step="0.01" value="0">
+          </div>
+
+          <div>
+            <label>Valor màxim</label>
+            <input id="kpiValorMaxim" type="number" step="0.01" placeholder="Ex. 100">
+          </div>
+
+          <div>
+            <label>Valor objectiu</label>
+            <input id="kpiValorObjectiu" type="number" step="0.01" placeholder="Ex. 80">
+          </div>
+        </div>
+
+        <p id="kpiAjuda" class="muted-text">
+          Defineix com s'ha d'interpretar el KPI per calcular el percentatge d'assoliment.
+        </p>
+
+        <div class="form-actions">
+          <button class="btn" id="btnCrearKPI">Afegir KPI</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="card constructor-container">
+      <h3>Estructura actual del pla</h3>
+      ${renderEstructuraPla()}
+    </div>
+  `;
+
+  activarEventsConstructor();
+}
+
+function activarEventsConstructor() {
+  document.getElementById("btnCrearObjectiu").addEventListener("click", crearObjectiu);
+  document.getElementById("btnCrearAccio").addEventListener("click", crearAccio);
+  document.getElementById("btnCrearKPI").addEventListener("click", crearKPI);
+
+  document.getElementById("kpiTipus").addEventListener("change", actualitzarAjudaKPI);
+  actualitzarAjudaKPI();
+}
+
+async function crearObjectiu() {
+  const payload = {
+    idPla: plaActual.idPla,
+    descripcio: document.getElementById("objectiuDescripcio").value.trim(),
+    valor: parseNullableNumber(document.getElementById("objectiuValor").value) ?? 100
+  };
+
+  if (!payload.descripcio) {
+    alert("Cal indicar una descripció per a l'objectiu.");
+    return;
+  }
+
+  await apiPost("/objectius", payload);
+  await carregarPla(plaActual.idPla);
+}
+
+async function crearAccio() {
+  const payload = {
+    idObjectiu: Number(document.getElementById("accioObjectiuSelect").value),
+    titol: document.getElementById("accioTitol").value.trim(),
+    descripcio: document.getElementById("accioDescripcio").value.trim(),
+    dataInici: document.getElementById("accioDataInici").value || null,
+    dataFi: document.getElementById("accioDataFi").value || null
+  };
+
+  if (!payload.idObjectiu) {
+    alert("Cal seleccionar un objectiu.");
+    return;
+  }
+
+  if (!payload.titol) {
+    alert("Cal indicar un títol per a l'acció.");
+    return;
+  }
+
+  await apiPost("/accions", payload);
+  await carregarPla(plaActual.idPla);
+}
+
+async function crearKPI() {
+  const tipus = document.getElementById("kpiTipus").value;
+
+  const payload = {
+    idAccio: Number(document.getElementById("kpiAccioSelect").value),
+    nom: document.getElementById("kpiNom").value.trim(),
+    descripcio: document.getElementById("kpiDescripcio").value.trim(),
+    periodicitat: document.getElementById("kpiPeriodicitat").value,
+    tipus,
+    orientacio: document.getElementById("kpiOrientacio").value,
+    valorMinim: parseNullableNumber(document.getElementById("kpiValorMinim").value),
+    valorMaxim: parseNullableNumber(document.getElementById("kpiValorMaxim").value),
+    valorObjectiu: parseNullableNumber(document.getElementById("kpiValorObjectiu").value)
+  };
+
+  if (!payload.idAccio) {
+    alert("Cal seleccionar una acció.");
+    return;
+  }
+
+  if (!payload.nom) {
+    alert("Cal indicar un nom per al KPI.");
+    return;
+  }
+
+  normalitzarValorsKPI(payload);
+
+  const error = validarKPI(payload);
+  if (error) {
+    alert(error);
+    return;
+  }
+
+  await apiPost("/kpis", payload);
+  await carregarPla(plaActual.idPla);
+}
+
+function normalitzarValorsKPI(kpi) {
+  if (kpi.tipus === "boolea") {
+    kpi.valorMinim = 0;
+    kpi.valorMaxim = 1;
+    kpi.valorObjectiu = 1;
+    kpi.orientacio = "major_millor";
+  }
+
+  if (kpi.tipus === "percentatge") {
+    kpi.valorMinim = 0;
+    kpi.valorMaxim = 100;
+    kpi.valorObjectiu = kpi.valorObjectiu ?? 100;
+  }
+
+  if (kpi.tipus === "escala") {
+    kpi.valorMinim = kpi.valorMinim ?? 1;
+    kpi.valorMaxim = kpi.valorMaxim ?? 5;
+    kpi.valorObjectiu = kpi.valorObjectiu ?? kpi.valorMaxim;
+  }
+
+  if (kpi.tipus === "numeric") {
+    kpi.valorMinim = kpi.valorMinim ?? 0;
+    kpi.valorObjectiu = kpi.valorObjectiu ?? kpi.valorMaxim;
+  }
+}
+
+function validarKPI(kpi) {
+  if (kpi.tipus === "boolea") {
+    return null;
+  }
+
+  if (kpi.tipus === "percentatge") {
+    if (kpi.valorObjectiu === null || kpi.valorObjectiu === undefined) {
+      return "Cal indicar el percentatge objectiu.";
+    }
+
+    if (kpi.valorObjectiu < 0 || kpi.valorObjectiu > 100) {
+      return "El percentatge objectiu ha d'estar entre 0 i 100.";
+    }
+
+    return null;
+  }
+
+  if (kpi.valorMinim === null || kpi.valorMinim === undefined) {
+    return "Cal indicar el valor mínim.";
+  }
+
+  if (kpi.valorMaxim === null || kpi.valorMaxim === undefined) {
+    return "Cal indicar el valor màxim.";
+  }
+
+  if (kpi.valorMaxim === kpi.valorMinim) {
+    return "El valor màxim ha de ser diferent del valor mínim.";
+  }
+
+  if (kpi.valorObjectiu === null || kpi.valorObjectiu === undefined) {
+    return "Cal indicar el valor objectiu.";
+  }
+
+  if (
+    kpi.valorObjectiu < Math.min(kpi.valorMinim, kpi.valorMaxim) ||
+    kpi.valorObjectiu > Math.max(kpi.valorMinim, kpi.valorMaxim)
+  ) {
+    return "El valor objectiu ha d'estar entre el valor mínim i el valor màxim.";
+  }
+
+  return null;
+}
+
+function renderOptionsObjectius() {
+  const objectius = plaActual.objectius || [];
+
+  if (!objectius.length) {
+    return `<option value="">No hi ha objectius disponibles</option>`;
+  }
+
+  return objectius.map((objectiu) => `
+    <option value="${objectiu.idObjectiu}">
+      ${objectiu.descripcio || objectiu.nom || `Objectiu ${objectiu.idObjectiu}`}
+    </option>
+  `).join("");
+}
+
+function renderOptionsAccions() {
+  const accions = obtenirAccionsPla();
+
+  if (!accions.length) {
+    return `<option value="">No hi ha accions disponibles</option>`;
+  }
+
+  return accions.map((accio) => `
+    <option value="${accio.idAccio}">
+      ${accio.titol || accio.nom || `Acció ${accio.idAccio}`}
+    </option>
+  `).join("");
+}
+
+function renderEstructuraPla() {
+  const objectius = plaActual.objectius || [];
+
+  if (!objectius.length) {
+    return `<p>Encara no hi ha objectius definits en aquest pla.</p>`;
+  }
+
+  return objectius.map((objectiu) => `
+    <div class="list-item">
+      <h4>${objectiu.descripcio || objectiu.nom || `Objectiu ${objectiu.idObjectiu}`}</h4>
+      <p>
+        <strong>Valor:</strong> ${objectiu.valor ?? "-"}
+        ${objectiu.progresObjectiu !== undefined ? ` · <strong>Progrés:</strong> ${formatPercentatge(objectiu.progresObjectiu)}` : ""}
+      </p>
+
+      ${renderAccionsObjectiu(objectiu)}
+    </div>
+  `).join("");
+}
+
+function renderAccionsObjectiu(objectiu) {
+  const accions = objectiu.accions || [];
+
+  if (!accions.length) {
+    return `<p>No hi ha accions associades.</p>`;
+  }
+
+  return `
+    <div class="list">
+      ${accions.map((accio) => `
+        <div class="list-item">
+          <strong>${accio.titol || accio.nom || `Acció ${accio.idAccio}`}</strong>
+          <p>${accio.descripcio || ""}</p>
+          ${renderKPIsAccio(accio)}
+        </div>
+      `).join("")}
+    </div>
+  `;
+}
+
+function renderKPIsAccio(accio) {
+  const kpis = accio.kpis || accio.indicadors || [];
+
+  if (!kpis.length) {
+    return `<p>No hi ha KPI associats.</p>`;
+  }
+
+  return `
+    <table>
+      <thead>
+        <tr>
+          <th>KPI</th>
+          <th>Tipus</th>
+          <th>Orientació</th>
+          <th>Rang</th>
+          <th>Objectiu</th>
+          <th>Periodicitat</th>
+        </tr>
+      </thead>
+      <tbody>
+        ${kpis.map((kpi) => `
+          <tr>
+            <td>${kpi.nom || `KPI ${kpi.idKPI}`}</td>
+            <td>${formatTipusKPI(kpi.tipus)}</td>
+            <td>${formatOrientacioKPI(kpi.orientacio)}</td>
+            <td>${formatRangKPI(kpi)}</td>
+            <td>${kpi.valorObjectiu ?? "-"}</td>
+            <td>${kpi.periodicitat || "-"}</td>
+          </tr>
+        `).join("")}
+      </tbody>
+    </table>
+  `;
+}
+
+function obtenirAccionsPla() {
   const accions = [];
 
-  objectius.forEach((objectiu) => {
+  (plaActual.objectius || []).forEach((objectiu) => {
     (objectiu.accions || []).forEach((accio) => {
       accions.push(accio);
     });
@@ -172,72 +511,78 @@ function obtenirAccions(objectius) {
   return accions;
 }
 
-function renderObjectius(objectius) {
-  if (!objectius.length) {
-    return `<p>Encara no hi ha objectius en aquest pla.</p>`;
+function actualitzarAjudaKPI() {
+  const tipus = document.getElementById("kpiTipus").value;
+  const ajuda = document.getElementById("kpiAjuda");
+
+  const campMinim = document.getElementById("kpiValorMinim").closest("div");
+  const campMaxim = document.getElementById("kpiValorMaxim").closest("div");
+  const campObjectiu = document.getElementById("kpiValorObjectiu").closest("div");
+  const campOrientacio = document.getElementById("kpiOrientacio").closest("div");
+
+  campMinim.style.display = "";
+  campMaxim.style.display = "";
+  campObjectiu.style.display = "";
+  campOrientacio.style.display = "";
+
+  if (tipus === "numeric") {
+    ajuda.textContent = "Numèric: indica mínim, màxim i valor objectiu.";
+  } else if (tipus === "escala") {
+    ajuda.textContent = "Escala: indica el rang, per exemple 1-5, i el valor objectiu.";
+  } else if (tipus === "percentatge") {
+    campMinim.style.display = "none";
+    campMaxim.style.display = "none";
+    ajuda.textContent = "Percentatge: només cal indicar el percentatge objectiu.";
+  } else if (tipus === "boolea") {
+    campMinim.style.display = "none";
+    campMaxim.style.display = "none";
+    campObjectiu.style.display = "none";
+    campOrientacio.style.display = "none";
+    ajuda.textContent = "Sí / No: Sí equival a 100% i No equival a 0%.";
   }
-
-  return `
-    <div class="list">
-      ${objectius.map((objectiu) => `
-        <div class="list-item">
-          <strong>${objectiu.descripcio || `Objectiu ${objectiu.idObjectiu}`}</strong>
-          <p>Valor objectiu: ${objectiu.valor}</p>
-
-          ${(objectiu.accions || []).length ? `
-            <ul>
-              ${objectiu.accions.map((accio) => `
-                <li>${accio.titol || accio.descripcio || `Acció ${accio.idAccio}`}</li>
-              `).join("")}
-            </ul>
-          ` : `<p>No hi ha accions associades.</p>`}
-        </div>
-      `).join("")}
-    </div>
-  `;
 }
 
-function activarForms(idPla, navegar) {
-  document.getElementById("objectiuForm").addEventListener("submit", async (event) => {
-    event.preventDefault();
+function parseNullableNumber(valor) {
+  if (valor === "" || valor === null || valor === undefined) {
+    return null;
+  }
 
-    const nouObjectiu = {
-      idPla: Number(idPla),
-      descripcio: document.getElementById("objectiuDescripcio").value,
-      valor: Number(document.getElementById("objectiuValor").value)
-    };
+  const numero = Number(valor);
+  return Number.isNaN(numero) ? null : numero;
+}
 
-    await apiPost("/objectius", nouObjectiu);
-    navegar("P17");
-  });
+function formatPercentatge(valor) {
+  if (valor === undefined || valor === null || Number.isNaN(Number(valor))) {
+    return "-";
+  }
 
-  document.getElementById("accioForm").addEventListener("submit", async (event) => {
-    event.preventDefault();
+  return `${Math.round(Number(valor))}%`;
+}
 
-    const novaAccio = {
-      idObjectiu: Number(document.getElementById("accioObjectiu").value),
-      titol: document.getElementById("accioTitol").value,
-      descripcio: document.getElementById("accioDescripcio").value,
-      dataInici: new Date().toISOString().slice(0, 10),
-      dataFi: document.getElementById("accioDataLimit").value
-    };
+function formatTipusKPI(tipus) {
+  const labels = {
+    numeric: "Numèric",
+    percentatge: "Percentatge",
+    escala: "Escala",
+    boolea: "Sí / No"
+  };
 
-    await apiPost("/accions", novaAccio);
-    navegar("P17");
-  });
+  return labels[tipus] || tipus || "-";
+}
 
-  document.getElementById("kpiForm").addEventListener("submit", async (event) => {
-    event.preventDefault();
+function formatOrientacioKPI(orientacio) {
+  const labels = {
+    major_millor: "Major és millor",
+    menor_millor: "Menor és millor"
+  };
 
-    const nouKPI = {
-      idAccio: Number(document.getElementById("kpiAccio").value),
-      nom: document.getElementById("kpiNom").value,
-      descripcio: document.getElementById("kpiDescripcio").value,
-      periodicitat: document.getElementById("kpiPeriodicitat").value,
-      tipusCalcul: document.getElementById("kpiTipusCalcul").value
-    };
+  return labels[orientacio] || orientacio || "-";
+}
 
-    await apiPost("/kpis", nouKPI);
-    navegar("P17");
-  });
+function formatRangKPI(kpi) {
+  if (kpi.tipus === "boolea") {
+    return "0 / 1";
+  }
+
+  return `${kpi.valorMinim ?? "-"} - ${kpi.valorMaxim ?? "-"}`;
 }

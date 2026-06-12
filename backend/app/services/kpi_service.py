@@ -82,3 +82,20 @@ class KPIService:
         registre_actualitzat = RegistreKPI(**data)
 
         return self.registre_kpi_repository.update(idRegistre, registre_actualitzat)
+
+    def calcular_assoliment_kpi(self, kpi, valor_actual: float) -> float:
+        if kpi.tipus == "boolea":
+            return 100.0 if valor_actual >= 1 else 0.0
+
+        minim = kpi.valorMinim if kpi.valorMinim is not None else 0
+        maxim = kpi.valorMaxim if kpi.valorMaxim is not None else kpi.valorObjectiu
+
+        if maxim is None or maxim == minim:
+            return 0.0
+
+        if kpi.orientacio == "menor_millor":
+            percentatge = ((maxim - valor_actual) / (maxim - minim)) * 100
+        else:
+            percentatge = ((valor_actual - minim) / (maxim - minim)) * 100
+
+        return max(0.0, min(100.0, round(percentatge, 2)))

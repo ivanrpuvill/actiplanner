@@ -1,4 +1,17 @@
+from enum import Enum
 from pydantic import BaseModel
+
+
+class TipusKPI(str, Enum):
+    numeric = "numeric"
+    percentatge = "percentatge"
+    escala = "escala"
+    boolea = "boolea"
+
+
+class OrientacioKPI(str, Enum):
+    major_millor = "major_millor"
+    menor_millor = "menor_millor"
 
 
 class KPIBase(BaseModel):
@@ -6,7 +19,13 @@ class KPIBase(BaseModel):
     nom: str
     descripcio: str
     periodicitat: str
-    tipusCalcul: str = "acumulat"
+
+    tipus: TipusKPI = TipusKPI.numeric
+    orientacio: OrientacioKPI = OrientacioKPI.major_millor
+
+    valorMinim: float | None = 0
+    valorMaxim: float | None = None
+    valorObjectiu: float | None = None
 
 
 class KPICreate(KPIBase):
@@ -18,7 +37,12 @@ class KPIUpdate(BaseModel):
     nom: str | None = None
     descripcio: str | None = None
     periodicitat: str | None = None
-    tipusCalcul: str | None = None
+
+    tipus: TipusKPI | None = None
+    orientacio: OrientacioKPI | None = None
+    valorMinim: float | None = None
+    valorMaxim: float | None = None
+    valorObjectiu: float | None = None
 
 
 class KPIRead(KPIBase):
