@@ -6,6 +6,7 @@ class KPIBase(BaseModel):
     nom: str
     descripcio: str
     periodicitat: str
+    tipusCalcul: str = "acumulat"
 
 
 class KPICreate(KPIBase):
@@ -17,6 +18,7 @@ class KPIUpdate(BaseModel):
     nom: str | None = None
     descripcio: str | None = None
     periodicitat: str | None = None
+    tipusCalcul: str | None = None
 
 
 class KPIRead(KPIBase):

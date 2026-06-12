@@ -19,6 +19,11 @@ class KPIService:
         return self.registre_kpi_repository.get_by_kpi_and_usuari(idKPI, idUsuari)
 
     def get_evolucio_kpi(self, idKPI: int):
+        kpi = self.kpi_repository.get_by_id(idKPI)
+
+        if kpi is None:
+            return []
+
         registres = self.registre_kpi_repository.get_by_kpi(idKPI)
 
         registres_ordenats = sorted(
@@ -26,17 +31,29 @@ class KPIService:
             key=lambda registre: registre.dataRegistre
         )
 
-        return [
-            {
+        evolucio = []
+        acumulat = 0
+
+        for index, registre in enumerate(registres_ordenats, start=1):
+            if kpi.tipusCalcul == "mitjana":
+                acumulat += registre.valor
+                valor_calculat = acumulat / index
+            elif kpi.tipusCalcul == "acumulat":
+                acumulat += registre.valor
+                valor_calculat = acumulat
+
+            evolucio.append({
                 "idRegistre": registre.idRegistre,
                 "idKPI": registre.idKPI,
                 "idPrograma": registre.idPrograma,
                 "idUsuari": registre.idUsuari,
                 "valor": registre.valor,
+                "valorCalculat": round(valor_calculat, 2),
+                "tipusCalcul": kpi.tipusCalcul,
                 "dataRegistre": registre.dataRegistre
-            }
-            for registre in registres_ordenats
-        ]
+            })
+
+        return evolucio
 
     def create_registre_kpi(self, registre: RegistreKPICreate):
         kpi = self.kpi_repository.get_by_id(registre.idKPI)

@@ -39,18 +39,17 @@ class PlaAccioService:
                 valors_kpi = []
 
                 for kpi in kpis:
-                    ultim_registre = self.registre_kpi_repository.get_ultim_by_kpi(kpi.idKPI)
-                    ultim_valor = ultim_registre.valor if ultim_registre else 0
+                    valor_kpi = self._calcular_valor_kpi(kpi)
 
-                    valors_kpi.append(ultim_valor)
+                    valors_kpi.append(valor_kpi)
 
                     kpis_detallats.append({
                         "idKPI": kpi.idKPI,
                         "nom": kpi.nom,
                         "descripcio": kpi.descripcio,
                         "periodicitat": kpi.periodicitat,
-                        "ultimValor": ultim_valor,
-                        "dataUltimRegistre": ultim_registre.dataRegistre if ultim_registre else None
+                        "ultimValor": valor_kpi,
+                        "dataUltimRegistre": None
                     })
 
                 progres_accio = self._calcular_mitjana(valors_kpi)
@@ -104,6 +103,25 @@ class PlaAccioService:
         if progres >= 40:
             return "en_progres"
         return "pendent"
+    
+    def _calcular_valor_kpi(self, kpi):
+        registres = self.registre_kpi_repository.get_by_kpi(
+            kpi.idKPI
+        )
+
+        if not registres:
+            return 0
+
+        if getattr(kpi, "tipusCalcul", "acumulat") == "mitjana":
+            return round(
+                sum(r.valor for r in registres) / len(registres),
+                2
+            )
+
+        return round(
+            sum(r.valor for r in registres),
+            2
+        )
 
     def get_resum_progres_pla(self, idPla: int) -> dict | None:
         pla = self.pla_repository.get_by_id(idPla)

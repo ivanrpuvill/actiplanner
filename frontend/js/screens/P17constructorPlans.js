@@ -136,6 +136,12 @@ async function carregarConstructor(idPla, navegar) {
               <option value="mensual">Mensual</option>
             </select>
 
+            <label>Tipus de càlcul</label>
+            <select id="kpiTipusCalcul" required>
+              <option value="acumulat">Acumulat</option>
+              <option value="mitjana">Mitjana</option>
+            </select>
+
             <button class="btn" type="submit">Crear KPI</button>
           </form>
         </div>
@@ -227,7 +233,8 @@ function activarForms(idPla, navegar) {
       idAccio: Number(document.getElementById("kpiAccio").value),
       nom: document.getElementById("kpiNom").value,
       descripcio: document.getElementById("kpiDescripcio").value,
-      periodicitat: document.getElementById("kpiPeriodicitat").value
+      periodicitat: document.getElementById("kpiPeriodicitat").value,
+      tipusCalcul: document.getElementById("kpiTipusCalcul").value
     };
 
     await apiPost("/kpis", nouKPI);

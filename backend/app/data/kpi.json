@@ -4,20 +4,15 @@
     "nom": "Reunions realitzades",
     "descripcio": "Nombre de reunions 1:1 realitzades durant la setmana.",
     "periodicitat": "setmanal",
-    "idKPI": 1
+    "idKPI": 1,
+    "tipusCalcul": "acumulat"
   },
   {
     "idAccio": 2,
-    "nom": "Feedbacks registrats",
-    "descripcio": "Nombre de feedbacks registrats després de les reunions.",
+    "nom": "Valoració de reunions",
+    "descripcio": "Valoració subjectiva de les reunions de l'1 al 5.",
     "periodicitat": "setmanal",
-    "idKPI": 2
-  },
-  {
-    "idAccio": 3,
-    "nom": "numero de trucades",
-    "descripcio": "as",
-    "periodicitat": "setmanal",
-    "idKPI": 3
+    "idKPI": 4,
+    "tipusCalcul": "mitjana"
   }
 ]

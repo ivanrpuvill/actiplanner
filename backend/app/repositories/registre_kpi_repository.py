@@ -29,7 +29,7 @@ class RegistreKPIRepository:
 
         return sorted(
             registres,
-            key=lambda registre: registre.dataRegistre,
+            key=lambda registre: (registre.dataRegistre, registre.idRegistre),
             reverse=True
         )[0]
 

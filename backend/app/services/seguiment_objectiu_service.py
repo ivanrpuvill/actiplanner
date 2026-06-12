@@ -52,12 +52,9 @@ class SeguimentObjectiuService:
                     idUsuari
                 )
 
-                if registres:
-                    ultim_registre = max(
-                        registres,
-                        key=lambda registre: registre.dataRegistre
-                    )
-                    valors_kpi.append(ultim_registre.valor)
+                valor_kpi = self._calcular_valor_kpi_usuari(kpi, idUsuari)
+
+                valors_kpi.append(valor_kpi)
 
         if not valors_kpi:
             return 0
@@ -97,3 +94,27 @@ class SeguimentObjectiuService:
         if progres >= 40:
             return "en_progres"
         return "pendent"
+
+    def _calcular_valor_kpi_usuari(
+        self,
+        kpi,
+        idUsuari
+    ):
+        registres = self.registre_kpi_repository.get_by_kpi_and_usuari(
+            kpi.idKPI,
+            idUsuari
+        )
+
+        if not registres:
+            return 0
+
+        if getattr(kpi, "tipusCalcul", "acumulat") == "mitjana":
+            return round(
+                sum(r.valor for r in registres) / len(registres),
+                2
+            )
+
+        return round(
+            sum(r.valor for r in registres),
+            2
+        )
