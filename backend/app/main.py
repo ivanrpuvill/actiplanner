@@ -486,6 +486,7 @@ def get_participants_destacats(idPrograma: int):
 def get_participants_amb_desviacio(idPrograma: int):
     return analisi_service.get_participants_amb_desviacio(idPrograma)
 
+
 @app.get("/ia/programes/{idPrograma}/resum")
 def generar_resum_programa(idPrograma: int):
     return ia_service.generar_resum_programa(idPrograma)
@@ -502,3 +503,8 @@ def generar_recomanacio_feedback(idPrograma: int, idUsuariParticipant: int):
 @app.get("/ia/plans/{idPla}/resum")
 def generar_resum_pla(idPla: int):
     return ia_service.generar_resum_pla(idPla)
+
+
+@app.get("/ia/programes/{idPrograma}/proposta-pla")
+def generar_proposta_pla(idPrograma: int):
+    return ia_service.generar_proposta_pla(idPrograma)

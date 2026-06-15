@@ -38,27 +38,49 @@ class IAService:
         }
 
         prompt = f"""
-Ets un assistent d'Actiplanner, una plataforma de seguiment de plans d'acció derivats de processos de formació empresarial.
+Actua com un consultor expert en gestió del canvi i seguiment de programes de formació.
 
-Analitza les dades següents d'un programa de formació i genera una resposta professional per a un supervisor.
+Analitza les dades següents.
 
-Dades del programa:
+Context:
 {self._format_context(context)}
 
-Retorna únicament JSON vàlid amb aquesta estructura:
+No facis un resum descriptiu.
+
+Genera:
+- una valoració global
+- una interpretació dels KPI i del progrés
+- riscos de consolidació
+- recomanacions accionables per al supervisor
+- prioritats de seguiment
+
+Retorna exclusivament JSON vàlid:
 
 {{
-  "resumGeneral": "",
-  "aspectesPositius": [],
-  "riscosDetectats": [],
-  "recomanacions": []
+  "resumExecutiu": "",
+  "diagnostic": "",
+  "riscos": [
+    {{
+      "titol": "",
+      "nivell": "baix|mitja|alt",
+      "explicacio": ""
+    }}
+  ],
+  "recomanacions": [
+    {{
+      "accio": "",
+      "prioritat": "baixa|mitjana|alta",
+      "impacteEsperat": ""
+    }}
+  ],
+  "indicadorsClau": [
+    {{
+      "nom": "",
+      "valor": "",
+      "interpretacio": ""
+    }}
+  ]
 }}
-
-Condicions:
-- Escriu en català.
-- No afegeixis text fora del JSON.
-- No utilitzis markdown.
-- No inventis dades que no apareguin al context.
 """
 
         analisi_generada = self._generar_json(prompt)
@@ -95,28 +117,22 @@ Condicions:
         }
 
         prompt = f"""
-Ets un assistent d'Actiplanner que ajuda supervisors a redactar feedback constructiu.
-
-Genera una proposta de feedback breu, clara i professional per al participant indicat.
+Actua com un supervisor expert en desenvolupament professional.
 
 Context:
 {self._format_context(context)}
 
-Retorna únicament JSON vàlid amb aquesta estructura:
+Genera feedback accionable i específic.
+
+Retorna exclusivament:
 
 {{
-  "feedbackProposat": "",
+  "missatgeFeedback": "",
   "puntsForts": [],
-  "aspectesMillora": [],
-  "to": "constructiu"
+  "puntsMillora": [],
+  "properesAccions": [],
+  "nivellPrioritat": "baix|mitja|alt"
 }}
-
-Condicions:
-- Escriu en català.
-- No afegeixis text fora del JSON.
-- No utilitzis markdown.
-- No inventis dades concretes que no apareguin al context.
-- No facis canvis automàtics al sistema.
 """
 
         feedback_generat = self._generar_json(prompt)
@@ -139,27 +155,26 @@ Condicions:
             }
 
         prompt = f"""
-Ets un assistent d'Actiplanner.
+Actua com un consultor en seguiment de plans d'acció.
 
-Analitza el resum de progrés del pla d'acció següent i genera una interpretació breu per a un supervisor o administrador.
-
-Dades del pla:
+Context:
 {self._format_context(resum_pla)}
 
-Retorna únicament JSON vàlid amb aquesta estructura:
+Avalua:
+- qualitat del pla
+- coherència entre objectius i KPI
+- riscos
+- millores
+
+Retorna exclusivament:
 
 {{
-  "estatGeneral": "",
-  "objectiusAvancats": [],
-  "objectiusAtencio": [],
-  "recomanacioFinal": ""
+  "avaluacioGeneral": "",
+  "fortaleses": [],
+  "febleses": [],
+  "riscos": [],
+  "milloresRecomanades": []
 }}
-
-Condicions:
-- Escriu en català.
-- No afegeixis text fora del JSON.
-- No utilitzis markdown.
-- No inventis dades que no apareguin al context.
 """
 
         analisi_generada = self._generar_json(prompt)
@@ -213,3 +228,74 @@ Condicions:
             indent=2,
             default=str
         )
+
+    def generar_proposta_pla(self, idPrograma: int) -> dict:
+        analisi = self.analisi_service.get_analisi_programa(idPrograma)
+        objectius_risc = self.analisi_service.get_objectius_risc(idPrograma)
+        participants_desviacio = self.analisi_service.get_participants_amb_desviacio(idPrograma)
+
+        context = {
+            "analisiPrograma": analisi,
+            "objectiusRisc": objectius_risc,
+            "participantsAmbDesviacio": participants_desviacio
+        }
+
+        prompt = f"""
+    Actua com un consultor expert en disseny de plans d'acció per consolidar canvis després d'una formació empresarial.
+
+    A partir de les dades del programa, genera una proposta de pla d'acció que es pugui incorporar a Actiplanner.
+
+    Context:
+    {self._format_context(context)}
+
+    Retorna exclusivament JSON vàlid amb aquesta estructura:
+
+    {{
+    "titol": "",
+    "descripcio": "",
+    "objectius": [
+        {{
+        "descripcio": "",
+        "valor": 100,
+        "accions": [
+            {{
+            "titol": "",
+            "descripcio": "",
+            "kpis": [
+                {{
+                "nom": "",
+                "descripcio": "",
+                "periodicitat": "setmanal",
+                "tipus": "numeric|percentatge|escala|boolea",
+                "orientacio": "major_millor|menor_millor",
+                "valorMinim": 0,
+                "valorMaxim": 100,
+                "valorObjectiu": 80
+                }}
+            ]
+            }}
+        ]
+        }}
+    ]
+    }}
+
+    Condicions:
+    - Escriu en català.
+    - Genera entre 2 i 4 objectius.
+    - Cada objectiu ha de tenir entre 1 i 3 accions.
+    - Cada acció ha de tenir entre 1 i 2 KPI.
+    - Els KPI han de ser mesurables.
+    - Si el KPI és percentatge, usa valorMinim=0, valorMaxim=100.
+    - Si el KPI és boolea, usa valorMinim=0, valorMaxim=1, valorObjectiu=1.
+    - No afegeixis text fora del JSON.
+    - No utilitzis markdown.
+    - No inventis dades personals de participants.
+    """
+
+        proposta = self._generar_json(prompt)
+
+        return {
+            "idPrograma": idPrograma,
+            "tipus": "proposta_pla",
+            "proposta": proposta
+        }
