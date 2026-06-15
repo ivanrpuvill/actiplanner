@@ -1,18 +1,50 @@
 [
   {
-    "idAccio": 1,
-    "nom": "Reunions realitzades",
-    "descripcio": "Nombre de reunions 1:1 realitzades durant la setmana.",
-    "periodicitat": "setmanal",
     "idKPI": 1,
-    "tipusCalcul": "acumulat"
+    "idAccio": 1,
+    "nom": "Nombre de reunions realitzades",
+    "descripcio": "Mesura el nombre de reunions 1:1 fetes amb l'equip",
+    "periodicitat": "setmanal",
+    "tipus": "numeric",
+    "orientacio": "major_millor",
+    "valorMinim": 0,
+    "valorMaxim": 10,
+    "valorObjectiu": 10
   },
   {
-    "idAccio": 2,
-    "nom": "Valoració de reunions",
-    "descripcio": "Valoració subjectiva de les reunions de l'1 al 5.",
+    "idKPI": 2,
+    "idAccio": 1,
+    "nom": "Percentatge de tasques completades",
+    "descripcio": "Mesura el percentatge de tasques finalitzades dins del termini",
     "periodicitat": "setmanal",
+    "tipus": "percentatge",
+    "orientacio": "major_millor",
+    "valorMinim": 0,
+    "valorMaxim": 100,
+    "valorObjectiu": 80
+  },
+  {
+    "idKPI": 3,
+    "idAccio": 2,
+    "nom": "Qualitat percebuda del feedback",
+    "descripcio": "Valoració del feedback rebut en una escala de l'1 al 5",
+    "periodicitat": "mensual",
+    "tipus": "escala",
+    "orientacio": "major_millor",
+    "valorMinim": 1,
+    "valorMaxim": 5,
+    "valorObjectiu": 4
+  },
+  {
     "idKPI": 4,
-    "tipusCalcul": "mitjana"
+    "idAccio": 2,
+    "nom": "Pla de millora definit",
+    "descripcio": "Indica si el participant ha definit el pla de millora acordat",
+    "periodicitat": "mensual",
+    "tipus": "boolea",
+    "orientacio": "major_millor",
+    "valorMinim": 0,
+    "valorMaxim": 1,
+    "valorObjectiu": 1
   }
 ]

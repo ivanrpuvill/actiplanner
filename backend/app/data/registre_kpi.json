@@ -46,5 +46,13 @@
     "valor": 5.0,
     "idRegistre": 6,
     "dataRegistre": "2026-06-12"
+  },
+  {
+    "idKPI": 1,
+    "idPrograma": 1,
+    "idUsuari": 1,
+    "valor": 1.0,
+    "idRegistre": 7,
+    "dataRegistre": "2026-06-14"
   }
 ]

@@ -167,7 +167,12 @@ class AnalisiService:
                         registres,
                         key=lambda registre: registre.dataRegistre
                     )
-                    valors.append(ultim_registre.valor)
+                    assoliment = self._calcular_assoliment_kpi(
+                        kpi,
+                        ultim_registre.valor
+                    )
+
+                    valors.append(assoliment)
 
         return self._mitjana(valors)
 
@@ -185,3 +190,34 @@ class AnalisiService:
             return "en_progres"
 
         return "pendent"
+
+    def _calcular_assoliment_kpi(self, kpi, valor_actual: float) -> float:
+        tipus = getattr(kpi, "tipus", "numeric")
+        orientacio = getattr(kpi, "orientacio", "major_millor")
+
+        if tipus == "boolea":
+            return 100 if valor_actual >= 1 else 0
+
+        if tipus == "percentatge":
+            objectiu = getattr(kpi, "valorObjectiu", 100) or 100
+            if objectiu == 0:
+                return 0
+
+            assoliment = (valor_actual / objectiu) * 100
+            return max(0, min(100, round(assoliment, 2)))
+
+        minim = getattr(kpi, "valorMinim", 0) or 0
+        objectiu = getattr(kpi, "valorObjectiu", None)
+        maxim = getattr(kpi, "valorMaxim", None)
+
+        referencia = objectiu if objectiu is not None else maxim
+
+        if referencia is None or referencia == minim:
+            return 0
+
+        if orientacio == "menor_millor":
+            assoliment = ((referencia - valor_actual) / (referencia - minim)) * 100
+        else:
+            assoliment = ((valor_actual - minim) / (referencia - minim)) * 100
+
+        return max(0, min(100, round(assoliment, 2)))

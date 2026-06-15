@@ -112,7 +112,11 @@ export async function renderP08DashboardSupervisor(app, navegar) {
 
       <div class="card stat-card">
         <h3>Progrés mitjà</h3>
-        <p class="stat-number">${formatPercentatge(analisi.progresMitja)}</p>
+        <p class="stat-number">
+          ${formatPercentatge(
+            analisi.progresMitjaPrograma ?? analisi.progresMitja
+          )}
+        </p>
         <p class="stat-subtitle">Indicador agregat del programa</p>
       </div>
 
