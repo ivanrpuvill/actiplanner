@@ -3,90 +3,4626 @@
     "idRegistre": 1,
     "idPrograma": 1,
     "idKPI": 1,
-    "idUsuari": 1,
+    "idUsuari": 13,
     "valor": 3,
-    "dataRegistre": "2025-05-01",
-    "comentari": "S'han realitzat 3 reunions individuals amb membres de l'equip."
+    "dataRegistre": "2026-06-10",
+    "comentari": "Dificultats per avançar al ritme previst; es recomana suport addicional."
   },
   {
     "idRegistre": 2,
     "idPrograma": 1,
     "idKPI": 1,
-    "idUsuari": 1,
-    "valor": 5,
-    "dataRegistre": "2025-05-15",
-    "comentari": "S'han recuperat les reunions ajornades durant la primera quinzena."
+    "idUsuari": 13,
+    "valor": 0,
+    "dataRegistre": "2026-06-24",
+    "comentari": "Dificultats per avançar al ritme previst; es recomana suport addicional."
   },
   {
     "idRegistre": 3,
     "idPrograma": 1,
-    "idKPI": 2,
-    "idUsuari": 1,
-    "valor": 65,
-    "dataRegistre": "2025-05-15",
-    "comentari": "La majoria de tasques s'han completat dins del termini previst."
+    "idKPI": 1,
+    "idUsuari": 13,
+    "valor": 1,
+    "dataRegistre": "2026-07-08",
+    "comentari": "Dificultats per avançar al ritme previst; es recomana suport addicional."
   },
   {
     "idRegistre": 4,
     "idPrograma": 1,
     "idKPI": 2,
-    "idUsuari": 1,
-    "valor": 82,
-    "dataRegistre": "2025-06-01",
-    "comentari": "S'ha assolit l'objectiu gràcies a una millor planificació setmanal."
+    "idUsuari": 13,
+    "valor": 1,
+    "dataRegistre": "2026-06-10",
+    "comentari": "Dificultats per avançar al ritme previst; es recomana suport addicional."
   },
   {
     "idRegistre": 5,
     "idPrograma": 1,
-    "idKPI": 3,
-    "idUsuari": 1,
+    "idKPI": 2,
+    "idUsuari": 13,
     "valor": 2,
-    "dataRegistre": "2025-05-10",
-    "comentari": "Encara costa aplicar les tècniques apreses en situacions reals."
+    "dataRegistre": "2026-06-24",
+    "comentari": "Dificultats per avançar al ritme previst; es recomana suport addicional."
   },
   {
     "idRegistre": 6,
     "idPrograma": 1,
-    "idKPI": 3,
-    "idUsuari": 1,
-    "valor": 4,
-    "dataRegistre": "2025-06-05",
-    "comentari": "Es percep una millora clara en la qualitat de les interaccions amb l'equip."
+    "idKPI": 2,
+    "idUsuari": 13,
+    "valor": 2,
+    "dataRegistre": "2026-07-08",
+    "comentari": "Dificultats per avançar al ritme previst; es recomana suport addicional."
   },
   {
     "idRegistre": 7,
     "idPrograma": 1,
-    "idKPI": 4,
-    "idUsuari": 1,
-    "valor": 1,
-    "dataRegistre": "2025-06-05",
-    "comentari": "S'ha definit i validat el pla de millora amb el supervisor."
+    "idKPI": 3,
+    "idUsuari": 13,
+    "valor": 6,
+    "dataRegistre": "2026-06-10",
+    "comentari": "Dificultats per avançar al ritme previst; es recomana suport addicional."
   },
   {
     "idRegistre": 8,
     "idPrograma": 1,
-    "idKPI": 5,
-    "idUsuari": 1,
-    "valor": 40,
-    "dataRegistre": "2025-05-12",
-    "comentari": "Participació limitada per càrrega de feina elevada."
+    "idKPI": 3,
+    "idUsuari": 13,
+    "valor": 1,
+    "dataRegistre": "2026-06-24",
+    "comentari": "Dificultats per avançar al ritme previst; es recomana suport addicional."
   },
   {
     "idRegistre": 9,
     "idPrograma": 1,
-    "idKPI": 5,
-    "idUsuari": 1,
-    "valor": 70,
-    "dataRegistre": "2025-06-02",
-    "comentari": "S'ha incrementat la participació després de reorganitzar prioritats."
+    "idKPI": 3,
+    "idUsuari": 13,
+    "valor": 3,
+    "dataRegistre": "2026-07-08",
+    "comentari": "Dificultats per avançar al ritme previst; es recomana suport addicional."
   },
   {
     "idRegistre": 10,
     "idPrograma": 1,
+    "idKPI": 4,
+    "idUsuari": 13,
+    "valor": 1,
+    "dataRegistre": "2026-06-10",
+    "comentari": "Dificultats per avançar al ritme previst; es recomana suport addicional."
+  },
+  {
+    "idRegistre": 11,
+    "idPrograma": 1,
+    "idKPI": 4,
+    "idUsuari": 13,
+    "valor": 1,
+    "dataRegistre": "2026-06-24",
+    "comentari": "Dificultats per avançar al ritme previst; es recomana suport addicional."
+  },
+  {
+    "idRegistre": 12,
+    "idPrograma": 1,
+    "idKPI": 4,
+    "idUsuari": 13,
+    "valor": 2,
+    "dataRegistre": "2026-07-08",
+    "comentari": "Dificultats per avançar al ritme previst; es recomana suport addicional."
+  },
+  {
+    "idRegistre": 13,
+    "idPrograma": 1,
+    "idKPI": 5,
+    "idUsuari": 13,
+    "valor": 0,
+    "dataRegistre": "2026-06-10",
+    "comentari": "Dificultats per avançar al ritme previst; es recomana suport addicional."
+  },
+  {
+    "idRegistre": 14,
+    "idPrograma": 1,
+    "idKPI": 5,
+    "idUsuari": 13,
+    "valor": 1,
+    "dataRegistre": "2026-06-24",
+    "comentari": "Dificultats per avançar al ritme previst; es recomana suport addicional."
+  },
+  {
+    "idRegistre": 15,
+    "idPrograma": 1,
+    "idKPI": 5,
+    "idUsuari": 13,
+    "valor": 3,
+    "dataRegistre": "2026-07-08",
+    "comentari": "Dificultats per avançar al ritme previst; es recomana suport addicional."
+  },
+  {
+    "idRegistre": 16,
+    "idPrograma": 1,
     "idKPI": 6,
-    "idUsuari": 1,
-    "valor": 90,
-    "dataRegistre": "2025-06-02",
-    "comentari": "La transferència dels aprenentatges al lloc de treball és pràcticament completa."
+    "idUsuari": 13,
+    "valor": 2,
+    "dataRegistre": "2026-06-10",
+    "comentari": "Dificultats per avançar al ritme previst; es recomana suport addicional."
+  },
+  {
+    "idRegistre": 17,
+    "idPrograma": 1,
+    "idKPI": 6,
+    "idUsuari": 13,
+    "valor": 1,
+    "dataRegistre": "2026-06-24",
+    "comentari": "Dificultats per avançar al ritme previst; es recomana suport addicional."
+  },
+  {
+    "idRegistre": 18,
+    "idPrograma": 1,
+    "idKPI": 6,
+    "idUsuari": 13,
+    "valor": 2,
+    "dataRegistre": "2026-07-08",
+    "comentari": "Dificultats per avançar al ritme previst; es recomana suport addicional."
+  },
+  {
+    "idRegistre": 19,
+    "idPrograma": 1,
+    "idKPI": 7,
+    "idUsuari": 13,
+    "valor": 6,
+    "dataRegistre": "2026-06-10",
+    "comentari": "Dificultats per avançar al ritme previst; es recomana suport addicional."
+  },
+  {
+    "idRegistre": 20,
+    "idPrograma": 1,
+    "idKPI": 7,
+    "idUsuari": 13,
+    "valor": 0,
+    "dataRegistre": "2026-06-24",
+    "comentari": "Dificultats per avançar al ritme previst; es recomana suport addicional."
+  },
+  {
+    "idRegistre": 21,
+    "idPrograma": 1,
+    "idKPI": 7,
+    "idUsuari": 13,
+    "valor": 6,
+    "dataRegistre": "2026-07-08",
+    "comentari": "Dificultats per avançar al ritme previst; es recomana suport addicional."
+  },
+  {
+    "idRegistre": 22,
+    "idPrograma": 1,
+    "idKPI": 8,
+    "idUsuari": 13,
+    "valor": 2,
+    "dataRegistre": "2026-06-10",
+    "comentari": "Dificultats per avançar al ritme previst; es recomana suport addicional."
+  },
+  {
+    "idRegistre": 23,
+    "idPrograma": 1,
+    "idKPI": 8,
+    "idUsuari": 13,
+    "valor": 1,
+    "dataRegistre": "2026-06-24",
+    "comentari": "Dificultats per avançar al ritme previst; es recomana suport addicional."
+  },
+  {
+    "idRegistre": 24,
+    "idPrograma": 1,
+    "idKPI": 8,
+    "idUsuari": 13,
+    "valor": 1,
+    "dataRegistre": "2026-07-08",
+    "comentari": "Dificultats per avançar al ritme previst; es recomana suport addicional."
+  },
+  {
+    "idRegistre": 25,
+    "idPrograma": 1,
+    "idKPI": 9,
+    "idUsuari": 13,
+    "valor": 5,
+    "dataRegistre": "2026-06-10",
+    "comentari": "Dificultats per avançar al ritme previst; es recomana suport addicional."
+  },
+  {
+    "idRegistre": 26,
+    "idPrograma": 1,
+    "idKPI": 9,
+    "idUsuari": 13,
+    "valor": 2,
+    "dataRegistre": "2026-06-24",
+    "comentari": "Dificultats per avançar al ritme previst; es recomana suport addicional."
+  },
+  {
+    "idRegistre": 27,
+    "idPrograma": 1,
+    "idKPI": 9,
+    "idUsuari": 13,
+    "valor": 0,
+    "dataRegistre": "2026-07-08",
+    "comentari": "Dificultats per avançar al ritme previst; es recomana suport addicional."
+  },
+  {
+    "idRegistre": 28,
+    "idPrograma": 1,
+    "idKPI": 10,
+    "idUsuari": 13,
+    "valor": 1,
+    "dataRegistre": "2026-06-10",
+    "comentari": "Dificultats per avançar al ritme previst; es recomana suport addicional."
+  },
+  {
+    "idRegistre": 29,
+    "idPrograma": 1,
+    "idKPI": 10,
+    "idUsuari": 13,
+    "valor": 2,
+    "dataRegistre": "2026-06-24",
+    "comentari": "Dificultats per avançar al ritme previst; es recomana suport addicional."
+  },
+  {
+    "idRegistre": 30,
+    "idPrograma": 1,
+    "idKPI": 10,
+    "idUsuari": 13,
+    "valor": 2,
+    "dataRegistre": "2026-07-08",
+    "comentari": "Dificultats per avançar al ritme previst; es recomana suport addicional."
+  },
+  {
+    "idRegistre": 31,
+    "idPrograma": 1,
+    "idKPI": 11,
+    "idUsuari": 13,
+    "valor": 6,
+    "dataRegistre": "2026-06-10",
+    "comentari": "Dificultats per avançar al ritme previst; es recomana suport addicional."
+  },
+  {
+    "idRegistre": 32,
+    "idPrograma": 1,
+    "idKPI": 11,
+    "idUsuari": 13,
+    "valor": 5,
+    "dataRegistre": "2026-06-24",
+    "comentari": "Dificultats per avançar al ritme previst; es recomana suport addicional."
+  },
+  {
+    "idRegistre": 33,
+    "idPrograma": 1,
+    "idKPI": 11,
+    "idUsuari": 13,
+    "valor": 4,
+    "dataRegistre": "2026-07-08",
+    "comentari": "Dificultats per avançar al ritme previst; es recomana suport addicional."
+  },
+  {
+    "idRegistre": 34,
+    "idPrograma": 1,
+    "idKPI": 12,
+    "idUsuari": 13,
+    "valor": 2,
+    "dataRegistre": "2026-06-10",
+    "comentari": "Dificultats per avançar al ritme previst; es recomana suport addicional."
+  },
+  {
+    "idRegistre": 35,
+    "idPrograma": 1,
+    "idKPI": 12,
+    "idUsuari": 13,
+    "valor": 2,
+    "dataRegistre": "2026-06-24",
+    "comentari": "Dificultats per avançar al ritme previst; es recomana suport addicional."
+  },
+  {
+    "idRegistre": 36,
+    "idPrograma": 1,
+    "idKPI": 12,
+    "idUsuari": 13,
+    "valor": 2,
+    "dataRegistre": "2026-07-08",
+    "comentari": "Dificultats per avançar al ritme previst; es recomana suport addicional."
+  },
+  {
+    "idRegistre": 37,
+    "idPrograma": 1,
+    "idKPI": 13,
+    "idUsuari": 13,
+    "valor": 4,
+    "dataRegistre": "2026-06-10",
+    "comentari": "Dificultats per avançar al ritme previst; es recomana suport addicional."
+  },
+  {
+    "idRegistre": 38,
+    "idPrograma": 1,
+    "idKPI": 13,
+    "idUsuari": 13,
+    "valor": 3,
+    "dataRegistre": "2026-06-24",
+    "comentari": "Dificultats per avançar al ritme previst; es recomana suport addicional."
+  },
+  {
+    "idRegistre": 39,
+    "idPrograma": 1,
+    "idKPI": 13,
+    "idUsuari": 13,
+    "valor": 4,
+    "dataRegistre": "2026-07-08",
+    "comentari": "Dificultats per avançar al ritme previst; es recomana suport addicional."
+  },
+  {
+    "idRegistre": 40,
+    "idPrograma": 1,
+    "idKPI": 14,
+    "idUsuari": 13,
+    "valor": 2,
+    "dataRegistre": "2026-06-10",
+    "comentari": "Dificultats per avançar al ritme previst; es recomana suport addicional."
+  },
+  {
+    "idRegistre": 41,
+    "idPrograma": 1,
+    "idKPI": 14,
+    "idUsuari": 13,
+    "valor": 2,
+    "dataRegistre": "2026-06-24",
+    "comentari": "Dificultats per avançar al ritme previst; es recomana suport addicional."
+  },
+  {
+    "idRegistre": 42,
+    "idPrograma": 1,
+    "idKPI": 14,
+    "idUsuari": 13,
+    "valor": 1,
+    "dataRegistre": "2026-07-08",
+    "comentari": "Dificultats per avançar al ritme previst; es recomana suport addicional."
+  },
+  {
+    "idRegistre": 43,
+    "idPrograma": 1,
+    "idKPI": 15,
+    "idUsuari": 13,
+    "valor": 2,
+    "dataRegistre": "2026-06-10",
+    "comentari": "Dificultats per avançar al ritme previst; es recomana suport addicional."
+  },
+  {
+    "idRegistre": 44,
+    "idPrograma": 1,
+    "idKPI": 15,
+    "idUsuari": 13,
+    "valor": 2,
+    "dataRegistre": "2026-06-24",
+    "comentari": "Dificultats per avançar al ritme previst; es recomana suport addicional."
+  },
+  {
+    "idRegistre": 45,
+    "idPrograma": 1,
+    "idKPI": 15,
+    "idUsuari": 13,
+    "valor": 1,
+    "dataRegistre": "2026-07-08",
+    "comentari": "Dificultats per avançar al ritme previst; es recomana suport addicional."
+  },
+  {
+    "idRegistre": 46,
+    "idPrograma": 1,
+    "idKPI": 16,
+    "idUsuari": 13,
+    "valor": 1,
+    "dataRegistre": "2026-06-10",
+    "comentari": "Dificultats per avançar al ritme previst; es recomana suport addicional."
+  },
+  {
+    "idRegistre": 47,
+    "idPrograma": 1,
+    "idKPI": 16,
+    "idUsuari": 13,
+    "valor": 1,
+    "dataRegistre": "2026-06-24",
+    "comentari": "Dificultats per avançar al ritme previst; es recomana suport addicional."
+  },
+  {
+    "idRegistre": 48,
+    "idPrograma": 1,
+    "idKPI": 16,
+    "idUsuari": 13,
+    "valor": 1,
+    "dataRegistre": "2026-07-08",
+    "comentari": "Dificultats per avançar al ritme previst; es recomana suport addicional."
+  },
+  {
+    "idRegistre": 49,
+    "idPrograma": 1,
+    "idKPI": 1,
+    "idUsuari": 14,
+    "valor": 2,
+    "dataRegistre": "2026-06-10",
+    "comentari": "Registre incomplet o irregular durant el període."
+  },
+  {
+    "idRegistre": 50,
+    "idPrograma": 1,
+    "idKPI": 3,
+    "idUsuari": 14,
+    "valor": 5,
+    "dataRegistre": "2026-06-10",
+    "comentari": "Registre incomplet o irregular durant el període."
+  },
+  {
+    "idRegistre": 51,
+    "idPrograma": 1,
+    "idKPI": 3,
+    "idUsuari": 14,
+    "valor": 1,
+    "dataRegistre": "2026-06-24",
+    "comentari": "Registre incomplet o irregular durant el període."
+  },
+  {
+    "idRegistre": 52,
+    "idPrograma": 1,
+    "idKPI": 3,
+    "idUsuari": 14,
+    "valor": 1,
+    "dataRegistre": "2026-07-08",
+    "comentari": "Registre incomplet o irregular durant el període."
+  },
+  {
+    "idRegistre": 53,
+    "idPrograma": 1,
+    "idKPI": 5,
+    "idUsuari": 14,
+    "valor": 3,
+    "dataRegistre": "2026-06-10",
+    "comentari": "Registre incomplet o irregular durant el període."
+  },
+  {
+    "idRegistre": 54,
+    "idPrograma": 1,
+    "idKPI": 5,
+    "idUsuari": 14,
+    "valor": 3,
+    "dataRegistre": "2026-06-24",
+    "comentari": "Registre incomplet o irregular durant el període."
+  },
+  {
+    "idRegistre": 55,
+    "idPrograma": 1,
+    "idKPI": 5,
+    "idUsuari": 14,
+    "valor": 4,
+    "dataRegistre": "2026-07-08",
+    "comentari": "Registre incomplet o irregular durant el període."
+  },
+  {
+    "idRegistre": 56,
+    "idPrograma": 1,
+    "idKPI": 11,
+    "idUsuari": 14,
+    "valor": 6,
+    "dataRegistre": "2026-06-10",
+    "comentari": "Registre incomplet o irregular durant el període."
+  },
+  {
+    "idRegistre": 57,
+    "idPrograma": 1,
+    "idKPI": 11,
+    "idUsuari": 14,
+    "valor": 3,
+    "dataRegistre": "2026-07-08",
+    "comentari": "Registre incomplet o irregular durant el període."
+  },
+  {
+    "idRegistre": 58,
+    "idPrograma": 1,
+    "idKPI": 12,
+    "idUsuari": 14,
+    "valor": 2,
+    "dataRegistre": "2026-06-10",
+    "comentari": "Registre incomplet o irregular durant el període."
+  },
+  {
+    "idRegistre": 59,
+    "idPrograma": 1,
+    "idKPI": 13,
+    "idUsuari": 14,
+    "valor": 1,
+    "dataRegistre": "2026-06-10",
+    "comentari": "Registre incomplet o irregular durant el període."
+  },
+  {
+    "idRegistre": 60,
+    "idPrograma": 1,
+    "idKPI": 13,
+    "idUsuari": 14,
+    "valor": 4,
+    "dataRegistre": "2026-06-24",
+    "comentari": "Registre incomplet o irregular durant el període."
+  },
+  {
+    "idRegistre": 61,
+    "idPrograma": 1,
+    "idKPI": 15,
+    "idUsuari": 14,
+    "valor": 4,
+    "dataRegistre": "2026-06-10",
+    "comentari": "Registre incomplet o irregular durant el període."
+  },
+  {
+    "idRegistre": 62,
+    "idPrograma": 1,
+    "idKPI": 1,
+    "idUsuari": 15,
+    "valor": 11,
+    "dataRegistre": "2026-06-10",
+    "comentari": "Evolució positiva i alineada amb l'objectiu definit."
+  },
+  {
+    "idRegistre": 63,
+    "idPrograma": 1,
+    "idKPI": 1,
+    "idUsuari": 15,
+    "valor": 11,
+    "dataRegistre": "2026-06-24",
+    "comentari": "Evolució positiva i alineada amb l'objectiu definit."
+  },
+  {
+    "idRegistre": 64,
+    "idPrograma": 1,
+    "idKPI": 1,
+    "idUsuari": 15,
+    "valor": 10,
+    "dataRegistre": "2026-07-08",
+    "comentari": "Evolució positiva i alineada amb l'objectiu definit."
+  },
+  {
+    "idRegistre": 65,
+    "idPrograma": 1,
+    "idKPI": 2,
+    "idUsuari": 15,
+    "valor": 4,
+    "dataRegistre": "2026-06-10",
+    "comentari": "Evolució positiva i alineada amb l'objectiu definit."
+  },
+  {
+    "idRegistre": 66,
+    "idPrograma": 1,
+    "idKPI": 2,
+    "idUsuari": 15,
+    "valor": 4,
+    "dataRegistre": "2026-06-24",
+    "comentari": "Evolució positiva i alineada amb l'objectiu definit."
+  },
+  {
+    "idRegistre": 67,
+    "idPrograma": 1,
+    "idKPI": 2,
+    "idUsuari": 15,
+    "valor": 5,
+    "dataRegistre": "2026-07-08",
+    "comentari": "Evolució positiva i alineada amb l'objectiu definit."
+  },
+  {
+    "idRegistre": 68,
+    "idPrograma": 1,
+    "idKPI": 3,
+    "idUsuari": 15,
+    "valor": 16,
+    "dataRegistre": "2026-06-10",
+    "comentari": "Evolució positiva i alineada amb l'objectiu definit."
+  },
+  {
+    "idRegistre": 69,
+    "idPrograma": 1,
+    "idKPI": 3,
+    "idUsuari": 15,
+    "valor": 20,
+    "dataRegistre": "2026-06-24",
+    "comentari": "Evolució positiva i alineada amb l'objectiu definit."
+  },
+  {
+    "idRegistre": 70,
+    "idPrograma": 1,
+    "idKPI": 3,
+    "idUsuari": 15,
+    "valor": 19,
+    "dataRegistre": "2026-07-08",
+    "comentari": "Evolució positiva i alineada amb l'objectiu definit."
+  },
+  {
+    "idRegistre": 71,
+    "idPrograma": 1,
+    "idKPI": 4,
+    "idUsuari": 15,
+    "valor": 4,
+    "dataRegistre": "2026-06-10",
+    "comentari": "Evolució positiva i alineada amb l'objectiu definit."
+  },
+  {
+    "idRegistre": 72,
+    "idPrograma": 1,
+    "idKPI": 4,
+    "idUsuari": 15,
+    "valor": 5,
+    "dataRegistre": "2026-06-24",
+    "comentari": "Evolució positiva i alineada amb l'objectiu definit."
+  },
+  {
+    "idRegistre": 73,
+    "idPrograma": 1,
+    "idKPI": 4,
+    "idUsuari": 15,
+    "valor": 5,
+    "dataRegistre": "2026-07-08",
+    "comentari": "Evolució positiva i alineada amb l'objectiu definit."
+  },
+  {
+    "idRegistre": 74,
+    "idPrograma": 1,
+    "idKPI": 5,
+    "idUsuari": 15,
+    "valor": 10,
+    "dataRegistre": "2026-06-10",
+    "comentari": "Evolució positiva i alineada amb l'objectiu definit."
+  },
+  {
+    "idRegistre": 75,
+    "idPrograma": 1,
+    "idKPI": 5,
+    "idUsuari": 15,
+    "valor": 9,
+    "dataRegistre": "2026-06-24",
+    "comentari": "Evolució positiva i alineada amb l'objectiu definit."
+  },
+  {
+    "idRegistre": 76,
+    "idPrograma": 1,
+    "idKPI": 5,
+    "idUsuari": 15,
+    "valor": 11,
+    "dataRegistre": "2026-07-08",
+    "comentari": "Evolució positiva i alineada amb l'objectiu definit."
+  },
+  {
+    "idRegistre": 77,
+    "idPrograma": 1,
+    "idKPI": 6,
+    "idUsuari": 15,
+    "valor": 4,
+    "dataRegistre": "2026-06-10",
+    "comentari": "Evolució positiva i alineada amb l'objectiu definit."
+  },
+  {
+    "idRegistre": 78,
+    "idPrograma": 1,
+    "idKPI": 6,
+    "idUsuari": 15,
+    "valor": 4,
+    "dataRegistre": "2026-06-24",
+    "comentari": "Evolució positiva i alineada amb l'objectiu definit."
+  },
+  {
+    "idRegistre": 79,
+    "idPrograma": 1,
+    "idKPI": 6,
+    "idUsuari": 15,
+    "valor": 4,
+    "dataRegistre": "2026-07-08",
+    "comentari": "Evolució positiva i alineada amb l'objectiu definit."
+  },
+  {
+    "idRegistre": 80,
+    "idPrograma": 1,
+    "idKPI": 7,
+    "idUsuari": 15,
+    "valor": 20,
+    "dataRegistre": "2026-06-10",
+    "comentari": "Evolució positiva i alineada amb l'objectiu definit."
+  },
+  {
+    "idRegistre": 81,
+    "idPrograma": 1,
+    "idKPI": 7,
+    "idUsuari": 15,
+    "valor": 19,
+    "dataRegistre": "2026-06-24",
+    "comentari": "Evolució positiva i alineada amb l'objectiu definit."
+  },
+  {
+    "idRegistre": 82,
+    "idPrograma": 1,
+    "idKPI": 7,
+    "idUsuari": 15,
+    "valor": 14,
+    "dataRegistre": "2026-07-08",
+    "comentari": "Evolució positiva i alineada amb l'objectiu definit."
+  },
+  {
+    "idRegistre": 83,
+    "idPrograma": 1,
+    "idKPI": 8,
+    "idUsuari": 15,
+    "valor": 5,
+    "dataRegistre": "2026-06-10",
+    "comentari": "Evolució positiva i alineada amb l'objectiu definit."
+  },
+  {
+    "idRegistre": 84,
+    "idPrograma": 1,
+    "idKPI": 8,
+    "idUsuari": 15,
+    "valor": 4,
+    "dataRegistre": "2026-06-24",
+    "comentari": "Evolució positiva i alineada amb l'objectiu definit."
+  },
+  {
+    "idRegistre": 85,
+    "idPrograma": 1,
+    "idKPI": 8,
+    "idUsuari": 15,
+    "valor": 5,
+    "dataRegistre": "2026-07-08",
+    "comentari": "Evolució positiva i alineada amb l'objectiu definit."
+  },
+  {
+    "idRegistre": 86,
+    "idPrograma": 1,
+    "idKPI": 9,
+    "idUsuari": 15,
+    "valor": 11,
+    "dataRegistre": "2026-06-10",
+    "comentari": "Evolució positiva i alineada amb l'objectiu definit."
+  },
+  {
+    "idRegistre": 87,
+    "idPrograma": 1,
+    "idKPI": 9,
+    "idUsuari": 15,
+    "valor": 9,
+    "dataRegistre": "2026-06-24",
+    "comentari": "Evolució positiva i alineada amb l'objectiu definit."
+  },
+  {
+    "idRegistre": 88,
+    "idPrograma": 1,
+    "idKPI": 9,
+    "idUsuari": 15,
+    "valor": 11,
+    "dataRegistre": "2026-07-08",
+    "comentari": "Evolució positiva i alineada amb l'objectiu definit."
+  },
+  {
+    "idRegistre": 89,
+    "idPrograma": 1,
+    "idKPI": 10,
+    "idUsuari": 15,
+    "valor": 5,
+    "dataRegistre": "2026-06-10",
+    "comentari": "Evolució positiva i alineada amb l'objectiu definit."
+  },
+  {
+    "idRegistre": 90,
+    "idPrograma": 1,
+    "idKPI": 10,
+    "idUsuari": 15,
+    "valor": 4,
+    "dataRegistre": "2026-06-24",
+    "comentari": "Evolució positiva i alineada amb l'objectiu definit."
+  },
+  {
+    "idRegistre": 91,
+    "idPrograma": 1,
+    "idKPI": 10,
+    "idUsuari": 15,
+    "valor": 5,
+    "dataRegistre": "2026-07-08",
+    "comentari": "Evolució positiva i alineada amb l'objectiu definit."
+  },
+  {
+    "idRegistre": 92,
+    "idPrograma": 1,
+    "idKPI": 11,
+    "idUsuari": 15,
+    "valor": 16,
+    "dataRegistre": "2026-06-10",
+    "comentari": "Evolució positiva i alineada amb l'objectiu definit."
+  },
+  {
+    "idRegistre": 93,
+    "idPrograma": 1,
+    "idKPI": 11,
+    "idUsuari": 15,
+    "valor": 18,
+    "dataRegistre": "2026-06-24",
+    "comentari": "Evolució positiva i alineada amb l'objectiu definit."
+  },
+  {
+    "idRegistre": 94,
+    "idPrograma": 1,
+    "idKPI": 11,
+    "idUsuari": 15,
+    "valor": 16,
+    "dataRegistre": "2026-07-08",
+    "comentari": "Evolució positiva i alineada amb l'objectiu definit."
+  },
+  {
+    "idRegistre": 95,
+    "idPrograma": 1,
+    "idKPI": 12,
+    "idUsuari": 15,
+    "valor": 4,
+    "dataRegistre": "2026-06-10",
+    "comentari": "Evolució positiva i alineada amb l'objectiu definit."
+  },
+  {
+    "idRegistre": 96,
+    "idPrograma": 1,
+    "idKPI": 12,
+    "idUsuari": 15,
+    "valor": 4,
+    "dataRegistre": "2026-06-24",
+    "comentari": "Evolució positiva i alineada amb l'objectiu definit."
+  },
+  {
+    "idRegistre": 97,
+    "idPrograma": 1,
+    "idKPI": 12,
+    "idUsuari": 15,
+    "valor": 4,
+    "dataRegistre": "2026-07-08",
+    "comentari": "Evolució positiva i alineada amb l'objectiu definit."
+  },
+  {
+    "idRegistre": 98,
+    "idPrograma": 1,
+    "idKPI": 13,
+    "idUsuari": 15,
+    "valor": 12,
+    "dataRegistre": "2026-06-10",
+    "comentari": "Evolució positiva i alineada amb l'objectiu definit."
+  },
+  {
+    "idRegistre": 99,
+    "idPrograma": 1,
+    "idKPI": 13,
+    "idUsuari": 15,
+    "valor": 12,
+    "dataRegistre": "2026-06-24",
+    "comentari": "Evolució positiva i alineada amb l'objectiu definit."
+  },
+  {
+    "idRegistre": 100,
+    "idPrograma": 1,
+    "idKPI": 13,
+    "idUsuari": 15,
+    "valor": 11,
+    "dataRegistre": "2026-07-08",
+    "comentari": "Evolució positiva i alineada amb l'objectiu definit."
+  },
+  {
+    "idRegistre": 101,
+    "idPrograma": 1,
+    "idKPI": 14,
+    "idUsuari": 15,
+    "valor": 4,
+    "dataRegistre": "2026-06-10",
+    "comentari": "Evolució positiva i alineada amb l'objectiu definit."
+  },
+  {
+    "idRegistre": 102,
+    "idPrograma": 1,
+    "idKPI": 14,
+    "idUsuari": 15,
+    "valor": 4,
+    "dataRegistre": "2026-06-24",
+    "comentari": "Evolució positiva i alineada amb l'objectiu definit."
+  },
+  {
+    "idRegistre": 103,
+    "idPrograma": 1,
+    "idKPI": 14,
+    "idUsuari": 15,
+    "valor": 5,
+    "dataRegistre": "2026-07-08",
+    "comentari": "Evolució positiva i alineada amb l'objectiu definit."
+  },
+  {
+    "idRegistre": 104,
+    "idPrograma": 1,
+    "idKPI": 15,
+    "idUsuari": 15,
+    "valor": 20,
+    "dataRegistre": "2026-06-10",
+    "comentari": "Evolució positiva i alineada amb l'objectiu definit."
+  },
+  {
+    "idRegistre": 105,
+    "idPrograma": 1,
+    "idKPI": 15,
+    "idUsuari": 15,
+    "valor": 13,
+    "dataRegistre": "2026-06-24",
+    "comentari": "Evolució positiva i alineada amb l'objectiu definit."
+  },
+  {
+    "idRegistre": 106,
+    "idPrograma": 1,
+    "idKPI": 15,
+    "idUsuari": 15,
+    "valor": 16,
+    "dataRegistre": "2026-07-08",
+    "comentari": "Evolució positiva i alineada amb l'objectiu definit."
+  },
+  {
+    "idRegistre": 107,
+    "idPrograma": 1,
+    "idKPI": 16,
+    "idUsuari": 15,
+    "valor": 4,
+    "dataRegistre": "2026-06-10",
+    "comentari": "Evolució positiva i alineada amb l'objectiu definit."
+  },
+  {
+    "idRegistre": 108,
+    "idPrograma": 1,
+    "idKPI": 16,
+    "idUsuari": 15,
+    "valor": 5,
+    "dataRegistre": "2026-06-24",
+    "comentari": "Evolució positiva i alineada amb l'objectiu definit."
+  },
+  {
+    "idRegistre": 109,
+    "idPrograma": 1,
+    "idKPI": 16,
+    "idUsuari": 15,
+    "valor": 5,
+    "dataRegistre": "2026-07-08",
+    "comentari": "Evolució positiva i alineada amb l'objectiu definit."
+  },
+  {
+    "idRegistre": 110,
+    "idPrograma": 2,
+    "idKPI": 18,
+    "idUsuari": 13,
+    "valor": 2,
+    "dataRegistre": "2026-06-10",
+    "comentari": "Registre incomplet o irregular durant el període."
+  },
+  {
+    "idRegistre": 111,
+    "idPrograma": 2,
+    "idKPI": 18,
+    "idUsuari": 13,
+    "valor": 2,
+    "dataRegistre": "2026-07-08",
+    "comentari": "Registre incomplet o irregular durant el període."
+  },
+  {
+    "idRegistre": 112,
+    "idPrograma": 2,
+    "idKPI": 20,
+    "idUsuari": 13,
+    "valor": 2,
+    "dataRegistre": "2026-06-10",
+    "comentari": "Registre incomplet o irregular durant el període."
+  },
+  {
+    "idRegistre": 113,
+    "idPrograma": 2,
+    "idKPI": 21,
+    "idUsuari": 13,
+    "valor": 3,
+    "dataRegistre": "2026-06-10",
+    "comentari": "Registre incomplet o irregular durant el període."
+  },
+  {
+    "idRegistre": 114,
+    "idPrograma": 2,
+    "idKPI": 21,
+    "idUsuari": 13,
+    "valor": 1,
+    "dataRegistre": "2026-07-08",
+    "comentari": "Registre incomplet o irregular durant el període."
+  },
+  {
+    "idRegistre": 115,
+    "idPrograma": 2,
+    "idKPI": 24,
+    "idUsuari": 13,
+    "valor": 1,
+    "dataRegistre": "2026-06-10",
+    "comentari": "Registre incomplet o irregular durant el període."
+  },
+  {
+    "idRegistre": 116,
+    "idPrograma": 2,
+    "idKPI": 17,
+    "idUsuari": 15,
+    "valor": 7,
+    "dataRegistre": "2026-06-10",
+    "comentari": "Progrés parcial; cal mantenir el seguiment per consolidar l'hàbit."
+  },
+  {
+    "idRegistre": 117,
+    "idPrograma": 2,
+    "idKPI": 17,
+    "idUsuari": 15,
+    "valor": 6,
+    "dataRegistre": "2026-06-24",
+    "comentari": "Progrés parcial; cal mantenir el seguiment per consolidar l'hàbit."
+  },
+  {
+    "idRegistre": 118,
+    "idPrograma": 2,
+    "idKPI": 17,
+    "idUsuari": 15,
+    "valor": 7,
+    "dataRegistre": "2026-07-08",
+    "comentari": "Progrés parcial; cal mantenir el seguiment per consolidar l'hàbit."
+  },
+  {
+    "idRegistre": 119,
+    "idPrograma": 2,
+    "idKPI": 18,
+    "idUsuari": 15,
+    "valor": 4,
+    "dataRegistre": "2026-06-10",
+    "comentari": "Progrés parcial; cal mantenir el seguiment per consolidar l'hàbit."
+  },
+  {
+    "idRegistre": 120,
+    "idPrograma": 2,
+    "idKPI": 18,
+    "idUsuari": 15,
+    "valor": 3,
+    "dataRegistre": "2026-06-24",
+    "comentari": "Progrés parcial; cal mantenir el seguiment per consolidar l'hàbit."
+  },
+  {
+    "idRegistre": 121,
+    "idPrograma": 2,
+    "idKPI": 18,
+    "idUsuari": 15,
+    "valor": 3,
+    "dataRegistre": "2026-07-08",
+    "comentari": "Progrés parcial; cal mantenir el seguiment per consolidar l'hàbit."
+  },
+  {
+    "idRegistre": 122,
+    "idPrograma": 2,
+    "idKPI": 19,
+    "idUsuari": 15,
+    "valor": 10,
+    "dataRegistre": "2026-06-10",
+    "comentari": "Progrés parcial; cal mantenir el seguiment per consolidar l'hàbit."
+  },
+  {
+    "idRegistre": 123,
+    "idPrograma": 2,
+    "idKPI": 19,
+    "idUsuari": 15,
+    "valor": 9,
+    "dataRegistre": "2026-06-24",
+    "comentari": "Progrés parcial; cal mantenir el seguiment per consolidar l'hàbit."
+  },
+  {
+    "idRegistre": 124,
+    "idPrograma": 2,
+    "idKPI": 19,
+    "idUsuari": 15,
+    "valor": 8,
+    "dataRegistre": "2026-07-08",
+    "comentari": "Progrés parcial; cal mantenir el seguiment per consolidar l'hàbit."
+  },
+  {
+    "idRegistre": 125,
+    "idPrograma": 2,
+    "idKPI": 20,
+    "idUsuari": 15,
+    "valor": 4,
+    "dataRegistre": "2026-06-10",
+    "comentari": "Progrés parcial; cal mantenir el seguiment per consolidar l'hàbit."
+  },
+  {
+    "idRegistre": 126,
+    "idPrograma": 2,
+    "idKPI": 20,
+    "idUsuari": 15,
+    "valor": 3,
+    "dataRegistre": "2026-06-24",
+    "comentari": "Progrés parcial; cal mantenir el seguiment per consolidar l'hàbit."
+  },
+  {
+    "idRegistre": 127,
+    "idPrograma": 2,
+    "idKPI": 20,
+    "idUsuari": 15,
+    "valor": 3,
+    "dataRegistre": "2026-07-08",
+    "comentari": "Progrés parcial; cal mantenir el seguiment per consolidar l'hàbit."
+  },
+  {
+    "idRegistre": 128,
+    "idPrograma": 2,
+    "idKPI": 21,
+    "idUsuari": 15,
+    "valor": 7,
+    "dataRegistre": "2026-06-10",
+    "comentari": "Progrés parcial; cal mantenir el seguiment per consolidar l'hàbit."
+  },
+  {
+    "idRegistre": 129,
+    "idPrograma": 2,
+    "idKPI": 21,
+    "idUsuari": 15,
+    "valor": 7,
+    "dataRegistre": "2026-06-24",
+    "comentari": "Progrés parcial; cal mantenir el seguiment per consolidar l'hàbit."
+  },
+  {
+    "idRegistre": 130,
+    "idPrograma": 2,
+    "idKPI": 21,
+    "idUsuari": 15,
+    "valor": 6,
+    "dataRegistre": "2026-07-08",
+    "comentari": "Progrés parcial; cal mantenir el seguiment per consolidar l'hàbit."
+  },
+  {
+    "idRegistre": 131,
+    "idPrograma": 2,
+    "idKPI": 22,
+    "idUsuari": 15,
+    "valor": 3,
+    "dataRegistre": "2026-06-10",
+    "comentari": "Progrés parcial; cal mantenir el seguiment per consolidar l'hàbit."
+  },
+  {
+    "idRegistre": 132,
+    "idPrograma": 2,
+    "idKPI": 22,
+    "idUsuari": 15,
+    "valor": 3,
+    "dataRegistre": "2026-06-24",
+    "comentari": "Progrés parcial; cal mantenir el seguiment per consolidar l'hàbit."
+  },
+  {
+    "idRegistre": 133,
+    "idPrograma": 2,
+    "idKPI": 22,
+    "idUsuari": 15,
+    "valor": 3,
+    "dataRegistre": "2026-07-08",
+    "comentari": "Progrés parcial; cal mantenir el seguiment per consolidar l'hàbit."
+  },
+  {
+    "idRegistre": 134,
+    "idPrograma": 2,
+    "idKPI": 23,
+    "idUsuari": 15,
+    "valor": 9,
+    "dataRegistre": "2026-06-10",
+    "comentari": "Progrés parcial; cal mantenir el seguiment per consolidar l'hàbit."
+  },
+  {
+    "idRegistre": 135,
+    "idPrograma": 2,
+    "idKPI": 23,
+    "idUsuari": 15,
+    "valor": 10,
+    "dataRegistre": "2026-06-24",
+    "comentari": "Progrés parcial; cal mantenir el seguiment per consolidar l'hàbit."
+  },
+  {
+    "idRegistre": 136,
+    "idPrograma": 2,
+    "idKPI": 23,
+    "idUsuari": 15,
+    "valor": 10,
+    "dataRegistre": "2026-07-08",
+    "comentari": "Progrés parcial; cal mantenir el seguiment per consolidar l'hàbit."
+  },
+  {
+    "idRegistre": 137,
+    "idPrograma": 2,
+    "idKPI": 24,
+    "idUsuari": 15,
+    "valor": 4,
+    "dataRegistre": "2026-06-10",
+    "comentari": "Progrés parcial; cal mantenir el seguiment per consolidar l'hàbit."
+  },
+  {
+    "idRegistre": 138,
+    "idPrograma": 2,
+    "idKPI": 24,
+    "idUsuari": 15,
+    "valor": 3,
+    "dataRegistre": "2026-06-24",
+    "comentari": "Progrés parcial; cal mantenir el seguiment per consolidar l'hàbit."
+  },
+  {
+    "idRegistre": 139,
+    "idPrograma": 2,
+    "idKPI": 24,
+    "idUsuari": 15,
+    "valor": 3,
+    "dataRegistre": "2026-07-08",
+    "comentari": "Progrés parcial; cal mantenir el seguiment per consolidar l'hàbit."
+  },
+  {
+    "idRegistre": 140,
+    "idPrograma": 3,
+    "idKPI": 26,
+    "idUsuari": 16,
+    "valor": 1,
+    "dataRegistre": "2026-06-10",
+    "comentari": "Registre incomplet o irregular durant el període."
+  },
+  {
+    "idRegistre": 141,
+    "idPrograma": 3,
+    "idKPI": 30,
+    "idUsuari": 16,
+    "valor": 2,
+    "dataRegistre": "2026-06-10",
+    "comentari": "Registre incomplet o irregular durant el període."
+  },
+  {
+    "idRegistre": 142,
+    "idPrograma": 3,
+    "idKPI": 30,
+    "idUsuari": 16,
+    "valor": 2,
+    "dataRegistre": "2026-06-24",
+    "comentari": "Registre incomplet o irregular durant el període."
+  },
+  {
+    "idRegistre": 143,
+    "idPrograma": 3,
+    "idKPI": 31,
+    "idUsuari": 16,
+    "valor": 4,
+    "dataRegistre": "2026-06-10",
+    "comentari": "Registre incomplet o irregular durant el període."
+  },
+  {
+    "idRegistre": 144,
+    "idPrograma": 3,
+    "idKPI": 31,
+    "idUsuari": 16,
+    "valor": 4,
+    "dataRegistre": "2026-06-24",
+    "comentari": "Registre incomplet o irregular durant el període."
+  },
+  {
+    "idRegistre": 145,
+    "idPrograma": 3,
+    "idKPI": 31,
+    "idUsuari": 16,
+    "valor": 1,
+    "dataRegistre": "2026-07-08",
+    "comentari": "Registre incomplet o irregular durant el període."
+  },
+  {
+    "idRegistre": 146,
+    "idPrograma": 3,
+    "idKPI": 32,
+    "idUsuari": 16,
+    "valor": 1,
+    "dataRegistre": "2026-06-10",
+    "comentari": "Registre incomplet o irregular durant el període."
+  },
+  {
+    "idRegistre": 147,
+    "idPrograma": 3,
+    "idKPI": 34,
+    "idUsuari": 16,
+    "valor": 1,
+    "dataRegistre": "2026-06-10",
+    "comentari": "Registre incomplet o irregular durant el període."
+  },
+  {
+    "idRegistre": 148,
+    "idPrograma": 3,
+    "idKPI": 34,
+    "idUsuari": 16,
+    "valor": 2,
+    "dataRegistre": "2026-06-24",
+    "comentari": "Registre incomplet o irregular durant el període."
+  },
+  {
+    "idRegistre": 149,
+    "idPrograma": 3,
+    "idKPI": 35,
+    "idUsuari": 16,
+    "valor": 5,
+    "dataRegistre": "2026-06-10",
+    "comentari": "Registre incomplet o irregular durant el període."
+  },
+  {
+    "idRegistre": 150,
+    "idPrograma": 3,
+    "idKPI": 35,
+    "idUsuari": 16,
+    "valor": 3,
+    "dataRegistre": "2026-06-24",
+    "comentari": "Registre incomplet o irregular durant el període."
+  },
+  {
+    "idRegistre": 151,
+    "idPrograma": 3,
+    "idKPI": 37,
+    "idUsuari": 16,
+    "valor": 4,
+    "dataRegistre": "2026-06-10",
+    "comentari": "Registre incomplet o irregular durant el període."
+  },
+  {
+    "idRegistre": 152,
+    "idPrograma": 3,
+    "idKPI": 37,
+    "idUsuari": 16,
+    "valor": 5,
+    "dataRegistre": "2026-06-24",
+    "comentari": "Registre incomplet o irregular durant el període."
+  },
+  {
+    "idRegistre": 153,
+    "idPrograma": 3,
+    "idKPI": 38,
+    "idUsuari": 16,
+    "valor": 2,
+    "dataRegistre": "2026-06-10",
+    "comentari": "Registre incomplet o irregular durant el període."
+  },
+  {
+    "idRegistre": 154,
+    "idPrograma": 3,
+    "idKPI": 38,
+    "idUsuari": 16,
+    "valor": 1,
+    "dataRegistre": "2026-06-24",
+    "comentari": "Registre incomplet o irregular durant el període."
+  },
+  {
+    "idRegistre": 155,
+    "idPrograma": 3,
+    "idKPI": 38,
+    "idUsuari": 16,
+    "valor": 1,
+    "dataRegistre": "2026-07-08",
+    "comentari": "Registre incomplet o irregular durant el període."
+  },
+  {
+    "idRegistre": 156,
+    "idPrograma": 3,
+    "idKPI": 40,
+    "idUsuari": 16,
+    "valor": 2,
+    "dataRegistre": "2026-06-10",
+    "comentari": "Registre incomplet o irregular durant el període."
+  },
+  {
+    "idRegistre": 157,
+    "idPrograma": 3,
+    "idKPI": 25,
+    "idUsuari": 17,
+    "valor": 19,
+    "dataRegistre": "2026-06-10",
+    "comentari": "Evolució positiva i alineada amb l'objectiu definit."
+  },
+  {
+    "idRegistre": 158,
+    "idPrograma": 3,
+    "idKPI": 25,
+    "idUsuari": 17,
+    "valor": 14,
+    "dataRegistre": "2026-06-24",
+    "comentari": "Evolució positiva i alineada amb l'objectiu definit."
+  },
+  {
+    "idRegistre": 159,
+    "idPrograma": 3,
+    "idKPI": 25,
+    "idUsuari": 17,
+    "valor": 17,
+    "dataRegistre": "2026-07-08",
+    "comentari": "Evolució positiva i alineada amb l'objectiu definit."
+  },
+  {
+    "idRegistre": 160,
+    "idPrograma": 3,
+    "idKPI": 26,
+    "idUsuari": 17,
+    "valor": 5,
+    "dataRegistre": "2026-06-10",
+    "comentari": "Evolució positiva i alineada amb l'objectiu definit."
+  },
+  {
+    "idRegistre": 161,
+    "idPrograma": 3,
+    "idKPI": 26,
+    "idUsuari": 17,
+    "valor": 4,
+    "dataRegistre": "2026-06-24",
+    "comentari": "Evolució positiva i alineada amb l'objectiu definit."
+  },
+  {
+    "idRegistre": 162,
+    "idPrograma": 3,
+    "idKPI": 26,
+    "idUsuari": 17,
+    "valor": 5,
+    "dataRegistre": "2026-07-08",
+    "comentari": "Evolució positiva i alineada amb l'objectiu definit."
+  },
+  {
+    "idRegistre": 163,
+    "idPrograma": 3,
+    "idKPI": 27,
+    "idUsuari": 17,
+    "valor": 10,
+    "dataRegistre": "2026-06-10",
+    "comentari": "Evolució positiva i alineada amb l'objectiu definit."
+  },
+  {
+    "idRegistre": 164,
+    "idPrograma": 3,
+    "idKPI": 27,
+    "idUsuari": 17,
+    "valor": 12,
+    "dataRegistre": "2026-06-24",
+    "comentari": "Evolució positiva i alineada amb l'objectiu definit."
+  },
+  {
+    "idRegistre": 165,
+    "idPrograma": 3,
+    "idKPI": 27,
+    "idUsuari": 17,
+    "valor": 9,
+    "dataRegistre": "2026-07-08",
+    "comentari": "Evolució positiva i alineada amb l'objectiu definit."
+  },
+  {
+    "idRegistre": 166,
+    "idPrograma": 3,
+    "idKPI": 28,
+    "idUsuari": 17,
+    "valor": 5,
+    "dataRegistre": "2026-06-10",
+    "comentari": "Evolució positiva i alineada amb l'objectiu definit."
+  },
+  {
+    "idRegistre": 167,
+    "idPrograma": 3,
+    "idKPI": 28,
+    "idUsuari": 17,
+    "valor": 4,
+    "dataRegistre": "2026-06-24",
+    "comentari": "Evolució positiva i alineada amb l'objectiu definit."
+  },
+  {
+    "idRegistre": 168,
+    "idPrograma": 3,
+    "idKPI": 28,
+    "idUsuari": 17,
+    "valor": 4,
+    "dataRegistre": "2026-07-08",
+    "comentari": "Evolució positiva i alineada amb l'objectiu definit."
+  },
+  {
+    "idRegistre": 169,
+    "idPrograma": 3,
+    "idKPI": 29,
+    "idUsuari": 17,
+    "valor": 17,
+    "dataRegistre": "2026-06-10",
+    "comentari": "Evolució positiva i alineada amb l'objectiu definit."
+  },
+  {
+    "idRegistre": 170,
+    "idPrograma": 3,
+    "idKPI": 29,
+    "idUsuari": 17,
+    "valor": 14,
+    "dataRegistre": "2026-06-24",
+    "comentari": "Evolució positiva i alineada amb l'objectiu definit."
+  },
+  {
+    "idRegistre": 171,
+    "idPrograma": 3,
+    "idKPI": 29,
+    "idUsuari": 17,
+    "valor": 15,
+    "dataRegistre": "2026-07-08",
+    "comentari": "Evolució positiva i alineada amb l'objectiu definit."
+  },
+  {
+    "idRegistre": 172,
+    "idPrograma": 3,
+    "idKPI": 30,
+    "idUsuari": 17,
+    "valor": 5,
+    "dataRegistre": "2026-06-10",
+    "comentari": "Evolució positiva i alineada amb l'objectiu definit."
+  },
+  {
+    "idRegistre": 173,
+    "idPrograma": 3,
+    "idKPI": 30,
+    "idUsuari": 17,
+    "valor": 4,
+    "dataRegistre": "2026-06-24",
+    "comentari": "Evolució positiva i alineada amb l'objectiu definit."
+  },
+  {
+    "idRegistre": 174,
+    "idPrograma": 3,
+    "idKPI": 30,
+    "idUsuari": 17,
+    "valor": 4,
+    "dataRegistre": "2026-07-08",
+    "comentari": "Evolució positiva i alineada amb l'objectiu definit."
+  },
+  {
+    "idRegistre": 175,
+    "idPrograma": 3,
+    "idKPI": 31,
+    "idUsuari": 17,
+    "valor": 12,
+    "dataRegistre": "2026-06-10",
+    "comentari": "Evolució positiva i alineada amb l'objectiu definit."
+  },
+  {
+    "idRegistre": 176,
+    "idPrograma": 3,
+    "idKPI": 31,
+    "idUsuari": 17,
+    "valor": 12,
+    "dataRegistre": "2026-06-24",
+    "comentari": "Evolució positiva i alineada amb l'objectiu definit."
+  },
+  {
+    "idRegistre": 177,
+    "idPrograma": 3,
+    "idKPI": 31,
+    "idUsuari": 17,
+    "valor": 8,
+    "dataRegistre": "2026-07-08",
+    "comentari": "Evolució positiva i alineada amb l'objectiu definit."
+  },
+  {
+    "idRegistre": 178,
+    "idPrograma": 3,
+    "idKPI": 32,
+    "idUsuari": 17,
+    "valor": 4,
+    "dataRegistre": "2026-06-10",
+    "comentari": "Evolució positiva i alineada amb l'objectiu definit."
+  },
+  {
+    "idRegistre": 179,
+    "idPrograma": 3,
+    "idKPI": 32,
+    "idUsuari": 17,
+    "valor": 4,
+    "dataRegistre": "2026-06-24",
+    "comentari": "Evolució positiva i alineada amb l'objectiu definit."
+  },
+  {
+    "idRegistre": 180,
+    "idPrograma": 3,
+    "idKPI": 32,
+    "idUsuari": 17,
+    "valor": 5,
+    "dataRegistre": "2026-07-08",
+    "comentari": "Evolució positiva i alineada amb l'objectiu definit."
+  },
+  {
+    "idRegistre": 181,
+    "idPrograma": 3,
+    "idKPI": 33,
+    "idUsuari": 17,
+    "valor": 19,
+    "dataRegistre": "2026-06-10",
+    "comentari": "Evolució positiva i alineada amb l'objectiu definit."
+  },
+  {
+    "idRegistre": 182,
+    "idPrograma": 3,
+    "idKPI": 33,
+    "idUsuari": 17,
+    "valor": 19,
+    "dataRegistre": "2026-06-24",
+    "comentari": "Evolució positiva i alineada amb l'objectiu definit."
+  },
+  {
+    "idRegistre": 183,
+    "idPrograma": 3,
+    "idKPI": 33,
+    "idUsuari": 17,
+    "valor": 15,
+    "dataRegistre": "2026-07-08",
+    "comentari": "Evolució positiva i alineada amb l'objectiu definit."
+  },
+  {
+    "idRegistre": 184,
+    "idPrograma": 3,
+    "idKPI": 34,
+    "idUsuari": 17,
+    "valor": 4,
+    "dataRegistre": "2026-06-10",
+    "comentari": "Evolució positiva i alineada amb l'objectiu definit."
+  },
+  {
+    "idRegistre": 185,
+    "idPrograma": 3,
+    "idKPI": 34,
+    "idUsuari": 17,
+    "valor": 5,
+    "dataRegistre": "2026-06-24",
+    "comentari": "Evolució positiva i alineada amb l'objectiu definit."
+  },
+  {
+    "idRegistre": 186,
+    "idPrograma": 3,
+    "idKPI": 34,
+    "idUsuari": 17,
+    "valor": 5,
+    "dataRegistre": "2026-07-08",
+    "comentari": "Evolució positiva i alineada amb l'objectiu definit."
+  },
+  {
+    "idRegistre": 187,
+    "idPrograma": 3,
+    "idKPI": 35,
+    "idUsuari": 17,
+    "valor": 10,
+    "dataRegistre": "2026-06-10",
+    "comentari": "Evolució positiva i alineada amb l'objectiu definit."
+  },
+  {
+    "idRegistre": 188,
+    "idPrograma": 3,
+    "idKPI": 35,
+    "idUsuari": 17,
+    "valor": 12,
+    "dataRegistre": "2026-06-24",
+    "comentari": "Evolució positiva i alineada amb l'objectiu definit."
+  },
+  {
+    "idRegistre": 189,
+    "idPrograma": 3,
+    "idKPI": 35,
+    "idUsuari": 17,
+    "valor": 11,
+    "dataRegistre": "2026-07-08",
+    "comentari": "Evolució positiva i alineada amb l'objectiu definit."
+  },
+  {
+    "idRegistre": 190,
+    "idPrograma": 3,
+    "idKPI": 36,
+    "idUsuari": 17,
+    "valor": 4,
+    "dataRegistre": "2026-06-10",
+    "comentari": "Evolució positiva i alineada amb l'objectiu definit."
+  },
+  {
+    "idRegistre": 191,
+    "idPrograma": 3,
+    "idKPI": 36,
+    "idUsuari": 17,
+    "valor": 5,
+    "dataRegistre": "2026-06-24",
+    "comentari": "Evolució positiva i alineada amb l'objectiu definit."
+  },
+  {
+    "idRegistre": 192,
+    "idPrograma": 3,
+    "idKPI": 36,
+    "idUsuari": 17,
+    "valor": 4,
+    "dataRegistre": "2026-07-08",
+    "comentari": "Evolució positiva i alineada amb l'objectiu definit."
+  },
+  {
+    "idRegistre": 193,
+    "idPrograma": 3,
+    "idKPI": 37,
+    "idUsuari": 17,
+    "valor": 17,
+    "dataRegistre": "2026-06-10",
+    "comentari": "Evolució positiva i alineada amb l'objectiu definit."
+  },
+  {
+    "idRegistre": 194,
+    "idPrograma": 3,
+    "idKPI": 37,
+    "idUsuari": 17,
+    "valor": 20,
+    "dataRegistre": "2026-06-24",
+    "comentari": "Evolució positiva i alineada amb l'objectiu definit."
+  },
+  {
+    "idRegistre": 195,
+    "idPrograma": 3,
+    "idKPI": 37,
+    "idUsuari": 17,
+    "valor": 13,
+    "dataRegistre": "2026-07-08",
+    "comentari": "Evolució positiva i alineada amb l'objectiu definit."
+  },
+  {
+    "idRegistre": 196,
+    "idPrograma": 3,
+    "idKPI": 38,
+    "idUsuari": 17,
+    "valor": 4,
+    "dataRegistre": "2026-06-10",
+    "comentari": "Evolució positiva i alineada amb l'objectiu definit."
+  },
+  {
+    "idRegistre": 197,
+    "idPrograma": 3,
+    "idKPI": 38,
+    "idUsuari": 17,
+    "valor": 4,
+    "dataRegistre": "2026-06-24",
+    "comentari": "Evolució positiva i alineada amb l'objectiu definit."
+  },
+  {
+    "idRegistre": 198,
+    "idPrograma": 3,
+    "idKPI": 38,
+    "idUsuari": 17,
+    "valor": 5,
+    "dataRegistre": "2026-07-08",
+    "comentari": "Evolució positiva i alineada amb l'objectiu definit."
+  },
+  {
+    "idRegistre": 199,
+    "idPrograma": 3,
+    "idKPI": 39,
+    "idUsuari": 17,
+    "valor": 9,
+    "dataRegistre": "2026-06-10",
+    "comentari": "Evolució positiva i alineada amb l'objectiu definit."
+  },
+  {
+    "idRegistre": 200,
+    "idPrograma": 3,
+    "idKPI": 39,
+    "idUsuari": 17,
+    "valor": 10,
+    "dataRegistre": "2026-06-24",
+    "comentari": "Evolució positiva i alineada amb l'objectiu definit."
+  },
+  {
+    "idRegistre": 201,
+    "idPrograma": 3,
+    "idKPI": 39,
+    "idUsuari": 17,
+    "valor": 11,
+    "dataRegistre": "2026-07-08",
+    "comentari": "Evolució positiva i alineada amb l'objectiu definit."
+  },
+  {
+    "idRegistre": 202,
+    "idPrograma": 3,
+    "idKPI": 40,
+    "idUsuari": 17,
+    "valor": 4,
+    "dataRegistre": "2026-06-10",
+    "comentari": "Evolució positiva i alineada amb l'objectiu definit."
+  },
+  {
+    "idRegistre": 203,
+    "idPrograma": 3,
+    "idKPI": 40,
+    "idUsuari": 17,
+    "valor": 5,
+    "dataRegistre": "2026-06-24",
+    "comentari": "Evolució positiva i alineada amb l'objectiu definit."
+  },
+  {
+    "idRegistre": 204,
+    "idPrograma": 3,
+    "idKPI": 40,
+    "idUsuari": 17,
+    "valor": 4,
+    "dataRegistre": "2026-07-08",
+    "comentari": "Evolució positiva i alineada amb l'objectiu definit."
+  },
+  {
+    "idRegistre": 205,
+    "idPrograma": 3,
+    "idKPI": 25,
+    "idUsuari": 18,
+    "valor": 10,
+    "dataRegistre": "2026-06-10",
+    "comentari": "Progrés parcial; cal mantenir el seguiment per consolidar l'hàbit."
+  },
+  {
+    "idRegistre": 206,
+    "idPrograma": 3,
+    "idKPI": 25,
+    "idUsuari": 18,
+    "valor": 11,
+    "dataRegistre": "2026-06-24",
+    "comentari": "Progrés parcial; cal mantenir el seguiment per consolidar l'hàbit."
+  },
+  {
+    "idRegistre": 207,
+    "idPrograma": 3,
+    "idKPI": 25,
+    "idUsuari": 18,
+    "valor": 11,
+    "dataRegistre": "2026-07-08",
+    "comentari": "Progrés parcial; cal mantenir el seguiment per consolidar l'hàbit."
+  },
+  {
+    "idRegistre": 208,
+    "idPrograma": 3,
+    "idKPI": 26,
+    "idUsuari": 18,
+    "valor": 3,
+    "dataRegistre": "2026-06-10",
+    "comentari": "Progrés parcial; cal mantenir el seguiment per consolidar l'hàbit."
+  },
+  {
+    "idRegistre": 209,
+    "idPrograma": 3,
+    "idKPI": 26,
+    "idUsuari": 18,
+    "valor": 3,
+    "dataRegistre": "2026-06-24",
+    "comentari": "Progrés parcial; cal mantenir el seguiment per consolidar l'hàbit."
+  },
+  {
+    "idRegistre": 210,
+    "idPrograma": 3,
+    "idKPI": 26,
+    "idUsuari": 18,
+    "valor": 3,
+    "dataRegistre": "2026-07-08",
+    "comentari": "Progrés parcial; cal mantenir el seguiment per consolidar l'hàbit."
+  },
+  {
+    "idRegistre": 211,
+    "idPrograma": 3,
+    "idKPI": 27,
+    "idUsuari": 18,
+    "valor": 5,
+    "dataRegistre": "2026-06-10",
+    "comentari": "Progrés parcial; cal mantenir el seguiment per consolidar l'hàbit."
+  },
+  {
+    "idRegistre": 212,
+    "idPrograma": 3,
+    "idKPI": 27,
+    "idUsuari": 18,
+    "valor": 7,
+    "dataRegistre": "2026-06-24",
+    "comentari": "Progrés parcial; cal mantenir el seguiment per consolidar l'hàbit."
+  },
+  {
+    "idRegistre": 213,
+    "idPrograma": 3,
+    "idKPI": 27,
+    "idUsuari": 18,
+    "valor": 7,
+    "dataRegistre": "2026-07-08",
+    "comentari": "Progrés parcial; cal mantenir el seguiment per consolidar l'hàbit."
+  },
+  {
+    "idRegistre": 214,
+    "idPrograma": 3,
+    "idKPI": 28,
+    "idUsuari": 18,
+    "valor": 3,
+    "dataRegistre": "2026-06-10",
+    "comentari": "Progrés parcial; cal mantenir el seguiment per consolidar l'hàbit."
+  },
+  {
+    "idRegistre": 215,
+    "idPrograma": 3,
+    "idKPI": 28,
+    "idUsuari": 18,
+    "valor": 3,
+    "dataRegistre": "2026-06-24",
+    "comentari": "Progrés parcial; cal mantenir el seguiment per consolidar l'hàbit."
+  },
+  {
+    "idRegistre": 216,
+    "idPrograma": 3,
+    "idKPI": 28,
+    "idUsuari": 18,
+    "valor": 3,
+    "dataRegistre": "2026-07-08",
+    "comentari": "Progrés parcial; cal mantenir el seguiment per consolidar l'hàbit."
+  },
+  {
+    "idRegistre": 217,
+    "idPrograma": 3,
+    "idKPI": 29,
+    "idUsuari": 18,
+    "valor": 9,
+    "dataRegistre": "2026-06-10",
+    "comentari": "Progrés parcial; cal mantenir el seguiment per consolidar l'hàbit."
+  },
+  {
+    "idRegistre": 218,
+    "idPrograma": 3,
+    "idKPI": 29,
+    "idUsuari": 18,
+    "valor": 8,
+    "dataRegistre": "2026-06-24",
+    "comentari": "Progrés parcial; cal mantenir el seguiment per consolidar l'hàbit."
+  },
+  {
+    "idRegistre": 219,
+    "idPrograma": 3,
+    "idKPI": 29,
+    "idUsuari": 18,
+    "valor": 8,
+    "dataRegistre": "2026-07-08",
+    "comentari": "Progrés parcial; cal mantenir el seguiment per consolidar l'hàbit."
+  },
+  {
+    "idRegistre": 220,
+    "idPrograma": 3,
+    "idKPI": 30,
+    "idUsuari": 18,
+    "valor": 4,
+    "dataRegistre": "2026-06-10",
+    "comentari": "Progrés parcial; cal mantenir el seguiment per consolidar l'hàbit."
+  },
+  {
+    "idRegistre": 221,
+    "idPrograma": 3,
+    "idKPI": 30,
+    "idUsuari": 18,
+    "valor": 4,
+    "dataRegistre": "2026-06-24",
+    "comentari": "Progrés parcial; cal mantenir el seguiment per consolidar l'hàbit."
+  },
+  {
+    "idRegistre": 222,
+    "idPrograma": 3,
+    "idKPI": 30,
+    "idUsuari": 18,
+    "valor": 3,
+    "dataRegistre": "2026-07-08",
+    "comentari": "Progrés parcial; cal mantenir el seguiment per consolidar l'hàbit."
+  },
+  {
+    "idRegistre": 223,
+    "idPrograma": 3,
+    "idKPI": 31,
+    "idUsuari": 18,
+    "valor": 7,
+    "dataRegistre": "2026-06-10",
+    "comentari": "Progrés parcial; cal mantenir el seguiment per consolidar l'hàbit."
+  },
+  {
+    "idRegistre": 224,
+    "idPrograma": 3,
+    "idKPI": 31,
+    "idUsuari": 18,
+    "valor": 7,
+    "dataRegistre": "2026-06-24",
+    "comentari": "Progrés parcial; cal mantenir el seguiment per consolidar l'hàbit."
+  },
+  {
+    "idRegistre": 225,
+    "idPrograma": 3,
+    "idKPI": 31,
+    "idUsuari": 18,
+    "valor": 6,
+    "dataRegistre": "2026-07-08",
+    "comentari": "Progrés parcial; cal mantenir el seguiment per consolidar l'hàbit."
+  },
+  {
+    "idRegistre": 226,
+    "idPrograma": 3,
+    "idKPI": 32,
+    "idUsuari": 18,
+    "valor": 3,
+    "dataRegistre": "2026-06-10",
+    "comentari": "Progrés parcial; cal mantenir el seguiment per consolidar l'hàbit."
+  },
+  {
+    "idRegistre": 227,
+    "idPrograma": 3,
+    "idKPI": 32,
+    "idUsuari": 18,
+    "valor": 3,
+    "dataRegistre": "2026-06-24",
+    "comentari": "Progrés parcial; cal mantenir el seguiment per consolidar l'hàbit."
+  },
+  {
+    "idRegistre": 228,
+    "idPrograma": 3,
+    "idKPI": 32,
+    "idUsuari": 18,
+    "valor": 4,
+    "dataRegistre": "2026-07-08",
+    "comentari": "Progrés parcial; cal mantenir el seguiment per consolidar l'hàbit."
+  },
+  {
+    "idRegistre": 229,
+    "idPrograma": 3,
+    "idKPI": 33,
+    "idUsuari": 18,
+    "valor": 11,
+    "dataRegistre": "2026-06-10",
+    "comentari": "Progrés parcial; cal mantenir el seguiment per consolidar l'hàbit."
+  },
+  {
+    "idRegistre": 230,
+    "idPrograma": 3,
+    "idKPI": 33,
+    "idUsuari": 18,
+    "valor": 11,
+    "dataRegistre": "2026-06-24",
+    "comentari": "Progrés parcial; cal mantenir el seguiment per consolidar l'hàbit."
+  },
+  {
+    "idRegistre": 231,
+    "idPrograma": 3,
+    "idKPI": 33,
+    "idUsuari": 18,
+    "valor": 11,
+    "dataRegistre": "2026-07-08",
+    "comentari": "Progrés parcial; cal mantenir el seguiment per consolidar l'hàbit."
+  },
+  {
+    "idRegistre": 232,
+    "idPrograma": 3,
+    "idKPI": 34,
+    "idUsuari": 18,
+    "valor": 3,
+    "dataRegistre": "2026-06-10",
+    "comentari": "Progrés parcial; cal mantenir el seguiment per consolidar l'hàbit."
+  },
+  {
+    "idRegistre": 233,
+    "idPrograma": 3,
+    "idKPI": 34,
+    "idUsuari": 18,
+    "valor": 3,
+    "dataRegistre": "2026-06-24",
+    "comentari": "Progrés parcial; cal mantenir el seguiment per consolidar l'hàbit."
+  },
+  {
+    "idRegistre": 234,
+    "idPrograma": 3,
+    "idKPI": 34,
+    "idUsuari": 18,
+    "valor": 3,
+    "dataRegistre": "2026-07-08",
+    "comentari": "Progrés parcial; cal mantenir el seguiment per consolidar l'hàbit."
+  },
+  {
+    "idRegistre": 235,
+    "idPrograma": 3,
+    "idKPI": 35,
+    "idUsuari": 18,
+    "valor": 7,
+    "dataRegistre": "2026-06-10",
+    "comentari": "Progrés parcial; cal mantenir el seguiment per consolidar l'hàbit."
+  },
+  {
+    "idRegistre": 236,
+    "idPrograma": 3,
+    "idKPI": 35,
+    "idUsuari": 18,
+    "valor": 7,
+    "dataRegistre": "2026-06-24",
+    "comentari": "Progrés parcial; cal mantenir el seguiment per consolidar l'hàbit."
+  },
+  {
+    "idRegistre": 237,
+    "idPrograma": 3,
+    "idKPI": 35,
+    "idUsuari": 18,
+    "valor": 6,
+    "dataRegistre": "2026-07-08",
+    "comentari": "Progrés parcial; cal mantenir el seguiment per consolidar l'hàbit."
+  },
+  {
+    "idRegistre": 238,
+    "idPrograma": 3,
+    "idKPI": 36,
+    "idUsuari": 18,
+    "valor": 3,
+    "dataRegistre": "2026-06-10",
+    "comentari": "Progrés parcial; cal mantenir el seguiment per consolidar l'hàbit."
+  },
+  {
+    "idRegistre": 239,
+    "idPrograma": 3,
+    "idKPI": 36,
+    "idUsuari": 18,
+    "valor": 3,
+    "dataRegistre": "2026-06-24",
+    "comentari": "Progrés parcial; cal mantenir el seguiment per consolidar l'hàbit."
+  },
+  {
+    "idRegistre": 240,
+    "idPrograma": 3,
+    "idKPI": 36,
+    "idUsuari": 18,
+    "valor": 4,
+    "dataRegistre": "2026-07-08",
+    "comentari": "Progrés parcial; cal mantenir el seguiment per consolidar l'hàbit."
+  },
+  {
+    "idRegistre": 241,
+    "idPrograma": 3,
+    "idKPI": 37,
+    "idUsuari": 18,
+    "valor": 11,
+    "dataRegistre": "2026-06-10",
+    "comentari": "Progrés parcial; cal mantenir el seguiment per consolidar l'hàbit."
+  },
+  {
+    "idRegistre": 242,
+    "idPrograma": 3,
+    "idKPI": 37,
+    "idUsuari": 18,
+    "valor": 11,
+    "dataRegistre": "2026-06-24",
+    "comentari": "Progrés parcial; cal mantenir el seguiment per consolidar l'hàbit."
+  },
+  {
+    "idRegistre": 243,
+    "idPrograma": 3,
+    "idKPI": 37,
+    "idUsuari": 18,
+    "valor": 11,
+    "dataRegistre": "2026-07-08",
+    "comentari": "Progrés parcial; cal mantenir el seguiment per consolidar l'hàbit."
+  },
+  {
+    "idRegistre": 244,
+    "idPrograma": 3,
+    "idKPI": 38,
+    "idUsuari": 18,
+    "valor": 4,
+    "dataRegistre": "2026-06-10",
+    "comentari": "Progrés parcial; cal mantenir el seguiment per consolidar l'hàbit."
+  },
+  {
+    "idRegistre": 245,
+    "idPrograma": 3,
+    "idKPI": 38,
+    "idUsuari": 18,
+    "valor": 3,
+    "dataRegistre": "2026-06-24",
+    "comentari": "Progrés parcial; cal mantenir el seguiment per consolidar l'hàbit."
+  },
+  {
+    "idRegistre": 246,
+    "idPrograma": 3,
+    "idKPI": 38,
+    "idUsuari": 18,
+    "valor": 3,
+    "dataRegistre": "2026-07-08",
+    "comentari": "Progrés parcial; cal mantenir el seguiment per consolidar l'hàbit."
+  },
+  {
+    "idRegistre": 247,
+    "idPrograma": 3,
+    "idKPI": 39,
+    "idUsuari": 18,
+    "valor": 6,
+    "dataRegistre": "2026-06-10",
+    "comentari": "Progrés parcial; cal mantenir el seguiment per consolidar l'hàbit."
+  },
+  {
+    "idRegistre": 248,
+    "idPrograma": 3,
+    "idKPI": 39,
+    "idUsuari": 18,
+    "valor": 7,
+    "dataRegistre": "2026-06-24",
+    "comentari": "Progrés parcial; cal mantenir el seguiment per consolidar l'hàbit."
+  },
+  {
+    "idRegistre": 249,
+    "idPrograma": 3,
+    "idKPI": 39,
+    "idUsuari": 18,
+    "valor": 7,
+    "dataRegistre": "2026-07-08",
+    "comentari": "Progrés parcial; cal mantenir el seguiment per consolidar l'hàbit."
+  },
+  {
+    "idRegistre": 250,
+    "idPrograma": 3,
+    "idKPI": 40,
+    "idUsuari": 18,
+    "valor": 4,
+    "dataRegistre": "2026-06-10",
+    "comentari": "Progrés parcial; cal mantenir el seguiment per consolidar l'hàbit."
+  },
+  {
+    "idRegistre": 251,
+    "idPrograma": 3,
+    "idKPI": 40,
+    "idUsuari": 18,
+    "valor": 4,
+    "dataRegistre": "2026-06-24",
+    "comentari": "Progrés parcial; cal mantenir el seguiment per consolidar l'hàbit."
+  },
+  {
+    "idRegistre": 252,
+    "idPrograma": 3,
+    "idKPI": 40,
+    "idUsuari": 18,
+    "valor": 3,
+    "dataRegistre": "2026-07-08",
+    "comentari": "Progrés parcial; cal mantenir el seguiment per consolidar l'hàbit."
+  },
+  {
+    "idRegistre": 253,
+    "idPrograma": 3,
+    "idKPI": 25,
+    "idUsuari": 19,
+    "valor": 6,
+    "dataRegistre": "2026-06-10",
+    "comentari": "Dificultats per avançar al ritme previst; es recomana suport addicional."
+  },
+  {
+    "idRegistre": 254,
+    "idPrograma": 3,
+    "idKPI": 25,
+    "idUsuari": 19,
+    "valor": 1,
+    "dataRegistre": "2026-06-24",
+    "comentari": "Dificultats per avançar al ritme previst; es recomana suport addicional."
+  },
+  {
+    "idRegistre": 255,
+    "idPrograma": 3,
+    "idKPI": 25,
+    "idUsuari": 19,
+    "valor": 6,
+    "dataRegistre": "2026-07-08",
+    "comentari": "Dificultats per avançar al ritme previst; es recomana suport addicional."
+  },
+  {
+    "idRegistre": 256,
+    "idPrograma": 3,
+    "idKPI": 26,
+    "idUsuari": 19,
+    "valor": 2,
+    "dataRegistre": "2026-06-10",
+    "comentari": "Dificultats per avançar al ritme previst; es recomana suport addicional."
+  },
+  {
+    "idRegistre": 257,
+    "idPrograma": 3,
+    "idKPI": 26,
+    "idUsuari": 19,
+    "valor": 1,
+    "dataRegistre": "2026-06-24",
+    "comentari": "Dificultats per avançar al ritme previst; es recomana suport addicional."
+  },
+  {
+    "idRegistre": 258,
+    "idPrograma": 3,
+    "idKPI": 26,
+    "idUsuari": 19,
+    "valor": 2,
+    "dataRegistre": "2026-07-08",
+    "comentari": "Dificultats per avançar al ritme previst; es recomana suport addicional."
+  },
+  {
+    "idRegistre": 259,
+    "idPrograma": 3,
+    "idKPI": 27,
+    "idUsuari": 19,
+    "valor": 2,
+    "dataRegistre": "2026-06-10",
+    "comentari": "Dificultats per avançar al ritme previst; es recomana suport addicional."
+  },
+  {
+    "idRegistre": 260,
+    "idPrograma": 3,
+    "idKPI": 27,
+    "idUsuari": 19,
+    "valor": 1,
+    "dataRegistre": "2026-06-24",
+    "comentari": "Dificultats per avançar al ritme previst; es recomana suport addicional."
+  },
+  {
+    "idRegistre": 261,
+    "idPrograma": 3,
+    "idKPI": 27,
+    "idUsuari": 19,
+    "valor": 4,
+    "dataRegistre": "2026-07-08",
+    "comentari": "Dificultats per avançar al ritme previst; es recomana suport addicional."
+  },
+  {
+    "idRegistre": 262,
+    "idPrograma": 3,
+    "idKPI": 28,
+    "idUsuari": 19,
+    "valor": 1,
+    "dataRegistre": "2026-06-10",
+    "comentari": "Dificultats per avançar al ritme previst; es recomana suport addicional."
+  },
+  {
+    "idRegistre": 263,
+    "idPrograma": 3,
+    "idKPI": 28,
+    "idUsuari": 19,
+    "valor": 1,
+    "dataRegistre": "2026-06-24",
+    "comentari": "Dificultats per avançar al ritme previst; es recomana suport addicional."
+  },
+  {
+    "idRegistre": 264,
+    "idPrograma": 3,
+    "idKPI": 28,
+    "idUsuari": 19,
+    "valor": 1,
+    "dataRegistre": "2026-07-08",
+    "comentari": "Dificultats per avançar al ritme previst; es recomana suport addicional."
+  },
+  {
+    "idRegistre": 265,
+    "idPrograma": 3,
+    "idKPI": 29,
+    "idUsuari": 19,
+    "valor": 2,
+    "dataRegistre": "2026-06-10",
+    "comentari": "Dificultats per avançar al ritme previst; es recomana suport addicional."
+  },
+  {
+    "idRegistre": 266,
+    "idPrograma": 3,
+    "idKPI": 29,
+    "idUsuari": 19,
+    "valor": 6,
+    "dataRegistre": "2026-06-24",
+    "comentari": "Dificultats per avançar al ritme previst; es recomana suport addicional."
+  },
+  {
+    "idRegistre": 267,
+    "idPrograma": 3,
+    "idKPI": 29,
+    "idUsuari": 19,
+    "valor": 7,
+    "dataRegistre": "2026-07-08",
+    "comentari": "Dificultats per avançar al ritme previst; es recomana suport addicional."
+  },
+  {
+    "idRegistre": 268,
+    "idPrograma": 3,
+    "idKPI": 30,
+    "idUsuari": 19,
+    "valor": 1,
+    "dataRegistre": "2026-06-10",
+    "comentari": "Dificultats per avançar al ritme previst; es recomana suport addicional."
+  },
+  {
+    "idRegistre": 269,
+    "idPrograma": 3,
+    "idKPI": 30,
+    "idUsuari": 19,
+    "valor": 2,
+    "dataRegistre": "2026-06-24",
+    "comentari": "Dificultats per avançar al ritme previst; es recomana suport addicional."
+  },
+  {
+    "idRegistre": 270,
+    "idPrograma": 3,
+    "idKPI": 30,
+    "idUsuari": 19,
+    "valor": 2,
+    "dataRegistre": "2026-07-08",
+    "comentari": "Dificultats per avançar al ritme previst; es recomana suport addicional."
+  },
+  {
+    "idRegistre": 271,
+    "idPrograma": 3,
+    "idKPI": 31,
+    "idUsuari": 19,
+    "valor": 5,
+    "dataRegistre": "2026-06-10",
+    "comentari": "Dificultats per avançar al ritme previst; es recomana suport addicional."
+  },
+  {
+    "idRegistre": 272,
+    "idPrograma": 3,
+    "idKPI": 31,
+    "idUsuari": 19,
+    "valor": 3,
+    "dataRegistre": "2026-06-24",
+    "comentari": "Dificultats per avançar al ritme previst; es recomana suport addicional."
+  },
+  {
+    "idRegistre": 273,
+    "idPrograma": 3,
+    "idKPI": 31,
+    "idUsuari": 19,
+    "valor": 5,
+    "dataRegistre": "2026-07-08",
+    "comentari": "Dificultats per avançar al ritme previst; es recomana suport addicional."
+  },
+  {
+    "idRegistre": 274,
+    "idPrograma": 3,
+    "idKPI": 32,
+    "idUsuari": 19,
+    "valor": 1,
+    "dataRegistre": "2026-06-10",
+    "comentari": "Dificultats per avançar al ritme previst; es recomana suport addicional."
+  },
+  {
+    "idRegistre": 275,
+    "idPrograma": 3,
+    "idKPI": 32,
+    "idUsuari": 19,
+    "valor": 2,
+    "dataRegistre": "2026-06-24",
+    "comentari": "Dificultats per avançar al ritme previst; es recomana suport addicional."
+  },
+  {
+    "idRegistre": 276,
+    "idPrograma": 3,
+    "idKPI": 32,
+    "idUsuari": 19,
+    "valor": 1,
+    "dataRegistre": "2026-07-08",
+    "comentari": "Dificultats per avançar al ritme previst; es recomana suport addicional."
+  },
+  {
+    "idRegistre": 277,
+    "idPrograma": 3,
+    "idKPI": 33,
+    "idUsuari": 19,
+    "valor": 7,
+    "dataRegistre": "2026-06-10",
+    "comentari": "Dificultats per avançar al ritme previst; es recomana suport addicional."
+  },
+  {
+    "idRegistre": 278,
+    "idPrograma": 3,
+    "idKPI": 33,
+    "idUsuari": 19,
+    "valor": 2,
+    "dataRegistre": "2026-06-24",
+    "comentari": "Dificultats per avançar al ritme previst; es recomana suport addicional."
+  },
+  {
+    "idRegistre": 279,
+    "idPrograma": 3,
+    "idKPI": 33,
+    "idUsuari": 19,
+    "valor": 1,
+    "dataRegistre": "2026-07-08",
+    "comentari": "Dificultats per avançar al ritme previst; es recomana suport addicional."
+  },
+  {
+    "idRegistre": 280,
+    "idPrograma": 3,
+    "idKPI": 34,
+    "idUsuari": 19,
+    "valor": 2,
+    "dataRegistre": "2026-06-10",
+    "comentari": "Dificultats per avançar al ritme previst; es recomana suport addicional."
+  },
+  {
+    "idRegistre": 281,
+    "idPrograma": 3,
+    "idKPI": 34,
+    "idUsuari": 19,
+    "valor": 2,
+    "dataRegistre": "2026-06-24",
+    "comentari": "Dificultats per avançar al ritme previst; es recomana suport addicional."
+  },
+  {
+    "idRegistre": 282,
+    "idPrograma": 3,
+    "idKPI": 34,
+    "idUsuari": 19,
+    "valor": 1,
+    "dataRegistre": "2026-07-08",
+    "comentari": "Dificultats per avançar al ritme previst; es recomana suport addicional."
+  },
+  {
+    "idRegistre": 283,
+    "idPrograma": 3,
+    "idKPI": 35,
+    "idUsuari": 19,
+    "valor": 3,
+    "dataRegistre": "2026-06-10",
+    "comentari": "Dificultats per avançar al ritme previst; es recomana suport addicional."
+  },
+  {
+    "idRegistre": 284,
+    "idPrograma": 3,
+    "idKPI": 35,
+    "idUsuari": 19,
+    "valor": 2,
+    "dataRegistre": "2026-06-24",
+    "comentari": "Dificultats per avançar al ritme previst; es recomana suport addicional."
+  },
+  {
+    "idRegistre": 285,
+    "idPrograma": 3,
+    "idKPI": 35,
+    "idUsuari": 19,
+    "valor": 2,
+    "dataRegistre": "2026-07-08",
+    "comentari": "Dificultats per avançar al ritme previst; es recomana suport addicional."
+  },
+  {
+    "idRegistre": 286,
+    "idPrograma": 3,
+    "idKPI": 36,
+    "idUsuari": 19,
+    "valor": 2,
+    "dataRegistre": "2026-06-10",
+    "comentari": "Dificultats per avançar al ritme previst; es recomana suport addicional."
+  },
+  {
+    "idRegistre": 287,
+    "idPrograma": 3,
+    "idKPI": 36,
+    "idUsuari": 19,
+    "valor": 1,
+    "dataRegistre": "2026-06-24",
+    "comentari": "Dificultats per avançar al ritme previst; es recomana suport addicional."
+  },
+  {
+    "idRegistre": 288,
+    "idPrograma": 3,
+    "idKPI": 36,
+    "idUsuari": 19,
+    "valor": 2,
+    "dataRegistre": "2026-07-08",
+    "comentari": "Dificultats per avançar al ritme previst; es recomana suport addicional."
+  },
+  {
+    "idRegistre": 289,
+    "idPrograma": 3,
+    "idKPI": 37,
+    "idUsuari": 19,
+    "valor": 0,
+    "dataRegistre": "2026-06-10",
+    "comentari": "Dificultats per avançar al ritme previst; es recomana suport addicional."
+  },
+  {
+    "idRegistre": 290,
+    "idPrograma": 3,
+    "idKPI": 37,
+    "idUsuari": 19,
+    "valor": 7,
+    "dataRegistre": "2026-06-24",
+    "comentari": "Dificultats per avançar al ritme previst; es recomana suport addicional."
+  },
+  {
+    "idRegistre": 291,
+    "idPrograma": 3,
+    "idKPI": 37,
+    "idUsuari": 19,
+    "valor": 4,
+    "dataRegistre": "2026-07-08",
+    "comentari": "Dificultats per avançar al ritme previst; es recomana suport addicional."
+  },
+  {
+    "idRegistre": 292,
+    "idPrograma": 3,
+    "idKPI": 38,
+    "idUsuari": 19,
+    "valor": 2,
+    "dataRegistre": "2026-06-10",
+    "comentari": "Dificultats per avançar al ritme previst; es recomana suport addicional."
+  },
+  {
+    "idRegistre": 293,
+    "idPrograma": 3,
+    "idKPI": 38,
+    "idUsuari": 19,
+    "valor": 2,
+    "dataRegistre": "2026-06-24",
+    "comentari": "Dificultats per avançar al ritme previst; es recomana suport addicional."
+  },
+  {
+    "idRegistre": 294,
+    "idPrograma": 3,
+    "idKPI": 38,
+    "idUsuari": 19,
+    "valor": 2,
+    "dataRegistre": "2026-07-08",
+    "comentari": "Dificultats per avançar al ritme previst; es recomana suport addicional."
+  },
+  {
+    "idRegistre": 295,
+    "idPrograma": 3,
+    "idKPI": 39,
+    "idUsuari": 19,
+    "valor": 2,
+    "dataRegistre": "2026-06-10",
+    "comentari": "Dificultats per avançar al ritme previst; es recomana suport addicional."
+  },
+  {
+    "idRegistre": 296,
+    "idPrograma": 3,
+    "idKPI": 39,
+    "idUsuari": 19,
+    "valor": 0,
+    "dataRegistre": "2026-06-24",
+    "comentari": "Dificultats per avançar al ritme previst; es recomana suport addicional."
+  },
+  {
+    "idRegistre": 297,
+    "idPrograma": 3,
+    "idKPI": 39,
+    "idUsuari": 19,
+    "valor": 3,
+    "dataRegistre": "2026-07-08",
+    "comentari": "Dificultats per avançar al ritme previst; es recomana suport addicional."
+  },
+  {
+    "idRegistre": 298,
+    "idPrograma": 3,
+    "idKPI": 40,
+    "idUsuari": 19,
+    "valor": 1,
+    "dataRegistre": "2026-06-10",
+    "comentari": "Dificultats per avançar al ritme previst; es recomana suport addicional."
+  },
+  {
+    "idRegistre": 299,
+    "idPrograma": 3,
+    "idKPI": 40,
+    "idUsuari": 19,
+    "valor": 1,
+    "dataRegistre": "2026-06-24",
+    "comentari": "Dificultats per avançar al ritme previst; es recomana suport addicional."
+  },
+  {
+    "idRegistre": 300,
+    "idPrograma": 3,
+    "idKPI": 40,
+    "idUsuari": 19,
+    "valor": 2,
+    "dataRegistre": "2026-07-08",
+    "comentari": "Dificultats per avançar al ritme previst; es recomana suport addicional."
+  },
+  {
+    "idRegistre": 301,
+    "idPrograma": 4,
+    "idKPI": 41,
+    "idUsuari": 20,
+    "valor": 11,
+    "dataRegistre": "2026-06-10",
+    "comentari": "Evolució positiva i alineada amb l'objectiu definit."
+  },
+  {
+    "idRegistre": 302,
+    "idPrograma": 4,
+    "idKPI": 41,
+    "idUsuari": 20,
+    "valor": 9,
+    "dataRegistre": "2026-06-24",
+    "comentari": "Evolució positiva i alineada amb l'objectiu definit."
+  },
+  {
+    "idRegistre": 303,
+    "idPrograma": 4,
+    "idKPI": 41,
+    "idUsuari": 20,
+    "valor": 9,
+    "dataRegistre": "2026-07-08",
+    "comentari": "Evolució positiva i alineada amb l'objectiu definit."
+  },
+  {
+    "idRegistre": 304,
+    "idPrograma": 4,
+    "idKPI": 42,
+    "idUsuari": 20,
+    "valor": 4,
+    "dataRegistre": "2026-06-10",
+    "comentari": "Evolució positiva i alineada amb l'objectiu definit."
+  },
+  {
+    "idRegistre": 305,
+    "idPrograma": 4,
+    "idKPI": 42,
+    "idUsuari": 20,
+    "valor": 4,
+    "dataRegistre": "2026-06-24",
+    "comentari": "Evolució positiva i alineada amb l'objectiu definit."
+  },
+  {
+    "idRegistre": 306,
+    "idPrograma": 4,
+    "idKPI": 42,
+    "idUsuari": 20,
+    "valor": 4,
+    "dataRegistre": "2026-07-08",
+    "comentari": "Evolució positiva i alineada amb l'objectiu definit."
+  },
+  {
+    "idRegistre": 307,
+    "idPrograma": 4,
+    "idKPI": 43,
+    "idUsuari": 20,
+    "valor": 13,
+    "dataRegistre": "2026-06-10",
+    "comentari": "Evolució positiva i alineada amb l'objectiu definit."
+  },
+  {
+    "idRegistre": 308,
+    "idPrograma": 4,
+    "idKPI": 43,
+    "idUsuari": 20,
+    "valor": 15,
+    "dataRegistre": "2026-06-24",
+    "comentari": "Evolució positiva i alineada amb l'objectiu definit."
+  },
+  {
+    "idRegistre": 309,
+    "idPrograma": 4,
+    "idKPI": 43,
+    "idUsuari": 20,
+    "valor": 20,
+    "dataRegistre": "2026-07-08",
+    "comentari": "Evolució positiva i alineada amb l'objectiu definit."
+  },
+  {
+    "idRegistre": 310,
+    "idPrograma": 4,
+    "idKPI": 44,
+    "idUsuari": 20,
+    "valor": 5,
+    "dataRegistre": "2026-06-10",
+    "comentari": "Evolució positiva i alineada amb l'objectiu definit."
+  },
+  {
+    "idRegistre": 311,
+    "idPrograma": 4,
+    "idKPI": 44,
+    "idUsuari": 20,
+    "valor": 5,
+    "dataRegistre": "2026-06-24",
+    "comentari": "Evolució positiva i alineada amb l'objectiu definit."
+  },
+  {
+    "idRegistre": 312,
+    "idPrograma": 4,
+    "idKPI": 44,
+    "idUsuari": 20,
+    "valor": 5,
+    "dataRegistre": "2026-07-08",
+    "comentari": "Evolució positiva i alineada amb l'objectiu definit."
+  },
+  {
+    "idRegistre": 313,
+    "idPrograma": 4,
+    "idKPI": 45,
+    "idUsuari": 20,
+    "valor": 14,
+    "dataRegistre": "2026-06-10",
+    "comentari": "Evolució positiva i alineada amb l'objectiu definit."
+  },
+  {
+    "idRegistre": 314,
+    "idPrograma": 4,
+    "idKPI": 45,
+    "idUsuari": 20,
+    "valor": 16,
+    "dataRegistre": "2026-06-24",
+    "comentari": "Evolució positiva i alineada amb l'objectiu definit."
+  },
+  {
+    "idRegistre": 315,
+    "idPrograma": 4,
+    "idKPI": 45,
+    "idUsuari": 20,
+    "valor": 12,
+    "dataRegistre": "2026-07-08",
+    "comentari": "Evolució positiva i alineada amb l'objectiu definit."
+  },
+  {
+    "idRegistre": 316,
+    "idPrograma": 4,
+    "idKPI": 46,
+    "idUsuari": 20,
+    "valor": 4,
+    "dataRegistre": "2026-06-10",
+    "comentari": "Evolució positiva i alineada amb l'objectiu definit."
+  },
+  {
+    "idRegistre": 317,
+    "idPrograma": 4,
+    "idKPI": 46,
+    "idUsuari": 20,
+    "valor": 4,
+    "dataRegistre": "2026-06-24",
+    "comentari": "Evolució positiva i alineada amb l'objectiu definit."
+  },
+  {
+    "idRegistre": 318,
+    "idPrograma": 4,
+    "idKPI": 46,
+    "idUsuari": 20,
+    "valor": 5,
+    "dataRegistre": "2026-07-08",
+    "comentari": "Evolució positiva i alineada amb l'objectiu definit."
+  },
+  {
+    "idRegistre": 319,
+    "idPrograma": 4,
+    "idKPI": 47,
+    "idUsuari": 20,
+    "valor": 13,
+    "dataRegistre": "2026-06-10",
+    "comentari": "Evolució positiva i alineada amb l'objectiu definit."
+  },
+  {
+    "idRegistre": 320,
+    "idPrograma": 4,
+    "idKPI": 47,
+    "idUsuari": 20,
+    "valor": 9,
+    "dataRegistre": "2026-06-24",
+    "comentari": "Evolució positiva i alineada amb l'objectiu definit."
+  },
+  {
+    "idRegistre": 321,
+    "idPrograma": 4,
+    "idKPI": 47,
+    "idUsuari": 20,
+    "valor": 8,
+    "dataRegistre": "2026-07-08",
+    "comentari": "Evolució positiva i alineada amb l'objectiu definit."
+  },
+  {
+    "idRegistre": 322,
+    "idPrograma": 4,
+    "idKPI": 48,
+    "idUsuari": 20,
+    "valor": 88.2,
+    "dataRegistre": "2026-06-10",
+    "comentari": "Evolució positiva i alineada amb l'objectiu definit."
+  },
+  {
+    "idRegistre": 323,
+    "idPrograma": 4,
+    "idKPI": 48,
+    "idUsuari": 20,
+    "valor": 92.1,
+    "dataRegistre": "2026-06-24",
+    "comentari": "Evolució positiva i alineada amb l'objectiu definit."
+  },
+  {
+    "idRegistre": 324,
+    "idPrograma": 4,
+    "idKPI": 48,
+    "idUsuari": 20,
+    "valor": 98.5,
+    "dataRegistre": "2026-07-08",
+    "comentari": "Evolució positiva i alineada amb l'objectiu definit."
+  },
+  {
+    "idRegistre": 325,
+    "idPrograma": 4,
+    "idKPI": 41,
+    "idUsuari": 21,
+    "valor": 7,
+    "dataRegistre": "2026-06-10",
+    "comentari": "Progrés parcial; cal mantenir el seguiment per consolidar l'hàbit."
+  },
+  {
+    "idRegistre": 326,
+    "idPrograma": 4,
+    "idKPI": 41,
+    "idUsuari": 21,
+    "valor": 6,
+    "dataRegistre": "2026-06-24",
+    "comentari": "Progrés parcial; cal mantenir el seguiment per consolidar l'hàbit."
+  },
+  {
+    "idRegistre": 327,
+    "idPrograma": 4,
+    "idKPI": 41,
+    "idUsuari": 21,
+    "valor": 5,
+    "dataRegistre": "2026-07-08",
+    "comentari": "Progrés parcial; cal mantenir el seguiment per consolidar l'hàbit."
+  },
+  {
+    "idRegistre": 328,
+    "idPrograma": 4,
+    "idKPI": 42,
+    "idUsuari": 21,
+    "valor": 3,
+    "dataRegistre": "2026-06-10",
+    "comentari": "Progrés parcial; cal mantenir el seguiment per consolidar l'hàbit."
+  },
+  {
+    "idRegistre": 329,
+    "idPrograma": 4,
+    "idKPI": 42,
+    "idUsuari": 21,
+    "valor": 3,
+    "dataRegistre": "2026-06-24",
+    "comentari": "Progrés parcial; cal mantenir el seguiment per consolidar l'hàbit."
+  },
+  {
+    "idRegistre": 330,
+    "idPrograma": 4,
+    "idKPI": 42,
+    "idUsuari": 21,
+    "valor": 3,
+    "dataRegistre": "2026-07-08",
+    "comentari": "Progrés parcial; cal mantenir el seguiment per consolidar l'hàbit."
+  },
+  {
+    "idRegistre": 331,
+    "idPrograma": 4,
+    "idKPI": 43,
+    "idUsuari": 21,
+    "valor": 11,
+    "dataRegistre": "2026-06-10",
+    "comentari": "Progrés parcial; cal mantenir el seguiment per consolidar l'hàbit."
+  },
+  {
+    "idRegistre": 332,
+    "idPrograma": 4,
+    "idKPI": 43,
+    "idUsuari": 21,
+    "valor": 11,
+    "dataRegistre": "2026-06-24",
+    "comentari": "Progrés parcial; cal mantenir el seguiment per consolidar l'hàbit."
+  },
+  {
+    "idRegistre": 333,
+    "idPrograma": 4,
+    "idKPI": 43,
+    "idUsuari": 21,
+    "valor": 10,
+    "dataRegistre": "2026-07-08",
+    "comentari": "Progrés parcial; cal mantenir el seguiment per consolidar l'hàbit."
+  },
+  {
+    "idRegistre": 334,
+    "idPrograma": 4,
+    "idKPI": 44,
+    "idUsuari": 21,
+    "valor": 3,
+    "dataRegistre": "2026-06-10",
+    "comentari": "Progrés parcial; cal mantenir el seguiment per consolidar l'hàbit."
+  },
+  {
+    "idRegistre": 335,
+    "idPrograma": 4,
+    "idKPI": 44,
+    "idUsuari": 21,
+    "valor": 3,
+    "dataRegistre": "2026-06-24",
+    "comentari": "Progrés parcial; cal mantenir el seguiment per consolidar l'hàbit."
+  },
+  {
+    "idRegistre": 336,
+    "idPrograma": 4,
+    "idKPI": 44,
+    "idUsuari": 21,
+    "valor": 3,
+    "dataRegistre": "2026-07-08",
+    "comentari": "Progrés parcial; cal mantenir el seguiment per consolidar l'hàbit."
+  },
+  {
+    "idRegistre": 337,
+    "idPrograma": 4,
+    "idKPI": 45,
+    "idUsuari": 21,
+    "valor": 9,
+    "dataRegistre": "2026-06-10",
+    "comentari": "Progrés parcial; cal mantenir el seguiment per consolidar l'hàbit."
+  },
+  {
+    "idRegistre": 338,
+    "idPrograma": 4,
+    "idKPI": 45,
+    "idUsuari": 21,
+    "valor": 10,
+    "dataRegistre": "2026-06-24",
+    "comentari": "Progrés parcial; cal mantenir el seguiment per consolidar l'hàbit."
+  },
+  {
+    "idRegistre": 339,
+    "idPrograma": 4,
+    "idKPI": 45,
+    "idUsuari": 21,
+    "valor": 11,
+    "dataRegistre": "2026-07-08",
+    "comentari": "Progrés parcial; cal mantenir el seguiment per consolidar l'hàbit."
+  },
+  {
+    "idRegistre": 340,
+    "idPrograma": 4,
+    "idKPI": 46,
+    "idUsuari": 21,
+    "valor": 3,
+    "dataRegistre": "2026-06-10",
+    "comentari": "Progrés parcial; cal mantenir el seguiment per consolidar l'hàbit."
+  },
+  {
+    "idRegistre": 341,
+    "idPrograma": 4,
+    "idKPI": 46,
+    "idUsuari": 21,
+    "valor": 3,
+    "dataRegistre": "2026-06-24",
+    "comentari": "Progrés parcial; cal mantenir el seguiment per consolidar l'hàbit."
+  },
+  {
+    "idRegistre": 342,
+    "idPrograma": 4,
+    "idKPI": 46,
+    "idUsuari": 21,
+    "valor": 3,
+    "dataRegistre": "2026-07-08",
+    "comentari": "Progrés parcial; cal mantenir el seguiment per consolidar l'hàbit."
+  },
+  {
+    "idRegistre": 343,
+    "idPrograma": 4,
+    "idKPI": 47,
+    "idUsuari": 21,
+    "valor": 24,
+    "dataRegistre": "2026-06-10",
+    "comentari": "Progrés parcial; cal mantenir el seguiment per consolidar l'hàbit."
+  },
+  {
+    "idRegistre": 344,
+    "idPrograma": 4,
+    "idKPI": 47,
+    "idUsuari": 21,
+    "valor": 30,
+    "dataRegistre": "2026-06-24",
+    "comentari": "Progrés parcial; cal mantenir el seguiment per consolidar l'hàbit."
+  },
+  {
+    "idRegistre": 345,
+    "idPrograma": 4,
+    "idKPI": 47,
+    "idUsuari": 21,
+    "valor": 28,
+    "dataRegistre": "2026-07-08",
+    "comentari": "Progrés parcial; cal mantenir el seguiment per consolidar l'hàbit."
+  },
+  {
+    "idRegistre": 346,
+    "idPrograma": 4,
+    "idKPI": 48,
+    "idUsuari": 21,
+    "valor": 61.5,
+    "dataRegistre": "2026-06-10",
+    "comentari": "Progrés parcial; cal mantenir el seguiment per consolidar l'hàbit."
+  },
+  {
+    "idRegistre": 347,
+    "idPrograma": 4,
+    "idKPI": 48,
+    "idUsuari": 21,
+    "valor": 72.0,
+    "dataRegistre": "2026-06-24",
+    "comentari": "Progrés parcial; cal mantenir el seguiment per consolidar l'hàbit."
+  },
+  {
+    "idRegistre": 348,
+    "idPrograma": 4,
+    "idKPI": 48,
+    "idUsuari": 21,
+    "valor": 55.4,
+    "dataRegistre": "2026-07-08",
+    "comentari": "Progrés parcial; cal mantenir el seguiment per consolidar l'hàbit."
+  },
+  {
+    "idRegistre": 349,
+    "idPrograma": 5,
+    "idKPI": 49,
+    "idUsuari": 22,
+    "valor": 6,
+    "dataRegistre": "2026-06-10",
+    "comentari": "Registre incomplet o irregular durant el període."
+  },
+  {
+    "idRegistre": 350,
+    "idPrograma": 5,
+    "idKPI": 51,
+    "idUsuari": 22,
+    "valor": 53,
+    "dataRegistre": "2026-06-10",
+    "comentari": "Registre incomplet o irregular durant el període."
+  },
+  {
+    "idRegistre": 351,
+    "idPrograma": 5,
+    "idKPI": 52,
+    "idUsuari": 22,
+    "valor": 23.3,
+    "dataRegistre": "2026-06-10",
+    "comentari": "Registre incomplet o irregular durant el període."
+  },
+  {
+    "idRegistre": 352,
+    "idPrograma": 5,
+    "idKPI": 52,
+    "idUsuari": 22,
+    "valor": 34.0,
+    "dataRegistre": "2026-06-24",
+    "comentari": "Registre incomplet o irregular durant el període."
+  },
+  {
+    "idRegistre": 353,
+    "idPrograma": 5,
+    "idKPI": 52,
+    "idUsuari": 22,
+    "valor": 30.4,
+    "dataRegistre": "2026-07-08",
+    "comentari": "Registre incomplet o irregular durant el període."
+  },
+  {
+    "idRegistre": 354,
+    "idPrograma": 5,
+    "idKPI": 53,
+    "idUsuari": 22,
+    "valor": 6,
+    "dataRegistre": "2026-06-10",
+    "comentari": "Registre incomplet o irregular durant el període."
+  },
+  {
+    "idRegistre": 355,
+    "idPrograma": 5,
+    "idKPI": 53,
+    "idUsuari": 22,
+    "valor": 5,
+    "dataRegistre": "2026-06-24",
+    "comentari": "Registre incomplet o irregular durant el període."
+  },
+  {
+    "idRegistre": 356,
+    "idPrograma": 5,
+    "idKPI": 53,
+    "idUsuari": 22,
+    "valor": 6,
+    "dataRegistre": "2026-07-08",
+    "comentari": "Registre incomplet o irregular durant el període."
+  },
+  {
+    "idRegistre": 357,
+    "idPrograma": 5,
+    "idKPI": 54,
+    "idUsuari": 22,
+    "valor": 2,
+    "dataRegistre": "2026-06-10",
+    "comentari": "Registre incomplet o irregular durant el període."
+  },
+  {
+    "idRegistre": 358,
+    "idPrograma": 5,
+    "idKPI": 54,
+    "idUsuari": 22,
+    "valor": 2,
+    "dataRegistre": "2026-06-24",
+    "comentari": "Registre incomplet o irregular durant el període."
+  },
+  {
+    "idRegistre": 359,
+    "idPrograma": 5,
+    "idKPI": 56,
+    "idUsuari": 22,
+    "valor": 39.1,
+    "dataRegistre": "2026-06-10",
+    "comentari": "Registre incomplet o irregular durant el període."
+  },
+  {
+    "idRegistre": 360,
+    "idPrograma": 5,
+    "idKPI": 56,
+    "idUsuari": 22,
+    "valor": 32.0,
+    "dataRegistre": "2026-06-24",
+    "comentari": "Registre incomplet o irregular durant el període."
+  },
+  {
+    "idRegistre": 361,
+    "idPrograma": 5,
+    "idKPI": 49,
+    "idUsuari": 23,
+    "valor": 13,
+    "dataRegistre": "2026-06-10",
+    "comentari": "Evolució positiva i alineada amb l'objectiu definit."
+  },
+  {
+    "idRegistre": 362,
+    "idPrograma": 5,
+    "idKPI": 49,
+    "idUsuari": 23,
+    "valor": 14,
+    "dataRegistre": "2026-06-24",
+    "comentari": "Evolució positiva i alineada amb l'objectiu definit."
+  },
+  {
+    "idRegistre": 363,
+    "idPrograma": 5,
+    "idKPI": 49,
+    "idUsuari": 23,
+    "valor": 14,
+    "dataRegistre": "2026-07-08",
+    "comentari": "Evolució positiva i alineada amb l'objectiu definit."
+  },
+  {
+    "idRegistre": 364,
+    "idPrograma": 5,
+    "idKPI": 50,
+    "idUsuari": 23,
+    "valor": 4,
+    "dataRegistre": "2026-06-10",
+    "comentari": "Evolució positiva i alineada amb l'objectiu definit."
+  },
+  {
+    "idRegistre": 365,
+    "idPrograma": 5,
+    "idKPI": 50,
+    "idUsuari": 23,
+    "valor": 5,
+    "dataRegistre": "2026-06-24",
+    "comentari": "Evolució positiva i alineada amb l'objectiu definit."
+  },
+  {
+    "idRegistre": 366,
+    "idPrograma": 5,
+    "idKPI": 50,
+    "idUsuari": 23,
+    "valor": 4,
+    "dataRegistre": "2026-07-08",
+    "comentari": "Evolució positiva i alineada amb l'objectiu definit."
+  },
+  {
+    "idRegistre": 367,
+    "idPrograma": 5,
+    "idKPI": 51,
+    "idUsuari": 23,
+    "valor": 4,
+    "dataRegistre": "2026-06-10",
+    "comentari": "Evolució positiva i alineada amb l'objectiu definit."
+  },
+  {
+    "idRegistre": 368,
+    "idPrograma": 5,
+    "idKPI": 51,
+    "idUsuari": 23,
+    "valor": 13,
+    "dataRegistre": "2026-06-24",
+    "comentari": "Evolució positiva i alineada amb l'objectiu definit."
+  },
+  {
+    "idRegistre": 369,
+    "idPrograma": 5,
+    "idKPI": 51,
+    "idUsuari": 23,
+    "valor": 14,
+    "dataRegistre": "2026-07-08",
+    "comentari": "Evolució positiva i alineada amb l'objectiu definit."
+  },
+  {
+    "idRegistre": 370,
+    "idPrograma": 5,
+    "idKPI": 52,
+    "idUsuari": 23,
+    "valor": 86.0,
+    "dataRegistre": "2026-06-10",
+    "comentari": "Evolució positiva i alineada amb l'objectiu definit."
+  },
+  {
+    "idRegistre": 371,
+    "idPrograma": 5,
+    "idKPI": 52,
+    "idUsuari": 23,
+    "valor": 91.1,
+    "dataRegistre": "2026-06-24",
+    "comentari": "Evolució positiva i alineada amb l'objectiu definit."
+  },
+  {
+    "idRegistre": 372,
+    "idPrograma": 5,
+    "idKPI": 52,
+    "idUsuari": 23,
+    "valor": 93.1,
+    "dataRegistre": "2026-07-08",
+    "comentari": "Evolució positiva i alineada amb l'objectiu definit."
+  },
+  {
+    "idRegistre": 373,
+    "idPrograma": 5,
+    "idKPI": 53,
+    "idUsuari": 23,
+    "valor": 15,
+    "dataRegistre": "2026-06-10",
+    "comentari": "Evolució positiva i alineada amb l'objectiu definit."
+  },
+  {
+    "idRegistre": 374,
+    "idPrograma": 5,
+    "idKPI": 53,
+    "idUsuari": 23,
+    "valor": 14,
+    "dataRegistre": "2026-06-24",
+    "comentari": "Evolució positiva i alineada amb l'objectiu definit."
+  },
+  {
+    "idRegistre": 375,
+    "idPrograma": 5,
+    "idKPI": 53,
+    "idUsuari": 23,
+    "valor": 15,
+    "dataRegistre": "2026-07-08",
+    "comentari": "Evolució positiva i alineada amb l'objectiu definit."
+  },
+  {
+    "idRegistre": 376,
+    "idPrograma": 5,
+    "idKPI": 54,
+    "idUsuari": 23,
+    "valor": 5,
+    "dataRegistre": "2026-06-10",
+    "comentari": "Evolució positiva i alineada amb l'objectiu definit."
+  },
+  {
+    "idRegistre": 377,
+    "idPrograma": 5,
+    "idKPI": 54,
+    "idUsuari": 23,
+    "valor": 5,
+    "dataRegistre": "2026-06-24",
+    "comentari": "Evolució positiva i alineada amb l'objectiu definit."
+  },
+  {
+    "idRegistre": 378,
+    "idPrograma": 5,
+    "idKPI": 54,
+    "idUsuari": 23,
+    "valor": 5,
+    "dataRegistre": "2026-07-08",
+    "comentari": "Evolució positiva i alineada amb l'objectiu definit."
+  },
+  {
+    "idRegistre": 379,
+    "idPrograma": 5,
+    "idKPI": 55,
+    "idUsuari": 23,
+    "valor": 16,
+    "dataRegistre": "2026-06-10",
+    "comentari": "Evolució positiva i alineada amb l'objectiu definit."
+  },
+  {
+    "idRegistre": 380,
+    "idPrograma": 5,
+    "idKPI": 55,
+    "idUsuari": 23,
+    "valor": 15,
+    "dataRegistre": "2026-06-24",
+    "comentari": "Evolució positiva i alineada amb l'objectiu definit."
+  },
+  {
+    "idRegistre": 381,
+    "idPrograma": 5,
+    "idKPI": 55,
+    "idUsuari": 23,
+    "valor": 7,
+    "dataRegistre": "2026-07-08",
+    "comentari": "Evolució positiva i alineada amb l'objectiu definit."
+  },
+  {
+    "idRegistre": 382,
+    "idPrograma": 5,
+    "idKPI": 56,
+    "idUsuari": 23,
+    "valor": 85.1,
+    "dataRegistre": "2026-06-10",
+    "comentari": "Evolució positiva i alineada amb l'objectiu definit."
+  },
+  {
+    "idRegistre": 383,
+    "idPrograma": 5,
+    "idKPI": 56,
+    "idUsuari": 23,
+    "valor": 90.3,
+    "dataRegistre": "2026-06-24",
+    "comentari": "Evolució positiva i alineada amb l'objectiu definit."
+  },
+  {
+    "idRegistre": 384,
+    "idPrograma": 5,
+    "idKPI": 56,
+    "idUsuari": 23,
+    "valor": 96.3,
+    "dataRegistre": "2026-07-08",
+    "comentari": "Evolució positiva i alineada amb l'objectiu definit."
+  },
+  {
+    "idRegistre": 385,
+    "idPrograma": 5,
+    "idKPI": 49,
+    "idUsuari": 24,
+    "valor": 11,
+    "dataRegistre": "2026-06-10",
+    "comentari": "Progrés parcial; cal mantenir el seguiment per consolidar l'hàbit."
+  },
+  {
+    "idRegistre": 386,
+    "idPrograma": 5,
+    "idKPI": 49,
+    "idUsuari": 24,
+    "valor": 11,
+    "dataRegistre": "2026-06-24",
+    "comentari": "Progrés parcial; cal mantenir el seguiment per consolidar l'hàbit."
+  },
+  {
+    "idRegistre": 387,
+    "idPrograma": 5,
+    "idKPI": 49,
+    "idUsuari": 24,
+    "valor": 9,
+    "dataRegistre": "2026-07-08",
+    "comentari": "Progrés parcial; cal mantenir el seguiment per consolidar l'hàbit."
+  },
+  {
+    "idRegistre": 388,
+    "idPrograma": 5,
+    "idKPI": 50,
+    "idUsuari": 24,
+    "valor": 3,
+    "dataRegistre": "2026-06-10",
+    "comentari": "Progrés parcial; cal mantenir el seguiment per consolidar l'hàbit."
+  },
+  {
+    "idRegistre": 389,
+    "idPrograma": 5,
+    "idKPI": 50,
+    "idUsuari": 24,
+    "valor": 3,
+    "dataRegistre": "2026-06-24",
+    "comentari": "Progrés parcial; cal mantenir el seguiment per consolidar l'hàbit."
+  },
+  {
+    "idRegistre": 390,
+    "idPrograma": 5,
+    "idKPI": 50,
+    "idUsuari": 24,
+    "valor": 3,
+    "dataRegistre": "2026-07-08",
+    "comentari": "Progrés parcial; cal mantenir el seguiment per consolidar l'hàbit."
+  },
+  {
+    "idRegistre": 391,
+    "idPrograma": 5,
+    "idKPI": 51,
+    "idUsuari": 24,
+    "valor": 24,
+    "dataRegistre": "2026-06-10",
+    "comentari": "Progrés parcial; cal mantenir el seguiment per consolidar l'hàbit."
+  },
+  {
+    "idRegistre": 392,
+    "idPrograma": 5,
+    "idKPI": 51,
+    "idUsuari": 24,
+    "valor": 24,
+    "dataRegistre": "2026-06-24",
+    "comentari": "Progrés parcial; cal mantenir el seguiment per consolidar l'hàbit."
+  },
+  {
+    "idRegistre": 393,
+    "idPrograma": 5,
+    "idKPI": 51,
+    "idUsuari": 24,
+    "valor": 27,
+    "dataRegistre": "2026-07-08",
+    "comentari": "Progrés parcial; cal mantenir el seguiment per consolidar l'hàbit."
+  },
+  {
+    "idRegistre": 394,
+    "idPrograma": 5,
+    "idKPI": 52,
+    "idUsuari": 24,
+    "valor": 56.0,
+    "dataRegistre": "2026-06-10",
+    "comentari": "Progrés parcial; cal mantenir el seguiment per consolidar l'hàbit."
+  },
+  {
+    "idRegistre": 395,
+    "idPrograma": 5,
+    "idKPI": 52,
+    "idUsuari": 24,
+    "valor": 63.8,
+    "dataRegistre": "2026-06-24",
+    "comentari": "Progrés parcial; cal mantenir el seguiment per consolidar l'hàbit."
+  },
+  {
+    "idRegistre": 396,
+    "idPrograma": 5,
+    "idKPI": 52,
+    "idUsuari": 24,
+    "valor": 72.6,
+    "dataRegistre": "2026-07-08",
+    "comentari": "Progrés parcial; cal mantenir el seguiment per consolidar l'hàbit."
+  },
+  {
+    "idRegistre": 397,
+    "idPrograma": 5,
+    "idKPI": 53,
+    "idUsuari": 24,
+    "valor": 9,
+    "dataRegistre": "2026-06-10",
+    "comentari": "Progrés parcial; cal mantenir el seguiment per consolidar l'hàbit."
+  },
+  {
+    "idRegistre": 398,
+    "idPrograma": 5,
+    "idKPI": 53,
+    "idUsuari": 24,
+    "valor": 8,
+    "dataRegistre": "2026-06-24",
+    "comentari": "Progrés parcial; cal mantenir el seguiment per consolidar l'hàbit."
+  },
+  {
+    "idRegistre": 399,
+    "idPrograma": 5,
+    "idKPI": 53,
+    "idUsuari": 24,
+    "valor": 9,
+    "dataRegistre": "2026-07-08",
+    "comentari": "Progrés parcial; cal mantenir el seguiment per consolidar l'hàbit."
+  },
+  {
+    "idRegistre": 400,
+    "idPrograma": 5,
+    "idKPI": 54,
+    "idUsuari": 24,
+    "valor": 3,
+    "dataRegistre": "2026-06-10",
+    "comentari": "Progrés parcial; cal mantenir el seguiment per consolidar l'hàbit."
+  },
+  {
+    "idRegistre": 401,
+    "idPrograma": 5,
+    "idKPI": 54,
+    "idUsuari": 24,
+    "valor": 3,
+    "dataRegistre": "2026-06-24",
+    "comentari": "Progrés parcial; cal mantenir el seguiment per consolidar l'hàbit."
+  },
+  {
+    "idRegistre": 402,
+    "idPrograma": 5,
+    "idKPI": 54,
+    "idUsuari": 24,
+    "valor": 3,
+    "dataRegistre": "2026-07-08",
+    "comentari": "Progrés parcial; cal mantenir el seguiment per consolidar l'hàbit."
+  },
+  {
+    "idRegistre": 403,
+    "idPrograma": 5,
+    "idKPI": 55,
+    "idUsuari": 24,
+    "valor": 26,
+    "dataRegistre": "2026-06-10",
+    "comentari": "Progrés parcial; cal mantenir el seguiment per consolidar l'hàbit."
+  },
+  {
+    "idRegistre": 404,
+    "idPrograma": 5,
+    "idKPI": 55,
+    "idUsuari": 24,
+    "valor": 28,
+    "dataRegistre": "2026-06-24",
+    "comentari": "Progrés parcial; cal mantenir el seguiment per consolidar l'hàbit."
+  },
+  {
+    "idRegistre": 405,
+    "idPrograma": 5,
+    "idKPI": 55,
+    "idUsuari": 24,
+    "valor": 22,
+    "dataRegistre": "2026-07-08",
+    "comentari": "Progrés parcial; cal mantenir el seguiment per consolidar l'hàbit."
+  },
+  {
+    "idRegistre": 406,
+    "idPrograma": 5,
+    "idKPI": 56,
+    "idUsuari": 24,
+    "valor": 71.6,
+    "dataRegistre": "2026-06-10",
+    "comentari": "Progrés parcial; cal mantenir el seguiment per consolidar l'hàbit."
+  },
+  {
+    "idRegistre": 407,
+    "idPrograma": 5,
+    "idKPI": 56,
+    "idUsuari": 24,
+    "valor": 58.7,
+    "dataRegistre": "2026-06-24",
+    "comentari": "Progrés parcial; cal mantenir el seguiment per consolidar l'hàbit."
+  },
+  {
+    "idRegistre": 408,
+    "idPrograma": 5,
+    "idKPI": 56,
+    "idUsuari": 24,
+    "valor": 67.0,
+    "dataRegistre": "2026-07-08",
+    "comentari": "Progrés parcial; cal mantenir el seguiment per consolidar l'hàbit."
+  },
+  {
+    "idRegistre": 409,
+    "idPrograma": 6,
+    "idKPI": 61,
+    "idUsuari": 25,
+    "valor": 18.2,
+    "dataRegistre": "2026-06-10",
+    "comentari": "Registre incomplet o irregular durant el període."
+  },
+  {
+    "idRegistre": 410,
+    "idPrograma": 6,
+    "idKPI": 61,
+    "idUsuari": 25,
+    "valor": 39.9,
+    "dataRegistre": "2026-06-24",
+    "comentari": "Registre incomplet o irregular durant el període."
+  },
+  {
+    "idRegistre": 411,
+    "idPrograma": 6,
+    "idKPI": 64,
+    "idUsuari": 25,
+    "valor": 2,
+    "dataRegistre": "2026-06-10",
+    "comentari": "Registre incomplet o irregular durant el període."
+  },
+  {
+    "idRegistre": 412,
+    "idPrograma": 6,
+    "idKPI": 64,
+    "idUsuari": 25,
+    "valor": 2,
+    "dataRegistre": "2026-07-08",
+    "comentari": "Registre incomplet o irregular durant el període."
+  },
+  {
+    "idRegistre": 413,
+    "idPrograma": 6,
+    "idKPI": 65,
+    "idUsuari": 25,
+    "valor": 36.2,
+    "dataRegistre": "2026-06-10",
+    "comentari": "Registre incomplet o irregular durant el període."
+  },
+  {
+    "idRegistre": 414,
+    "idPrograma": 6,
+    "idKPI": 65,
+    "idUsuari": 25,
+    "valor": 9.6,
+    "dataRegistre": "2026-06-24",
+    "comentari": "Registre incomplet o irregular durant el període."
+  },
+  {
+    "idRegistre": 415,
+    "idPrograma": 6,
+    "idKPI": 68,
+    "idUsuari": 25,
+    "valor": 2,
+    "dataRegistre": "2026-06-10",
+    "comentari": "Registre incomplet o irregular durant el període."
+  },
+  {
+    "idRegistre": 416,
+    "idPrograma": 6,
+    "idKPI": 68,
+    "idUsuari": 25,
+    "valor": 2,
+    "dataRegistre": "2026-07-08",
+    "comentari": "Registre incomplet o irregular durant el període."
+  },
+  {
+    "idRegistre": 417,
+    "idPrograma": 6,
+    "idKPI": 70,
+    "idUsuari": 25,
+    "valor": 2,
+    "dataRegistre": "2026-06-10",
+    "comentari": "Registre incomplet o irregular durant el període."
+  },
+  {
+    "idRegistre": 418,
+    "idPrograma": 6,
+    "idKPI": 70,
+    "idUsuari": 25,
+    "valor": 2,
+    "dataRegistre": "2026-07-08",
+    "comentari": "Registre incomplet o irregular durant el període."
+  },
+  {
+    "idRegistre": 419,
+    "idPrograma": 6,
+    "idKPI": 57,
+    "idUsuari": 26,
+    "valor": 86.2,
+    "dataRegistre": "2026-06-10",
+    "comentari": "Evolució positiva i alineada amb l'objectiu definit."
+  },
+  {
+    "idRegistre": 420,
+    "idPrograma": 6,
+    "idKPI": 57,
+    "idUsuari": 26,
+    "valor": 93.5,
+    "dataRegistre": "2026-06-24",
+    "comentari": "Evolució positiva i alineada amb l'objectiu definit."
+  },
+  {
+    "idRegistre": 421,
+    "idPrograma": 6,
+    "idKPI": 57,
+    "idUsuari": 26,
+    "valor": 99.2,
+    "dataRegistre": "2026-07-08",
+    "comentari": "Evolució positiva i alineada amb l'objectiu definit."
+  },
+  {
+    "idRegistre": 422,
+    "idPrograma": 6,
+    "idKPI": 58,
+    "idUsuari": 26,
+    "valor": 84.9,
+    "dataRegistre": "2026-06-10",
+    "comentari": "Evolució positiva i alineada amb l'objectiu definit."
+  },
+  {
+    "idRegistre": 423,
+    "idPrograma": 6,
+    "idKPI": 58,
+    "idUsuari": 26,
+    "valor": 92.9,
+    "dataRegistre": "2026-06-24",
+    "comentari": "Evolució positiva i alineada amb l'objectiu definit."
+  },
+  {
+    "idRegistre": 424,
+    "idPrograma": 6,
+    "idKPI": 58,
+    "idUsuari": 26,
+    "valor": 76.9,
+    "dataRegistre": "2026-07-08",
+    "comentari": "Evolució positiva i alineada amb l'objectiu definit."
+  },
+  {
+    "idRegistre": 425,
+    "idPrograma": 6,
+    "idKPI": 59,
+    "idUsuari": 26,
+    "valor": 11,
+    "dataRegistre": "2026-06-10",
+    "comentari": "Evolució positiva i alineada amb l'objectiu definit."
+  },
+  {
+    "idRegistre": 426,
+    "idPrograma": 6,
+    "idKPI": 59,
+    "idUsuari": 26,
+    "valor": 11,
+    "dataRegistre": "2026-06-24",
+    "comentari": "Evolució positiva i alineada amb l'objectiu definit."
+  },
+  {
+    "idRegistre": 427,
+    "idPrograma": 6,
+    "idKPI": 59,
+    "idUsuari": 26,
+    "valor": 8,
+    "dataRegistre": "2026-07-08",
+    "comentari": "Evolució positiva i alineada amb l'objectiu definit."
+  },
+  {
+    "idRegistre": 428,
+    "idPrograma": 6,
+    "idKPI": 60,
+    "idUsuari": 26,
+    "valor": 5,
+    "dataRegistre": "2026-06-10",
+    "comentari": "Evolució positiva i alineada amb l'objectiu definit."
+  },
+  {
+    "idRegistre": 429,
+    "idPrograma": 6,
+    "idKPI": 60,
+    "idUsuari": 26,
+    "valor": 5,
+    "dataRegistre": "2026-06-24",
+    "comentari": "Evolució positiva i alineada amb l'objectiu definit."
+  },
+  {
+    "idRegistre": 430,
+    "idPrograma": 6,
+    "idKPI": 60,
+    "idUsuari": 26,
+    "valor": 5,
+    "dataRegistre": "2026-07-08",
+    "comentari": "Evolució positiva i alineada amb l'objectiu definit."
+  },
+  {
+    "idRegistre": 431,
+    "idPrograma": 6,
+    "idKPI": 61,
+    "idUsuari": 26,
+    "valor": 82.4,
+    "dataRegistre": "2026-06-10",
+    "comentari": "Evolució positiva i alineada amb l'objectiu definit."
+  },
+  {
+    "idRegistre": 432,
+    "idPrograma": 6,
+    "idKPI": 61,
+    "idUsuari": 26,
+    "valor": 99.7,
+    "dataRegistre": "2026-06-24",
+    "comentari": "Evolució positiva i alineada amb l'objectiu definit."
+  },
+  {
+    "idRegistre": 433,
+    "idPrograma": 6,
+    "idKPI": 61,
+    "idUsuari": 26,
+    "valor": 95.7,
+    "dataRegistre": "2026-07-08",
+    "comentari": "Evolució positiva i alineada amb l'objectiu definit."
+  },
+  {
+    "idRegistre": 434,
+    "idPrograma": 6,
+    "idKPI": 62,
+    "idUsuari": 26,
+    "valor": 83.7,
+    "dataRegistre": "2026-06-10",
+    "comentari": "Evolució positiva i alineada amb l'objectiu definit."
+  },
+  {
+    "idRegistre": 435,
+    "idPrograma": 6,
+    "idKPI": 62,
+    "idUsuari": 26,
+    "valor": 85.7,
+    "dataRegistre": "2026-06-24",
+    "comentari": "Evolució positiva i alineada amb l'objectiu definit."
+  },
+  {
+    "idRegistre": 436,
+    "idPrograma": 6,
+    "idKPI": 62,
+    "idUsuari": 26,
+    "valor": 84.3,
+    "dataRegistre": "2026-07-08",
+    "comentari": "Evolució positiva i alineada amb l'objectiu definit."
+  },
+  {
+    "idRegistre": 437,
+    "idPrograma": 6,
+    "idKPI": 63,
+    "idUsuari": 26,
+    "valor": 10,
+    "dataRegistre": "2026-06-10",
+    "comentari": "Evolució positiva i alineada amb l'objectiu definit."
+  },
+  {
+    "idRegistre": 438,
+    "idPrograma": 6,
+    "idKPI": 63,
+    "idUsuari": 26,
+    "valor": 9,
+    "dataRegistre": "2026-06-24",
+    "comentari": "Evolució positiva i alineada amb l'objectiu definit."
+  },
+  {
+    "idRegistre": 439,
+    "idPrograma": 6,
+    "idKPI": 63,
+    "idUsuari": 26,
+    "valor": 11,
+    "dataRegistre": "2026-07-08",
+    "comentari": "Evolució positiva i alineada amb l'objectiu definit."
+  },
+  {
+    "idRegistre": 440,
+    "idPrograma": 6,
+    "idKPI": 64,
+    "idUsuari": 26,
+    "valor": 5,
+    "dataRegistre": "2026-06-10",
+    "comentari": "Evolució positiva i alineada amb l'objectiu definit."
+  },
+  {
+    "idRegistre": 441,
+    "idPrograma": 6,
+    "idKPI": 64,
+    "idUsuari": 26,
+    "valor": 4,
+    "dataRegistre": "2026-06-24",
+    "comentari": "Evolució positiva i alineada amb l'objectiu definit."
+  },
+  {
+    "idRegistre": 442,
+    "idPrograma": 6,
+    "idKPI": 64,
+    "idUsuari": 26,
+    "valor": 5,
+    "dataRegistre": "2026-07-08",
+    "comentari": "Evolució positiva i alineada amb l'objectiu definit."
+  },
+  {
+    "idRegistre": 443,
+    "idPrograma": 6,
+    "idKPI": 65,
+    "idUsuari": 26,
+    "valor": 92.7,
+    "dataRegistre": "2026-06-10",
+    "comentari": "Evolució positiva i alineada amb l'objectiu definit."
+  },
+  {
+    "idRegistre": 444,
+    "idPrograma": 6,
+    "idKPI": 65,
+    "idUsuari": 26,
+    "valor": 96.6,
+    "dataRegistre": "2026-06-24",
+    "comentari": "Evolució positiva i alineada amb l'objectiu definit."
+  },
+  {
+    "idRegistre": 445,
+    "idPrograma": 6,
+    "idKPI": 65,
+    "idUsuari": 26,
+    "valor": 94.1,
+    "dataRegistre": "2026-07-08",
+    "comentari": "Evolució positiva i alineada amb l'objectiu definit."
+  },
+  {
+    "idRegistre": 446,
+    "idPrograma": 6,
+    "idKPI": 66,
+    "idUsuari": 26,
+    "valor": 85.9,
+    "dataRegistre": "2026-06-10",
+    "comentari": "Evolució positiva i alineada amb l'objectiu definit."
+  },
+  {
+    "idRegistre": 447,
+    "idPrograma": 6,
+    "idKPI": 66,
+    "idUsuari": 26,
+    "valor": 93.3,
+    "dataRegistre": "2026-06-24",
+    "comentari": "Evolució positiva i alineada amb l'objectiu definit."
+  },
+  {
+    "idRegistre": 448,
+    "idPrograma": 6,
+    "idKPI": 66,
+    "idUsuari": 26,
+    "valor": 99.1,
+    "dataRegistre": "2026-07-08",
+    "comentari": "Evolució positiva i alineada amb l'objectiu definit."
+  },
+  {
+    "idRegistre": 449,
+    "idPrograma": 6,
+    "idKPI": 67,
+    "idUsuari": 26,
+    "valor": 9,
+    "dataRegistre": "2026-06-10",
+    "comentari": "Evolució positiva i alineada amb l'objectiu definit."
+  },
+  {
+    "idRegistre": 450,
+    "idPrograma": 6,
+    "idKPI": 67,
+    "idUsuari": 26,
+    "valor": 11,
+    "dataRegistre": "2026-06-24",
+    "comentari": "Evolució positiva i alineada amb l'objectiu definit."
+  },
+  {
+    "idRegistre": 451,
+    "idPrograma": 6,
+    "idKPI": 67,
+    "idUsuari": 26,
+    "valor": 10,
+    "dataRegistre": "2026-07-08",
+    "comentari": "Evolució positiva i alineada amb l'objectiu definit."
+  },
+  {
+    "idRegistre": 452,
+    "idPrograma": 6,
+    "idKPI": 68,
+    "idUsuari": 26,
+    "valor": 4,
+    "dataRegistre": "2026-06-10",
+    "comentari": "Evolució positiva i alineada amb l'objectiu definit."
+  },
+  {
+    "idRegistre": 453,
+    "idPrograma": 6,
+    "idKPI": 68,
+    "idUsuari": 26,
+    "valor": 4,
+    "dataRegistre": "2026-06-24",
+    "comentari": "Evolució positiva i alineada amb l'objectiu definit."
+  },
+  {
+    "idRegistre": 454,
+    "idPrograma": 6,
+    "idKPI": 68,
+    "idUsuari": 26,
+    "valor": 5,
+    "dataRegistre": "2026-07-08",
+    "comentari": "Evolució positiva i alineada amb l'objectiu definit."
+  },
+  {
+    "idRegistre": 455,
+    "idPrograma": 6,
+    "idKPI": 69,
+    "idUsuari": 26,
+    "valor": 14,
+    "dataRegistre": "2026-06-10",
+    "comentari": "Evolució positiva i alineada amb l'objectiu definit."
+  },
+  {
+    "idRegistre": 456,
+    "idPrograma": 6,
+    "idKPI": 69,
+    "idUsuari": 26,
+    "valor": 19,
+    "dataRegistre": "2026-06-24",
+    "comentari": "Evolució positiva i alineada amb l'objectiu definit."
+  },
+  {
+    "idRegistre": 457,
+    "idPrograma": 6,
+    "idKPI": 69,
+    "idUsuari": 26,
+    "valor": 19,
+    "dataRegistre": "2026-07-08",
+    "comentari": "Evolució positiva i alineada amb l'objectiu definit."
+  },
+  {
+    "idRegistre": 458,
+    "idPrograma": 6,
+    "idKPI": 70,
+    "idUsuari": 26,
+    "valor": 4,
+    "dataRegistre": "2026-06-10",
+    "comentari": "Evolució positiva i alineada amb l'objectiu definit."
+  },
+  {
+    "idRegistre": 459,
+    "idPrograma": 6,
+    "idKPI": 70,
+    "idUsuari": 26,
+    "valor": 5,
+    "dataRegistre": "2026-06-24",
+    "comentari": "Evolució positiva i alineada amb l'objectiu definit."
+  },
+  {
+    "idRegistre": 460,
+    "idPrograma": 6,
+    "idKPI": 70,
+    "idUsuari": 26,
+    "valor": 4,
+    "dataRegistre": "2026-07-08",
+    "comentari": "Evolució positiva i alineada amb l'objectiu definit."
+  },
+  {
+    "idRegistre": 461,
+    "idPrograma": 6,
+    "idKPI": 71,
+    "idUsuari": 26,
+    "valor": 9,
+    "dataRegistre": "2026-06-10",
+    "comentari": "Evolució positiva i alineada amb l'objectiu definit."
+  },
+  {
+    "idRegistre": 462,
+    "idPrograma": 6,
+    "idKPI": 71,
+    "idUsuari": 26,
+    "valor": 12,
+    "dataRegistre": "2026-06-24",
+    "comentari": "Evolució positiva i alineada amb l'objectiu definit."
+  },
+  {
+    "idRegistre": 463,
+    "idPrograma": 6,
+    "idKPI": 71,
+    "idUsuari": 26,
+    "valor": 7,
+    "dataRegistre": "2026-07-08",
+    "comentari": "Evolució positiva i alineada amb l'objectiu definit."
+  },
+  {
+    "idRegistre": 464,
+    "idPrograma": 6,
+    "idKPI": 72,
+    "idUsuari": 26,
+    "valor": 85.4,
+    "dataRegistre": "2026-06-10",
+    "comentari": "Evolució positiva i alineada amb l'objectiu definit."
+  },
+  {
+    "idRegistre": 465,
+    "idPrograma": 6,
+    "idKPI": 72,
+    "idUsuari": 26,
+    "valor": 97.8,
+    "dataRegistre": "2026-06-24",
+    "comentari": "Evolució positiva i alineada amb l'objectiu definit."
+  },
+  {
+    "idRegistre": 466,
+    "idPrograma": 6,
+    "idKPI": 72,
+    "idUsuari": 26,
+    "valor": 87.7,
+    "dataRegistre": "2026-07-08",
+    "comentari": "Evolució positiva i alineada amb l'objectiu definit."
+  },
+  {
+    "idRegistre": 467,
+    "idPrograma": 6,
+    "idKPI": 57,
+    "idUsuari": 27,
+    "valor": 57.1,
+    "dataRegistre": "2026-06-10",
+    "comentari": "Progrés parcial; cal mantenir el seguiment per consolidar l'hàbit."
+  },
+  {
+    "idRegistre": 468,
+    "idPrograma": 6,
+    "idKPI": 57,
+    "idUsuari": 27,
+    "valor": 71.1,
+    "dataRegistre": "2026-06-24",
+    "comentari": "Progrés parcial; cal mantenir el seguiment per consolidar l'hàbit."
+  },
+  {
+    "idRegistre": 469,
+    "idPrograma": 6,
+    "idKPI": 57,
+    "idUsuari": 27,
+    "valor": 60.2,
+    "dataRegistre": "2026-07-08",
+    "comentari": "Progrés parcial; cal mantenir el seguiment per consolidar l'hàbit."
+  },
+  {
+    "idRegistre": 470,
+    "idPrograma": 6,
+    "idKPI": 58,
+    "idUsuari": 27,
+    "valor": 68.6,
+    "dataRegistre": "2026-06-10",
+    "comentari": "Progrés parcial; cal mantenir el seguiment per consolidar l'hàbit."
+  },
+  {
+    "idRegistre": 471,
+    "idPrograma": 6,
+    "idKPI": 58,
+    "idUsuari": 27,
+    "valor": 64.5,
+    "dataRegistre": "2026-06-24",
+    "comentari": "Progrés parcial; cal mantenir el seguiment per consolidar l'hàbit."
+  },
+  {
+    "idRegistre": 472,
+    "idPrograma": 6,
+    "idKPI": 58,
+    "idUsuari": 27,
+    "valor": 55.0,
+    "dataRegistre": "2026-07-08",
+    "comentari": "Progrés parcial; cal mantenir el seguiment per consolidar l'hàbit."
+  },
+  {
+    "idRegistre": 473,
+    "idPrograma": 6,
+    "idKPI": 59,
+    "idUsuari": 27,
+    "valor": 5,
+    "dataRegistre": "2026-06-10",
+    "comentari": "Progrés parcial; cal mantenir el seguiment per consolidar l'hàbit."
+  },
+  {
+    "idRegistre": 474,
+    "idPrograma": 6,
+    "idKPI": 59,
+    "idUsuari": 27,
+    "valor": 7,
+    "dataRegistre": "2026-06-24",
+    "comentari": "Progrés parcial; cal mantenir el seguiment per consolidar l'hàbit."
+  },
+  {
+    "idRegistre": 475,
+    "idPrograma": 6,
+    "idKPI": 59,
+    "idUsuari": 27,
+    "valor": 5,
+    "dataRegistre": "2026-07-08",
+    "comentari": "Progrés parcial; cal mantenir el seguiment per consolidar l'hàbit."
+  },
+  {
+    "idRegistre": 476,
+    "idPrograma": 6,
+    "idKPI": 60,
+    "idUsuari": 27,
+    "valor": 3,
+    "dataRegistre": "2026-06-10",
+    "comentari": "Progrés parcial; cal mantenir el seguiment per consolidar l'hàbit."
+  },
+  {
+    "idRegistre": 477,
+    "idPrograma": 6,
+    "idKPI": 60,
+    "idUsuari": 27,
+    "valor": 3,
+    "dataRegistre": "2026-06-24",
+    "comentari": "Progrés parcial; cal mantenir el seguiment per consolidar l'hàbit."
+  },
+  {
+    "idRegistre": 478,
+    "idPrograma": 6,
+    "idKPI": 60,
+    "idUsuari": 27,
+    "valor": 4,
+    "dataRegistre": "2026-07-08",
+    "comentari": "Progrés parcial; cal mantenir el seguiment per consolidar l'hàbit."
+  },
+  {
+    "idRegistre": 479,
+    "idPrograma": 6,
+    "idKPI": 61,
+    "idUsuari": 27,
+    "valor": 68.6,
+    "dataRegistre": "2026-06-10",
+    "comentari": "Progrés parcial; cal mantenir el seguiment per consolidar l'hàbit."
+  },
+  {
+    "idRegistre": 480,
+    "idPrograma": 6,
+    "idKPI": 61,
+    "idUsuari": 27,
+    "valor": 67.5,
+    "dataRegistre": "2026-06-24",
+    "comentari": "Progrés parcial; cal mantenir el seguiment per consolidar l'hàbit."
+  },
+  {
+    "idRegistre": 481,
+    "idPrograma": 6,
+    "idKPI": 61,
+    "idUsuari": 27,
+    "valor": 63.8,
+    "dataRegistre": "2026-07-08",
+    "comentari": "Progrés parcial; cal mantenir el seguiment per consolidar l'hàbit."
+  },
+  {
+    "idRegistre": 482,
+    "idPrograma": 6,
+    "idKPI": 62,
+    "idUsuari": 27,
+    "valor": 66.6,
+    "dataRegistre": "2026-06-10",
+    "comentari": "Progrés parcial; cal mantenir el seguiment per consolidar l'hàbit."
+  },
+  {
+    "idRegistre": 483,
+    "idPrograma": 6,
+    "idKPI": 62,
+    "idUsuari": 27,
+    "valor": 50.8,
+    "dataRegistre": "2026-06-24",
+    "comentari": "Progrés parcial; cal mantenir el seguiment per consolidar l'hàbit."
+  },
+  {
+    "idRegistre": 484,
+    "idPrograma": 6,
+    "idKPI": 62,
+    "idUsuari": 27,
+    "valor": 53.7,
+    "dataRegistre": "2026-07-08",
+    "comentari": "Progrés parcial; cal mantenir el seguiment per consolidar l'hàbit."
+  },
+  {
+    "idRegistre": 485,
+    "idPrograma": 6,
+    "idKPI": 63,
+    "idUsuari": 27,
+    "valor": 7,
+    "dataRegistre": "2026-06-10",
+    "comentari": "Progrés parcial; cal mantenir el seguiment per consolidar l'hàbit."
+  },
+  {
+    "idRegistre": 486,
+    "idPrograma": 6,
+    "idKPI": 63,
+    "idUsuari": 27,
+    "valor": 6,
+    "dataRegistre": "2026-06-24",
+    "comentari": "Progrés parcial; cal mantenir el seguiment per consolidar l'hàbit."
+  },
+  {
+    "idRegistre": 487,
+    "idPrograma": 6,
+    "idKPI": 63,
+    "idUsuari": 27,
+    "valor": 7,
+    "dataRegistre": "2026-07-08",
+    "comentari": "Progrés parcial; cal mantenir el seguiment per consolidar l'hàbit."
+  },
+  {
+    "idRegistre": 488,
+    "idPrograma": 6,
+    "idKPI": 64,
+    "idUsuari": 27,
+    "valor": 3,
+    "dataRegistre": "2026-06-10",
+    "comentari": "Progrés parcial; cal mantenir el seguiment per consolidar l'hàbit."
+  },
+  {
+    "idRegistre": 489,
+    "idPrograma": 6,
+    "idKPI": 64,
+    "idUsuari": 27,
+    "valor": 3,
+    "dataRegistre": "2026-06-24",
+    "comentari": "Progrés parcial; cal mantenir el seguiment per consolidar l'hàbit."
+  },
+  {
+    "idRegistre": 490,
+    "idPrograma": 6,
+    "idKPI": 64,
+    "idUsuari": 27,
+    "valor": 3,
+    "dataRegistre": "2026-07-08",
+    "comentari": "Progrés parcial; cal mantenir el seguiment per consolidar l'hàbit."
+  },
+  {
+    "idRegistre": 491,
+    "idPrograma": 6,
+    "idKPI": 65,
+    "idUsuari": 27,
+    "valor": 69.9,
+    "dataRegistre": "2026-06-10",
+    "comentari": "Progrés parcial; cal mantenir el seguiment per consolidar l'hàbit."
+  },
+  {
+    "idRegistre": 492,
+    "idPrograma": 6,
+    "idKPI": 65,
+    "idUsuari": 27,
+    "valor": 59.9,
+    "dataRegistre": "2026-06-24",
+    "comentari": "Progrés parcial; cal mantenir el seguiment per consolidar l'hàbit."
+  },
+  {
+    "idRegistre": 493,
+    "idPrograma": 6,
+    "idKPI": 65,
+    "idUsuari": 27,
+    "valor": 68.9,
+    "dataRegistre": "2026-07-08",
+    "comentari": "Progrés parcial; cal mantenir el seguiment per consolidar l'hàbit."
+  },
+  {
+    "idRegistre": 494,
+    "idPrograma": 6,
+    "idKPI": 66,
+    "idUsuari": 27,
+    "valor": 54.8,
+    "dataRegistre": "2026-06-10",
+    "comentari": "Progrés parcial; cal mantenir el seguiment per consolidar l'hàbit."
+  },
+  {
+    "idRegistre": 495,
+    "idPrograma": 6,
+    "idKPI": 66,
+    "idUsuari": 27,
+    "valor": 54.4,
+    "dataRegistre": "2026-06-24",
+    "comentari": "Progrés parcial; cal mantenir el seguiment per consolidar l'hàbit."
+  },
+  {
+    "idRegistre": 496,
+    "idPrograma": 6,
+    "idKPI": 66,
+    "idUsuari": 27,
+    "valor": 51.5,
+    "dataRegistre": "2026-07-08",
+    "comentari": "Progrés parcial; cal mantenir el seguiment per consolidar l'hàbit."
+  },
+  {
+    "idRegistre": 497,
+    "idPrograma": 6,
+    "idKPI": 67,
+    "idUsuari": 27,
+    "valor": 6,
+    "dataRegistre": "2026-06-10",
+    "comentari": "Progrés parcial; cal mantenir el seguiment per consolidar l'hàbit."
+  },
+  {
+    "idRegistre": 498,
+    "idPrograma": 6,
+    "idKPI": 67,
+    "idUsuari": 27,
+    "valor": 5,
+    "dataRegistre": "2026-06-24",
+    "comentari": "Progrés parcial; cal mantenir el seguiment per consolidar l'hàbit."
+  },
+  {
+    "idRegistre": 499,
+    "idPrograma": 6,
+    "idKPI": 67,
+    "idUsuari": 27,
+    "valor": 6,
+    "dataRegistre": "2026-07-08",
+    "comentari": "Progrés parcial; cal mantenir el seguiment per consolidar l'hàbit."
+  },
+  {
+    "idRegistre": 500,
+    "idPrograma": 6,
+    "idKPI": 68,
+    "idUsuari": 27,
+    "valor": 4,
+    "dataRegistre": "2026-06-10",
+    "comentari": "Progrés parcial; cal mantenir el seguiment per consolidar l'hàbit."
+  },
+  {
+    "idRegistre": 501,
+    "idPrograma": 6,
+    "idKPI": 68,
+    "idUsuari": 27,
+    "valor": 3,
+    "dataRegistre": "2026-06-24",
+    "comentari": "Progrés parcial; cal mantenir el seguiment per consolidar l'hàbit."
+  },
+  {
+    "idRegistre": 502,
+    "idPrograma": 6,
+    "idKPI": 68,
+    "idUsuari": 27,
+    "valor": 3,
+    "dataRegistre": "2026-07-08",
+    "comentari": "Progrés parcial; cal mantenir el seguiment per consolidar l'hàbit."
+  },
+  {
+    "idRegistre": 503,
+    "idPrograma": 6,
+    "idKPI": 69,
+    "idUsuari": 27,
+    "valor": 10,
+    "dataRegistre": "2026-06-10",
+    "comentari": "Progrés parcial; cal mantenir el seguiment per consolidar l'hàbit."
+  },
+  {
+    "idRegistre": 504,
+    "idPrograma": 6,
+    "idKPI": 69,
+    "idUsuari": 27,
+    "valor": 10,
+    "dataRegistre": "2026-06-24",
+    "comentari": "Progrés parcial; cal mantenir el seguiment per consolidar l'hàbit."
+  },
+  {
+    "idRegistre": 505,
+    "idPrograma": 6,
+    "idKPI": 69,
+    "idUsuari": 27,
+    "valor": 11,
+    "dataRegistre": "2026-07-08",
+    "comentari": "Progrés parcial; cal mantenir el seguiment per consolidar l'hàbit."
+  },
+  {
+    "idRegistre": 506,
+    "idPrograma": 6,
+    "idKPI": 70,
+    "idUsuari": 27,
+    "valor": 3,
+    "dataRegistre": "2026-06-10",
+    "comentari": "Progrés parcial; cal mantenir el seguiment per consolidar l'hàbit."
+  },
+  {
+    "idRegistre": 507,
+    "idPrograma": 6,
+    "idKPI": 70,
+    "idUsuari": 27,
+    "valor": 3,
+    "dataRegistre": "2026-06-24",
+    "comentari": "Progrés parcial; cal mantenir el seguiment per consolidar l'hàbit."
+  },
+  {
+    "idRegistre": 508,
+    "idPrograma": 6,
+    "idKPI": 70,
+    "idUsuari": 27,
+    "valor": 3,
+    "dataRegistre": "2026-07-08",
+    "comentari": "Progrés parcial; cal mantenir el seguiment per consolidar l'hàbit."
+  },
+  {
+    "idRegistre": 509,
+    "idPrograma": 6,
+    "idKPI": 71,
+    "idUsuari": 27,
+    "valor": 24,
+    "dataRegistre": "2026-06-10",
+    "comentari": "Progrés parcial; cal mantenir el seguiment per consolidar l'hàbit."
+  },
+  {
+    "idRegistre": 510,
+    "idPrograma": 6,
+    "idKPI": 71,
+    "idUsuari": 27,
+    "valor": 24,
+    "dataRegistre": "2026-06-24",
+    "comentari": "Progrés parcial; cal mantenir el seguiment per consolidar l'hàbit."
+  },
+  {
+    "idRegistre": 511,
+    "idPrograma": 6,
+    "idKPI": 71,
+    "idUsuari": 27,
+    "valor": 24,
+    "dataRegistre": "2026-07-08",
+    "comentari": "Progrés parcial; cal mantenir el seguiment per consolidar l'hàbit."
+  },
+  {
+    "idRegistre": 512,
+    "idPrograma": 6,
+    "idKPI": 72,
+    "idUsuari": 27,
+    "valor": 55.6,
+    "dataRegistre": "2026-06-10",
+    "comentari": "Progrés parcial; cal mantenir el seguiment per consolidar l'hàbit."
+  },
+  {
+    "idRegistre": 513,
+    "idPrograma": 6,
+    "idKPI": 72,
+    "idUsuari": 27,
+    "valor": 68.9,
+    "dataRegistre": "2026-06-24",
+    "comentari": "Progrés parcial; cal mantenir el seguiment per consolidar l'hàbit."
+  },
+  {
+    "idRegistre": 514,
+    "idPrograma": 6,
+    "idKPI": 72,
+    "idUsuari": 27,
+    "valor": 62.2,
+    "dataRegistre": "2026-07-08",
+    "comentari": "Progrés parcial; cal mantenir el seguiment per consolidar l'hàbit."
   }
 ]

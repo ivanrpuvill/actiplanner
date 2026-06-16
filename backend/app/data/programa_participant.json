@@ -1,7 +1,103 @@
 [
   {
     "idPrograma": 1,
-    "idUsuari": 1,
+    "idUsuari": 13,
+    "estatParticipacio": "actiu",
+    "dataAssignacio": "2026-06-01"
+  },
+  {
+    "idPrograma": 1,
+    "idUsuari": 14,
+    "estatParticipacio": "actiu",
+    "dataAssignacio": "2026-06-01"
+  },
+  {
+    "idPrograma": 1,
+    "idUsuari": 15,
+    "estatParticipacio": "actiu",
+    "dataAssignacio": "2026-06-01"
+  },
+  {
+    "idPrograma": 2,
+    "idUsuari": 13,
+    "estatParticipacio": "actiu",
+    "dataAssignacio": "2026-06-01"
+  },
+  {
+    "idPrograma": 2,
+    "idUsuari": 15,
+    "estatParticipacio": "actiu",
+    "dataAssignacio": "2026-06-01"
+  },
+  {
+    "idPrograma": 3,
+    "idUsuari": 16,
+    "estatParticipacio": "actiu",
+    "dataAssignacio": "2026-06-01"
+  },
+  {
+    "idPrograma": 3,
+    "idUsuari": 17,
+    "estatParticipacio": "actiu",
+    "dataAssignacio": "2026-06-01"
+  },
+  {
+    "idPrograma": 3,
+    "idUsuari": 18,
+    "estatParticipacio": "actiu",
+    "dataAssignacio": "2026-06-01"
+  },
+  {
+    "idPrograma": 3,
+    "idUsuari": 19,
+    "estatParticipacio": "actiu",
+    "dataAssignacio": "2026-06-01"
+  },
+  {
+    "idPrograma": 4,
+    "idUsuari": 20,
+    "estatParticipacio": "actiu",
+    "dataAssignacio": "2026-06-01"
+  },
+  {
+    "idPrograma": 4,
+    "idUsuari": 21,
+    "estatParticipacio": "actiu",
+    "dataAssignacio": "2026-06-01"
+  },
+  {
+    "idPrograma": 5,
+    "idUsuari": 22,
+    "estatParticipacio": "actiu",
+    "dataAssignacio": "2026-06-01"
+  },
+  {
+    "idPrograma": 5,
+    "idUsuari": 23,
+    "estatParticipacio": "actiu",
+    "dataAssignacio": "2026-06-01"
+  },
+  {
+    "idPrograma": 5,
+    "idUsuari": 24,
+    "estatParticipacio": "actiu",
+    "dataAssignacio": "2026-06-01"
+  },
+  {
+    "idPrograma": 6,
+    "idUsuari": 25,
+    "estatParticipacio": "actiu",
+    "dataAssignacio": "2026-06-01"
+  },
+  {
+    "idPrograma": 6,
+    "idUsuari": 26,
+    "estatParticipacio": "actiu",
+    "dataAssignacio": "2026-06-01"
+  },
+  {
+    "idPrograma": 6,
+    "idUsuari": 27,
     "estatParticipacio": "actiu",
     "dataAssignacio": "2026-06-01"
   }

@@ -1,9 +1,23 @@
 [
   {
-    "idPla": 1,
     "idPrograma": 1,
     "titol": "Pla d'acció de lideratge",
-    "dataCreacio": "2026-06-01",
-    "actiu": true
+    "actiu": true,
+    "idPla": 1,
+    "dataCreacio": "2026-06-01"
+  },
+  {
+    "idPrograma": 1,
+    "titol": "Prova1",
+    "actiu": true,
+    "idPla": 2,
+    "dataCreacio": "2026-06-12"
+  },
+  {
+    "idPrograma": 2,
+    "titol": "pla1",
+    "actiu": true,
+    "idPla": 3,
+    "dataCreacio": "2026-06-12"
   }
 ]

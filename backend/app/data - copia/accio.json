@@ -1,18 +1,26 @@
 [
   {
-    "idAccio": 1,
     "idObjectiu": 1,
     "titol": "Fer una reunió 1:1 setmanal",
     "descripcio": "Programar una reunió individual amb cada membre de l'equip.",
     "dataInici": "2026-06-03",
-    "dataFi": "2026-07-10"
+    "dataFi": "2026-07-10",
+    "idAccio": 1
   },
   {
-    "idAccio": 2,
     "idObjectiu": 2,
     "titol": "Registrar feedback després de cada reunió",
     "descripcio": "Anotar els punts principals del feedback donat a cada persona.",
     "dataInici": "2026-06-03",
-    "dataFi": "2026-07-10"
+    "dataFi": "2026-07-10",
+    "idAccio": 2
+  },
+  {
+    "idObjectiu": 3,
+    "titol": "concertar trucades",
+    "descripcio": "concertar trucades",
+    "dataInici": "2026-06-11",
+    "dataFi": "2026-06-26",
+    "idAccio": 3
   }
 ]

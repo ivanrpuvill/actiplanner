@@ -1,12 +1,42 @@
 [
   {
     "idPrograma": 1,
-    "idUsuari": 2,
+    "idUsuari": 6,
     "dataAssignacio": "2026-06-01"
   },
   {
     "idPrograma": 1,
+    "idUsuari": 7,
+    "dataAssignacio": "2026-06-01"
+  },
+  {
+    "idPrograma": 2,
     "idUsuari": 6,
-    "dataAssignacio": "2026-06-12"
+    "dataAssignacio": "2026-06-01"
+  },
+  {
+    "idPrograma": 3,
+    "idUsuari": 8,
+    "dataAssignacio": "2026-06-01"
+  },
+  {
+    "idPrograma": 3,
+    "idUsuari": 9,
+    "dataAssignacio": "2026-06-01"
+  },
+  {
+    "idPrograma": 4,
+    "idUsuari": 10,
+    "dataAssignacio": "2026-06-01"
+  },
+  {
+    "idPrograma": 5,
+    "idUsuari": 11,
+    "dataAssignacio": "2026-06-01"
+  },
+  {
+    "idPrograma": 6,
+    "idUsuari": 12,
+    "dataAssignacio": "2026-06-01"
   }
 ]

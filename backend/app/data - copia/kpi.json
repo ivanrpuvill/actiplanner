@@ -2,15 +2,79 @@
   {
     "idKPI": 1,
     "idAccio": 1,
-    "nom": "Reunions realitzades",
-    "descripcio": "Nombre de reunions 1:1 realitzades durant la setmana.",
-    "periodicitat": "setmanal"
+    "nom": "Reunions de seguiment realitzades",
+    "descripcio": "Nombre de reunions de seguiment efectuades amb l'equip.",
+    "periodicitat": "setmanal",
+    "tipus": "numeric",
+    "tipusCalcul": "acumulat",
+    "orientacio": "major_millor",
+    "valorMinim": 0,
+    "valorMaxim": 10,
+    "valorObjectiu": 10
   },
   {
     "idKPI": 2,
+    "idAccio": 1,
+    "nom": "Percentatge de tasques completades",
+    "descripcio": "Percentatge de tasques finalitzades dins del termini establert.",
+    "periodicitat": "setmanal",
+    "tipus": "percentatge",
+    "tipusCalcul": "mitjana",
+    "orientacio": "major_millor",
+    "valorMinim": 0,
+    "valorMaxim": 100,
+    "valorObjectiu": 80
+  },
+  {
+    "idKPI": 3,
     "idAccio": 2,
-    "nom": "Feedbacks registrats",
-    "descripcio": "Nombre de feedbacks registrats després de les reunions.",
-    "periodicitat": "setmanal"
+    "nom": "Aplicació de tècniques apreses",
+    "descripcio": "Valoració de l'aplicació de les tècniques treballades durant la formació.",
+    "periodicitat": "mensual",
+    "tipus": "escala",
+    "tipusCalcul": "mitjana",
+    "orientacio": "major_millor",
+    "valorMinim": 1,
+    "valorMaxim": 5,
+    "valorObjectiu": 4
+  },
+  {
+    "idKPI": 4,
+    "idAccio": 2,
+    "nom": "Pla de millora validat",
+    "descripcio": "Indica si el pla de millora ha estat validat pel supervisor.",
+    "periodicitat": "mensual",
+    "tipus": "boolea",
+    "tipusCalcul": "ultim",
+    "orientacio": "major_millor",
+    "valorMinim": 0,
+    "valorMaxim": 1,
+    "valorObjectiu": 1
+  },
+  {
+    "idKPI": 5,
+    "idAccio": 3,
+    "nom": "Participació en activitats de seguiment",
+    "descripcio": "Percentatge de participació en activitats de reforç i seguiment.",
+    "periodicitat": "mensual",
+    "tipus": "percentatge",
+    "tipusCalcul": "mitjana",
+    "orientacio": "major_millor",
+    "valorMinim": 0,
+    "valorMaxim": 100,
+    "valorObjectiu": 75
+  },
+  {
+    "idKPI": 6,
+    "idAccio": 3,
+    "nom": "Transferència dels aprenentatges",
+    "descripcio": "Percentatge estimat de transferència dels aprenentatges al lloc de treball.",
+    "periodicitat": "mensual",
+    "tipus": "percentatge",
+    "tipusCalcul": "mitjana",
+    "orientacio": "major_millor",
+    "valorMinim": 0,
+    "valorMaxim": 100,
+    "valorObjectiu": 85
   }
 ]

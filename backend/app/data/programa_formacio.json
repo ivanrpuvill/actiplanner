@@ -1,20 +1,56 @@
 [
   {
     "idEmpresa": 1,
-    "nom": "Formació en lideratge",
-    "descripcio": "Programa orientat a millorar les habilitats de lideratge dels comandaments intermedis.",
+    "nom": "Programa de lideratge d'equips",
+    "descripcio": "Millora de reunions 1:1, feedback i seguiment dels equips.",
     "dataInici": "2026-06-01",
-    "dataFi": "2026-07-15",
+    "dataFi": "2026-07-31",
     "actiu": true,
     "idPrograma": 1
   },
   {
     "idEmpresa": 1,
-    "nom": "Prova 1",
-    "descripcio": "asd",
-    "dataInici": "2026-06-12",
-    "dataFi": "2026-06-12",
+    "nom": "Programa de comunicació efectiva",
+    "descripcio": "Aplicació de tècniques de comunicació clara i escolta activa.",
+    "dataInici": "2026-06-10",
+    "dataFi": "2026-08-15",
     "actiu": true,
     "idPrograma": 2
+  },
+  {
+    "idEmpresa": 2,
+    "nom": "Excel·lència comercial bancària",
+    "descripcio": "Millora de seguiment d'oportunitats, qualitat comercial i conversió.",
+    "dataInici": "2026-06-05",
+    "dataFi": "2026-08-30",
+    "actiu": true,
+    "idPrograma": 3
+  },
+  {
+    "idEmpresa": 3,
+    "nom": "Gestió del canvi en equips clínics",
+    "descripcio": "Consolidació d'hàbits de coordinació, qualitat i seguretat.",
+    "dataInici": "2026-06-12",
+    "dataFi": "2026-09-01",
+    "actiu": true,
+    "idPrograma": 4
+  },
+  {
+    "idEmpresa": 4,
+    "nom": "Atenció al client en retail",
+    "descripcio": "Millora de l'experiència de client, resolució d'incidències i qualitat del servei.",
+    "dataInici": "2026-06-03",
+    "dataFi": "2026-07-20",
+    "actiu": true,
+    "idPrograma": 5
+  },
+  {
+    "idEmpresa": 5,
+    "nom": "Productivitat i gestió del temps",
+    "descripcio": "Millora de priorització, planificació setmanal i reducció de bloquejos.",
+    "dataInici": "2026-06-07",
+    "dataFi": "2026-08-10",
+    "actiu": true,
+    "idPrograma": 6
   }
 ]

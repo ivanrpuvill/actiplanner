@@ -3,12 +3,324 @@
     "idSeguiment": 1,
     "idObjectiu": 1,
     "idPrograma": 1,
-    "idUsuari": 1
+    "idUsuari": 13
   },
   {
     "idSeguiment": 2,
     "idObjectiu": 2,
     "idPrograma": 1,
-    "idUsuari": 1
+    "idUsuari": 13
+  },
+  {
+    "idSeguiment": 3,
+    "idObjectiu": 3,
+    "idPrograma": 1,
+    "idUsuari": 13
+  },
+  {
+    "idSeguiment": 4,
+    "idObjectiu": 4,
+    "idPrograma": 1,
+    "idUsuari": 13
+  },
+  {
+    "idSeguiment": 5,
+    "idObjectiu": 1,
+    "idPrograma": 1,
+    "idUsuari": 14
+  },
+  {
+    "idSeguiment": 6,
+    "idObjectiu": 2,
+    "idPrograma": 1,
+    "idUsuari": 14
+  },
+  {
+    "idSeguiment": 7,
+    "idObjectiu": 3,
+    "idPrograma": 1,
+    "idUsuari": 14
+  },
+  {
+    "idSeguiment": 8,
+    "idObjectiu": 4,
+    "idPrograma": 1,
+    "idUsuari": 14
+  },
+  {
+    "idSeguiment": 9,
+    "idObjectiu": 1,
+    "idPrograma": 1,
+    "idUsuari": 15
+  },
+  {
+    "idSeguiment": 10,
+    "idObjectiu": 2,
+    "idPrograma": 1,
+    "idUsuari": 15
+  },
+  {
+    "idSeguiment": 11,
+    "idObjectiu": 3,
+    "idPrograma": 1,
+    "idUsuari": 15
+  },
+  {
+    "idSeguiment": 12,
+    "idObjectiu": 4,
+    "idPrograma": 1,
+    "idUsuari": 15
+  },
+  {
+    "idSeguiment": 13,
+    "idObjectiu": 5,
+    "idPrograma": 2,
+    "idUsuari": 13
+  },
+  {
+    "idSeguiment": 14,
+    "idObjectiu": 6,
+    "idPrograma": 2,
+    "idUsuari": 13
+  },
+  {
+    "idSeguiment": 15,
+    "idObjectiu": 5,
+    "idPrograma": 2,
+    "idUsuari": 15
+  },
+  {
+    "idSeguiment": 16,
+    "idObjectiu": 6,
+    "idPrograma": 2,
+    "idUsuari": 15
+  },
+  {
+    "idSeguiment": 17,
+    "idObjectiu": 7,
+    "idPrograma": 3,
+    "idUsuari": 16
+  },
+  {
+    "idSeguiment": 18,
+    "idObjectiu": 8,
+    "idPrograma": 3,
+    "idUsuari": 16
+  },
+  {
+    "idSeguiment": 19,
+    "idObjectiu": 9,
+    "idPrograma": 3,
+    "idUsuari": 16
+  },
+  {
+    "idSeguiment": 20,
+    "idObjectiu": 10,
+    "idPrograma": 3,
+    "idUsuari": 16
+  },
+  {
+    "idSeguiment": 21,
+    "idObjectiu": 7,
+    "idPrograma": 3,
+    "idUsuari": 17
+  },
+  {
+    "idSeguiment": 22,
+    "idObjectiu": 8,
+    "idPrograma": 3,
+    "idUsuari": 17
+  },
+  {
+    "idSeguiment": 23,
+    "idObjectiu": 9,
+    "idPrograma": 3,
+    "idUsuari": 17
+  },
+  {
+    "idSeguiment": 24,
+    "idObjectiu": 10,
+    "idPrograma": 3,
+    "idUsuari": 17
+  },
+  {
+    "idSeguiment": 25,
+    "idObjectiu": 7,
+    "idPrograma": 3,
+    "idUsuari": 18
+  },
+  {
+    "idSeguiment": 26,
+    "idObjectiu": 8,
+    "idPrograma": 3,
+    "idUsuari": 18
+  },
+  {
+    "idSeguiment": 27,
+    "idObjectiu": 9,
+    "idPrograma": 3,
+    "idUsuari": 18
+  },
+  {
+    "idSeguiment": 28,
+    "idObjectiu": 10,
+    "idPrograma": 3,
+    "idUsuari": 18
+  },
+  {
+    "idSeguiment": 29,
+    "idObjectiu": 7,
+    "idPrograma": 3,
+    "idUsuari": 19
+  },
+  {
+    "idSeguiment": 30,
+    "idObjectiu": 8,
+    "idPrograma": 3,
+    "idUsuari": 19
+  },
+  {
+    "idSeguiment": 31,
+    "idObjectiu": 9,
+    "idPrograma": 3,
+    "idUsuari": 19
+  },
+  {
+    "idSeguiment": 32,
+    "idObjectiu": 10,
+    "idPrograma": 3,
+    "idUsuari": 19
+  },
+  {
+    "idSeguiment": 33,
+    "idObjectiu": 11,
+    "idPrograma": 4,
+    "idUsuari": 20
+  },
+  {
+    "idSeguiment": 34,
+    "idObjectiu": 12,
+    "idPrograma": 4,
+    "idUsuari": 20
+  },
+  {
+    "idSeguiment": 35,
+    "idObjectiu": 11,
+    "idPrograma": 4,
+    "idUsuari": 21
+  },
+  {
+    "idSeguiment": 36,
+    "idObjectiu": 12,
+    "idPrograma": 4,
+    "idUsuari": 21
+  },
+  {
+    "idSeguiment": 37,
+    "idObjectiu": 13,
+    "idPrograma": 5,
+    "idUsuari": 22
+  },
+  {
+    "idSeguiment": 38,
+    "idObjectiu": 14,
+    "idPrograma": 5,
+    "idUsuari": 22
+  },
+  {
+    "idSeguiment": 39,
+    "idObjectiu": 13,
+    "idPrograma": 5,
+    "idUsuari": 23
+  },
+  {
+    "idSeguiment": 40,
+    "idObjectiu": 14,
+    "idPrograma": 5,
+    "idUsuari": 23
+  },
+  {
+    "idSeguiment": 41,
+    "idObjectiu": 13,
+    "idPrograma": 5,
+    "idUsuari": 24
+  },
+  {
+    "idSeguiment": 42,
+    "idObjectiu": 14,
+    "idPrograma": 5,
+    "idUsuari": 24
+  },
+  {
+    "idSeguiment": 43,
+    "idObjectiu": 15,
+    "idPrograma": 6,
+    "idUsuari": 25
+  },
+  {
+    "idSeguiment": 44,
+    "idObjectiu": 16,
+    "idPrograma": 6,
+    "idUsuari": 25
+  },
+  {
+    "idSeguiment": 45,
+    "idObjectiu": 17,
+    "idPrograma": 6,
+    "idUsuari": 25
+  },
+  {
+    "idSeguiment": 46,
+    "idObjectiu": 18,
+    "idPrograma": 6,
+    "idUsuari": 25
+  },
+  {
+    "idSeguiment": 47,
+    "idObjectiu": 15,
+    "idPrograma": 6,
+    "idUsuari": 26
+  },
+  {
+    "idSeguiment": 48,
+    "idObjectiu": 16,
+    "idPrograma": 6,
+    "idUsuari": 26
+  },
+  {
+    "idSeguiment": 49,
+    "idObjectiu": 17,
+    "idPrograma": 6,
+    "idUsuari": 26
+  },
+  {
+    "idSeguiment": 50,
+    "idObjectiu": 18,
+    "idPrograma": 6,
+    "idUsuari": 26
+  },
+  {
+    "idSeguiment": 51,
+    "idObjectiu": 15,
+    "idPrograma": 6,
+    "idUsuari": 27
+  },
+  {
+    "idSeguiment": 52,
+    "idObjectiu": 16,
+    "idPrograma": 6,
+    "idUsuari": 27
+  },
+  {
+    "idSeguiment": 53,
+    "idObjectiu": 17,
+    "idPrograma": 6,
+    "idUsuari": 27
+  },
+  {
+    "idSeguiment": 54,
+    "idObjectiu": 18,
+    "idPrograma": 6,
+    "idUsuari": 27
   }
 ]

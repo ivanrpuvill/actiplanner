@@ -1,20 +1,308 @@
 [
   {
     "idPrograma": 1,
-    "idUsuariSupervisor": 2,
-    "idUsuariParticipant": 1,
-    "comentari": "El participant està aplicant correctament les reunions 1:1 i mostra una evolució positiva.",
-    "validacio": true,
+    "idUsuariSupervisor": 6,
+    "idUsuariParticipant": 13,
+    "comentari": "S'han detectat dificultats en l'aplicació del pla d'acció. Es recomana una sessió de seguiment específica.",
+    "validacio": false,
     "idFeedback": 1,
     "dataCreacio": "2026-06-15"
   },
   {
     "idPrograma": 1,
-    "idUsuariSupervisor": 2,
-    "idUsuariParticipant": 1,
-    "comentari": "Cal continuar reforçant el registre sistemàtic del feedback després de cada reunió.",
-    "validacio": true,
+    "idUsuariSupervisor": 6,
+    "idUsuariParticipant": 13,
+    "comentari": "Cal prioritzar poques accions i reforçar el suport del supervisor durant les properes setmanes.",
+    "validacio": false,
     "idFeedback": 2,
-    "dataCreacio": "2026-06-20"
+    "dataCreacio": "2026-06-25"
+  },
+  {
+    "idPrograma": 1,
+    "idUsuariSupervisor": 6,
+    "idUsuariParticipant": 14,
+    "comentari": "No hi ha prou registres per valorar correctament l'evolució del participant.",
+    "validacio": false,
+    "idFeedback": 3,
+    "dataCreacio": "2026-06-15"
+  },
+  {
+    "idPrograma": 1,
+    "idUsuariSupervisor": 6,
+    "idUsuariParticipant": 14,
+    "comentari": "Es recomana recordar la importància d'actualitzar els KPI de manera recurrent.",
+    "validacio": false,
+    "idFeedback": 4,
+    "dataCreacio": "2026-06-25"
+  },
+  {
+    "idPrograma": 1,
+    "idUsuariSupervisor": 6,
+    "idUsuariParticipant": 15,
+    "comentari": "El participant mostra una evolució molt positiva i aplica els aprenentatges de manera consistent.",
+    "validacio": true,
+    "idFeedback": 5,
+    "dataCreacio": "2026-06-15"
+  },
+  {
+    "idPrograma": 1,
+    "idUsuariSupervisor": 6,
+    "idUsuariParticipant": 15,
+    "comentari": "Es recomana documentar les bones pràctiques perquè puguin servir de referència a altres participants.",
+    "validacio": true,
+    "idFeedback": 6,
+    "dataCreacio": "2026-06-25"
+  },
+  {
+    "idPrograma": 2,
+    "idUsuariSupervisor": 6,
+    "idUsuariParticipant": 13,
+    "comentari": "No hi ha prou registres per valorar correctament l'evolució del participant.",
+    "validacio": false,
+    "idFeedback": 7,
+    "dataCreacio": "2026-06-15"
+  },
+  {
+    "idPrograma": 2,
+    "idUsuariSupervisor": 6,
+    "idUsuariParticipant": 13,
+    "comentari": "Es recomana recordar la importància d'actualitzar els KPI de manera recurrent.",
+    "validacio": false,
+    "idFeedback": 8,
+    "dataCreacio": "2026-06-25"
+  },
+  {
+    "idPrograma": 2,
+    "idUsuariSupervisor": 6,
+    "idUsuariParticipant": 15,
+    "comentari": "El participant avança de manera adequada, però encara necessita consolidar alguns hàbits.",
+    "validacio": true,
+    "idFeedback": 9,
+    "dataCreacio": "2026-06-15"
+  },
+  {
+    "idPrograma": 2,
+    "idUsuariSupervisor": 6,
+    "idUsuariParticipant": 15,
+    "comentari": "Cal revisar els KPI amb desviació moderada i definir compromisos concrets per al proper període.",
+    "validacio": true,
+    "idFeedback": 10,
+    "dataCreacio": "2026-06-25"
+  },
+  {
+    "idPrograma": 3,
+    "idUsuariSupervisor": 8,
+    "idUsuariParticipant": 16,
+    "comentari": "No hi ha prou registres per valorar correctament l'evolució del participant.",
+    "validacio": false,
+    "idFeedback": 11,
+    "dataCreacio": "2026-06-15"
+  },
+  {
+    "idPrograma": 3,
+    "idUsuariSupervisor": 8,
+    "idUsuariParticipant": 16,
+    "comentari": "Es recomana recordar la importància d'actualitzar els KPI de manera recurrent.",
+    "validacio": false,
+    "idFeedback": 12,
+    "dataCreacio": "2026-06-25"
+  },
+  {
+    "idPrograma": 3,
+    "idUsuariSupervisor": 8,
+    "idUsuariParticipant": 17,
+    "comentari": "El participant mostra una evolució molt positiva i aplica els aprenentatges de manera consistent.",
+    "validacio": true,
+    "idFeedback": 13,
+    "dataCreacio": "2026-06-15"
+  },
+  {
+    "idPrograma": 3,
+    "idUsuariSupervisor": 8,
+    "idUsuariParticipant": 17,
+    "comentari": "Es recomana documentar les bones pràctiques perquè puguin servir de referència a altres participants.",
+    "validacio": true,
+    "idFeedback": 14,
+    "dataCreacio": "2026-06-25"
+  },
+  {
+    "idPrograma": 3,
+    "idUsuariSupervisor": 8,
+    "idUsuariParticipant": 18,
+    "comentari": "El participant avança de manera adequada, però encara necessita consolidar alguns hàbits.",
+    "validacio": true,
+    "idFeedback": 15,
+    "dataCreacio": "2026-06-15"
+  },
+  {
+    "idPrograma": 3,
+    "idUsuariSupervisor": 8,
+    "idUsuariParticipant": 18,
+    "comentari": "Cal revisar els KPI amb desviació moderada i definir compromisos concrets per al proper període.",
+    "validacio": true,
+    "idFeedback": 16,
+    "dataCreacio": "2026-06-25"
+  },
+  {
+    "idPrograma": 3,
+    "idUsuariSupervisor": 8,
+    "idUsuariParticipant": 19,
+    "comentari": "S'han detectat dificultats en l'aplicació del pla d'acció. Es recomana una sessió de seguiment específica.",
+    "validacio": false,
+    "idFeedback": 17,
+    "dataCreacio": "2026-06-15"
+  },
+  {
+    "idPrograma": 3,
+    "idUsuariSupervisor": 8,
+    "idUsuariParticipant": 19,
+    "comentari": "Cal prioritzar poques accions i reforçar el suport del supervisor durant les properes setmanes.",
+    "validacio": false,
+    "idFeedback": 18,
+    "dataCreacio": "2026-06-25"
+  },
+  {
+    "idPrograma": 4,
+    "idUsuariSupervisor": 10,
+    "idUsuariParticipant": 20,
+    "comentari": "El participant mostra una evolució molt positiva i aplica els aprenentatges de manera consistent.",
+    "validacio": true,
+    "idFeedback": 19,
+    "dataCreacio": "2026-06-15"
+  },
+  {
+    "idPrograma": 4,
+    "idUsuariSupervisor": 10,
+    "idUsuariParticipant": 20,
+    "comentari": "Es recomana documentar les bones pràctiques perquè puguin servir de referència a altres participants.",
+    "validacio": true,
+    "idFeedback": 20,
+    "dataCreacio": "2026-06-25"
+  },
+  {
+    "idPrograma": 4,
+    "idUsuariSupervisor": 10,
+    "idUsuariParticipant": 21,
+    "comentari": "El participant avança de manera adequada, però encara necessita consolidar alguns hàbits.",
+    "validacio": true,
+    "idFeedback": 21,
+    "dataCreacio": "2026-06-15"
+  },
+  {
+    "idPrograma": 4,
+    "idUsuariSupervisor": 10,
+    "idUsuariParticipant": 21,
+    "comentari": "Cal revisar els KPI amb desviació moderada i definir compromisos concrets per al proper període.",
+    "validacio": true,
+    "idFeedback": 22,
+    "dataCreacio": "2026-06-25"
+  },
+  {
+    "idPrograma": 5,
+    "idUsuariSupervisor": 11,
+    "idUsuariParticipant": 22,
+    "comentari": "No hi ha prou registres per valorar correctament l'evolució del participant.",
+    "validacio": false,
+    "idFeedback": 23,
+    "dataCreacio": "2026-06-15"
+  },
+  {
+    "idPrograma": 5,
+    "idUsuariSupervisor": 11,
+    "idUsuariParticipant": 22,
+    "comentari": "Es recomana recordar la importància d'actualitzar els KPI de manera recurrent.",
+    "validacio": false,
+    "idFeedback": 24,
+    "dataCreacio": "2026-06-25"
+  },
+  {
+    "idPrograma": 5,
+    "idUsuariSupervisor": 11,
+    "idUsuariParticipant": 23,
+    "comentari": "El participant mostra una evolució molt positiva i aplica els aprenentatges de manera consistent.",
+    "validacio": true,
+    "idFeedback": 25,
+    "dataCreacio": "2026-06-15"
+  },
+  {
+    "idPrograma": 5,
+    "idUsuariSupervisor": 11,
+    "idUsuariParticipant": 23,
+    "comentari": "Es recomana documentar les bones pràctiques perquè puguin servir de referència a altres participants.",
+    "validacio": true,
+    "idFeedback": 26,
+    "dataCreacio": "2026-06-25"
+  },
+  {
+    "idPrograma": 5,
+    "idUsuariSupervisor": 11,
+    "idUsuariParticipant": 24,
+    "comentari": "El participant avança de manera adequada, però encara necessita consolidar alguns hàbits.",
+    "validacio": true,
+    "idFeedback": 27,
+    "dataCreacio": "2026-06-15"
+  },
+  {
+    "idPrograma": 5,
+    "idUsuariSupervisor": 11,
+    "idUsuariParticipant": 24,
+    "comentari": "Cal revisar els KPI amb desviació moderada i definir compromisos concrets per al proper període.",
+    "validacio": true,
+    "idFeedback": 28,
+    "dataCreacio": "2026-06-25"
+  },
+  {
+    "idPrograma": 6,
+    "idUsuariSupervisor": 12,
+    "idUsuariParticipant": 25,
+    "comentari": "No hi ha prou registres per valorar correctament l'evolució del participant.",
+    "validacio": false,
+    "idFeedback": 29,
+    "dataCreacio": "2026-06-15"
+  },
+  {
+    "idPrograma": 6,
+    "idUsuariSupervisor": 12,
+    "idUsuariParticipant": 25,
+    "comentari": "Es recomana recordar la importància d'actualitzar els KPI de manera recurrent.",
+    "validacio": false,
+    "idFeedback": 30,
+    "dataCreacio": "2026-06-25"
+  },
+  {
+    "idPrograma": 6,
+    "idUsuariSupervisor": 12,
+    "idUsuariParticipant": 26,
+    "comentari": "El participant mostra una evolució molt positiva i aplica els aprenentatges de manera consistent.",
+    "validacio": true,
+    "idFeedback": 31,
+    "dataCreacio": "2026-06-15"
+  },
+  {
+    "idPrograma": 6,
+    "idUsuariSupervisor": 12,
+    "idUsuariParticipant": 26,
+    "comentari": "Es recomana documentar les bones pràctiques perquè puguin servir de referència a altres participants.",
+    "validacio": true,
+    "idFeedback": 32,
+    "dataCreacio": "2026-06-25"
+  },
+  {
+    "idPrograma": 6,
+    "idUsuariSupervisor": 12,
+    "idUsuariParticipant": 27,
+    "comentari": "El participant avança de manera adequada, però encara necessita consolidar alguns hàbits.",
+    "validacio": true,
+    "idFeedback": 33,
+    "dataCreacio": "2026-06-15"
+  },
+  {
+    "idPrograma": 6,
+    "idUsuariSupervisor": 12,
+    "idUsuariParticipant": 27,
+    "comentari": "Cal revisar els KPI amb desviació moderada i definir compromisos concrets per al proper període.",
+    "validacio": true,
+    "idFeedback": 34,
+    "dataCreacio": "2026-06-25"
   }
 ]

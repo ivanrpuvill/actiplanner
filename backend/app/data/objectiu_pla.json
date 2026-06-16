@@ -1,20 +1,110 @@
 [
   {
     "idPla": 1,
-    "descripcio": "Millorar el seguiment individual de l'equip",
+    "descripcio": "Millorar el seguiment individual dels membres de l'equip",
     "valor": 100.0,
     "idObjectiu": 1
   },
   {
     "idPla": 1,
-    "descripcio": "Incrementar la qualitat del feedback",
+    "descripcio": "Incrementar la qualitat i freqüència del feedback",
     "valor": 100.0,
     "idObjectiu": 2
   },
   {
-    "idPla": 1,
-    "descripcio": "Vendes",
+    "idPla": 2,
+    "descripcio": "Consolidar l'hàbit de preparar reunions de seguiment",
     "valor": 100.0,
     "idObjectiu": 3
+  },
+  {
+    "idPla": 2,
+    "descripcio": "Registrar compromisos i acords després de cada reunió",
+    "valor": 100.0,
+    "idObjectiu": 4
+  },
+  {
+    "idPla": 3,
+    "descripcio": "Aplicar tècniques d'escolta activa en reunions i converses clau",
+    "valor": 100.0,
+    "idObjectiu": 5
+  },
+  {
+    "idPla": 3,
+    "descripcio": "Reduir malentesos en la comunicació interna",
+    "valor": 100.0,
+    "idObjectiu": 6
+  },
+  {
+    "idPla": 4,
+    "descripcio": "Incrementar el seguiment sistemàtic d'oportunitats comercials",
+    "valor": 100.0,
+    "idObjectiu": 7
+  },
+  {
+    "idPla": 4,
+    "descripcio": "Millorar la taxa de conversió de contactes qualificats",
+    "valor": 100.0,
+    "idObjectiu": 8
+  },
+  {
+    "idPla": 5,
+    "descripcio": "Augmentar la qualitat de les notes comercials",
+    "valor": 100.0,
+    "idObjectiu": 9
+  },
+  {
+    "idPla": 5,
+    "descripcio": "Reduir oportunitats sense proper pas definit",
+    "valor": 100.0,
+    "idObjectiu": 10
+  },
+  {
+    "idPla": 6,
+    "descripcio": "Millorar la coordinació entre equips clínics",
+    "valor": 100.0,
+    "idObjectiu": 11
+  },
+  {
+    "idPla": 6,
+    "descripcio": "Reduir incidències derivades de manca de comunicació",
+    "valor": 100.0,
+    "idObjectiu": 12
+  },
+  {
+    "idPla": 7,
+    "descripcio": "Millorar la resolució d'incidències amb clients",
+    "valor": 100.0,
+    "idObjectiu": 13
+  },
+  {
+    "idPla": 7,
+    "descripcio": "Incrementar la satisfacció percebuda pel client",
+    "valor": 100.0,
+    "idObjectiu": 14
+  },
+  {
+    "idPla": 8,
+    "descripcio": "Millorar la planificació setmanal de tasques prioritàries",
+    "valor": 100.0,
+    "idObjectiu": 15
+  },
+  {
+    "idPla": 8,
+    "descripcio": "Reduir interrupcions i tasques sense planificació",
+    "valor": 100.0,
+    "idObjectiu": 16
+  },
+  {
+    "idPla": 9,
+    "descripcio": "Identificar bloquejos recurrents i definir accions preventives",
+    "valor": 100.0,
+    "idObjectiu": 17
+  },
+  {
+    "idPla": 9,
+    "descripcio": "Reduir el temps mitjà de resposta davant incidències internes",
+    "valor": 100.0,
+    "idObjectiu": 18
   }
 ]

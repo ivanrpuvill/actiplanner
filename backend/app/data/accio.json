@@ -1,26 +1,290 @@
 [
   {
     "idObjectiu": 1,
-    "titol": "Fer una reunió 1:1 setmanal",
-    "descripcio": "Programar una reunió individual amb cada membre de l'equip.",
-    "dataInici": "2026-06-03",
-    "dataFi": "2026-07-10",
+    "titol": "Realitzar seguiment periòdic",
+    "descripcio": "Fer una revisió estructurada de l'evolució de l'objectiu.",
+    "dataInici": "2026-06-04",
+    "dataFi": "2026-07-16",
     "idAccio": 1
+  },
+  {
+    "idObjectiu": 1,
+    "titol": "Documentar compromisos adquirits",
+    "descripcio": "Registrar acords, accions i responsables després de cada seguiment.",
+    "dataInici": "2026-06-04",
+    "dataFi": "2026-07-16",
+    "idAccio": 2
+  },
+  {
+    "idObjectiu": 2,
+    "titol": "Preparar una pauta de feedback",
+    "descripcio": "Definir una estructura breu per donar feedback concret i accionable.",
+    "dataInici": "2026-06-05",
+    "dataFi": "2026-07-24",
+    "idAccio": 3
   },
   {
     "idObjectiu": 2,
     "titol": "Registrar feedback després de cada reunió",
-    "descripcio": "Anotar els punts principals del feedback donat a cada persona.",
-    "dataInici": "2026-06-03",
-    "dataFi": "2026-07-10",
-    "idAccio": 2
+    "descripcio": "Anotar punts tractats, compromisos i següents passos.",
+    "dataInici": "2026-06-05",
+    "dataFi": "2026-07-24",
+    "idAccio": 4
   },
   {
     "idObjectiu": 3,
-    "titol": "concertar trucades",
-    "descripcio": "concertar trucades",
-    "dataInici": "2026-06-11",
-    "dataFi": "2026-06-26",
-    "idAccio": 3
+    "titol": "Realitzar seguiment periòdic",
+    "descripcio": "Fer una revisió estructurada de l'evolució de l'objectiu.",
+    "dataInici": "2026-06-06",
+    "dataFi": "2026-07-11",
+    "idAccio": 5
+  },
+  {
+    "idObjectiu": 3,
+    "titol": "Documentar compromisos adquirits",
+    "descripcio": "Registrar acords, accions i responsables després de cada seguiment.",
+    "dataInici": "2026-06-06",
+    "dataFi": "2026-07-11",
+    "idAccio": 6
+  },
+  {
+    "idObjectiu": 4,
+    "titol": "Realitzar seguiment periòdic",
+    "descripcio": "Fer una revisió estructurada de l'evolució de l'objectiu.",
+    "dataInici": "2026-06-03",
+    "dataFi": "2026-07-15",
+    "idAccio": 7
+  },
+  {
+    "idObjectiu": 4,
+    "titol": "Documentar compromisos adquirits",
+    "descripcio": "Registrar acords, accions i responsables després de cada seguiment.",
+    "dataInici": "2026-06-03",
+    "dataFi": "2026-07-15",
+    "idAccio": 8
+  },
+  {
+    "idObjectiu": 5,
+    "titol": "Realitzar seguiment periòdic",
+    "descripcio": "Fer una revisió estructurada de l'evolució de l'objectiu.",
+    "dataInici": "2026-06-04",
+    "dataFi": "2026-07-23",
+    "idAccio": 9
+  },
+  {
+    "idObjectiu": 5,
+    "titol": "Documentar compromisos adquirits",
+    "descripcio": "Registrar acords, accions i responsables després de cada seguiment.",
+    "dataInici": "2026-06-04",
+    "dataFi": "2026-07-23",
+    "idAccio": 10
+  },
+  {
+    "idObjectiu": 6,
+    "titol": "Realitzar seguiment periòdic",
+    "descripcio": "Fer una revisió estructurada de l'evolució de l'objectiu.",
+    "dataInici": "2026-06-05",
+    "dataFi": "2026-07-10",
+    "idAccio": 11
+  },
+  {
+    "idObjectiu": 6,
+    "titol": "Documentar compromisos adquirits",
+    "descripcio": "Registrar acords, accions i responsables després de cada seguiment.",
+    "dataInici": "2026-06-05",
+    "dataFi": "2026-07-10",
+    "idAccio": 12
+  },
+  {
+    "idObjectiu": 7,
+    "titol": "Actualitzar oportunitats setmanalment",
+    "descripcio": "Revisar i actualitzar l'estat de les oportunitats comercials.",
+    "dataInici": "2026-06-06",
+    "dataFi": "2026-07-18",
+    "idAccio": 13
+  },
+  {
+    "idObjectiu": 7,
+    "titol": "Definir proper pas per a cada oportunitat",
+    "descripcio": "Assignar una acció concreta i una data de seguiment.",
+    "dataInici": "2026-06-06",
+    "dataFi": "2026-07-18",
+    "idAccio": 14
+  },
+  {
+    "idObjectiu": 8,
+    "titol": "Actualitzar oportunitats setmanalment",
+    "descripcio": "Revisar i actualitzar l'estat de les oportunitats comercials.",
+    "dataInici": "2026-06-03",
+    "dataFi": "2026-07-22",
+    "idAccio": 15
+  },
+  {
+    "idObjectiu": 8,
+    "titol": "Definir proper pas per a cada oportunitat",
+    "descripcio": "Assignar una acció concreta i una data de seguiment.",
+    "dataInici": "2026-06-03",
+    "dataFi": "2026-07-22",
+    "idAccio": 16
+  },
+  {
+    "idObjectiu": 9,
+    "titol": "Actualitzar oportunitats setmanalment",
+    "descripcio": "Revisar i actualitzar l'estat de les oportunitats comercials.",
+    "dataInici": "2026-06-04",
+    "dataFi": "2026-07-09",
+    "idAccio": 17
+  },
+  {
+    "idObjectiu": 9,
+    "titol": "Definir proper pas per a cada oportunitat",
+    "descripcio": "Assignar una acció concreta i una data de seguiment.",
+    "dataInici": "2026-06-04",
+    "dataFi": "2026-07-09",
+    "idAccio": 18
+  },
+  {
+    "idObjectiu": 10,
+    "titol": "Actualitzar oportunitats setmanalment",
+    "descripcio": "Revisar i actualitzar l'estat de les oportunitats comercials.",
+    "dataInici": "2026-06-05",
+    "dataFi": "2026-07-17",
+    "idAccio": 19
+  },
+  {
+    "idObjectiu": 10,
+    "titol": "Definir proper pas per a cada oportunitat",
+    "descripcio": "Assignar una acció concreta i una data de seguiment.",
+    "dataInici": "2026-06-05",
+    "dataFi": "2026-07-17",
+    "idAccio": 20
+  },
+  {
+    "idObjectiu": 11,
+    "titol": "Realitzar seguiment periòdic",
+    "descripcio": "Fer una revisió estructurada de l'evolució de l'objectiu.",
+    "dataInici": "2026-06-06",
+    "dataFi": "2026-07-25",
+    "idAccio": 21
+  },
+  {
+    "idObjectiu": 11,
+    "titol": "Documentar compromisos adquirits",
+    "descripcio": "Registrar acords, accions i responsables després de cada seguiment.",
+    "dataInici": "2026-06-06",
+    "dataFi": "2026-07-25",
+    "idAccio": 22
+  },
+  {
+    "idObjectiu": 12,
+    "titol": "Registrar incidències i causa principal",
+    "descripcio": "Documentar les incidències rebudes i classificar-ne l'origen.",
+    "dataInici": "2026-06-03",
+    "dataFi": "2026-07-08",
+    "idAccio": 23
+  },
+  {
+    "idObjectiu": 12,
+    "titol": "Aplicar protocol de resolució",
+    "descripcio": "Fer seguiment del protocol definit i del temps de resposta.",
+    "dataInici": "2026-06-03",
+    "dataFi": "2026-07-08",
+    "idAccio": 24
+  },
+  {
+    "idObjectiu": 13,
+    "titol": "Registrar incidències i causa principal",
+    "descripcio": "Documentar les incidències rebudes i classificar-ne l'origen.",
+    "dataInici": "2026-06-04",
+    "dataFi": "2026-07-16",
+    "idAccio": 25
+  },
+  {
+    "idObjectiu": 13,
+    "titol": "Aplicar protocol de resolució",
+    "descripcio": "Fer seguiment del protocol definit i del temps de resposta.",
+    "dataInici": "2026-06-04",
+    "dataFi": "2026-07-16",
+    "idAccio": 26
+  },
+  {
+    "idObjectiu": 14,
+    "titol": "Registrar incidències i causa principal",
+    "descripcio": "Documentar les incidències rebudes i classificar-ne l'origen.",
+    "dataInici": "2026-06-05",
+    "dataFi": "2026-07-24",
+    "idAccio": 27
+  },
+  {
+    "idObjectiu": 14,
+    "titol": "Aplicar protocol de resolució",
+    "descripcio": "Fer seguiment del protocol definit i del temps de resposta.",
+    "dataInici": "2026-06-05",
+    "dataFi": "2026-07-24",
+    "idAccio": 28
+  },
+  {
+    "idObjectiu": 15,
+    "titol": "Planificar la setmana amb prioritats",
+    "descripcio": "Definir les tasques clau abans de començar la setmana.",
+    "dataInici": "2026-06-06",
+    "dataFi": "2026-07-11",
+    "idAccio": 29
+  },
+  {
+    "idObjectiu": 15,
+    "titol": "Revisar bloquejos en tancament setmanal",
+    "descripcio": "Identificar obstacles i establir accions preventives.",
+    "dataInici": "2026-06-06",
+    "dataFi": "2026-07-11",
+    "idAccio": 30
+  },
+  {
+    "idObjectiu": 16,
+    "titol": "Planificar la setmana amb prioritats",
+    "descripcio": "Definir les tasques clau abans de començar la setmana.",
+    "dataInici": "2026-06-03",
+    "dataFi": "2026-07-15",
+    "idAccio": 31
+  },
+  {
+    "idObjectiu": 16,
+    "titol": "Revisar bloquejos en tancament setmanal",
+    "descripcio": "Identificar obstacles i establir accions preventives.",
+    "dataInici": "2026-06-03",
+    "dataFi": "2026-07-15",
+    "idAccio": 32
+  },
+  {
+    "idObjectiu": 17,
+    "titol": "Planificar la setmana amb prioritats",
+    "descripcio": "Definir les tasques clau abans de començar la setmana.",
+    "dataInici": "2026-06-04",
+    "dataFi": "2026-07-23",
+    "idAccio": 33
+  },
+  {
+    "idObjectiu": 17,
+    "titol": "Revisar bloquejos en tancament setmanal",
+    "descripcio": "Identificar obstacles i establir accions preventives.",
+    "dataInici": "2026-06-04",
+    "dataFi": "2026-07-23",
+    "idAccio": 34
+  },
+  {
+    "idObjectiu": 18,
+    "titol": "Registrar incidències i causa principal",
+    "descripcio": "Documentar les incidències rebudes i classificar-ne l'origen.",
+    "dataInici": "2026-06-05",
+    "dataFi": "2026-07-10",
+    "idAccio": 35
+  },
+  {
+    "idObjectiu": 18,
+    "titol": "Aplicar protocol de resolució",
+    "descripcio": "Fer seguiment del protocol definit i del temps de resposta.",
+    "dataInici": "2026-06-05",
+    "dataFi": "2026-07-10",
+    "idAccio": 36
   }
 ]
