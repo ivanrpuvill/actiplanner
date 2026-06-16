@@ -19,10 +19,8 @@ class KPIBase(BaseModel):
     nom: str
     descripcio: str
     periodicitat: str
-
     tipus: TipusKPI = TipusKPI.numeric
     orientacio: OrientacioKPI = OrientacioKPI.major_millor
-
     valorMinim: float | None = 0
     valorMaxim: float | None = None
     valorObjectiu: float | None = None
@@ -37,7 +35,6 @@ class KPIUpdate(BaseModel):
     nom: str | None = None
     descripcio: str | None = None
     periodicitat: str | None = None
-
     tipus: TipusKPI | None = None
     orientacio: OrientacioKPI | None = None
     valorMinim: float | None = None

@@ -6,6 +6,7 @@ class RegistreKPIBase(BaseModel):
     idPrograma: int
     idUsuari: int
     valor: float
+    comentari: str | None = None
 
 
 class RegistreKPICreate(RegistreKPIBase):
@@ -17,6 +18,7 @@ class RegistreKPIUpdate(BaseModel):
     idPrograma: int | None = None
     idUsuari: int | None = None
     valor: float | None = None
+    comentari: str | None = None
     dataRegistre: str | None = None
 
 

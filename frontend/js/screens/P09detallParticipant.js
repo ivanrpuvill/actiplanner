@@ -89,7 +89,6 @@ async function carregarSelectorParticipants(programa) {
     ) || opcions[0];
 
     select.value = participantInicial.idUsuari;
-
     await carregarParticipant(programa.idPrograma, participantInicial.idUsuari);
 
     sessionStorage.removeItem("idUsuariParticipantSeleccionat");
@@ -138,7 +137,7 @@ async function carregarParticipant(idPrograma, idUsuari) {
         <div class="card stat-card">
           <h3>Seguiments</h3>
           <p class="stat-number">${seguiments.length || 0}</p>
-          <p class="stat-subtitle">Objectius amb seguiment</p>
+          <p class="stat-subtitle">Objectius del programa</p>
         </div>
 
         <div class="card stat-card">
@@ -169,27 +168,48 @@ function renderSeguiments(seguiments) {
   }
 
   return `
+    <div class="list">
+      ${seguiments.map((seguiment) => {
+        const progres = obtenirProgresSeguiment(seguiment);
+        const estat = obtenirEstatSeguiment(seguiment, progres);
+
+        return `
+          <div class="list-item">
+            <h4>${obtenirNomObjectiu(seguiment)}</h4>
+            <p><strong>Progrés:</strong> ${formatPercentatge(progres)}</p>
+            <p><strong>Estat:</strong> ${formatEstat(estat)}</p>
+            ${renderKPIs(seguiment.kpis)}
+          </div>
+        `;
+      }).join("")}
+    </div>
+  `;
+}
+
+function renderKPIs(kpis) {
+  if (!kpis || !kpis.length) {
+    return `<p>No hi ha KPI registrats per aquest objectiu.</p>`;
+  }
+
+  return `
     <table>
       <thead>
         <tr>
-          <th>Objectiu</th>
-          <th>Progrés</th>
-          <th>Estat</th>
+          <th>KPI</th>
+          <th>Valor actual</th>
+          <th>Assoliment</th>
+          <th>Comentari</th>
         </tr>
       </thead>
       <tbody>
-        ${seguiments.map((seguiment) => {
-          const progres = obtenirProgresSeguiment(seguiment);
-          const estat = obtenirEstatSeguiment(seguiment, progres);
-
-          return `
-            <tr>
-              <td>${obtenirNomObjectiu(seguiment)}</td>
-              <td>${formatPercentatge(progres)}</td>
-              <td>${formatEstat(estat)}</td>
-            </tr>
-          `;
-        }).join("")}
+        ${kpis.map((kpi) => `
+          <tr>
+            <td>${kpi.nom || `KPI ${kpi.idKPI || "-"}`}</td>
+            <td>${kpi.valorActual ?? "-"}</td>
+            <td>${formatPercentatge(kpi.assoliment)}</td>
+            <td>${kpi.comentari || "-"}</td>
+          </tr>
+        `).join("")}
       </tbody>
     </table>
   `;
@@ -253,14 +273,8 @@ function calcularProgresMitja(seguiments) {
 function calcularEstat(progres) {
   const valor = Number(progres || 0);
 
-  if (valor >= 80) {
-    return "assolit";
-  }
-
-  if (valor >= 40) {
-    return "en_progres";
-  }
-
+  if (valor >= 80) return "assolit";
+  if (valor >= 40) return "en_progres";
   return "pendent";
 }
 

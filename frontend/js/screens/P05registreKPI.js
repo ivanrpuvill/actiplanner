@@ -35,6 +35,16 @@ export async function renderP05RegistreKPI(app, navegar) {
     const plans = await apiGet(`/programes/${programa.idPrograma}/plans`);
     const select = document.getElementById("plaSelect");
 
+    if (!plans.length) {
+      select.innerHTML = `<option value="">No hi ha plans</option>`;
+      document.getElementById("kpiContainer").innerHTML = `
+        <div class="card">
+          <p>No hi ha plans disponibles.</p>
+        </div>
+      `;
+      return;
+    }
+
     select.innerHTML = plans.map((pla) => `
       <option value="${pla.idPla}">
         ${pla.titol || pla.nom || `Pla ${pla.idPla}`}
@@ -50,7 +60,7 @@ export async function renderP05RegistreKPI(app, navegar) {
     if (plaActiu) {
       select.value = plaActiu.idPla;
       await carregarKPIs(plaActiu.idPla, navegar);
-    } else if (plans.length) {
+    } else {
       await carregarKPIs(plans[0].idPla, navegar);
     }
   } catch (error) {
@@ -95,13 +105,22 @@ async function carregarKPIs(idPla, navegar) {
           <div class="card">
             <h3>${kpi.nom || `KPI ${kpi.idKPI}`}</h3>
             <p>${kpi.descripcio || ""}</p>
+            <p><strong>Objectiu:</strong> ${kpi.objectiu.descripcio || `Objectiu ${kpi.objectiu.idObjectiu}`}</p>
             <p><strong>Acció:</strong> ${kpi.accio.titol || `Acció ${kpi.accio.idAccio}`}</p>
             <p><strong>Periodicitat:</strong> ${kpi.periodicitat || "-"}</p>
-            <p><strong>Últim valor:</strong> ${kpi.ultimValor ?? "-"}</p>
+            <p><strong>Tipus:</strong> ${formatTipusKPI(kpi.tipus)}</p>
+            <p><strong>Valor objectiu:</strong> ${kpi.valorObjectiu ?? "-"}</p>
 
             <form class="form registre-kpi-form" data-id-kpi="${kpi.idKPI}">
               <label>Nou valor</label>
               <input name="valor" type="number" step="0.01" required />
+
+              <label>Comentari / observacions</label>
+              <textarea
+                name="comentari"
+                rows="3"
+                placeholder="Explica el context d'aquest registre..."
+              ></textarea>
 
               <button class="btn" type="submit">Registrar valor</button>
             </form>
@@ -138,7 +157,10 @@ async function carregarRegistres(kpis) {
         <h4>Històric</h4>
         <ul>
           ${registres.map((registre) => `
-            <li>${registre.dataRegistre || "-"} — ${registre.valor}</li>
+            <li>
+              <strong>${registre.dataRegistre || "-"}</strong> — ${registre.valor}
+              ${registre.comentari ? `<br><em>${registre.comentari}</em>` : ""}
+            </li>
           `).join("")}
         </ul>
       `;
@@ -157,16 +179,35 @@ function activarFormsRegistre(navegar) {
       const usuari = obtenirUsuariActiu();
       const idKPI = Number(form.dataset.idKpi);
       const valor = Number(form.valor.value);
+      const comentari = form.comentari.value.trim();
+
+      if (Number.isNaN(valor)) {
+        alert("Cal indicar un valor numèric.");
+        return;
+      }
 
       const registre = {
         idKPI,
         idPrograma: programa.idPrograma,
         idUsuari: usuari.idUsuari,
-        valor
+        valor,
+        dataRegistre: new Date().toISOString().split("T")[0],
+        comentari
       };
 
       await apiPost("/registres-kpi", registre);
       navegar("P05");
     });
   });
+}
+
+function formatTipusKPI(tipus) {
+  const labels = {
+    numeric: "Numèric",
+    percentatge: "Percentatge",
+    escala: "Escala",
+    boolea: "Sí / No"
+  };
+
+  return labels[tipus] || tipus || "-";
 }

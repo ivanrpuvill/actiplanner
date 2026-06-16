@@ -1,58 +1,92 @@
 [
   {
-    "idKPI": 1,
-    "idPrograma": 1,
-    "idUsuari": 1,
-    "valor": 80.0,
     "idRegistre": 1,
-    "dataRegistre": "2026-06-10"
+    "idPrograma": 1,
+    "idKPI": 1,
+    "idUsuari": 3,
+    "valor": 3,
+    "dataRegistre": "2025-05-01",
+    "comentari": "S'han realitzat 3 reunions individuals amb membres de l'equip."
   },
   {
-    "idKPI": 2,
-    "idPrograma": 1,
-    "idUsuari": 1,
-    "valor": 60.0,
     "idRegistre": 2,
-    "dataRegistre": "2026-06-10"
+    "idPrograma": 1,
+    "idKPI": 1,
+    "idUsuari": 3,
+    "valor": 5,
+    "dataRegistre": "2025-05-15",
+    "comentari": "S'han recuperat les reunions ajornades durant la primera quinzena."
   },
   {
-    "idKPI": 1,
-    "idPrograma": 1,
-    "idUsuari": 1,
-    "valor": 2.0,
     "idRegistre": 3,
-    "dataRegistre": "2026-06-12"
+    "idPrograma": 1,
+    "idKPI": 2,
+    "idUsuari": 3,
+    "valor": 65,
+    "dataRegistre": "2025-05-15",
+    "comentari": "La majoria de tasques s'han completat dins del termini previst."
   },
   {
-    "idKPI": 1,
-    "idPrograma": 1,
-    "idUsuari": 1,
-    "valor": 1.0,
     "idRegistre": 4,
-    "dataRegistre": "2026-06-12"
+    "idPrograma": 1,
+    "idKPI": 2,
+    "idUsuari": 3,
+    "valor": 82,
+    "dataRegistre": "2025-06-01",
+    "comentari": "S'ha assolit l'objectiu gràcies a una millor planificació setmanal."
   },
   {
-    "idKPI": 4,
-    "idPrograma": 1,
-    "idUsuari": 1,
-    "valor": 10.0,
     "idRegistre": 5,
-    "dataRegistre": "2026-06-12"
+    "idPrograma": 1,
+    "idKPI": 3,
+    "idUsuari": 4,
+    "valor": 2,
+    "dataRegistre": "2025-05-10",
+    "comentari": "Encara costa aplicar les tècniques apreses en situacions reals."
   },
   {
-    "idKPI": 4,
-    "idPrograma": 1,
-    "idUsuari": 1,
-    "valor": 5.0,
     "idRegistre": 6,
-    "dataRegistre": "2026-06-12"
+    "idPrograma": 1,
+    "idKPI": 3,
+    "idUsuari": 4,
+    "valor": 4,
+    "dataRegistre": "2025-06-05",
+    "comentari": "Es percep una millora clara en la qualitat de les interaccions amb l'equip."
   },
   {
-    "idKPI": 1,
-    "idPrograma": 1,
-    "idUsuari": 1,
-    "valor": 1.0,
     "idRegistre": 7,
-    "dataRegistre": "2026-06-14"
+    "idPrograma": 1,
+    "idKPI": 4,
+    "idUsuari": 4,
+    "valor": 1,
+    "dataRegistre": "2025-06-05",
+    "comentari": "S'ha definit i validat el pla de millora amb el supervisor."
+  },
+  {
+    "idRegistre": 8,
+    "idPrograma": 1,
+    "idKPI": 5,
+    "idUsuari": 5,
+    "valor": 40,
+    "dataRegistre": "2025-05-12",
+    "comentari": "Participació limitada per càrrega de feina elevada."
+  },
+  {
+    "idRegistre": 9,
+    "idPrograma": 1,
+    "idKPI": 5,
+    "idUsuari": 5,
+    "valor": 70,
+    "dataRegistre": "2025-06-02",
+    "comentari": "S'ha incrementat la participació després de reorganitzar prioritats."
+  },
+  {
+    "idRegistre": 10,
+    "idPrograma": 1,
+    "idKPI": 6,
+    "idUsuari": 5,
+    "valor": 90,
+    "dataRegistre": "2025-06-02",
+    "comentari": "La transferència dels aprenentatges al lloc de treball és pràcticament completa."
   }
 ]

@@ -7,6 +7,7 @@ from google import genai
 from app.services.analisi_service import AnalisiService
 from app.services.feedback_service import FeedbackService
 from app.services.pla_accio_service import PlaAccioService
+from app.services.seguiment_objectiu_service import SeguimentObjectiuService
 
 
 class IAService:
@@ -23,6 +24,7 @@ class IAService:
         self.analisi_service = AnalisiService()
         self.feedback_service = FeedbackService()
         self.pla_accio_service = PlaAccioService()
+        self.seguiment_objectiu_service = SeguimentObjectiuService()
 
     def generar_resum_programa(self, idPrograma: int) -> dict:
         analisi = self.analisi_service.get_analisi_programa(idPrograma)
@@ -106,10 +108,16 @@ Retorna exclusivament JSON vàlid:
             idUsuariParticipant
         )
 
+        seguiments = self.seguiment_objectiu_service.get_seguiments_programa_usuari(
+            idPrograma,
+            idUsuariParticipant
+        )
+
         context = {
             "idPrograma": idPrograma,
             "idUsuariParticipant": idUsuariParticipant,
             "progresCalculat": progres,
+            "seguimentsObjectius": seguiments,
             "feedbacksPrevis": [
                 feedback.model_dump()
                 for feedback in feedbacks
@@ -117,23 +125,40 @@ Retorna exclusivament JSON vàlid:
         }
 
         prompt = f"""
-Actua com un supervisor expert en desenvolupament professional.
+    Actua com un supervisor expert en desenvolupament professional i seguiment de plans d'acció.
 
-Context:
-{self._format_context(context)}
+    Analitza el progrés del participant a partir dels KPI, els comentaris justificatius i el feedback previ.
 
-Genera feedback accionable i específic.
+    Context:
+    {self._format_context(context)}
 
-Retorna exclusivament:
+    Genera feedback accionable i específic.
 
-{{
-  "missatgeFeedback": "",
-  "puntsForts": [],
-  "puntsMillora": [],
-  "properesAccions": [],
-  "nivellPrioritat": "baix|mitja|alt"
-}}
-"""
+    Tingues en compte:
+    - el progrés global del participant
+    - els objectius amb millor i pitjor evolució
+    - els KPI registrats
+    - els comentaris associats als registres KPI
+    - possibles causes de desviació
+    - accions concretes de millora
+
+    Retorna exclusivament JSON vàlid amb aquesta estructura:
+
+    {{
+    "missatgeFeedback": "",
+    "puntsForts": [],
+    "puntsMillora": [],
+    "properesAccions": [],
+    "nivellPrioritat": "baix|mitja|alt"
+    }}
+
+    Condicions:
+    - Escriu en català.
+    - No afegeixis text fora del JSON.
+    - No utilitzis markdown.
+    - No inventis dades no presents al context.
+    - Si els comentaris expliquen una desviació, incorpora-ho al feedback.
+    """
 
         feedback_generat = self._generar_json(prompt)
 

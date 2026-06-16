@@ -22,27 +22,82 @@ class SeguimentObjectiuService:
         idPrograma: int,
         idUsuari: int
     ):
-        seguiments = self.seguiment_repository.get_by_programa_usuari(
-            idPrograma,
-            idUsuari
-        )
+        from app.repositories.pla_accio_repository import PlaAccioRepository
+        from app.repositories.objectiu_pla_repository import ObjectiuPlaRepository
 
+        pla_repository = PlaAccioRepository()
+        objectiu_repository = ObjectiuPlaRepository()
+
+        plans = pla_repository.get_by_programa(idPrograma)
         resultat = []
 
-        for seguiment in seguiments:
-            progres = self.calcular_progres_objectiu_usuari(
-                seguiment.idObjectiu,
-                idUsuari
-            )
+        for pla in plans:
+            objectius = objectiu_repository.get_by_pla(pla.idPla)
 
-            resultat.append({
-                "idSeguiment": seguiment.idSeguiment,
-                "idObjectiu": seguiment.idObjectiu,
-                "idPrograma": seguiment.idPrograma,
-                "idUsuari": seguiment.idUsuari,
-                "progresCalculat": progres,
-                "estatCalculat": self._calcular_estat(progres)
-            })
+            for objectiu in objectius:
+                progres = self.calcular_progres_objectiu_usuari(
+                    objectiu.idObjectiu,
+                    idUsuari
+                )
+
+                resultat.append({
+                    "idObjectiu": objectiu.idObjectiu,
+                    "idPrograma": idPrograma,
+                    "idUsuari": idUsuari,
+                    "descripcioObjectiu": objectiu.descripcio,
+                    "progresCalculat": progres,
+                    "estatCalculat": self._calcular_estat(progres),
+                    "kpis": self._get_kpis_objectiu_usuari(
+                        objectiu.idObjectiu,
+                        idUsuari
+                    )
+                })
+
+        return resultat
+
+
+    def _get_kpis_objectiu_usuari(
+        self,
+        idObjectiu: int,
+        idUsuari: int
+    ):
+        accions = self.accio_repository.get_by_objectiu(idObjectiu)
+        resultat = []
+
+        for accio in accions:
+            kpis = self.kpi_repository.get_by_accio(accio.idAccio)
+
+            for kpi in kpis:
+                registres = self.registre_kpi_repository.get_by_kpi_and_usuari(
+                    kpi.idKPI,
+                    idUsuari
+                )
+
+                if not registres:
+                    resultat.append({
+                        "idKPI": kpi.idKPI,
+                        "nom": kpi.nom,
+                        "valorActual": None,
+                        "assoliment": 0,
+                        "comentari": None
+                    })
+                    continue
+
+                ultim_registre = max(
+                    registres,
+                    key=lambda registre: registre.dataRegistre
+                )
+
+                resultat.append({
+                    "idKPI": kpi.idKPI,
+                    "nom": kpi.nom,
+                    "valorActual": ultim_registre.valor,
+                    "assoliment": self._calcular_assoliment_kpi(
+                        kpi,
+                        ultim_registre.valor
+                    ),
+                    "comentari": getattr(ultim_registre, "comentari", None)
+                })
 
         return resultat
 
