@@ -33,21 +33,44 @@ export async function renderP18AnaliticaReporting(app, navegar) {
 
 async function carregarSelectorProgrames() {
   const select = document.getElementById("programaSelect");
-  const programes = await apiGet("/programes");
 
-  select.innerHTML = programes.map((programa) => `
-    <option value="${programa.idPrograma}">
-      ${programa.nom || programa.nomPrograma || `Programa ${programa.idPrograma}`}
-    </option>
-  `).join("");
+  try {
+    const programes = await apiGet("/programes");
 
-  if (programes.length) {
+    if (!programes.length) {
+      select.innerHTML = `<option value="">No hi ha programes</option>`;
+      document.getElementById("analiticaContainer").innerHTML = `
+        <div class="card">
+          <p>No hi ha programes disponibles.</p>
+        </div>
+      `;
+      return;
+    }
+
+    select.innerHTML = programes.map((programa) => `
+      <option value="${programa.idPrograma}">
+        ${programa.nom || programa.nomPrograma || `Programa ${programa.idPrograma}`}
+      </option>
+    `).join("");
+
     await carregarAnalitica(programes[0].idPrograma);
+  } catch (error) {
+    document.getElementById("analiticaContainer").innerHTML =
+      `<p class="error-text">${error.message}</p>`;
   }
 }
 
 async function carregarAnalitica(idPrograma) {
   const container = document.getElementById("analiticaContainer");
+
+  if (!idPrograma) {
+    container.innerHTML = `
+      <div class="card">
+        <p>Selecciona un programa per veure l'analítica.</p>
+      </div>
+    `;
+    return;
+  }
 
   container.innerHTML = `
     <div class="card">
@@ -56,32 +79,48 @@ async function carregarAnalitica(idPrograma) {
   `;
 
   try {
-    const analisi = await apiGet(`/programes/${idPrograma}/analisi`);
-    const objectiusRisc = await apiGet(`/programes/${idPrograma}/objectius-risc`);
-    const destacats = await apiGet(`/programes/${idPrograma}/participants-destacats`);
-    const desviacio = await apiGet(`/programes/${idPrograma}/participants-desviacio`);
+    const [
+      analisi,
+      objectiusRisc,
+      destacats,
+      desviacio
+    ] = await Promise.all([
+      apiGet(`/programes/${idPrograma}/analisi`),
+      apiGet(`/programes/${idPrograma}/objectius-risc`),
+      apiGet(`/programes/${idPrograma}/participants-destacats`),
+      apiGet(`/programes/${idPrograma}/participants-desviacio`)
+    ]);
 
     container.innerHTML = `
       <div class="grid">
-        <div class="card">
-          <h3>Resum general</h3>
-          <p>${analisi.resum || analisi.descripcio || "Anàlisi carregada correctament."}</p>
+        <div class="card stat-card">
+          <h3>Participants</h3>
+          <p class="stat-number">${analisi.nombreParticipants ?? 0}</p>
+          <p class="stat-subtitle">Participants del programa</p>
         </div>
 
-        <div class="card">
+        <div class="card stat-card">
+          <h3>Progrés mitjà</h3>
+          <p class="stat-number">${formatPercentatge(analisi.progresMitjaPrograma)}</p>
+          <p class="stat-subtitle">${formatEstat(analisi.estatPrograma)}</p>
+        </div>
+
+        <div class="card stat-card">
           <h3>Objectius en risc</h3>
-          <p>${objectiusRisc.length || 0} objectius detectats</p>
+          <p class="stat-number">${objectiusRisc.length || 0}</p>
+          <p class="stat-subtitle">Objectius detectats</p>
         </div>
 
-        <div class="card">
-          <h3>Participants destacats</h3>
-          <p>${destacats.length || 0} participants</p>
-        </div>
-
-        <div class="card">
+        <div class="card stat-card">
           <h3>Participants amb desviació</h3>
-          <p>${desviacio.length || 0} participants</p>
+          <p class="stat-number">${desviacio.length || 0}</p>
+          <p class="stat-subtitle">Participants per revisar</p>
         </div>
+      </div>
+
+      <div class="card constructor-container">
+        <h3>Interpretació de l'analítica</h3>
+        ${renderInterpretacioAnalitica(analisi, objectiusRisc, destacats, desviacio)}
       </div>
 
       <div class="card constructor-container">
@@ -92,18 +131,18 @@ async function carregarAnalitica(idPrograma) {
       <div class="grid two-cols constructor-container">
         <div class="card">
           <h3>Participants destacats</h3>
-          ${renderTaulaParticipants(destacats)}
+          ${renderTaulaParticipants(destacats, "destacat")}
         </div>
 
         <div class="card">
           <h3>Participants amb desviació</h3>
-          ${renderTaulaParticipants(desviacio)}
+          ${renderTaulaParticipants(desviacio, "desviacio")}
         </div>
       </div>
 
       <div class="card constructor-container">
-        <h3>Resposta completa d'analítica</h3>
-        <pre class="json-block">${JSON.stringify(analisi, null, 2)}</pre>
+        <h3>Detall de participants</h3>
+        ${renderTaulaParticipants(analisi.participants || [], "general")}
       </div>
     `;
   } catch (error) {
@@ -111,8 +150,88 @@ async function carregarAnalitica(idPrograma) {
   }
 }
 
+function renderInterpretacioAnalitica(analisi, objectiusRisc, destacats, desviacio) {
+  const progres = Number(analisi.progresMitjaPrograma || 0);
+  const estat = analisi.estatPrograma || calcularEstat(progres);
+
+  let missatge = "El programa encara no té prou dades registrades per extreure una conclusió sòlida.";
+
+  if (progres >= 80) {
+    missatge = "El programa mostra un nivell d'assoliment alt. La majoria de participants presenten una evolució positiva i el seguiment indica una bona consolidació dels objectius.";
+  } else if (progres >= 40) {
+    missatge = "El programa presenta un progrés intermedi. Hi ha avenços visibles, però encara existeixen objectius o participants que requereixen seguiment específic.";
+  } else if (progres > 0) {
+    missatge = "El programa es troba en una fase inicial o presenta un progrés baix. Es recomana revisar els objectius en risc i reforçar el seguiment dels participants amb desviació.";
+  }
+
+  return `
+    <div class="list">
+      <div class="list-item">
+        <strong>Estat global</strong>
+        <p>${formatEstat(estat)} · ${formatPercentatge(progres)}</p>
+        <p>${missatge}</p>
+      </div>
+
+      <div class="list-item">
+        <strong>Lectura dels riscos</strong>
+        <p>${renderTextRiscos(objectiusRisc, desviacio)}</p>
+      </div>
+
+      <div class="list-item">
+        <strong>Lectura dels resultats positius</strong>
+        <p>${renderTextDestacats(destacats)}</p>
+      </div>
+
+      <div class="list-item">
+        <strong>Recomanació operativa</strong>
+        <p>${renderRecomanacio(progres, objectiusRisc, desviacio)}</p>
+      </div>
+    </div>
+  `;
+}
+
+function renderTextRiscos(objectiusRisc, desviacio) {
+  if ((!objectiusRisc || !objectiusRisc.length) && (!desviacio || !desviacio.length)) {
+    return "No s'han detectat riscos rellevants en el programa.";
+  }
+
+  const parts = [];
+
+  if (objectiusRisc.length) {
+    parts.push(`${objectiusRisc.length} objectiu(s) en risc`);
+  }
+
+  if (desviacio.length) {
+    parts.push(`${desviacio.length} participant(s) amb desviació`);
+  }
+
+  return `S'han detectat ${parts.join(" i ")}. Cal revisar-ne el detall i prioritzar accions de seguiment.`;
+}
+
+function renderTextDestacats(destacats) {
+  if (!destacats || !destacats.length) {
+    return "Encara no hi ha participants destacats identificats.";
+  }
+
+  return `${destacats.length} participant(s) mostren un rendiment destacat i poden servir com a referència per identificar bones pràctiques.`;
+}
+
+function renderRecomanacio(progres, objectiusRisc, desviacio) {
+  if ((desviacio && desviacio.length) || (objectiusRisc && objectiusRisc.length)) {
+    return "Prioritzar reunions de seguiment amb els participants amb desviació i revisar els KPI dels objectius en risc.";
+  }
+
+  if (progres >= 80) {
+    return "Mantenir el ritme de seguiment i documentar les bones pràctiques detectades.";
+  }
+
+  return "Continuar registrant KPI i feedback per disposar d'una visió més completa de l'evolució del programa.";
+}
+
 function renderTaulaObjectius(items) {
-  if (!items || !items.length) return "<p>No hi ha objectius en risc.</p>";
+  if (!items || !items.length) {
+    return "<p>No hi ha objectius en risc.</p>";
+  }
 
   return `
     <table>
@@ -127,8 +246,8 @@ function renderTaulaObjectius(items) {
         ${items.map((item) => `
           <tr>
             <td>${item.descripcio || item.titol || item.idObjectiu || "-"}</td>
-            <td>${item.progres ?? item.progresObjectiu ?? "-"}%</td>
-            <td>${item.estat || item.estatObjectiu || "-"}</td>
+            <td>${formatPercentatge(item.progres ?? item.progresObjectiu)}</td>
+            <td>${formatEstat(item.estat || item.estatObjectiu)}</td>
           </tr>
         `).join("")}
       </tbody>
@@ -136,15 +255,17 @@ function renderTaulaObjectius(items) {
   `;
 }
 
-function renderTaulaParticipants(items) {
-  if (!items || !items.length) return "<p>No hi ha dades disponibles.</p>";
+function renderTaulaParticipants(items, tipus) {
+  if (!items || !items.length) {
+    return "<p>No hi ha dades disponibles.</p>";
+  }
 
   return `
     <table>
       <thead>
         <tr>
           <th>Participant</th>
-          <th>Valor</th>
+          <th>Progrés</th>
           <th>Estat</th>
         </tr>
       </thead>
@@ -152,8 +273,8 @@ function renderTaulaParticipants(items) {
         ${items.map((item) => `
           <tr>
             <td>${nomParticipant(item)}</td>
-            <td>${item.progres ?? item.progresPla ?? item.valor ?? item.desviacio ?? "-"}</td>
-            <td>${item.estat || item.estatPla || item.estatObjectiu || "-"}</td>
+            <td>${formatPercentatge(item.progres ?? item.progresPla ?? item.valor ?? item.desviacio)}</td>
+            <td>${formatEstat(item.estat || item.estatPla || item.estatObjectiu || tipus)}</td>
           </tr>
         `).join("")}
       </tbody>
@@ -171,4 +292,38 @@ function nomParticipant(item) {
   }
 
   return `Usuari ${item.idUsuari || item.idParticipant || "-"}`;
+}
+
+function formatPercentatge(valor) {
+  if (valor === undefined || valor === null || Number.isNaN(Number(valor))) {
+    return "-";
+  }
+
+  return `${Math.round(Number(valor))}%`;
+}
+
+function calcularEstat(progres) {
+  const valor = Number(progres || 0);
+
+  if (valor >= 80) {
+    return "assolit";
+  }
+
+  if (valor >= 40) {
+    return "en_progres";
+  }
+
+  return "pendent";
+}
+
+function formatEstat(estat) {
+  const labels = {
+    assolit: "Assolit",
+    en_progres: "En progrés",
+    pendent: "Pendent",
+    destacat: "Destacat",
+    desviacio: "Desviació"
+  };
+
+  return labels[estat] || estat || "-";
 }
