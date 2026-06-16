@@ -3,6 +3,7 @@ from app.models.feedback import Feedback, FeedbackCreate, FeedbackUpdate
 from app.repositories.feedback_repository import FeedbackRepository
 from app.repositories.programa_participant_repository import ProgramaParticipantRepository
 from app.repositories.programa_supervisor_repository import ProgramaSupervisorRepository
+from app.repositories.programa_formacio_repository import ProgramaFormacioRepository
 
 
 class FeedbackService:
@@ -10,6 +11,7 @@ class FeedbackService:
         self.feedback_repository = FeedbackRepository()
         self.participant_repository = ProgramaParticipantRepository()
         self.supervisor_repository = ProgramaSupervisorRepository()
+        self.programa_repository = ProgramaFormacioRepository()
 
     def get_feedbacks(self) -> list[Feedback]:
         return self.feedback_repository.get_all()
@@ -37,6 +39,9 @@ class FeedbackService:
         )
 
     def create_feedback(self, feedback: FeedbackCreate) -> Feedback | None:
+        if self.programa_repository.get_by_id(feedback.idPrograma) is None:
+            raise ValueError("programa_no_trobat")
+
         es_supervisor = any(
             item.idPrograma == feedback.idPrograma
             and item.idUsuari == feedback.idUsuariSupervisor

@@ -41,6 +41,10 @@ class KPIService:
             elif kpi.tipusCalcul == "acumulat":
                 acumulat += registre.valor
                 valor_calculat = acumulat
+            elif kpi.tipusCalcul == "ultim":
+                valor_calculat = registre.valor
+            else:
+                raise ValueError(f"Tipus de càlcul de KPI no suportat: {kpi.tipusCalcul}")
 
             evolucio.append({
                 "idRegistre": registre.idRegistre,

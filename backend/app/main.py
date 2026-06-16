@@ -139,7 +139,10 @@ def get_rols_usuari(idUsuari: int):
 
 @app.post("/usuaris", response_model=UsuariRead)
 def create_usuari(usuari: UsuariCreate):
-    return usuari_service.create_usuari(usuari)
+    nou_usuari = usuari_service.create_usuari(usuari)
+    if nou_usuari is None:
+        raise HTTPException(status_code=404, detail="Empresa no trobada")
+    return nou_usuari
 
 
 @app.put("/usuaris/{idUsuari}", response_model=UsuariRead)
@@ -242,7 +245,10 @@ def get_pla_detallat(idPla: int):
 
 @app.post("/plans", response_model=PlaAccioRead)
 def create_pla(pla: PlaAccioCreate):
-    return pla_accio_service.create_pla(pla)
+    nou_pla = pla_accio_service.create_pla(pla)
+    if nou_pla is None:
+        raise HTTPException(status_code=404, detail="Programa no trobat")
+    return nou_pla
 
 
 @app.put("/plans/{idPla}", response_model=PlaAccioRead)
@@ -409,7 +415,13 @@ def get_feedback(idFeedback: int):
 
 @app.post("/feedback", response_model=FeedbackRead)
 def create_feedback(feedback: FeedbackCreate):
-    nou_feedback = feedback_service.create_feedback(feedback)
+    try:
+        nou_feedback = feedback_service.create_feedback(feedback)
+    except ValueError as error:
+        if str(error) == "programa_no_trobat":
+            raise HTTPException(status_code=404, detail="Programa no trobat")
+        raise
+
     if nou_feedback is None:
         raise HTTPException(
             status_code=400,
@@ -464,7 +476,10 @@ def get_resum_progres_pla(idPla: int):
 
 @app.get("/kpis/{idKPI}/evolucio")
 def get_evolucio_kpi(idKPI: int):
-    return kpi_service.get_evolucio_kpi(idKPI)
+    try:
+        return kpi_service.get_evolucio_kpi(idKPI)
+    except ValueError as error:
+        raise HTTPException(status_code=400, detail=str(error))
 
 
 @app.get("/programes/{idPrograma}/analisi")

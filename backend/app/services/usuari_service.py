@@ -5,6 +5,8 @@ from app.models.programa_supervisor import ProgramaSupervisor, ProgramaSuperviso
 from app.repositories.usuari_repository import UsuariRepository
 from app.repositories.programa_participant_repository import ProgramaParticipantRepository
 from app.repositories.programa_supervisor_repository import ProgramaSupervisorRepository
+from app.repositories.programa_formacio_repository import ProgramaFormacioRepository
+from app.repositories.empresa_client_repository import EmpresaClientRepository
 
 
 class UsuariService:
@@ -14,6 +16,8 @@ class UsuariService:
         self.supervisor_repository = ProgramaSupervisorRepository()
         self.programa_participant_repository = ProgramaParticipantRepository()
         self.programa_supervisor_repository = ProgramaSupervisorRepository()
+        self.programa_repository = ProgramaFormacioRepository()
+        self.empresa_repository = EmpresaClientRepository()
 
     def get_usuaris(self) -> list[Usuari]:
         return self.usuari_repository.get_all()
@@ -63,6 +67,9 @@ class UsuariService:
         }
 
     def create_usuari(self, usuari: UsuariCreate):
+        if self.empresa_repository.get_by_id(usuari.idEmpresa) is None:
+            return None
+
         data = usuari.model_dump()
         password = data.pop("password")
 
@@ -95,6 +102,9 @@ class UsuariService:
         return self.usuari_repository.update(idUsuari, usuari_actualitzat)
 
     def assignar_participant(self, idPrograma: int, participant: ProgramaParticipantCreate):
+        if self.programa_repository.get_by_id(idPrograma) is None:
+            return None
+
         if self.get_usuari(participant.idUsuari) is None:
             return None
 
@@ -130,6 +140,9 @@ class UsuariService:
         )
 
     def assignar_supervisor(self, idPrograma: int, supervisor: ProgramaSupervisorCreate):
+        if self.programa_repository.get_by_id(idPrograma) is None:
+            return None
+
         if self.get_usuari(supervisor.idUsuari) is None:
             return None
 

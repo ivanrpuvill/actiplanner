@@ -8,6 +8,7 @@ from app.repositories.objectiu_pla_repository import ObjectiuPlaRepository
 from app.repositories.accio_repository import AccioRepository
 from app.repositories.kpi_repository import KPIRepository
 from app.repositories.registre_kpi_repository import RegistreKPIRepository
+from app.repositories.programa_formacio_repository import ProgramaFormacioRepository
 
 
 class PlaAccioService:
@@ -17,6 +18,7 @@ class PlaAccioService:
         self.accio_repository = AccioRepository()
         self.kpi_repository = KPIRepository()
         self.registre_kpi_repository = RegistreKPIRepository()
+        self.programa_repository = ProgramaFormacioRepository()
 
     def get_pla_detallat(self, idPla: int) -> dict | None:
         pla = self.pla_repository.get_by_id(idPla)
@@ -112,11 +114,20 @@ class PlaAccioService:
         if not registres:
             return 0
 
-        if getattr(kpi, "tipusCalcul", "acumulat") == "mitjana":
+        tipus_calcul = getattr(kpi, "tipusCalcul", "acumulat")
+
+        if tipus_calcul == "mitjana":
             return round(
                 sum(r.valor for r in registres) / len(registres),
                 2
             )
+
+        if tipus_calcul == "ultim":
+            ultim_registre = sorted(
+                registres,
+                key=lambda registre: registre.dataRegistre
+            )[-1]
+            return round(ultim_registre.valor, 2)
 
         return round(
             sum(r.valor for r in registres),
@@ -175,6 +186,11 @@ class PlaAccioService:
         return self.pla_repository.get_by_programa(idPrograma)
 
     def create_pla(self, pla: PlaAccioCreate):
+        programa = self.programa_repository.get_by_id(pla.idPrograma)
+
+        if programa is None:
+            return None
+
         nou_pla = PlaAccio(
             idPla=self.pla_repository.next_id(),
             dataCreacio=date.today().isoformat(),
