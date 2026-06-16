@@ -83,6 +83,11 @@ class SeguimentObjectiuService:
                     })
                     continue
 
+                valor_actual = self._calcular_valor_actual_kpi(
+                    kpi,
+                    registres
+                )
+
                 ultim_registre = max(
                     registres,
                     key=lambda registre: registre.dataRegistre
@@ -91,10 +96,10 @@ class SeguimentObjectiuService:
                 resultat.append({
                     "idKPI": kpi.idKPI,
                     "nom": kpi.nom,
-                    "valorActual": ultim_registre.valor,
+                    "valorActual": valor_actual,
                     "assoliment": self._calcular_assoliment_kpi(
                         kpi,
-                        ultim_registre.valor
+                        valor_actual
                     ),
                     "comentari": getattr(ultim_registre, "comentari", None)
                 })
@@ -172,14 +177,14 @@ class SeguimentObjectiuService:
         if not registres:
             return 0
 
-        ultim_registre = max(
-            registres,
-            key=lambda registre: registre.dataRegistre
+        valor_actual = self._calcular_valor_actual_kpi(
+            kpi,
+            registres
         )
 
         return self._calcular_assoliment_kpi(
             kpi,
-            ultim_registre.valor
+            valor_actual
         )
 
     def _calcular_assoliment_kpi(self, kpi, valor_actual: float) -> float:
@@ -212,3 +217,29 @@ class SeguimentObjectiuService:
             assoliment = ((valor_actual - minim) / (referencia - minim)) * 100
 
         return max(0, min(100, round(assoliment, 2)))
+
+    def _calcular_valor_actual_kpi(
+        self,
+        kpi,
+        registres
+    ):
+        tipus_calcul = getattr(kpi, "tipusCalcul", "acumulat")
+
+        registres_ordenats = sorted(
+            registres,
+            key=lambda registre: registre.dataRegistre
+        )
+
+        if tipus_calcul == "mitjana":
+            return round(
+                sum(registre.valor for registre in registres) / len(registres),
+                2
+            )
+
+        if tipus_calcul == "ultim":
+            return registres_ordenats[-1].valor
+
+        return round(
+            sum(registre.valor for registre in registres),
+            2
+        )

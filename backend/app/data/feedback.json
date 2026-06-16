@@ -1,20 +1,20 @@
 [
   {
-    "idFeedback": 1,
     "idPrograma": 1,
     "idUsuariSupervisor": 2,
     "idUsuariParticipant": 1,
     "comentari": "El participant està aplicant correctament les reunions 1:1 i mostra una evolució positiva.",
     "validacio": true,
+    "idFeedback": 1,
     "dataCreacio": "2026-06-15"
   },
   {
-    "idFeedback": 2,
     "idPrograma": 1,
     "idUsuariSupervisor": 2,
     "idUsuariParticipant": 1,
     "comentari": "Cal continuar reforçant el registre sistemàtic del feedback després de cada reunió.",
-    "validacio": false,
+    "validacio": true,
+    "idFeedback": 2,
     "dataCreacio": "2026-06-20"
   }
 ]

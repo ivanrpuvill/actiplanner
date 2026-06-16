@@ -3,7 +3,7 @@
     "idRegistre": 1,
     "idPrograma": 1,
     "idKPI": 1,
-    "idUsuari": 3,
+    "idUsuari": 1,
     "valor": 3,
     "dataRegistre": "2025-05-01",
     "comentari": "S'han realitzat 3 reunions individuals amb membres de l'equip."
@@ -12,7 +12,7 @@
     "idRegistre": 2,
     "idPrograma": 1,
     "idKPI": 1,
-    "idUsuari": 3,
+    "idUsuari": 1,
     "valor": 5,
     "dataRegistre": "2025-05-15",
     "comentari": "S'han recuperat les reunions ajornades durant la primera quinzena."
@@ -21,7 +21,7 @@
     "idRegistre": 3,
     "idPrograma": 1,
     "idKPI": 2,
-    "idUsuari": 3,
+    "idUsuari": 1,
     "valor": 65,
     "dataRegistre": "2025-05-15",
     "comentari": "La majoria de tasques s'han completat dins del termini previst."
@@ -30,7 +30,7 @@
     "idRegistre": 4,
     "idPrograma": 1,
     "idKPI": 2,
-    "idUsuari": 3,
+    "idUsuari": 1,
     "valor": 82,
     "dataRegistre": "2025-06-01",
     "comentari": "S'ha assolit l'objectiu gràcies a una millor planificació setmanal."
@@ -39,7 +39,7 @@
     "idRegistre": 5,
     "idPrograma": 1,
     "idKPI": 3,
-    "idUsuari": 4,
+    "idUsuari": 1,
     "valor": 2,
     "dataRegistre": "2025-05-10",
     "comentari": "Encara costa aplicar les tècniques apreses en situacions reals."
@@ -48,7 +48,7 @@
     "idRegistre": 6,
     "idPrograma": 1,
     "idKPI": 3,
-    "idUsuari": 4,
+    "idUsuari": 1,
     "valor": 4,
     "dataRegistre": "2025-06-05",
     "comentari": "Es percep una millora clara en la qualitat de les interaccions amb l'equip."
@@ -57,7 +57,7 @@
     "idRegistre": 7,
     "idPrograma": 1,
     "idKPI": 4,
-    "idUsuari": 4,
+    "idUsuari": 1,
     "valor": 1,
     "dataRegistre": "2025-06-05",
     "comentari": "S'ha definit i validat el pla de millora amb el supervisor."
@@ -66,7 +66,7 @@
     "idRegistre": 8,
     "idPrograma": 1,
     "idKPI": 5,
-    "idUsuari": 5,
+    "idUsuari": 1,
     "valor": 40,
     "dataRegistre": "2025-05-12",
     "comentari": "Participació limitada per càrrega de feina elevada."
@@ -75,7 +75,7 @@
     "idRegistre": 9,
     "idPrograma": 1,
     "idKPI": 5,
-    "idUsuari": 5,
+    "idUsuari": 1,
     "valor": 70,
     "dataRegistre": "2025-06-02",
     "comentari": "S'ha incrementat la participació després de reorganitzar prioritats."
@@ -84,7 +84,7 @@
     "idRegistre": 10,
     "idPrograma": 1,
     "idKPI": 6,
-    "idUsuari": 5,
+    "idUsuari": 1,
     "valor": 90,
     "dataRegistre": "2025-06-02",
     "comentari": "La transferència dels aprenentatges al lloc de treball és pràcticament completa."
