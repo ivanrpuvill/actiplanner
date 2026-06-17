@@ -281,6 +281,11 @@ th {
   margin: 6px 0 0;
 }
 
+.fila-propia {
+  background: #eff6ff;
+  font-weight: 600;
+}
+
 .page-actions {
   margin-bottom: 24px;
   display: flex;
@@ -329,6 +334,34 @@ th {
   margin-top: 8px;
   color: #64748b;
   font-size: 14px;
+}
+
+.progres-bar-track {
+  margin-top: 12px;
+  width: 100%;
+  height: 10px;
+  border-radius: 999px;
+  background: #e2e8f0;
+  overflow: hidden;
+}
+
+.progres-bar-fill {
+  height: 100%;
+  border-radius: 999px;
+  background: #0f172a;
+  transition: width 0.3s ease;
+}
+
+.progres-bar-fill.estat-assolit {
+  background: #16a34a;
+}
+
+.progres-bar-fill.estat-en_progres {
+  background: #f59e0b;
+}
+
+.progres-bar-fill.estat-pendent {
+  background: #dc2626;
 }
 
 .dashboard-wide {

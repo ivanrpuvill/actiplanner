@@ -66,24 +66,21 @@ async function carregarGamificacio(programa, usuari, plaActiu) {
   }
 
   try {
-    const destacats = await apiGet(
-      `/programes/${programa.idPrograma}/participants-destacats`
-    );
+    const ranquing = await apiGet(`/programes/${programa.idPrograma}/ranquing`);
 
-    if (!destacats.length) {
+    if (!ranquing.length) {
       posicioParticipant.textContent = "Encara no hi ha rànquing.";
-      rankingContainer.innerHTML = "<p>No hi ha participants destacats.</p>";
+      rankingContainer.innerHTML = "<p>Encara no hi ha participants en aquest programa.</p>";
       return;
     }
 
-    const indexParticipant = destacats.findIndex((item) =>
-      String(item.idUsuari || item.idParticipant || item.usuari?.idUsuari) === String(usuari.idUsuari)
+    const itemParticipant = ranquing.find((item) =>
+      String(item.idUsuari) === String(usuari.idUsuari)
     );
 
-    posicioParticipant.textContent =
-      indexParticipant >= 0
-        ? `Posició ${indexParticipant + 1} de ${destacats.length}`
-        : "Encara no apareixes al rànquing.";
+    posicioParticipant.textContent = itemParticipant
+      ? `Posició ${itemParticipant.posicio} de ${ranquing.length}${itemParticipant.destacat ? " — Participant destacat ⭐" : ""}`
+      : "Encara no apareixes al rànquing.";
 
     rankingContainer.innerHTML = `
       <table>
@@ -95,13 +92,11 @@ async function carregarGamificacio(programa, usuari, plaActiu) {
           </tr>
         </thead>
         <tbody>
-          ${destacats.map((item, index) => `
-            <tr>
-              <td>${index + 1}</td>
-              <td>
-                ${item.nom || item.nomUsuari || item.usuari?.nom || `Usuari ${item.idUsuari || item.idParticipant || "-"}`}
-              </td>
-              <td>${item.progres ?? item.progresPla ?? item.valor ?? "-"}%</td>
+          ${ranquing.map((item) => `
+            <tr ${String(item.idUsuari) === String(usuari.idUsuari) ? 'class="fila-propia"' : ""}>
+              <td>${item.posicio}${item.destacat ? " ⭐" : ""}</td>
+              <td>${item.nom}</td>
+              <td>${item.progres}%</td>
             </tr>
           `).join("")}
         </tbody>

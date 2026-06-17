@@ -511,6 +511,11 @@ def generar_resum_programa(idPrograma: int):
     return ia_service.generar_resum_programa(idPrograma)
 
 
+@app.get("/programes/{idPrograma}/ranquing")
+def get_ranquing_programa(idPrograma: int):
+    return analisi_service.get_ranquing_programa(idPrograma)
+
+
 @app.get("/ia/programes/{idPrograma}/participants/{idUsuariParticipant}/feedback")
 def generar_recomanacio_feedback(idPrograma: int, idUsuariParticipant: int):
     return ia_service.generar_recomanacio_feedback(

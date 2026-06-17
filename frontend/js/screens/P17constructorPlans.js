@@ -190,6 +190,16 @@ function renderConstructor() {
           </div>
 
           <div>
+            <label>Tipus de càlcul</label>
+            <select id="kpiTipusCalcul">
+              <option value="acumulat">Acumulat (suma tots els registres)</option>
+              <option value="mitjana">Mitjana (mitjana de tots els registres)</option>
+              <option value="ultim">Últim valor (només el registre més recent)</option>
+            </select>
+            <p id="kpiAjudaCalcul" class="muted-text"></p>
+          </div>
+
+          <div>
             <label>Tipus de KPI</label>
             <select id="kpiTipus">
               <option value="numeric">Numèric</option>
@@ -248,7 +258,9 @@ function activarEventsConstructor() {
   document.getElementById("btnCrearKPI").addEventListener("click", crearKPI);
 
   document.getElementById("kpiTipus").addEventListener("change", actualitzarAjudaKPI);
+  document.getElementById("kpiTipusCalcul").addEventListener("change", actualitzarAjudaCalcul);
   actualitzarAjudaKPI();
+  actualitzarAjudaCalcul();
 }
 
 async function crearObjectiu() {
@@ -298,6 +310,7 @@ async function crearKPI() {
     nom: document.getElementById("kpiNom").value.trim(),
     descripcio: document.getElementById("kpiDescripcio").value.trim(),
     periodicitat: document.getElementById("kpiPeriodicitat").value,
+    tipusCalcul: document.getElementById("kpiTipusCalcul").value,
     tipus,
     orientacio: document.getElementById("kpiOrientacio").value,
     valorMinim: parseNullableNumber(document.getElementById("kpiValorMinim").value),
@@ -457,6 +470,10 @@ function renderAccionsObjectiu(objectiu) {
         <div class="list-item">
           <strong>${accio.titol || accio.nom || `Acció ${accio.idAccio}`}</strong>
           <p>${accio.descripcio || ""}</p>
+          <p class="stat-subtitle">
+            ${accio.progresAccio !== undefined ? `<strong>Progrés:</strong> ${formatPercentatge(accio.progresAccio)}` : ""}
+            ${accio.estatAccio ? ` · <strong>Estat:</strong> ${formatEstatKPI(accio.estatAccio)}` : ""}
+          </p>
           ${renderKPIsAccio(accio)}
         </div>
       `).join("")}
@@ -477,10 +494,13 @@ function renderKPIsAccio(accio) {
         <tr>
           <th>KPI</th>
           <th>Tipus</th>
+          <th>Càlcul</th>
           <th>Orientació</th>
           <th>Rang</th>
           <th>Objectiu</th>
           <th>Periodicitat</th>
+          <th>Progrés</th>
+          <th>Estat</th>
         </tr>
       </thead>
       <tbody>
@@ -488,15 +508,38 @@ function renderKPIsAccio(accio) {
           <tr>
             <td>${kpi.nom || `KPI ${kpi.idKPI}`}</td>
             <td>${formatTipusKPI(kpi.tipus)}</td>
+            <td>${formatTipusCalculKPI(kpi.tipusCalcul)}</td>
             <td>${formatOrientacioKPI(kpi.orientacio)}</td>
             <td>${formatRangKPI(kpi)}</td>
             <td>${kpi.valorObjectiu ?? "-"}</td>
             <td>${kpi.periodicitat || "-"}</td>
+            <td>${kpi.assoliment ?? "-"}${kpi.assoliment != null ? "%" : ""}</td>
+            <td>${formatEstatKPI(kpi.estatKPI)}</td>
           </tr>
         `).join("")}
       </tbody>
     </table>
   `;
+}
+
+function formatTipusCalculKPI(tipusCalcul) {
+  const labels = {
+    acumulat: "Acumulat",
+    mitjana: "Mitjana",
+    ultim: "Últim valor"
+  };
+
+  return labels[tipusCalcul] || tipusCalcul || "-";
+}
+
+function formatEstatKPI(estat) {
+  const labels = {
+    assolit: "✅ Assolit",
+    en_progres: "🟡 En progrés",
+    pendent: "🔴 Pendent"
+  };
+
+  return labels[estat] || estat || "-";
 }
 
 function obtenirAccionsPla() {
@@ -540,6 +583,19 @@ function actualitzarAjudaKPI() {
     campOrientacio.style.display = "none";
     ajuda.textContent = "Sí / No: Sí equival a 100% i No equival a 0%.";
   }
+}
+
+function actualitzarAjudaCalcul() {
+  const tipusCalcul = document.getElementById("kpiTipusCalcul").value;
+  const ajuda = document.getElementById("kpiAjudaCalcul");
+
+  const textos = {
+    acumulat: "Tots els registres se sumen. Útil per a comptadors, com el nombre de reunions fetes.",
+    mitjana: "Es calcula la mitjana de tots els registres. Útil per a puntuacions recollides diverses vegades, com una valoració d'1 a 5.",
+    ultim: "Només compta el registre més recent. Útil per a indicadors d'estat puntual, com una certificació obtinguda."
+  };
+
+  ajuda.textContent = textos[tipusCalcul] || "";
 }
 
 function parseNullableNumber(valor) {

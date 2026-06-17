@@ -101,6 +101,7 @@ export async function renderP03DashboardParticipant(app, navegar) {
       <div class="card stat-card">
         <h3>Progrés personal</h3>
         <p class="stat-number">${progresMitja === null ? "-" : `${progresMitja}%`}</p>
+        ${renderBarraProgres(progresMitja)}
         <p class="stat-subtitle">Mitjana dels teus seguiments</p>
       </div>
 
@@ -144,6 +145,35 @@ function calcularProgresMitja(seguiments) {
   const suma = valors.reduce((total, valor) => total + Number(valor), 0);
 
   return Math.round(suma / valors.length);
+}
+
+function renderBarraProgres(progres) {
+  if (progres === null) {
+    return "";
+  }
+
+  const valor = Math.max(0, Math.min(100, progres));
+  const estat = calcularEstat(valor);
+
+  return `
+    <div class="progres-bar-track">
+      <div class="progres-bar-fill estat-${estat}" style="width: ${valor}%"></div>
+    </div>
+  `;
+}
+
+function calcularEstat(progres) {
+  // Mateixos llindars que AnalisiService._calcular_estat al backend
+  // (20% / 80%), replicats aquí només per acolorir la barra visual.
+  if (progres >= 80) {
+    return "assolit";
+  }
+
+  if (progres >= 20) {
+    return "en_progres";
+  }
+
+  return "pendent";
 }
 
 function renderAlertes(alertes) {

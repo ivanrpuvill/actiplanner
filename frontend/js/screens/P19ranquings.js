@@ -8,8 +8,9 @@ export async function renderP19Ranquings(app, navegar) {
   app.innerHTML = renderLayout("Rànquings i gamificació", `
     <div class="grid">
       <div class="card">
-        <h3>Participants destacats</h3>
-        <div id="destacatsContainer">Carregant...</div>
+        <h3>Rànquing del programa</h3>
+        <p class="stat-subtitle">Tots els participants, ordenats per progrés. Els destacats (&#8805; 80%) es marquen amb &#11088;.</p>
+        <div id="ranquingContainer">Carregant...</div>
       </div>
 
       <div class="card">
@@ -25,19 +26,19 @@ export async function renderP19Ranquings(app, navegar) {
 }
 
 async function carregarRanquings(idPrograma) {
-  const destacatsContainer = document.getElementById("destacatsContainer");
+  const ranquingContainer = document.getElementById("ranquingContainer");
   const desviacioContainer = document.getElementById("desviacioContainer");
 
   try {
-    const destacats = await apiGet(`/programes/${idPrograma}/participants-destacats`);
+    const ranquing = await apiGet(`/programes/${idPrograma}/ranquing`);
 
-    if (!destacats.length) {
-      destacatsContainer.innerHTML = "<p>No hi ha participants destacats.</p>";
+    if (!ranquing.length) {
+      ranquingContainer.innerHTML = "<p>Encara no hi ha participants en aquest programa.</p>";
     } else {
-      destacatsContainer.innerHTML = renderTaulaParticipants(destacats, true);
+      ranquingContainer.innerHTML = renderTaulaRanquing(ranquing);
     }
   } catch (error) {
-    destacatsContainer.innerHTML = `<p class="error-text">${error.message}</p>`;
+    ranquingContainer.innerHTML = `<p class="error-text">${error.message}</p>`;
   }
 
   try {
@@ -51,6 +52,31 @@ async function carregarRanquings(idPrograma) {
   } catch (error) {
     desviacioContainer.innerHTML = `<p class="error-text">${error.message}</p>`;
   }
+}
+
+function renderTaulaRanquing(items) {
+  return `
+    <table>
+      <thead>
+        <tr>
+          <th>Posició</th>
+          <th>Participant</th>
+          <th>Progrés</th>
+          <th>Estat</th>
+        </tr>
+      </thead>
+      <tbody>
+        ${items.map((item) => `
+          <tr>
+            <td>${item.posicio}${item.destacat ? " &#11088;" : ""}</td>
+            <td>${item.nom}</td>
+            <td>${item.progres}%</td>
+            <td>${item.estat}</td>
+          </tr>
+        `).join("")}
+      </tbody>
+    </table>
+  `;
 }
 
 function renderTaulaParticipants(items, mostrarPosicio) {

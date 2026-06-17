@@ -9,6 +9,7 @@ from app.repositories.accio_repository import AccioRepository
 from app.repositories.kpi_repository import KPIRepository
 from app.repositories.registre_kpi_repository import RegistreKPIRepository
 from app.repositories.programa_formacio_repository import ProgramaFormacioRepository
+from app.services.analisi_service import AnalisiService
 
 
 class PlaAccioService:
@@ -19,6 +20,7 @@ class PlaAccioService:
         self.kpi_repository = KPIRepository()
         self.registre_kpi_repository = RegistreKPIRepository()
         self.programa_repository = ProgramaFormacioRepository()
+        self.analisi_service = AnalisiService()
 
     def get_pla_detallat(self, idPla: int) -> dict | None:
         pla = self.pla_repository.get_by_id(idPla)
@@ -41,17 +43,43 @@ class PlaAccioService:
                 valors_kpi = []
 
                 for kpi in kpis:
-                    valor_kpi = self._calcular_valor_kpi(kpi)
+                    registres = self.registre_kpi_repository.get_by_kpi(kpi.idKPI)
 
-                    valors_kpi.append(valor_kpi)
+                    if registres:
+                        valor_agregat = self.analisi_service._agregar_registres_kpi(
+                            kpi, registres
+                        )
+                        assoliment = self.analisi_service._calcular_assoliment_kpi(
+                            kpi, valor_agregat
+                        )
+                        ultim_registre = max(
+                            registres,
+                            key=lambda registre: registre.dataRegistre
+                        )
+                        data_ultim_registre = ultim_registre.dataRegistre
+                    else:
+                        valor_agregat = None
+                        assoliment = 0
+                        data_ultim_registre = None
+
+                    valors_kpi.append(assoliment)
 
                     kpis_detallats.append({
                         "idKPI": kpi.idKPI,
                         "nom": kpi.nom,
                         "descripcio": kpi.descripcio,
                         "periodicitat": kpi.periodicitat,
-                        "ultimValor": valor_kpi,
-                        "dataUltimRegistre": None
+                        "tipus": kpi.tipus,
+                        "tipusCalcul": kpi.tipusCalcul,
+                        "orientacio": kpi.orientacio,
+                        "valorMinim": kpi.valorMinim,
+                        "valorMaxim": kpi.valorMaxim,
+                        "valorObjectiu": kpi.valorObjectiu,
+                        "valorAgregat": valor_agregat,
+                        "assoliment": assoliment,
+                        "estatKPI": self.analisi_service._calcular_estat_kpi(assoliment),
+                        "ultimValor": valor_agregat,
+                        "dataUltimRegistre": data_ultim_registre
                     })
 
                 progres_accio = self._calcular_mitjana(valors_kpi)
@@ -100,39 +128,18 @@ class PlaAccioService:
         return round(sum(valors) / len(valors), 2)
 
     def _calcular_estat(self, progres: float) -> str:
+        """
+        Estat agregat (acció, objectiu, pla). El llindar d'assoliment es
+        manté al 80% perquè, en agregar diversos KPI heterogenis
+        mitjançant una mitjana, exigir el 100% faria que gairebé cap
+        nivell compost arribés mai a "assolit" tot i tenir un rendiment
+        molt alt en tots els seus components. Coherent amb AnalisiService.
+        """
         if progres >= 80:
             return "assolit"
-        if progres >= 40:
+        if progres >= 20:
             return "en_progres"
         return "pendent"
-    
-    def _calcular_valor_kpi(self, kpi):
-        registres = self.registre_kpi_repository.get_by_kpi(
-            kpi.idKPI
-        )
-
-        if not registres:
-            return 0
-
-        tipus_calcul = getattr(kpi, "tipusCalcul", "acumulat")
-
-        if tipus_calcul == "mitjana":
-            return round(
-                sum(r.valor for r in registres) / len(registres),
-                2
-            )
-
-        if tipus_calcul == "ultim":
-            ultim_registre = sorted(
-                registres,
-                key=lambda registre: registre.dataRegistre
-            )[-1]
-            return round(ultim_registre.valor, 2)
-
-        return round(
-            sum(r.valor for r in registres),
-            2
-        )
 
     def get_resum_progres_pla(self, idPla: int) -> dict | None:
         pla = self.pla_repository.get_by_id(idPla)
@@ -151,12 +158,16 @@ class PlaAccioService:
                 kpis = self.kpi_repository.get_by_accio(accio.idAccio)
 
                 for kpi in kpis:
-                    ultim_registre = self.registre_kpi_repository.get_ultim_by_kpi(
-                        kpi.idKPI
-                    )
+                    registres = self.registre_kpi_repository.get_by_kpi(kpi.idKPI)
 
-                    if ultim_registre is not None:
-                        valors_objectiu.append(ultim_registre.valor)
+                    if registres:
+                        valor_agregat = self.analisi_service._agregar_registres_kpi(
+                            kpi, registres
+                        )
+                        assoliment = self.analisi_service._calcular_assoliment_kpi(
+                            kpi, valor_agregat
+                        )
+                        valors_objectiu.append(assoliment)
 
             progres_objectiu = self._calcular_mitjana(valors_objectiu)
 
