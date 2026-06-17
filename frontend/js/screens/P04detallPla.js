@@ -64,8 +64,9 @@ async function carregarPla(idPla) {
     container.innerHTML = `
       <div class="card">
         <h3>${pla.titol || pla.nom || `Pla ${pla.idPla}`}</h3>
-        <p><strong>Estat:</strong> ${pla.estatPla || "-"}</p>
+        <p><strong>Estat:</strong> ${formatEstat(pla.estatPla)}</p>
         <p><strong>Progrés:</strong> ${pla.progresPla ?? 0}%</p>
+        ${renderBarraProgres(pla.progresPla, pla.estatPla)}
         <p><strong>Data creació:</strong> ${pla.dataCreacio || "-"}</p>
       </div>
 
@@ -74,8 +75,9 @@ async function carregarPla(idPla) {
           <div class="card">
             <h3>${objectiu.descripcio || objectiu.titol || `Objectiu ${objectiu.idObjectiu}`}</h3>
             <p><strong>Valor:</strong> ${objectiu.valor ?? "-"}</p>
-            <p><strong>Estat:</strong> ${objectiu.estatObjectiu || "-"}</p>
+            <p><strong>Estat:</strong> ${formatEstat(objectiu.estatObjectiu)}</p>
             <p><strong>Progrés:</strong> ${objectiu.progresObjectiu ?? 0}%</p>
+            ${renderBarraProgres(objectiu.progresObjectiu, objectiu.estatObjectiu)}
 
             <h4>Accions</h4>
             ${(objectiu.accions || []).map((accio) => `
@@ -83,7 +85,7 @@ async function carregarPla(idPla) {
                 <strong>${accio.titol || `Acció ${accio.idAccio}`}</strong>
                 <p>${accio.descripcio || ""}</p>
                 <p>${accio.dataInici || "-"} → ${accio.dataFi || "-"}</p>
-                <p><strong>Estat:</strong> ${accio.estatAccio || "-"}</p>
+                <p><strong>Progrés:</strong> ${accio.progresAccio ?? 0}% · <strong>Estat:</strong> ${formatEstat(accio.estatAccio)}</p>
               </div>
             `).join("") || "<p>No hi ha accions.</p>"}
 
@@ -92,7 +94,9 @@ async function carregarPla(idPla) {
               <div class="list-item">
                 <strong>${kpi.nom || `KPI ${kpi.idKPI}`}</strong>
                 <p>${kpi.descripcio || ""}</p>
-                <p><strong>Últim valor:</strong> ${kpi.ultimValor ?? "-"}</p>
+                <p><strong>Càlcul:</strong> ${formatTipusCalcul(kpi.tipusCalcul)}</p>
+                <p><strong>Valor agregat:</strong> ${kpi.valorAgregat ?? kpi.ultimValor ?? "-"}</p>
+                <p><strong>Assoliment:</strong> ${kpi.assoliment ?? 0}% · <strong>Estat:</strong> ${formatEstat(kpi.estatKPI)}</p>
               </div>
             `).join("") || "<p>No hi ha KPI.</p>"}
           </div>
@@ -102,4 +106,39 @@ async function carregarPla(idPla) {
   } catch (error) {
     container.innerHTML = `<p class="error-text">${error.message}</p>`;
   }
+}
+
+function renderBarraProgres(progres, estat) {
+  if (progres === undefined || progres === null) {
+    return "";
+  }
+
+  const valor = Math.max(0, Math.min(100, progres));
+  const classeEstat = estat || "pendent";
+
+  return `
+    <div class="progres-bar-track">
+      <div class="progres-bar-fill estat-${classeEstat}" style="width: ${valor}%"></div>
+    </div>
+  `;
+}
+
+function formatEstat(estat) {
+  const labels = {
+    assolit: "✅ Assolit",
+    en_progres: "🟡 En progrés",
+    pendent: "🔴 Pendent"
+  };
+
+  return labels[estat] || estat || "-";
+}
+
+function formatTipusCalcul(tipusCalcul) {
+  const labels = {
+    acumulat: "Acumulat",
+    mitjana: "Mitjana",
+    ultim: "Últim valor"
+  };
+
+  return labels[tipusCalcul] || tipusCalcul || "-";
 }

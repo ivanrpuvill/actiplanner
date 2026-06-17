@@ -44,7 +44,7 @@ export async function renderP03DashboardParticipant(app, navegar) {
     const feedbacksRebuts = feedbacks.length;
 
     const seguimentsCompletats = seguiments.filter((seguiment) =>
-      String(seguiment.estat || seguiment.estatObjectiu || "").toLowerCase().includes("complet")
+      (seguiment.estatCalculat || seguiment.estat || seguiment.estatObjectiu) === "assolit"
     ).length;
 
     const progresMitja = calcularProgresMitja(seguiments);
@@ -135,7 +135,7 @@ export async function renderP03DashboardParticipant(app, navegar) {
 
 function calcularProgresMitja(seguiments) {
   const valors = seguiments
-    .map((seguiment) => seguiment.progres ?? seguiment.progresObjectiu)
+    .map((seguiment) => seguiment.progresCalculat ?? seguiment.progres ?? seguiment.progresObjectiu)
     .filter((valor) => valor !== undefined && valor !== null && !Number.isNaN(Number(valor)));
 
   if (!valors.length) {

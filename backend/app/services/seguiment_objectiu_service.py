@@ -2,6 +2,7 @@ from app.repositories.seguiment_objectiu_repository import SeguimentObjectiuRepo
 from app.repositories.accio_repository import AccioRepository
 from app.repositories.kpi_repository import KPIRepository
 from app.repositories.registre_kpi_repository import RegistreKPIRepository
+from app.services.analisi_service import AnalisiService
 
 
 class SeguimentObjectiuService:
@@ -10,6 +11,7 @@ class SeguimentObjectiuService:
         self.accio_repository = AccioRepository()
         self.kpi_repository = KPIRepository()
         self.registre_kpi_repository = RegistreKPIRepository()
+        self.analisi_service = AnalisiService()
 
     def get_seguiments_objectiu(self, idObjectiu: int):
         return self.seguiment_repository.get_by_objectiu(idObjectiu)
@@ -46,7 +48,7 @@ class SeguimentObjectiuService:
                     "idUsuari": idUsuari,
                     "descripcioObjectiu": objectiu.descripcio,
                     "progresCalculat": progres,
-                    "estatCalculat": self._calcular_estat(progres),
+                    "estatCalculat": self.analisi_service._calcular_estat(progres),
                     "kpis": self._get_kpis_objectiu_usuari(
                         objectiu.idObjectiu,
                         idUsuari
@@ -79,13 +81,16 @@ class SeguimentObjectiuService:
                         "nom": kpi.nom,
                         "valorActual": None,
                         "assoliment": 0,
+                        "estatKPI": self.analisi_service._calcular_estat_kpi(0),
                         "comentari": None
                     })
                     continue
 
-                valor_actual = self._calcular_valor_actual_kpi(
-                    kpi,
-                    registres
+                valor_agregat = self.analisi_service._agregar_registres_kpi(
+                    kpi, registres
+                )
+                assoliment = self.analisi_service._calcular_assoliment_kpi(
+                    kpi, valor_agregat
                 )
 
                 ultim_registre = max(
@@ -96,11 +101,9 @@ class SeguimentObjectiuService:
                 resultat.append({
                     "idKPI": kpi.idKPI,
                     "nom": kpi.nom,
-                    "valorActual": valor_actual,
-                    "assoliment": self._calcular_assoliment_kpi(
-                        kpi,
-                        valor_actual
-                    ),
+                    "valorActual": valor_agregat,
+                    "assoliment": assoliment,
+                    "estatKPI": self.analisi_service._calcular_estat_kpi(assoliment),
                     "comentari": getattr(ultim_registre, "comentari", None)
                 })
 
@@ -118,12 +121,22 @@ class SeguimentObjectiuService:
             kpis = self.kpi_repository.get_by_accio(accio.idAccio)
 
             for kpi in kpis:
-                valor_kpi = self._calcular_valor_kpi_usuari(
-                    kpi,
+                registres = self.registre_kpi_repository.get_by_kpi_and_usuari(
+                    kpi.idKPI,
                     idUsuari
                 )
 
-                valors_kpi.append(valor_kpi)
+                if not registres:
+                    continue
+
+                valor_agregat = self.analisi_service._agregar_registres_kpi(
+                    kpi, registres
+                )
+                assoliment = self.analisi_service._calcular_assoliment_kpi(
+                    kpi, valor_agregat
+                )
+
+                valors_kpi.append(assoliment)
 
         if not valors_kpi:
             return 0
@@ -154,92 +167,5 @@ class SeguimentObjectiuService:
             "idPrograma": seguiment.idPrograma,
             "idUsuari": seguiment.idUsuari,
             "progresCalculat": progres,
-            "estatCalculat": self._calcular_estat(progres)
+            "estatCalculat": self.analisi_service._calcular_estat(progres)
         }
-
-    def _calcular_estat(self, progres: float) -> str:
-        if progres >= 80:
-            return "assolit"
-        if progres >= 40:
-            return "en_progres"
-        return "pendent"
-
-    def _calcular_valor_kpi_usuari(
-        self,
-        kpi,
-        idUsuari
-    ):
-        registres = self.registre_kpi_repository.get_by_kpi_and_usuari(
-            kpi.idKPI,
-            idUsuari
-        )
-
-        if not registres:
-            return 0
-
-        valor_actual = self._calcular_valor_actual_kpi(
-            kpi,
-            registres
-        )
-
-        return self._calcular_assoliment_kpi(
-            kpi,
-            valor_actual
-        )
-
-    def _calcular_assoliment_kpi(self, kpi, valor_actual: float) -> float:
-        tipus = getattr(kpi, "tipus", "numeric")
-        orientacio = getattr(kpi, "orientacio", "major_millor")
-
-        if tipus == "boolea":
-            return 100 if valor_actual >= 1 else 0
-
-        if tipus == "percentatge":
-            objectiu = getattr(kpi, "valorObjectiu", 100) or 100
-            if objectiu == 0:
-                return 0
-
-            assoliment = (valor_actual / objectiu) * 100
-            return max(0, min(100, round(assoliment, 2)))
-
-        minim = getattr(kpi, "valorMinim", 0) or 0
-        objectiu = getattr(kpi, "valorObjectiu", None)
-        maxim = getattr(kpi, "valorMaxim", None)
-
-        referencia = objectiu if objectiu is not None else maxim
-
-        if referencia is None or referencia == minim:
-            return 0
-
-        if orientacio == "menor_millor":
-            assoliment = ((referencia - valor_actual) / (referencia - minim)) * 100
-        else:
-            assoliment = ((valor_actual - minim) / (referencia - minim)) * 100
-
-        return max(0, min(100, round(assoliment, 2)))
-
-    def _calcular_valor_actual_kpi(
-        self,
-        kpi,
-        registres
-    ):
-        tipus_calcul = getattr(kpi, "tipusCalcul", "acumulat")
-
-        registres_ordenats = sorted(
-            registres,
-            key=lambda registre: registre.dataRegistre
-        )
-
-        if tipus_calcul == "mitjana":
-            return round(
-                sum(registre.valor for registre in registres) / len(registres),
-                2
-            )
-
-        if tipus_calcul == "ultim":
-            return registres_ordenats[-1].valor
-
-        return round(
-            sum(registre.valor for registre in registres),
-            2
-        )
