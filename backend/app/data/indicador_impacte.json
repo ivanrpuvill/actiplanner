@@ -1,0 +1,74 @@
+[
+  {
+    "idPrograma": 1,
+    "nom": "Rotació voluntària de l'equip",
+    "descripcio": "Percentatge de baixes voluntàries de l'equip directe del participant durant el trimestre, com a senyal indirecte de la qualitat del lideratge exercit.",
+    "unitat": "%",
+    "orientacio": "menor_millor",
+    "fontDades": "Sistema de Recursos Humans (nòmines i baixes voluntàries)",
+    "idIndicadorImpacte": 1
+  },
+  {
+    "idPrograma": 2,
+    "nom": "NPS intern de l'equip",
+    "descripcio": "Net Promoter Score intern recollit a l'enquesta trimestral de clima, que mesura si els membres de l'equip recomanarien treballar amb el seu responsable.",
+    "unitat": "punts (-100 a 100)",
+    "orientacio": "major_millor",
+    "fontDades": "Enquesta trimestral de clima laboral (RRHH)",
+    "idIndicadorImpacte": 2
+  },
+  {
+    "idPrograma": 3,
+    "nom": "Taxa de conversió d'oportunitats comercials",
+    "descripcio": "Percentatge d'oportunitats comercials registrades al CRM que es converteixen en venda tancada.",
+    "unitat": "%",
+    "orientacio": "major_millor",
+    "fontDades": "CRM comercial (Salesforce intern del banc)",
+    "idIndicadorImpacte": 3
+  },
+  {
+    "idPrograma": 4,
+    "nom": "Incidents de seguretat del pacient",
+    "descripcio": "Nombre d'incidents de seguretat del pacient reportats al sistema de notificació de l'hospital, atribuïbles a l'equip o torn del participant.",
+    "unitat": "incidents/mes",
+    "orientacio": "menor_millor",
+    "fontDades": "Sistema de notificació d'incidents de seguretat clínica",
+    "idIndicadorImpacte": 4
+  },
+  {
+    "idPrograma": 5,
+    "nom": "Temps mitjà de resolució d'incidències",
+    "descripcio": "Temps mitjà, en hores, que triga el participant a resoldre una incidència de client des que es registra fins que es tanca. Dada extreta del sistema de tiquets de l'empresa, externa a Actiplanner.",
+    "unitat": "hores",
+    "orientacio": "menor_millor",
+    "fontDades": "Sistema de tiquets (CRM intern de l'empresa client)",
+    "idIndicadorImpacte": 5
+  },
+  {
+    "idPrograma": 5,
+    "nom": "Satisfacció del client (CSAT)",
+    "descripcio": "Puntuació mitjana de satisfacció (escala 1-10) recollida en l'enquesta posterior a l'atenció.",
+    "unitat": "punts (1-10)",
+    "orientacio": "major_millor",
+    "fontDades": "Enquesta de satisfacció post-interacció (eina externa)",
+    "idIndicadorImpacte": 6
+  },
+  {
+    "idPrograma": 6,
+    "nom": "Tasques completades dins de termini",
+    "descripcio": "Percentatge de tasques del backlog personal completades abans de la data límit prevista, segons l'eina de gestió de tasques de l'equip.",
+    "unitat": "%",
+    "orientacio": "major_millor",
+    "fontDades": "Eina de gestió de tasques (Jira intern de l'empresa)",
+    "idIndicadorImpacte": 7
+  },
+  {
+    "idPrograma": 6,
+    "nom": "Temps mitjà de resolució d'incidències",
+    "descripcio": "Mateix indicador que el del programa 5, registrat per al grup de control (participants que no han rebut la formació d'atenció al client) per poder-los comparar.",
+    "unitat": "hores",
+    "orientacio": "menor_millor",
+    "fontDades": "Sistema de tiquets (CRM intern de l'empresa client)",
+    "idIndicadorImpacte": 8
+  }
+]

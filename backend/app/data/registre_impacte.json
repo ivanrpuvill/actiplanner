@@ -1,0 +1,462 @@
+[
+  {
+    "idIndicadorImpacte": 1,
+    "idPrograma": 1,
+    "idUsuari": 13,
+    "moment": "pre",
+    "valor": 9.5,
+    "comentari": "Mesura prèvia: rotació trimestral de l'equip abans d'iniciar el programa.",
+    "idRegistreImpacte": 1,
+    "dataRegistre": "2026-05-28"
+  },
+  {
+    "idIndicadorImpacte": 1,
+    "idPrograma": 1,
+    "idUsuari": 13,
+    "moment": "post",
+    "valor": 8.7,
+    "comentari": "Mesura posterior: lleugera millora, coherent amb un compliment baix del pla.",
+    "idRegistreImpacte": 2,
+    "dataRegistre": "2026-08-15"
+  },
+  {
+    "idIndicadorImpacte": 1,
+    "idPrograma": 1,
+    "idUsuari": 14,
+    "moment": "pre",
+    "valor": 8.0,
+    "comentari": "Mesura prèvia de rotació trimestral.",
+    "idRegistreImpacte": 3,
+    "dataRegistre": "2026-05-28"
+  },
+  {
+    "idIndicadorImpacte": 1,
+    "idPrograma": 1,
+    "idUsuari": 14,
+    "moment": "post",
+    "valor": 6.9,
+    "comentari": "Millora moderada, tot i un compliment del pla encara limitat.",
+    "idRegistreImpacte": 4,
+    "dataRegistre": "2026-08-15"
+  },
+  {
+    "idIndicadorImpacte": 1,
+    "idPrograma": 1,
+    "idUsuari": 15,
+    "moment": "pre",
+    "valor": 11.2,
+    "comentari": "Mesura prèvia de rotació trimestral, equip amb rotació elevada.",
+    "idRegistreImpacte": 5,
+    "dataRegistre": "2026-05-28"
+  },
+  {
+    "idIndicadorImpacte": 1,
+    "idPrograma": 1,
+    "idUsuari": 15,
+    "moment": "post",
+    "valor": 6.4,
+    "comentari": "Reducció notable de la rotació, coherent amb el compliment complet del pla.",
+    "idRegistreImpacte": 6,
+    "dataRegistre": "2026-08-15"
+  },
+  {
+    "idIndicadorImpacte": 2,
+    "idPrograma": 2,
+    "idUsuari": 13,
+    "moment": "pre",
+    "valor": 12.0,
+    "comentari": "NPS intern previ a la formació, recollit a l'enquesta trimestral de clima.",
+    "idRegistreImpacte": 7,
+    "dataRegistre": "2026-06-05"
+  },
+  {
+    "idIndicadorImpacte": 2,
+    "idPrograma": 2,
+    "idUsuari": 13,
+    "moment": "post",
+    "valor": 16.0,
+    "comentari": "NPS intern posterior; petita millora, coherent amb un compliment baix del pla.",
+    "idRegistreImpacte": 8,
+    "dataRegistre": "2026-08-25"
+  },
+  {
+    "idIndicadorImpacte": 2,
+    "idPrograma": 2,
+    "idUsuari": 15,
+    "moment": "pre",
+    "valor": 18.0,
+    "comentari": "NPS intern previ, recollit a l'enquesta trimestral de clima.",
+    "idRegistreImpacte": 9,
+    "dataRegistre": "2026-06-05"
+  },
+  {
+    "idIndicadorImpacte": 2,
+    "idPrograma": 2,
+    "idUsuari": 15,
+    "moment": "post",
+    "valor": 29.0,
+    "comentari": "Millora notable del NPS intern, coherent amb un compliment alt del pla.",
+    "idRegistreImpacte": 10,
+    "dataRegistre": "2026-08-25"
+  },
+  {
+    "idIndicadorImpacte": 3,
+    "idPrograma": 3,
+    "idUsuari": 16,
+    "moment": "pre",
+    "valor": 14.5,
+    "comentari": "Taxa de conversió prèvia, extreta del CRM comercial.",
+    "idRegistreImpacte": 11,
+    "dataRegistre": "2026-06-01"
+  },
+  {
+    "idIndicadorImpacte": 3,
+    "idPrograma": 3,
+    "idUsuari": 16,
+    "moment": "post",
+    "valor": 15.7,
+    "comentari": "Millora lleu, coherent amb un compliment baix del pla d'acció.",
+    "idRegistreImpacte": 12,
+    "dataRegistre": "2026-09-10"
+  },
+  {
+    "idIndicadorImpacte": 3,
+    "idPrograma": 3,
+    "idUsuari": 17,
+    "moment": "pre",
+    "valor": 16.0,
+    "comentari": "Taxa de conversió prèvia, extreta del CRM comercial.",
+    "idRegistreImpacte": 13,
+    "dataRegistre": "2026-06-01"
+  },
+  {
+    "idIndicadorImpacte": 3,
+    "idPrograma": 3,
+    "idUsuari": 17,
+    "moment": "post",
+    "valor": 23.5,
+    "comentari": "Millora important, coherent amb el compliment complet del pla.",
+    "idRegistreImpacte": 14,
+    "dataRegistre": "2026-09-10"
+  },
+  {
+    "idIndicadorImpacte": 3,
+    "idPrograma": 3,
+    "idUsuari": 18,
+    "moment": "pre",
+    "valor": 15.2,
+    "comentari": "Taxa de conversió prèvia, extreta del CRM comercial.",
+    "idRegistreImpacte": 15,
+    "dataRegistre": "2026-06-01"
+  },
+  {
+    "idIndicadorImpacte": 3,
+    "idPrograma": 3,
+    "idUsuari": 18,
+    "moment": "post",
+    "valor": 19.2,
+    "comentari": "Millora notable, coherent amb un compliment alt del pla.",
+    "idRegistreImpacte": 16,
+    "dataRegistre": "2026-09-10"
+  },
+  {
+    "idIndicadorImpacte": 3,
+    "idPrograma": 3,
+    "idUsuari": 19,
+    "moment": "pre",
+    "valor": 13.8,
+    "comentari": "Taxa de conversió prèvia, extreta del CRM comercial.",
+    "idRegistreImpacte": 17,
+    "dataRegistre": "2026-06-01"
+  },
+  {
+    "idIndicadorImpacte": 3,
+    "idPrograma": 3,
+    "idUsuari": 19,
+    "moment": "post",
+    "valor": 17.6,
+    "comentari": "Millora per sobre del que suggeriria el seu compliment moderat-baix del pla; possible efecte d'altres factors comercials.",
+    "idRegistreImpacte": 18,
+    "dataRegistre": "2026-09-10"
+  },
+  {
+    "idIndicadorImpacte": 4,
+    "idPrograma": 4,
+    "idUsuari": 20,
+    "moment": "pre",
+    "valor": 5.0,
+    "comentari": "Nombre d'incidents de seguretat del pacient al mes previ a la formació.",
+    "idRegistreImpacte": 19,
+    "dataRegistre": "2026-06-08"
+  },
+  {
+    "idIndicadorImpacte": 4,
+    "idPrograma": 4,
+    "idUsuari": 20,
+    "moment": "post",
+    "valor": 2.5,
+    "comentari": "Reducció notable d'incidents, coherent amb el compliment alt del pla.",
+    "idRegistreImpacte": 20,
+    "dataRegistre": "2026-09-15"
+  },
+  {
+    "idIndicadorImpacte": 4,
+    "idPrograma": 4,
+    "idUsuari": 21,
+    "moment": "pre",
+    "valor": 4.2,
+    "comentari": "Nombre d'incidents de seguretat del pacient al mes previ a la formació.",
+    "idRegistreImpacte": 21,
+    "dataRegistre": "2026-06-08"
+  },
+  {
+    "idIndicadorImpacte": 4,
+    "idPrograma": 4,
+    "idUsuari": 21,
+    "moment": "post",
+    "valor": 2.4,
+    "comentari": "Reducció moderada d'incidents, coherent amb un compliment mitjà del pla.",
+    "idRegistreImpacte": 22,
+    "dataRegistre": "2026-09-15"
+  },
+  {
+    "idIndicadorImpacte": 5,
+    "idPrograma": 5,
+    "idUsuari": 22,
+    "moment": "pre",
+    "valor": 6.5,
+    "comentari": "Mesura prèvia a l'inici del programa de formació.",
+    "idRegistreImpacte": 23,
+    "dataRegistre": "2026-06-03"
+  },
+  {
+    "idIndicadorImpacte": 5,
+    "idPrograma": 5,
+    "idUsuari": 22,
+    "moment": "post",
+    "valor": 6.1,
+    "comentari": "Mesura presa un mes després de finalitzar el seguiment del pla.",
+    "idRegistreImpacte": 24,
+    "dataRegistre": "2026-07-25"
+  },
+  {
+    "idIndicadorImpacte": 5,
+    "idPrograma": 5,
+    "idUsuari": 23,
+    "moment": "pre",
+    "valor": 6.8,
+    "comentari": "Mesura prèvia a l'inici del programa de formació.",
+    "idRegistreImpacte": 25,
+    "dataRegistre": "2026-06-03"
+  },
+  {
+    "idIndicadorImpacte": 5,
+    "idPrograma": 5,
+    "idUsuari": 23,
+    "moment": "post",
+    "valor": 6.4,
+    "comentari": "Tot i el compliment alt del pla, la millora real en temps de resolució és modesta.",
+    "idRegistreImpacte": 26,
+    "dataRegistre": "2026-07-25"
+  },
+  {
+    "idIndicadorImpacte": 5,
+    "idPrograma": 5,
+    "idUsuari": 24,
+    "moment": "pre",
+    "valor": 7.2,
+    "comentari": "Mesura prèvia a l'inici del programa de formació.",
+    "idRegistreImpacte": 27,
+    "dataRegistre": "2026-06-03"
+  },
+  {
+    "idIndicadorImpacte": 5,
+    "idPrograma": 5,
+    "idUsuari": 24,
+    "moment": "post",
+    "valor": 4.9,
+    "comentari": "Millora notable en temps de resolució, malgrat un compliment moderat del pla.",
+    "idRegistreImpacte": 28,
+    "dataRegistre": "2026-07-25"
+  },
+  {
+    "idIndicadorImpacte": 6,
+    "idPrograma": 5,
+    "idUsuari": 22,
+    "moment": "pre",
+    "valor": 7.0,
+    "comentari": "Puntuació CSAT mitjana prèvia a la formació.",
+    "idRegistreImpacte": 29,
+    "dataRegistre": "2026-06-03"
+  },
+  {
+    "idIndicadorImpacte": 6,
+    "idPrograma": 5,
+    "idUsuari": 22,
+    "moment": "post",
+    "valor": 7.3,
+    "comentari": "Petita millora de la satisfacció del client.",
+    "idRegistreImpacte": 30,
+    "dataRegistre": "2026-07-25"
+  },
+  {
+    "idIndicadorImpacte": 6,
+    "idPrograma": 5,
+    "idUsuari": 23,
+    "moment": "pre",
+    "valor": 7.4,
+    "comentari": "Puntuació CSAT mitjana prèvia a la formació.",
+    "idRegistreImpacte": 31,
+    "dataRegistre": "2026-06-03"
+  },
+  {
+    "idIndicadorImpacte": 6,
+    "idPrograma": 5,
+    "idUsuari": 23,
+    "moment": "post",
+    "valor": 7.9,
+    "comentari": "Millora moderada de la satisfacció del client.",
+    "idRegistreImpacte": 32,
+    "dataRegistre": "2026-07-25"
+  },
+  {
+    "idIndicadorImpacte": 6,
+    "idPrograma": 5,
+    "idUsuari": 24,
+    "moment": "pre",
+    "valor": 7.1,
+    "comentari": "Puntuació CSAT mitjana prèvia a la formació.",
+    "idRegistreImpacte": 33,
+    "dataRegistre": "2026-06-03"
+  },
+  {
+    "idIndicadorImpacte": 6,
+    "idPrograma": 5,
+    "idUsuari": 24,
+    "moment": "post",
+    "valor": 7.8,
+    "comentari": "Millora moderada de la satisfacció del client, malgrat un compliment intermedi del pla.",
+    "idRegistreImpacte": 34,
+    "dataRegistre": "2026-07-25"
+  },
+  {
+    "idIndicadorImpacte": 7,
+    "idPrograma": 6,
+    "idUsuari": 25,
+    "moment": "pre",
+    "valor": 58.0,
+    "comentari": "Percentatge de tasques completades a temps, mesura prèvia.",
+    "idRegistreImpacte": 35,
+    "dataRegistre": "2026-06-03"
+  },
+  {
+    "idIndicadorImpacte": 7,
+    "idPrograma": 6,
+    "idUsuari": 25,
+    "moment": "post",
+    "valor": 61.5,
+    "comentari": "Millora superior a la que suggeriria el seu compliment baix del pla, indicant que altres factors hi influeixen.",
+    "idRegistreImpacte": 36,
+    "dataRegistre": "2026-08-20"
+  },
+  {
+    "idIndicadorImpacte": 7,
+    "idPrograma": 6,
+    "idUsuari": 26,
+    "moment": "pre",
+    "valor": 60.0,
+    "comentari": "Percentatge de tasques completades a temps, mesura prèvia.",
+    "idRegistreImpacte": 37,
+    "dataRegistre": "2026-06-03"
+  },
+  {
+    "idIndicadorImpacte": 7,
+    "idPrograma": 6,
+    "idUsuari": 26,
+    "moment": "post",
+    "valor": 63.0,
+    "comentari": "Millora modesta malgrat un compliment molt alt del pla; suggereix que el pla no és un bon proxy d'aquest indicador.",
+    "idRegistreImpacte": 38,
+    "dataRegistre": "2026-08-20"
+  },
+  {
+    "idIndicadorImpacte": 7,
+    "idPrograma": 6,
+    "idUsuari": 27,
+    "moment": "pre",
+    "valor": 62.0,
+    "comentari": "Percentatge de tasques completades a temps, mesura prèvia.",
+    "idRegistreImpacte": 39,
+    "dataRegistre": "2026-06-03"
+  },
+  {
+    "idIndicadorImpacte": 7,
+    "idPrograma": 6,
+    "idUsuari": 27,
+    "moment": "post",
+    "valor": 67.0,
+    "comentari": "Millora notable, amb un compliment alt del pla.",
+    "idRegistreImpacte": 40,
+    "dataRegistre": "2026-08-20"
+  },
+  {
+    "idIndicadorImpacte": 8,
+    "idPrograma": 6,
+    "idUsuari": 25,
+    "moment": "pre",
+    "valor": 6.6,
+    "comentari": "Grup de control: no ha rebut la formació d'atenció al client.",
+    "idRegistreImpacte": 41,
+    "dataRegistre": "2026-06-03"
+  },
+  {
+    "idIndicadorImpacte": 8,
+    "idPrograma": 6,
+    "idUsuari": 25,
+    "moment": "post",
+    "valor": 6.5,
+    "comentari": "Grup de control: mesura posterior, sense intervenció formativa específica.",
+    "idRegistreImpacte": 42,
+    "dataRegistre": "2026-07-25"
+  },
+  {
+    "idIndicadorImpacte": 8,
+    "idPrograma": 6,
+    "idUsuari": 26,
+    "moment": "pre",
+    "valor": 7.0,
+    "comentari": "Grup de control: no ha rebut la formació d'atenció al client.",
+    "idRegistreImpacte": 43,
+    "dataRegistre": "2026-06-03"
+  },
+  {
+    "idIndicadorImpacte": 8,
+    "idPrograma": 6,
+    "idUsuari": 26,
+    "moment": "post",
+    "valor": 7.1,
+    "comentari": "Grup de control: mesura posterior, sense intervenció formativa específica.",
+    "idRegistreImpacte": 44,
+    "dataRegistre": "2026-07-25"
+  },
+  {
+    "idIndicadorImpacte": 8,
+    "idPrograma": 6,
+    "idUsuari": 27,
+    "moment": "pre",
+    "valor": 6.4,
+    "comentari": "Grup de control: no ha rebut la formació d'atenció al client.",
+    "idRegistreImpacte": 45,
+    "dataRegistre": "2026-06-03"
+  },
+  {
+    "idIndicadorImpacte": 8,
+    "idPrograma": 6,
+    "idUsuari": 27,
+    "moment": "post",
+    "valor": 6.6,
+    "comentari": "Grup de control: mesura posterior, sense intervenció formativa específica.",
+    "idRegistreImpacte": 46,
+    "dataRegistre": "2026-07-25"
+  }
+]

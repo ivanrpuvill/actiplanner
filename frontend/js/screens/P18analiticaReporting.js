@@ -91,6 +91,10 @@ async function carregarAnalitica(idPrograma) {
       apiGet(`/programes/${idPrograma}/participants-desviacio`)
     ]);
 
+    const indicadorsImpacte = await apiGet(
+      `/programes/${idPrograma}/indicadors-impacte`
+    ).catch(() => []);
+
     container.innerHTML = `
       <div class="grid">
         <div class="card stat-card">
@@ -121,6 +125,16 @@ async function carregarAnalitica(idPrograma) {
       <div class="card constructor-container">
         <h3>Interpretació de l'analítica</h3>
         ${renderInterpretacioAnalitica(analisi, objectiusRisc, destacats, desviacio)}
+      </div>
+
+      <div class="card constructor-container">
+        <h3>🎯 Validació de l'impacte real de la formació</h3>
+        <p class="stat-subtitle">
+          Aquest bloc respon a una pregunta diferent de l'anterior: no si els
+          participants compleixen el pla, sinó si la formació ha canviat
+          realment un indicador de negoci extern al sistema.
+        </p>
+        ${await renderImpacteFormacio(idPrograma, indicadorsImpacte)}
       </div>
 
       <div class="card constructor-container">
@@ -188,6 +202,99 @@ function renderInterpretacioAnalitica(analisi, objectiusRisc, destacats, desviac
       </div>
     </div>
   `;
+}
+
+async function renderImpacteFormacio(idPrograma, indicadors) {
+  if (!indicadors || !indicadors.length) {
+    return `
+      <div class="alert-block warning-alert">
+        <h4>Cap indicador d'impacte definit</h4>
+        <p>
+          Aquest programa encara no té cap indicador de negoci (extern al
+          pla d'acció) configurat. El progrés mostrat a dalt només indica
+          el grau de compliment del pla, no si la formació ha tingut un
+          efecte real. Es recomana definir almenys un indicador (p. ex.
+          un KPI operatiu o de client) i registrar-ne un valor abans i
+          després de la formació.
+        </p>
+      </div>
+    `;
+  }
+
+  const blocs = await Promise.all(
+    indicadors.map((indicador) => renderBlocIndicador(idPrograma, indicador))
+  );
+
+  return `<div class="list">${blocs.join("")}</div>`;
+}
+
+async function renderBlocIndicador(idPrograma, indicador) {
+  const idIndicador = indicador.idIndicadorImpacte;
+
+  try {
+    const [deltes, correlacio] = await Promise.all([
+      apiGet(`/indicadors-impacte/${idIndicador}/programes/${idPrograma}/deltes`),
+      apiGet(`/indicadors-impacte/${idIndicador}/programes/${idPrograma}/correlacio`)
+    ]);
+
+    const deltesDisponibles = deltes.filter((d) => d.disponible);
+    const deltaMitja = deltesDisponibles.length
+      ? deltesDisponibles.reduce((acc, d) => acc + d.delta, 0) / deltesDisponibles.length
+      : null;
+
+    return `
+      <div class="list-item">
+        <strong>${indicador.nom}</strong>
+        <p class="stat-subtitle">
+          Font: ${indicador.fontDades} · Unitat: ${indicador.unitat}
+        </p>
+
+        <div class="grid two-cols">
+          <div>
+            <p><strong>Millora mitjana pre/post</strong></p>
+            <p class="stat-number">${formatDelta(deltaMitja, indicador.unitat)}</p>
+            <p class="stat-subtitle">
+              ${deltesDisponibles.length} de ${deltes.length} participant(s) amb
+              dada pre i post disponible
+            </p>
+          </div>
+
+          <div>
+            <p><strong>Correlació amb el compliment del pla</strong></p>
+            <p class="stat-number">${formatCoeficient(correlacio.coeficientPearson)}</p>
+            <p class="stat-subtitle">${correlacio.nParticipants} participant(s) analitzats</p>
+          </div>
+        </div>
+
+        <p>${correlacio.interpretacio}</p>
+      </div>
+    `;
+  } catch (error) {
+    return `
+      <div class="list-item">
+        <strong>${indicador.nom}</strong>
+        <p class="error-text">No s'ha pogut calcular l'impacte: ${error.message}</p>
+      </div>
+    `;
+  }
+}
+
+function formatDelta(valor, unitat) {
+  if (valor === null || valor === undefined || Number.isNaN(valor)) {
+    return "-";
+  }
+
+  const signe = valor > 0 ? "+" : "";
+
+  return `${signe}${valor.toFixed(2)} ${unitat || ""}`.trim();
+}
+
+function formatCoeficient(r) {
+  if (r === null || r === undefined || Number.isNaN(r)) {
+    return "-";
+  }
+
+  return `r = ${r}`;
 }
 
 function renderTextRiscos(objectiusRisc, desviacio) {

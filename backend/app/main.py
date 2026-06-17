@@ -12,6 +12,8 @@ from app.models.accio import AccioCreate, AccioUpdate, AccioRead
 from app.models.kpi import KPICreate, KPIUpdate, KPIRead
 from app.models.registre_kpi import RegistreKPICreate, RegistreKPIUpdate, RegistreKPIRead
 from app.models.feedback import FeedbackCreate, FeedbackUpdate, FeedbackRead
+from app.models.indicador_impacte import IndicadorImpacteCreate, IndicadorImpacteUpdate, IndicadorImpacteRead
+from app.models.registre_impacte import RegistreImpacteCreate, RegistreImpacteUpdate, RegistreImpacteRead
 
 from app.services.empresa_client_service import EmpresaClientService
 from app.services.usuari_service import UsuariService
@@ -22,6 +24,7 @@ from app.services.seguiment_objectiu_service import SeguimentObjectiuService
 from app.services.feedback_service import FeedbackService
 from app.services.analisi_service import AnalisiService
 from app.services.ia_service import IAService
+from app.services.impacte_service import ImpacteService
 
 empresa_client_service = EmpresaClientService()
 usuari_service = UsuariService()
@@ -32,6 +35,7 @@ seguiment_objectiu_service = SeguimentObjectiuService()
 feedback_service = FeedbackService()
 analisi_service = AnalisiService()
 ia_service = IAService()
+impacte_service = ImpacteService()
 
 app = FastAPI(
     title="Actiplanner API",
@@ -523,3 +527,69 @@ def generar_resum_pla(idPla: int):
 @app.get("/ia/programes/{idPrograma}/proposta-pla")
 def generar_proposta_pla(idPrograma: int):
     return ia_service.generar_proposta_pla(idPrograma)
+
+
+@app.get("/programes/{idPrograma}/indicadors-impacte", response_model=list[IndicadorImpacteRead])
+def get_indicadors_impacte_programa(idPrograma: int):
+    return impacte_service.get_indicadors_programa(idPrograma)
+
+
+@app.post("/indicadors-impacte", response_model=IndicadorImpacteRead)
+def create_indicador_impacte(indicador: IndicadorImpacteCreate):
+    return impacte_service.create_indicador(indicador)
+
+
+@app.get("/indicadors-impacte/{idIndicadorImpacte}/registres", response_model=list[RegistreImpacteRead])
+def get_registres_indicador_impacte(idIndicadorImpacte: int):
+    return impacte_service.get_registres_indicador(idIndicadorImpacte)
+
+
+@app.post("/registres-impacte", response_model=RegistreImpacteRead)
+def create_registre_impacte(registre: RegistreImpacteCreate):
+    nou_registre = impacte_service.create_registre_impacte(registre)
+
+    if nou_registre is None:
+        raise HTTPException(
+            status_code=404,
+            detail="Indicador d'impacte no trobat"
+        )
+
+    return nou_registre
+
+
+@app.get("/indicadors-impacte/{idIndicadorImpacte}/usuaris/{idUsuari}/delta")
+def get_delta_impacte_usuari(idIndicadorImpacte: int, idUsuari: int):
+    delta = impacte_service.get_delta_impacte_usuari(idIndicadorImpacte, idUsuari)
+
+    if delta is None:
+        raise HTTPException(
+            status_code=404,
+            detail="Indicador d'impacte no trobat"
+        )
+
+    return delta
+
+
+@app.get("/indicadors-impacte/{idIndicadorImpacte}/programes/{idPrograma}/deltes")
+def get_deltes_programa(idIndicadorImpacte: int, idPrograma: int):
+    return impacte_service.get_deltes_programa(idIndicadorImpacte, idPrograma)
+
+
+@app.get("/indicadors-impacte/{idIndicadorImpacteFormat}/comparacio-grups")
+def comparar_grups_impacte(
+    idIndicadorImpacteFormat: int,
+    idProgramaFormat: int,
+    idProgramaControl: int | None = None,
+    idIndicadorImpacteControl: int | None = None
+):
+    return impacte_service.comparar_grups(
+        idIndicadorImpacteFormat,
+        idProgramaFormat,
+        idIndicadorImpacteControl,
+        idProgramaControl
+    )
+
+
+@app.get("/indicadors-impacte/{idIndicadorImpacte}/programes/{idPrograma}/correlacio")
+def get_correlacio_progres_impacte(idIndicadorImpacte: int, idPrograma: int):
+    return impacte_service.correlacio_progres_impacte(idIndicadorImpacte, idPrograma)
