@@ -3,30 +3,35 @@
     "idEmpresa": 1,
     "nom": "Empresa Demo",
     "sector": "Formació i consultoria",
-    "contacte": "contacte@empresa-demo.com"
+    "contacte": "contacte@empresa-demo.com",
+    "actiu": true
   },
   {
     "idEmpresa": 2,
     "nom": "Banca Nova",
     "sector": "Banca",
-    "contacte": "rrhh@bancanova.com"
+    "contacte": "rrhh@bancanova.com",
+    "actiu": true
   },
   {
     "idEmpresa": 3,
     "nom": "Salut Farma",
     "sector": "Farmacèutic",
-    "contacte": "formacio@salutfarma.com"
+    "contacte": "formacio@salutfarma.com",
+    "actiu": true
   },
   {
     "idEmpresa": 4,
     "nom": "Retail Plus",
     "sector": "Retail",
-    "contacte": "talent@retailplus.com"
+    "contacte": "talent@retailplus.com",
+    "actiu": true
   },
   {
     "idEmpresa": 5,
     "nom": "Tech Solutions",
     "sector": "Tecnologia",
-    "contacte": "people@techsolutions.com"
+    "contacte": "people@techsolutions.com",
+    "actiu": true
   }
 ]

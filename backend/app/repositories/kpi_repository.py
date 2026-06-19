@@ -18,6 +18,13 @@ class KPIRepository:
         return [
             kpi
             for kpi in self.get_all()
+            if kpi.idAccio == idAccio and kpi.actiu
+        ]
+
+    def get_all_by_accio(self, idAccio: int) -> list[KPI]:
+        return [
+            kpi
+            for kpi in self.get_all()
             if kpi.idAccio == idAccio
         ]
     

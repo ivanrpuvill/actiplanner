@@ -54,6 +54,14 @@ class FeedbackRepository:
             and feedback.idUsuariParticipant == idUsuariParticipant
         ]
 
+    def next_id(self):
+        feedbacks = self.get_all()
+
+        if not feedbacks:
+            return 1
+
+        return max(feedback.idFeedback for feedback in feedbacks) + 1
+
     def create(self, nou_feedback: Feedback) -> Feedback:
         feedbacks = self.get_all()
         feedbacks.append(nou_feedback)

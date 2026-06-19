@@ -31,6 +31,7 @@ class KPIBase(BaseModel):
     valorMinim: float | None = 0
     valorMaxim: float | None = None
     valorObjectiu: float | None = None
+    actiu: bool = True
 
 
 class KPICreate(KPIBase):
@@ -48,6 +49,7 @@ class KPIUpdate(BaseModel):
     valorMinim: float | None = None
     valorMaxim: float | None = None
     valorObjectiu: float | None = None
+    actiu: bool | None = None
 
 
 class KPIRead(KPIBase):

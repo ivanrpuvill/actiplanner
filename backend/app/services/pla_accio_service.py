@@ -224,6 +224,12 @@ class PlaAccioService:
 
         return self.pla_repository.update(idPla, pla_actualitzat)
 
+    def get_objectiu(self, idObjectiu: int):
+        return self.objectiu_repository.get_by_id(idObjectiu)
+
+    def get_objectius_pla(self, idPla: int):
+        return self.objectiu_repository.get_all_by_pla(idPla)
+
     def create_objectiu(self, objectiu: ObjectiuPlaCreate):
         pla = self.pla_repository.get_by_id(objectiu.idPla)
 
@@ -251,6 +257,12 @@ class PlaAccioService:
 
         return self.objectiu_repository.update(idObjectiu, objectiu_actualitzat)
 
+    def get_accio(self, idAccio: int):
+        return self.accio_repository.get_by_id(idAccio)
+
+    def get_accions_objectiu(self, idObjectiu: int):
+        return self.accio_repository.get_all_by_objectiu(idObjectiu)
+
     def create_accio(self, accio: AccioCreate):
         objectiu = self.objectiu_repository.get_by_id(accio.idObjectiu)
 
@@ -277,6 +289,9 @@ class PlaAccioService:
         accio_actualitzada = Accio(**data)
 
         return self.accio_repository.update(idAccio, accio_actualitzada)
+
+    def get_kpis_accio(self, idAccio: int):
+        return self.kpi_repository.get_all_by_accio(idAccio)
 
     def create_kpi(self, kpi: KPICreate):
         accio = self.accio_repository.get_by_id(kpi.idAccio)

@@ -247,9 +247,15 @@ function renderConstructor() {
       <h3>Estructura actual del pla</h3>
       ${renderEstructuraPla()}
     </div>
+
+    <div class="card constructor-container">
+      <h3>Elements desactivats</h3>
+      <div id="elementsDesactivatsContainer">Carregant...</div>
+    </div>
   `;
 
   activarEventsConstructor();
+  carregarElementsDesactivats();
 }
 
 function activarEventsConstructor() {
@@ -261,6 +267,27 @@ function activarEventsConstructor() {
   document.getElementById("kpiTipusCalcul").addEventListener("change", actualitzarAjudaCalcul);
   actualitzarAjudaKPI();
   actualitzarAjudaCalcul();
+
+  document.querySelectorAll(".btn-editar-objectiu").forEach((button) => {
+    button.addEventListener("click", () => obrirEdicioObjectiu(Number(button.dataset.id)));
+  });
+  document.querySelectorAll(".btn-desactivar-objectiu").forEach((button) => {
+    button.addEventListener("click", () => canviarEstatObjectiu(Number(button.dataset.id), false));
+  });
+
+  document.querySelectorAll(".btn-editar-accio").forEach((button) => {
+    button.addEventListener("click", () => obrirEdicioAccio(Number(button.dataset.id)));
+  });
+  document.querySelectorAll(".btn-desactivar-accio").forEach((button) => {
+    button.addEventListener("click", () => canviarEstatAccio(Number(button.dataset.id), false));
+  });
+
+  document.querySelectorAll(".btn-editar-kpi").forEach((button) => {
+    button.addEventListener("click", () => obrirEdicioKPI(Number(button.dataset.id)));
+  });
+  document.querySelectorAll(".btn-desactivar-kpi").forEach((button) => {
+    button.addEventListener("click", () => canviarEstatKPI(Number(button.dataset.id), false));
+  });
 }
 
 async function crearObjectiu() {
@@ -338,6 +365,193 @@ async function crearKPI() {
 
   await apiPost("/kpis", payload);
   await carregarPla(plaActual.idPla);
+}
+
+async function canviarEstatObjectiu(idObjectiu, nouEstat) {
+  await apiPut(`/objectius/${idObjectiu}`, { actiu: nouEstat });
+  await carregarPla(plaActual.idPla);
+}
+
+async function canviarEstatAccio(idAccio, nouEstat) {
+  await apiPut(`/accions/${idAccio}`, { actiu: nouEstat });
+  await carregarPla(plaActual.idPla);
+}
+
+async function canviarEstatKPI(idKPI, nouEstat) {
+  await apiPut(`/kpis/${idKPI}`, { actiu: nouEstat });
+  await carregarPla(plaActual.idPla);
+}
+
+async function obrirEdicioObjectiu(idObjectiu) {
+  const objectiu = await apiGet(`/objectius/${idObjectiu}`);
+
+  const descripcioNova = prompt("Descripció de l'objectiu:", objectiu.descripcio || "");
+  if (descripcioNova === null) {
+    return;
+  }
+
+  const valorNou = prompt("Valor / pes de l'objectiu:", objectiu.valor ?? "100");
+  if (valorNou === null) {
+    return;
+  }
+
+  await apiPut(`/objectius/${idObjectiu}`, {
+    descripcio: descripcioNova.trim(),
+    valor: parseNullableNumber(valorNou) ?? objectiu.valor
+  });
+
+  await carregarPla(plaActual.idPla);
+}
+
+async function obrirEdicioAccio(idAccio) {
+  const accio = await apiGet(`/accions/${idAccio}`);
+
+  const titolNou = prompt("Títol de l'acció:", accio.titol || "");
+  if (titolNou === null) {
+    return;
+  }
+
+  const descripcioNova = prompt("Descripció de l'acció:", accio.descripcio || "");
+  if (descripcioNova === null) {
+    return;
+  }
+
+  const dataIniciNova = prompt("Data d'inici (AAAA-MM-DD):", accio.dataInici || "");
+  if (dataIniciNova === null) {
+    return;
+  }
+
+  const dataFiNova = prompt("Data de fi (AAAA-MM-DD):", accio.dataFi || "");
+  if (dataFiNova === null) {
+    return;
+  }
+
+  await apiPut(`/accions/${idAccio}`, {
+    titol: titolNou.trim(),
+    descripcio: descripcioNova.trim(),
+    dataInici: dataIniciNova.trim() || null,
+    dataFi: dataFiNova.trim() || null
+  });
+
+  await carregarPla(plaActual.idPla);
+}
+
+async function obrirEdicioKPI(idKPI) {
+  const kpi = await apiGet(`/kpis/${idKPI}`);
+
+  const nomNou = prompt("Nom del KPI:", kpi.nom || "");
+  if (nomNou === null) {
+    return;
+  }
+
+  const descripcioNova = prompt("Descripció del KPI:", kpi.descripcio || "");
+  if (descripcioNova === null) {
+    return;
+  }
+
+  const valorObjectiuNou = prompt("Valor objectiu:", kpi.valorObjectiu ?? "");
+  if (valorObjectiuNou === null) {
+    return;
+  }
+
+  const payload = {
+    nom: nomNou.trim(),
+    descripcio: descripcioNova.trim(),
+    valorObjectiu: parseNullableNumber(valorObjectiuNou)
+  };
+
+  const error = validarKPI({ ...kpi, ...payload });
+  if (error) {
+    alert(error);
+    return;
+  }
+
+  await apiPut(`/kpis/${idKPI}`, payload);
+  await carregarPla(plaActual.idPla);
+}
+
+async function carregarElementsDesactivats() {
+  const container = document.getElementById("elementsDesactivatsContainer");
+
+  try {
+    const objectius = await apiGet(`/plans/${plaActual.idPla}/objectius`);
+    const objectiusInactius = objectius.filter((objectiu) => objectiu.actiu === false);
+
+    const accionsInactivesPerObjectiu = await Promise.all(
+      objectius.map((objectiu) => apiGet(`/objectius/${objectiu.idObjectiu}/accions`))
+    );
+    const totesLesAccions = accionsInactivesPerObjectiu.flat();
+    const accionsInactives = totesLesAccions.filter((accio) => accio.actiu === false);
+
+    const kpisInactiusPerAccio = await Promise.all(
+      totesLesAccions.map((accio) => apiGet(`/accions/${accio.idAccio}/kpis`))
+    );
+    const kpisInactius = kpisInactiusPerAccio.flat().filter((kpi) => kpi.actiu === false);
+
+    if (!objectiusInactius.length && !accionsInactives.length && !kpisInactius.length) {
+      container.innerHTML = "<p>No hi ha cap element desactivat en aquest pla.</p>";
+      return;
+    }
+
+    container.innerHTML = `
+      ${objectiusInactius.length ? `
+        <h4>Objectius</h4>
+        <table>
+          <thead><tr><th>Descripció</th><th></th></tr></thead>
+          <tbody>
+            ${objectiusInactius.map((objectiu) => `
+              <tr>
+                <td>${objectiu.descripcio}</td>
+                <td><button class="btn secondary small btn-reactivar-objectiu" data-id="${objectiu.idObjectiu}">Activar</button></td>
+              </tr>
+            `).join("")}
+          </tbody>
+        </table>
+      ` : ""}
+
+      ${accionsInactives.length ? `
+        <h4>Accions</h4>
+        <table>
+          <thead><tr><th>Títol</th><th></th></tr></thead>
+          <tbody>
+            ${accionsInactives.map((accio) => `
+              <tr>
+                <td>${accio.titol}</td>
+                <td><button class="btn secondary small btn-reactivar-accio" data-id="${accio.idAccio}">Activar</button></td>
+              </tr>
+            `).join("")}
+          </tbody>
+        </table>
+      ` : ""}
+
+      ${kpisInactius.length ? `
+        <h4>KPI</h4>
+        <table>
+          <thead><tr><th>Nom</th><th></th></tr></thead>
+          <tbody>
+            ${kpisInactius.map((kpi) => `
+              <tr>
+                <td>${kpi.nom}</td>
+                <td><button class="btn secondary small btn-reactivar-kpi" data-id="${kpi.idKPI}">Activar</button></td>
+              </tr>
+            `).join("")}
+          </tbody>
+        </table>
+      ` : ""}
+    `;
+
+    container.querySelectorAll(".btn-reactivar-objectiu").forEach((button) => {
+      button.addEventListener("click", () => canviarEstatObjectiu(Number(button.dataset.id), true));
+    });
+    container.querySelectorAll(".btn-reactivar-accio").forEach((button) => {
+      button.addEventListener("click", () => canviarEstatAccio(Number(button.dataset.id), true));
+    });
+    container.querySelectorAll(".btn-reactivar-kpi").forEach((button) => {
+      button.addEventListener("click", () => canviarEstatKPI(Number(button.dataset.id), true));
+    });
+  } catch (error) {
+    container.innerHTML = `<p class="error-text">${error.message}</p>`;
+  }
 }
 
 function normalitzarValorsKPI(kpi) {
@@ -446,7 +660,13 @@ function renderEstructuraPla() {
 
   return objectius.map((objectiu) => `
     <div class="list-item">
-      <h4>${objectiu.descripcio || objectiu.nom || `Objectiu ${objectiu.idObjectiu}`}</h4>
+      <div class="list-item-header">
+        <h4>${objectiu.descripcio || objectiu.nom || `Objectiu ${objectiu.idObjectiu}`}</h4>
+        <div class="list-item-actions">
+          <button class="btn secondary small btn-editar-objectiu" data-id="${objectiu.idObjectiu}">Editar</button>
+          <button class="btn secondary small btn-desactivar-objectiu" data-id="${objectiu.idObjectiu}">Desactivar</button>
+        </div>
+      </div>
       <p>
         <strong>Valor:</strong> ${objectiu.valor ?? "-"}
         ${objectiu.progresObjectiu !== undefined ? ` · <strong>Progrés:</strong> ${formatPercentatge(objectiu.progresObjectiu)}` : ""}
@@ -468,7 +688,13 @@ function renderAccionsObjectiu(objectiu) {
     <div class="list">
       ${accions.map((accio) => `
         <div class="list-item">
-          <strong>${accio.titol || accio.nom || `Acció ${accio.idAccio}`}</strong>
+          <div class="list-item-header">
+            <strong>${accio.titol || accio.nom || `Acció ${accio.idAccio}`}</strong>
+            <div class="list-item-actions">
+              <button class="btn secondary small btn-editar-accio" data-id="${accio.idAccio}">Editar</button>
+              <button class="btn secondary small btn-desactivar-accio" data-id="${accio.idAccio}">Desactivar</button>
+            </div>
+          </div>
           <p>${accio.descripcio || ""}</p>
           <p class="stat-subtitle">
             ${accio.progresAccio !== undefined ? `<strong>Progrés:</strong> ${formatPercentatge(accio.progresAccio)}` : ""}
@@ -501,6 +727,7 @@ function renderKPIsAccio(accio) {
           <th>Periodicitat</th>
           <th>Progrés</th>
           <th>Estat</th>
+          <th></th>
         </tr>
       </thead>
       <tbody>
@@ -515,6 +742,10 @@ function renderKPIsAccio(accio) {
             <td>${kpi.periodicitat || "-"}</td>
             <td>${kpi.assoliment ?? "-"}${kpi.assoliment != null ? "%" : ""}</td>
             <td>${formatEstatKPI(kpi.estatKPI)}</td>
+            <td>
+              <button class="btn secondary small btn-editar-kpi" data-id="${kpi.idKPI}">Editar</button>
+              <button class="btn secondary small btn-desactivar-kpi" data-id="${kpi.idKPI}">Desactivar</button>
+            </td>
           </tr>
         `).join("")}
       </tbody>

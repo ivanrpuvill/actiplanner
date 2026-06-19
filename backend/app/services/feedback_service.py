@@ -45,12 +45,14 @@ class FeedbackService:
         es_supervisor = any(
             item.idPrograma == feedback.idPrograma
             and item.idUsuari == feedback.idUsuariSupervisor
+            and item.actiu
             for item in self.supervisor_repository.get_all()
         )
 
         es_participant = any(
             item.idPrograma == feedback.idPrograma
             and item.idUsuari == feedback.idUsuariParticipant
+            and item.actiu
             for item in self.participant_repository.get_all()
         )
 

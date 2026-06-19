@@ -1,7 +1,7 @@
 from datetime import date
 from app.models.usuari import Usuari, UsuariCreate, UsuariUpdate
 from app.models.programa_participant import ProgramaParticipant, ProgramaParticipantCreate, ProgramaParticipantUpdate
-from app.models.programa_supervisor import ProgramaSupervisor, ProgramaSupervisorCreate
+from app.models.programa_supervisor import ProgramaSupervisor, ProgramaSupervisorCreate, ProgramaSupervisorUpdate
 from app.repositories.usuari_repository import UsuariRepository
 from app.repositories.programa_participant_repository import ProgramaParticipantRepository
 from app.repositories.programa_supervisor_repository import ProgramaSupervisorRepository
@@ -28,20 +28,26 @@ class UsuariService:
     def get_administradors(self) -> list[Usuari]:
         return self.usuari_repository.get_administradors()
 
+    def get_participants_programa(self, idPrograma: int) -> list[ProgramaParticipant]:
+        return self.programa_participant_repository.get_all_by_programa(idPrograma)
+
+    def get_supervisors_programa(self, idPrograma: int) -> list[ProgramaSupervisor]:
+        return self.programa_supervisor_repository.get_all_by_programa(idPrograma)
+
     def es_participant(self, idUsuari: int, idPrograma: int) -> bool:
         participacions = self.participant_repository.get_by_usuari(idUsuari)
 
         return any(
-            item.idPrograma == idPrograma
+            item.idPrograma == idPrograma and item.actiu
             for item in participacions
         )
 
     def es_supervisor(self, idUsuari: int, idPrograma: int) -> bool:
-        supervisiones = self.supervisor_repository.get_by_usuari(idUsuari)
+        supervisions = self.supervisor_repository.get_by_usuari(idUsuari)
 
         return any(
-            item.idPrograma == idPrograma
-            for item in supervisiones
+            item.idPrograma == idPrograma and item.actiu
+            for item in supervisions
         )
 
     def get_rols_usuari(self, idUsuari: int) -> dict:
@@ -153,3 +159,25 @@ class UsuariService:
         )
 
         return self.programa_supervisor_repository.create(nou_supervisor)
+
+    def update_supervisor_programa(self, idPrograma: int, idUsuari: int, supervisor: ProgramaSupervisorUpdate):
+        supervisor_actual = self.programa_supervisor_repository.get_by_programa_usuari(
+            idPrograma,
+            idUsuari
+        )
+
+        if supervisor_actual is None:
+            return None
+
+        data = supervisor_actual.model_dump()
+        data.update(supervisor.model_dump(exclude_unset=True))
+        data["idPrograma"] = idPrograma
+        data["idUsuari"] = idUsuari
+
+        supervisor_actualitzat = ProgramaSupervisor(**data)
+
+        return self.programa_supervisor_repository.update(
+            idPrograma,
+            idUsuari,
+            supervisor_actualitzat
+        )

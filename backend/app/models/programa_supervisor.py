@@ -4,6 +4,7 @@ from pydantic import BaseModel
 class ProgramaSupervisorBase(BaseModel):
     idPrograma: int
     idUsuari: int
+    actiu: bool = True
 
 
 class ProgramaSupervisorCreate(BaseModel):
@@ -11,7 +12,7 @@ class ProgramaSupervisorCreate(BaseModel):
 
 
 class ProgramaSupervisorUpdate(BaseModel):
-    pass
+    actiu: bool | None = None
 
 
 class ProgramaSupervisorRead(ProgramaSupervisorBase):

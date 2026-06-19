@@ -3,108 +3,126 @@
     "idPla": 1,
     "descripcio": "Millorar el seguiment individual dels membres de l'equip",
     "valor": 100.0,
-    "idObjectiu": 1
+    "idObjectiu": 1,
+    "actiu": true
   },
   {
     "idPla": 1,
     "descripcio": "Incrementar la qualitat i freqüència del feedback",
     "valor": 100.0,
-    "idObjectiu": 2
+    "idObjectiu": 2,
+    "actiu": true
   },
   {
     "idPla": 2,
     "descripcio": "Consolidar l'hàbit de preparar reunions de seguiment",
     "valor": 100.0,
-    "idObjectiu": 3
+    "idObjectiu": 3,
+    "actiu": true
   },
   {
     "idPla": 2,
     "descripcio": "Registrar compromisos i acords després de cada reunió",
     "valor": 100.0,
-    "idObjectiu": 4
+    "idObjectiu": 4,
+    "actiu": true
   },
   {
     "idPla": 3,
     "descripcio": "Aplicar tècniques d'escolta activa en reunions i converses clau",
     "valor": 100.0,
-    "idObjectiu": 5
+    "idObjectiu": 5,
+    "actiu": true
   },
   {
     "idPla": 3,
     "descripcio": "Reduir malentesos en la comunicació interna",
     "valor": 100.0,
-    "idObjectiu": 6
+    "idObjectiu": 6,
+    "actiu": true
   },
   {
     "idPla": 4,
     "descripcio": "Incrementar el seguiment sistemàtic d'oportunitats comercials",
     "valor": 100.0,
-    "idObjectiu": 7
+    "idObjectiu": 7,
+    "actiu": true
   },
   {
     "idPla": 4,
     "descripcio": "Millorar la taxa de conversió de contactes qualificats",
     "valor": 100.0,
-    "idObjectiu": 8
+    "idObjectiu": 8,
+    "actiu": true
   },
   {
     "idPla": 5,
     "descripcio": "Augmentar la qualitat de les notes comercials",
     "valor": 100.0,
-    "idObjectiu": 9
+    "idObjectiu": 9,
+    "actiu": true
   },
   {
     "idPla": 5,
     "descripcio": "Reduir oportunitats sense proper pas definit",
     "valor": 100.0,
-    "idObjectiu": 10
+    "idObjectiu": 10,
+    "actiu": true
   },
   {
     "idPla": 6,
     "descripcio": "Millorar la coordinació entre equips clínics",
     "valor": 100.0,
-    "idObjectiu": 11
+    "idObjectiu": 11,
+    "actiu": true
   },
   {
     "idPla": 6,
     "descripcio": "Reduir incidències derivades de manca de comunicació",
     "valor": 100.0,
-    "idObjectiu": 12
+    "idObjectiu": 12,
+    "actiu": true
   },
   {
     "idPla": 7,
     "descripcio": "Millorar la resolució d'incidències amb clients",
     "valor": 100.0,
-    "idObjectiu": 13
+    "idObjectiu": 13,
+    "actiu": true
   },
   {
     "idPla": 7,
     "descripcio": "Incrementar la satisfacció percebuda pel client",
     "valor": 100.0,
-    "idObjectiu": 14
+    "idObjectiu": 14,
+    "actiu": true
   },
   {
     "idPla": 8,
     "descripcio": "Millorar la planificació setmanal de tasques prioritàries",
     "valor": 100.0,
-    "idObjectiu": 15
+    "idObjectiu": 15,
+    "actiu": true
   },
   {
     "idPla": 8,
     "descripcio": "Reduir interrupcions i tasques sense planificació",
     "valor": 100.0,
-    "idObjectiu": 16
+    "idObjectiu": 16,
+    "actiu": true
   },
   {
     "idPla": 9,
     "descripcio": "Identificar bloquejos recurrents i definir accions preventives",
     "valor": 100.0,
-    "idObjectiu": 17
+    "idObjectiu": 17,
+    "actiu": true
   },
   {
     "idPla": 9,
     "descripcio": "Reduir el temps mitjà de resposta davant incidències internes",
     "valor": 100.0,
-    "idObjectiu": 18
+    "idObjectiu": 18,
+    "actiu": true
   }
 ]

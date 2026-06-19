@@ -7,6 +7,7 @@ class AccioBase(BaseModel):
     descripcio: str
     dataInici: str
     dataFi: str
+    actiu: bool = True
 
 
 class AccioCreate(AccioBase):
@@ -19,6 +20,7 @@ class AccioUpdate(BaseModel):
     descripcio: str | None = None
     dataInici: str | None = None
     dataFi: str | None = None
+    actiu: bool | None = None
 
 
 class AccioRead(AccioBase):

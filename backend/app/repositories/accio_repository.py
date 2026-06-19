@@ -18,6 +18,13 @@ class AccioRepository:
         return [
             accio
             for accio in self.get_all()
+            if accio.idObjectiu == idObjectiu and accio.actiu
+        ]
+
+    def get_all_by_objectiu(self, idObjectiu: int) -> list[Accio]:
+        return [
+            accio
+            for accio in self.get_all()
             if accio.idObjectiu == idObjectiu
         ]
 

@@ -18,6 +18,13 @@ class ProgramaSupervisorRepository:
         return [
             item
             for item in self.get_all()
+            if item.idPrograma == idPrograma and item.actiu
+        ]
+
+    def get_all_by_programa(self, idPrograma: int) -> list[ProgramaSupervisor]:
+        return [
+            item
+            for item in self.get_all()
             if item.idPrograma == idPrograma
         ]
 
@@ -27,6 +34,13 @@ class ProgramaSupervisorRepository:
             for item in self.get_all()
             if item.idUsuari == idUsuari
         ]
+
+    def get_by_programa_usuari(self, idPrograma: int, idUsuari: int) -> ProgramaSupervisor | None:
+        for item in self.get_all():
+            if item.idPrograma == idPrograma and item.idUsuari == idUsuari:
+                return item
+
+        return None
 
     def _write_all(self, supervisors):
         with open(self.file_path, "w", encoding="utf-8") as file:
@@ -52,3 +66,17 @@ class ProgramaSupervisorRepository:
         supervisors.append(supervisor)
         self._write_all(supervisors)
         return supervisor
+
+    def update(self, idPrograma: int, idUsuari: int, supervisor_actualitzat):
+        supervisors = self.get_all()
+
+        for index, supervisor in enumerate(supervisors):
+            if (
+                supervisor.idPrograma == idPrograma and
+                supervisor.idUsuari == idUsuari
+            ):
+                supervisors[index] = supervisor_actualitzat
+                self._write_all(supervisors)
+                return supervisor_actualitzat
+
+        return None

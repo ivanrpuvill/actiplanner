@@ -4,8 +4,8 @@ from fastapi.middleware.cors import CORSMiddleware
 from app.models.empresa_client import EmpresaClientCreate, EmpresaClientUpdate, EmpresaClientRead
 from app.models.usuari import UsuariCreate, UsuariUpdate, UsuariRead
 from app.models.programa_formacio import ProgramaFormacioCreate, ProgramaFormacioUpdate, ProgramaFormacioRead
-from app.models.programa_participant import ProgramaParticipantCreate, ProgramaParticipantRead
-from app.models.programa_supervisor import ProgramaSupervisorCreate, ProgramaSupervisorRead
+from app.models.programa_participant import ProgramaParticipantCreate, ProgramaParticipantUpdate, ProgramaParticipantRead
+from app.models.programa_supervisor import ProgramaSupervisorCreate, ProgramaSupervisorUpdate, ProgramaSupervisorRead
 from app.models.pla_accio import PlaAccioCreate, PlaAccioUpdate, PlaAccioRead
 from app.models.objectiu_pla import ObjectiuPlaCreate, ObjectiuPlaUpdate, ObjectiuPlaRead
 from app.models.accio import AccioCreate, AccioUpdate, AccioRead
@@ -224,6 +224,21 @@ def assignar_participant(idPrograma: int, participant: ProgramaParticipantCreate
     return assignacio
 
 
+@app.get("/programes/{idPrograma}/participants", response_model=list[ProgramaParticipantRead])
+def get_participants_programa(idPrograma: int):
+    return usuari_service.get_participants_programa(idPrograma)
+
+
+@app.put("/programes/{idPrograma}/participants/{idUsuari}", response_model=ProgramaParticipantRead)
+def update_participant(idPrograma: int, idUsuari: int, participant: ProgramaParticipantUpdate):
+    assignacio_actualitzada = usuari_service.update_participant_programa(idPrograma, idUsuari, participant)
+
+    if assignacio_actualitzada is None:
+        raise HTTPException(status_code=404, detail="Assignació de participant no trobada")
+
+    return assignacio_actualitzada
+
+
 @app.post("/programes/{idPrograma}/supervisors", response_model=ProgramaSupervisorRead)
 def assignar_supervisor(idPrograma: int, supervisor: ProgramaSupervisorCreate):
     assignacio = usuari_service.assignar_supervisor(idPrograma, supervisor)
@@ -235,6 +250,21 @@ def assignar_supervisor(idPrograma: int, supervisor: ProgramaSupervisorCreate):
         )
 
     return assignacio
+
+
+@app.get("/programes/{idPrograma}/supervisors", response_model=list[ProgramaSupervisorRead])
+def get_supervisors_programa(idPrograma: int):
+    return usuari_service.get_supervisors_programa(idPrograma)
+
+
+@app.put("/programes/{idPrograma}/supervisors/{idUsuari}", response_model=ProgramaSupervisorRead)
+def update_supervisor(idPrograma: int, idUsuari: int, supervisor: ProgramaSupervisorUpdate):
+    assignacio_actualitzada = usuari_service.update_supervisor_programa(idPrograma, idUsuari, supervisor)
+
+    if assignacio_actualitzada is None:
+        raise HTTPException(status_code=404, detail="Assignació de supervisor no trobada")
+
+    return assignacio_actualitzada
 
 
 @app.get("/plans/{idPla}")
@@ -268,6 +298,19 @@ def get_seguiments_objectiu(idObjectiu: int):
     return seguiment_objectiu_service.get_seguiments_objectiu(idObjectiu)
 
 
+@app.get("/objectius/{idObjectiu}", response_model=ObjectiuPlaRead)
+def get_objectiu(idObjectiu: int):
+    objectiu = pla_accio_service.get_objectiu(idObjectiu)
+    if objectiu is None:
+        raise HTTPException(status_code=404, detail="Objectiu no trobat")
+    return objectiu
+
+
+@app.get("/plans/{idPla}/objectius", response_model=list[ObjectiuPlaRead])
+def get_objectius_pla(idPla: int):
+    return pla_accio_service.get_objectius_pla(idPla)
+
+
 @app.post("/objectius", response_model=ObjectiuPlaRead)
 def create_objectiu(objectiu: ObjectiuPlaCreate):
     nou_objectiu = pla_accio_service.create_objectiu(objectiu)
@@ -282,6 +325,19 @@ def update_objectiu(idObjectiu: int, objectiu: ObjectiuPlaUpdate):
     if objectiu_actualitzat is None:
         raise HTTPException(status_code=404, detail="Objectiu no trobat")
     return objectiu_actualitzat
+
+
+@app.get("/accions/{idAccio}", response_model=AccioRead)
+def get_accio(idAccio: int):
+    accio = pla_accio_service.get_accio(idAccio)
+    if accio is None:
+        raise HTTPException(status_code=404, detail="Acció no trobada")
+    return accio
+
+
+@app.get("/objectius/{idObjectiu}/accions", response_model=list[AccioRead])
+def get_accions_objectiu(idObjectiu: int):
+    return pla_accio_service.get_accions_objectiu(idObjectiu)
 
 
 @app.post("/accions", response_model=AccioRead)
@@ -336,6 +392,11 @@ def get_registres_kpi(idKPI: int):
 @app.get("/kpis/{idKPI}/usuaris/{idUsuari}/registres", response_model=list[RegistreKPIRead])
 def get_registres_kpi_usuari(idKPI: int, idUsuari: int):
     return kpi_service.get_registres_kpi_usuari(idKPI, idUsuari)
+
+
+@app.get("/accions/{idAccio}/kpis", response_model=list[KPIRead])
+def get_kpis_accio(idAccio: int):
+    return pla_accio_service.get_kpis_accio(idAccio)
 
 
 @app.post("/kpis", response_model=KPIRead)

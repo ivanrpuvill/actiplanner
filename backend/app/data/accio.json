@@ -5,7 +5,8 @@
     "descripcio": "Fer una revisió estructurada de l'evolució de l'objectiu.",
     "dataInici": "2026-06-04",
     "dataFi": "2026-07-16",
-    "idAccio": 1
+    "idAccio": 1,
+    "actiu": true
   },
   {
     "idObjectiu": 1,
@@ -13,7 +14,8 @@
     "descripcio": "Registrar acords, accions i responsables després de cada seguiment.",
     "dataInici": "2026-06-04",
     "dataFi": "2026-07-16",
-    "idAccio": 2
+    "idAccio": 2,
+    "actiu": true
   },
   {
     "idObjectiu": 2,
@@ -21,7 +23,8 @@
     "descripcio": "Definir una estructura breu per donar feedback concret i accionable.",
     "dataInici": "2026-06-05",
     "dataFi": "2026-07-24",
-    "idAccio": 3
+    "idAccio": 3,
+    "actiu": true
   },
   {
     "idObjectiu": 2,
@@ -29,7 +32,8 @@
     "descripcio": "Anotar punts tractats, compromisos i següents passos.",
     "dataInici": "2026-06-05",
     "dataFi": "2026-07-24",
-    "idAccio": 4
+    "idAccio": 4,
+    "actiu": true
   },
   {
     "idObjectiu": 3,
@@ -37,7 +41,8 @@
     "descripcio": "Fer una revisió estructurada de l'evolució de l'objectiu.",
     "dataInici": "2026-06-06",
     "dataFi": "2026-07-11",
-    "idAccio": 5
+    "idAccio": 5,
+    "actiu": true
   },
   {
     "idObjectiu": 3,
@@ -45,7 +50,8 @@
     "descripcio": "Registrar acords, accions i responsables després de cada seguiment.",
     "dataInici": "2026-06-06",
     "dataFi": "2026-07-11",
-    "idAccio": 6
+    "idAccio": 6,
+    "actiu": true
   },
   {
     "idObjectiu": 4,
@@ -53,7 +59,8 @@
     "descripcio": "Fer una revisió estructurada de l'evolució de l'objectiu.",
     "dataInici": "2026-06-03",
     "dataFi": "2026-07-15",
-    "idAccio": 7
+    "idAccio": 7,
+    "actiu": true
   },
   {
     "idObjectiu": 4,
@@ -61,7 +68,8 @@
     "descripcio": "Registrar acords, accions i responsables després de cada seguiment.",
     "dataInici": "2026-06-03",
     "dataFi": "2026-07-15",
-    "idAccio": 8
+    "idAccio": 8,
+    "actiu": true
   },
   {
     "idObjectiu": 5,
@@ -69,7 +77,8 @@
     "descripcio": "Fer una revisió estructurada de l'evolució de l'objectiu.",
     "dataInici": "2026-06-04",
     "dataFi": "2026-07-23",
-    "idAccio": 9
+    "idAccio": 9,
+    "actiu": true
   },
   {
     "idObjectiu": 5,
@@ -77,7 +86,8 @@
     "descripcio": "Registrar acords, accions i responsables després de cada seguiment.",
     "dataInici": "2026-06-04",
     "dataFi": "2026-07-23",
-    "idAccio": 10
+    "idAccio": 10,
+    "actiu": true
   },
   {
     "idObjectiu": 6,
@@ -85,7 +95,8 @@
     "descripcio": "Fer una revisió estructurada de l'evolució de l'objectiu.",
     "dataInici": "2026-06-05",
     "dataFi": "2026-07-10",
-    "idAccio": 11
+    "idAccio": 11,
+    "actiu": true
   },
   {
     "idObjectiu": 6,
@@ -93,7 +104,8 @@
     "descripcio": "Registrar acords, accions i responsables després de cada seguiment.",
     "dataInici": "2026-06-05",
     "dataFi": "2026-07-10",
-    "idAccio": 12
+    "idAccio": 12,
+    "actiu": true
   },
   {
     "idObjectiu": 7,
@@ -101,7 +113,8 @@
     "descripcio": "Revisar i actualitzar l'estat de les oportunitats comercials.",
     "dataInici": "2026-06-06",
     "dataFi": "2026-07-18",
-    "idAccio": 13
+    "idAccio": 13,
+    "actiu": true
   },
   {
     "idObjectiu": 7,
@@ -109,7 +122,8 @@
     "descripcio": "Assignar una acció concreta i una data de seguiment.",
     "dataInici": "2026-06-06",
     "dataFi": "2026-07-18",
-    "idAccio": 14
+    "idAccio": 14,
+    "actiu": true
   },
   {
     "idObjectiu": 8,
@@ -117,7 +131,8 @@
     "descripcio": "Revisar i actualitzar l'estat de les oportunitats comercials.",
     "dataInici": "2026-06-03",
     "dataFi": "2026-07-22",
-    "idAccio": 15
+    "idAccio": 15,
+    "actiu": true
   },
   {
     "idObjectiu": 8,
@@ -125,7 +140,8 @@
     "descripcio": "Assignar una acció concreta i una data de seguiment.",
     "dataInici": "2026-06-03",
     "dataFi": "2026-07-22",
-    "idAccio": 16
+    "idAccio": 16,
+    "actiu": true
   },
   {
     "idObjectiu": 9,
@@ -133,7 +149,8 @@
     "descripcio": "Revisar i actualitzar l'estat de les oportunitats comercials.",
     "dataInici": "2026-06-04",
     "dataFi": "2026-07-09",
-    "idAccio": 17
+    "idAccio": 17,
+    "actiu": true
   },
   {
     "idObjectiu": 9,
@@ -141,7 +158,8 @@
     "descripcio": "Assignar una acció concreta i una data de seguiment.",
     "dataInici": "2026-06-04",
     "dataFi": "2026-07-09",
-    "idAccio": 18
+    "idAccio": 18,
+    "actiu": true
   },
   {
     "idObjectiu": 10,
@@ -149,7 +167,8 @@
     "descripcio": "Revisar i actualitzar l'estat de les oportunitats comercials.",
     "dataInici": "2026-06-05",
     "dataFi": "2026-07-17",
-    "idAccio": 19
+    "idAccio": 19,
+    "actiu": true
   },
   {
     "idObjectiu": 10,
@@ -157,7 +176,8 @@
     "descripcio": "Assignar una acció concreta i una data de seguiment.",
     "dataInici": "2026-06-05",
     "dataFi": "2026-07-17",
-    "idAccio": 20
+    "idAccio": 20,
+    "actiu": true
   },
   {
     "idObjectiu": 11,
@@ -165,7 +185,8 @@
     "descripcio": "Fer una revisió estructurada de l'evolució de l'objectiu.",
     "dataInici": "2026-06-06",
     "dataFi": "2026-07-25",
-    "idAccio": 21
+    "idAccio": 21,
+    "actiu": true
   },
   {
     "idObjectiu": 11,
@@ -173,7 +194,8 @@
     "descripcio": "Registrar acords, accions i responsables després de cada seguiment.",
     "dataInici": "2026-06-06",
     "dataFi": "2026-07-25",
-    "idAccio": 22
+    "idAccio": 22,
+    "actiu": true
   },
   {
     "idObjectiu": 12,
@@ -181,7 +203,8 @@
     "descripcio": "Documentar les incidències rebudes i classificar-ne l'origen.",
     "dataInici": "2026-06-03",
     "dataFi": "2026-07-08",
-    "idAccio": 23
+    "idAccio": 23,
+    "actiu": true
   },
   {
     "idObjectiu": 12,
@@ -189,7 +212,8 @@
     "descripcio": "Fer seguiment del protocol definit i del temps de resposta.",
     "dataInici": "2026-06-03",
     "dataFi": "2026-07-08",
-    "idAccio": 24
+    "idAccio": 24,
+    "actiu": true
   },
   {
     "idObjectiu": 13,
@@ -197,7 +221,8 @@
     "descripcio": "Documentar les incidències rebudes i classificar-ne l'origen.",
     "dataInici": "2026-06-04",
     "dataFi": "2026-07-16",
-    "idAccio": 25
+    "idAccio": 25,
+    "actiu": true
   },
   {
     "idObjectiu": 13,
@@ -205,7 +230,8 @@
     "descripcio": "Fer seguiment del protocol definit i del temps de resposta.",
     "dataInici": "2026-06-04",
     "dataFi": "2026-07-16",
-    "idAccio": 26
+    "idAccio": 26,
+    "actiu": true
   },
   {
     "idObjectiu": 14,
@@ -213,7 +239,8 @@
     "descripcio": "Documentar les incidències rebudes i classificar-ne l'origen.",
     "dataInici": "2026-06-05",
     "dataFi": "2026-07-24",
-    "idAccio": 27
+    "idAccio": 27,
+    "actiu": true
   },
   {
     "idObjectiu": 14,
@@ -221,7 +248,8 @@
     "descripcio": "Fer seguiment del protocol definit i del temps de resposta.",
     "dataInici": "2026-06-05",
     "dataFi": "2026-07-24",
-    "idAccio": 28
+    "idAccio": 28,
+    "actiu": true
   },
   {
     "idObjectiu": 15,
@@ -229,7 +257,8 @@
     "descripcio": "Definir les tasques clau abans de començar la setmana.",
     "dataInici": "2026-06-06",
     "dataFi": "2026-07-11",
-    "idAccio": 29
+    "idAccio": 29,
+    "actiu": true
   },
   {
     "idObjectiu": 15,
@@ -237,7 +266,8 @@
     "descripcio": "Identificar obstacles i establir accions preventives.",
     "dataInici": "2026-06-06",
     "dataFi": "2026-07-11",
-    "idAccio": 30
+    "idAccio": 30,
+    "actiu": true
   },
   {
     "idObjectiu": 16,
@@ -245,7 +275,8 @@
     "descripcio": "Definir les tasques clau abans de començar la setmana.",
     "dataInici": "2026-06-03",
     "dataFi": "2026-07-15",
-    "idAccio": 31
+    "idAccio": 31,
+    "actiu": true
   },
   {
     "idObjectiu": 16,
@@ -253,7 +284,8 @@
     "descripcio": "Identificar obstacles i establir accions preventives.",
     "dataInici": "2026-06-03",
     "dataFi": "2026-07-15",
-    "idAccio": 32
+    "idAccio": 32,
+    "actiu": true
   },
   {
     "idObjectiu": 17,
@@ -261,7 +293,8 @@
     "descripcio": "Definir les tasques clau abans de començar la setmana.",
     "dataInici": "2026-06-04",
     "dataFi": "2026-07-23",
-    "idAccio": 33
+    "idAccio": 33,
+    "actiu": true
   },
   {
     "idObjectiu": 17,
@@ -269,7 +302,8 @@
     "descripcio": "Identificar obstacles i establir accions preventives.",
     "dataInici": "2026-06-04",
     "dataFi": "2026-07-23",
-    "idAccio": 34
+    "idAccio": 34,
+    "actiu": true
   },
   {
     "idObjectiu": 18,
@@ -277,7 +311,8 @@
     "descripcio": "Documentar les incidències rebudes i classificar-ne l'origen.",
     "dataInici": "2026-06-05",
     "dataFi": "2026-07-10",
-    "idAccio": 35
+    "idAccio": 35,
+    "actiu": true
   },
   {
     "idObjectiu": 18,
@@ -285,6 +320,7 @@
     "descripcio": "Fer seguiment del protocol definit i del temps de resposta.",
     "dataInici": "2026-06-05",
     "dataFi": "2026-07-10",
-    "idAccio": 36
+    "idAccio": 36,
+    "actiu": true
   }
 ]

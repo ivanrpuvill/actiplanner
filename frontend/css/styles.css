@@ -89,6 +89,35 @@ textarea {
   background: #d1d5db;
 }
 
+.btn.small {
+  padding: 6px 12px;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.badge {
+  display: inline-block;
+  padding: 4px 10px;
+  border-radius: 999px;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.badge-actiu {
+  background: #dcfce7;
+  color: #166534;
+}
+
+.badge-inactiu {
+  background: #fee2e2;
+  color: #991b1b;
+}
+
+.section-title {
+  margin: 32px 0 16px;
+  color: #111827;
+}
+
 .status {
   padding: 12px;
   border-radius: 10px;

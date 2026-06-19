@@ -18,6 +18,13 @@ class ProgramaParticipantRepository:
         return [
             item
             for item in self.get_all()
+            if item.idPrograma == idPrograma and item.actiu
+        ]
+
+    def get_all_by_programa(self, idPrograma: int) -> list[ProgramaParticipant]:
+        return [
+            item
+            for item in self.get_all()
             if item.idPrograma == idPrograma
         ]
 
@@ -27,6 +34,13 @@ class ProgramaParticipantRepository:
             for item in self.get_all()
             if item.idUsuari == idUsuari
         ]
+
+    def get_by_programa_usuari(self, idPrograma: int, idUsuari: int) -> ProgramaParticipant | None:
+        for item in self.get_all():
+            if item.idPrograma == idPrograma and item.idUsuari == idUsuari:
+                return item
+
+        return None
 
     def _write_all(self, participants):
         with open(self.file_path, "w", encoding="utf-8") as file:

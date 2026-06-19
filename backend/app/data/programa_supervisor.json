@@ -2,41 +2,49 @@
   {
     "idPrograma": 1,
     "idUsuari": 6,
-    "dataAssignacio": "2026-06-01"
+    "dataAssignacio": "2026-06-01",
+    "actiu": true
   },
   {
     "idPrograma": 1,
     "idUsuari": 7,
-    "dataAssignacio": "2026-06-01"
+    "dataAssignacio": "2026-06-01",
+    "actiu": true
   },
   {
     "idPrograma": 2,
     "idUsuari": 6,
-    "dataAssignacio": "2026-06-01"
+    "dataAssignacio": "2026-06-01",
+    "actiu": true
   },
   {
     "idPrograma": 3,
     "idUsuari": 8,
-    "dataAssignacio": "2026-06-01"
+    "dataAssignacio": "2026-06-01",
+    "actiu": true
   },
   {
     "idPrograma": 3,
     "idUsuari": 9,
-    "dataAssignacio": "2026-06-01"
+    "dataAssignacio": "2026-06-01",
+    "actiu": true
   },
   {
     "idPrograma": 4,
     "idUsuari": 10,
-    "dataAssignacio": "2026-06-01"
+    "dataAssignacio": "2026-06-01",
+    "actiu": true
   },
   {
     "idPrograma": 5,
     "idUsuari": 11,
-    "dataAssignacio": "2026-06-01"
+    "dataAssignacio": "2026-06-01",
+    "actiu": true
   },
   {
     "idPrograma": 6,
     "idUsuari": 12,
-    "dataAssignacio": "2026-06-01"
+    "dataAssignacio": "2026-06-01",
+    "actiu": true
   }
 ]

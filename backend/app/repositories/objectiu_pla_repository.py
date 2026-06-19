@@ -18,6 +18,13 @@ class ObjectiuPlaRepository:
         return [
             objectiu
             for objectiu in self.get_all()
+            if objectiu.idPla == idPla and objectiu.actiu
+        ]
+
+    def get_all_by_pla(self, idPla: int) -> list[ObjectiuPla]:
+        return [
+            objectiu
+            for objectiu in self.get_all()
             if objectiu.idPla == idPla
         ]
 
