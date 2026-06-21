@@ -2,12 +2,14 @@ from datetime import date
 from app.models.registre_kpi import RegistreKPI, RegistreKPICreate, RegistreKPIUpdate
 from app.repositories.kpi_repository import KPIRepository
 from app.repositories.registre_kpi_repository import RegistreKPIRepository
+from app.repositories.programa_participant_repository import ProgramaParticipantRepository
 
 
 class KPIService:
     def __init__(self):
         self.kpi_repository = KPIRepository()
         self.registre_kpi_repository = RegistreKPIRepository()
+        self.participant_repository = ProgramaParticipantRepository()
 
     def get_kpi(self, idKPI: int):
         return self.kpi_repository.get_by_id(idKPI)
@@ -65,6 +67,12 @@ class KPIService:
         if kpi is None:
             return None
 
+        if not self._es_participant_actiu(registre.idUsuari, registre.idPrograma):
+            raise ValueError("usuari_no_es_participant")
+
+        if not self._valor_dins_de_rang(kpi, registre.valor):
+            raise ValueError("valor_fora_de_rang")
+
         nou_registre = RegistreKPI(
             idRegistre=self.registre_kpi_repository.next_id(),
             dataRegistre=date.today().isoformat(),
@@ -72,6 +80,29 @@ class KPIService:
         )
 
         return self.registre_kpi_repository.create(nou_registre)
+
+    def _es_participant_actiu(self, idUsuari: int, idPrograma: int) -> bool:
+        participacions = self.participant_repository.get_by_usuari(idUsuari)
+
+        return any(
+            item.idPrograma == idPrograma and item.actiu
+            for item in participacions
+        )
+
+    def _valor_dins_de_rang(self, kpi, valor: float) -> bool:
+        if kpi.tipus == "boolea":
+            return valor in (0, 1)
+
+        minim = kpi.valorMinim
+        maxim = kpi.valorMaxim
+
+        if minim is not None and valor < minim:
+            return False
+
+        if maxim is not None and valor > maxim:
+            return False
+
+        return True
 
     def update_registre_kpi(self, idRegistre: int, registre: RegistreKPIUpdate):
         registre_actual = self.registre_kpi_repository.get_by_id(idRegistre)

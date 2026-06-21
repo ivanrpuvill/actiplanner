@@ -4,62 +4,89 @@
     "titol": "Pla de lideratge i seguiment individual",
     "actiu": true,
     "idPla": 1,
-    "dataCreacio": "2026-06-01"
+    "dataCreacio": "2026-06-01",
+    "descripcio": null,
+    "dataInici": null,
+    "dataFi": null
   },
   {
     "idPrograma": 1,
     "titol": "Pla de feedback i consolidació d'hàbits",
     "actiu": true,
     "idPla": 2,
-    "dataCreacio": "2026-06-01"
+    "dataCreacio": "2026-06-01",
+    "descripcio": null,
+    "dataInici": null,
+    "dataFi": null
   },
   {
     "idPrograma": 2,
     "titol": "Pla de comunicació i escolta activa",
     "actiu": true,
     "idPla": 3,
-    "dataCreacio": "2026-06-01"
+    "dataCreacio": "2026-06-01",
+    "descripcio": null,
+    "dataInici": null,
+    "dataFi": null
   },
   {
     "idPrograma": 3,
     "titol": "Pla de seguiment comercial i conversió",
     "actiu": true,
     "idPla": 4,
-    "dataCreacio": "2026-06-01"
+    "dataCreacio": "2026-06-01",
+    "descripcio": null,
+    "dataInici": null,
+    "dataFi": null
   },
   {
     "idPrograma": 3,
     "titol": "Pla de qualitat en oportunitats comercials",
     "actiu": true,
     "idPla": 5,
-    "dataCreacio": "2026-06-01"
+    "dataCreacio": "2026-06-01",
+    "descripcio": null,
+    "dataInici": null,
+    "dataFi": null
   },
   {
     "idPrograma": 4,
     "titol": "Pla de coordinació i seguretat operativa",
     "actiu": true,
     "idPla": 6,
-    "dataCreacio": "2026-06-01"
+    "dataCreacio": "2026-06-01",
+    "descripcio": null,
+    "dataInici": null,
+    "dataFi": null
   },
   {
     "idPrograma": 5,
     "titol": "Pla de qualitat d'atenció al client",
     "actiu": true,
     "idPla": 7,
-    "dataCreacio": "2026-06-01"
+    "dataCreacio": "2026-06-01",
+    "descripcio": null,
+    "dataInici": null,
+    "dataFi": null
   },
   {
     "idPrograma": 6,
     "titol": "Pla de productivitat i priorització",
     "actiu": true,
     "idPla": 8,
-    "dataCreacio": "2026-06-01"
+    "dataCreacio": "2026-06-01",
+    "descripcio": null,
+    "dataInici": null,
+    "dataFi": null
   },
   {
     "idPrograma": 6,
     "titol": "Pla de reducció de bloquejos",
     "actiu": true,
     "idPla": 9,
-    "dataCreacio": "2026-06-01"
+    "dataCreacio": "2026-06-01",
+    "descripcio": null,
+    "dataInici": null,
+    "dataFi": null
   }
 ]

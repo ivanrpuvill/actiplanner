@@ -4,7 +4,10 @@ from pydantic import BaseModel
 class PlaAccioBase(BaseModel):
     idPrograma: int
     titol: str
-    actiu: bool
+    descripcio: str | None = None
+    dataInici: str | None = None
+    dataFi: str | None = None
+    actiu: bool = True
 
 
 class PlaAccioCreate(PlaAccioBase):
@@ -14,6 +17,9 @@ class PlaAccioCreate(PlaAccioBase):
 class PlaAccioUpdate(BaseModel):
     idPrograma: int | None = None
     titol: str | None = None
+    descripcio: str | None = None
+    dataInici: str | None = None
+    dataFi: str | None = None
     actiu: bool | None = None
 
 

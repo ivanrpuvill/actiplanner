@@ -417,7 +417,21 @@ def update_kpi(idKPI: int, kpi: KPIUpdate):
 
 @app.post("/registres-kpi", response_model=RegistreKPIRead)
 def create_registre_kpi(registre: RegistreKPICreate):
-    nou_registre = kpi_service.create_registre_kpi(registre)
+    try:
+        nou_registre = kpi_service.create_registre_kpi(registre)
+    except ValueError as error:
+        if str(error) == "usuari_no_es_participant":
+            raise HTTPException(
+                status_code=400,
+                detail="L'usuari no és participant actiu del programa indicat"
+            )
+        if str(error) == "valor_fora_de_rang":
+            raise HTTPException(
+                status_code=400,
+                detail="El valor registrat es troba fora del rang definit pel KPI"
+            )
+        raise
+
     if nou_registre is None:
         raise HTTPException(status_code=404, detail="KPI no trobat")
     return nou_registre
