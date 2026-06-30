@@ -673,3 +673,11 @@ def comparar_grups_impacte(
 @app.get("/indicadors-impacte/{idIndicadorImpacte}/programes/{idPrograma}/correlacio")
 def get_correlacio_progres_impacte(idIndicadorImpacte: int, idPrograma: int):
     return impacte_service.correlacio_progres_impacte(idIndicadorImpacte, idPrograma)
+
+
+@app.get("/indicadors-impacte/{id_indicador}/programes/{id_programa}/comparacio-control")
+def comparar_amb_grup_control(id_indicador: int, id_programa: int):
+    return impacte_service.comparar_grups(
+        idIndicadorImpacteFormat=id_indicador,
+        idProgramaFormat=id_programa
+    )
